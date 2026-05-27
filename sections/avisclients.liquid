@@ -1,0 +1,63 @@
+{% assign has_image = false %}
+{% if block.settings.image != blank and block.settings.show_image %}
+  {% assign has_image = true %}
+{% endif %}
+
+<article
+  class="pureva-review-card {% if has_image %}card-with-image{% else %}card-text-only{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% if has_image %}
+    <div class="pureva-review-image-wrap">
+      <img
+        src="{{ block.settings.image | image_url: width: 500 }}"
+        alt="{{ block.settings.title | escape }}"
+        class="pureva-review-image"
+        loading="lazy"
+      >
+    </div>
+  {% endif %}
+
+  <div class="pureva-review-content">
+    <div class="pureva-review-stars" aria-label="{{ block.settings.rating }} étoiles">
+      {% for i in (1..block.settings.rating) %}
+        <span>★</span>
+      {% endfor %}
+    </div>
+
+    {% if block.settings.title != blank %}
+      <h3 class="pureva-review-title">
+        {{ block.settings.title }}
+      </h3>
+    {% endif %}
+
+    {% if block.settings.text != blank %}
+      <p class="pureva-review-text">
+        {{ block.settings.text }}
+      </p>
+    {% endif %}
+
+    <div class="pureva-review-author">
+      {% if block.settings.initials != blank %}
+        <div class="pureva-review-avatar">
+          {{ block.settings.initials }}
+        </div>
+      {% endif %}
+
+      <div>
+        {% if block.settings.name != blank %}
+          <div class="pureva-review-name">
+            {{ block.settings.name }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.verified_text != blank %}
+          <div class="pureva-review-verified">
+            <span class="pureva-review-check">✓</span>
+            <span>{{ block.settings.verified_text }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>

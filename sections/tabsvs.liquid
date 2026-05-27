@@ -1,0 +1,1160 @@
+<section
+  class="pureva-compare-section"
+  style="
+    --pc-bg: {{ section.settings.section_background }};
+    --pc-text: {{ section.settings.text_color }};
+    --pc-muted: {{ section.settings.muted_text_color }};
+    --pc-card-bg: {{ section.settings.table_background }};
+    --pc-main: {{ section.settings.main_column_background }};
+    --pc-main-text: {{ section.settings.main_column_text }};
+    --pc-border: {{ section.settings.border_color }};
+    --pc-check-bg: {{ section.settings.check_background }};
+    --pc-check-color: {{ section.settings.check_color }};
+    --pc-cross-bg: {{ section.settings.cross_background }};
+    --pc-cross-color: {{ section.settings.cross_color }};
+    --pc-pill-bg: {{ section.settings.pill_background }};
+    --pc-radius: {{ section.settings.table_radius }}px;
+    --pc-max-width: {{ section.settings.max_width }}px;
+    --pc-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --pc-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-compare-container">
+
+    {% if section.settings.badge_text != blank %}
+      <div class="pureva-compare-badge">
+        {{ section.settings.badge_text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-compare-heading">
+        {{ section.settings.heading | newline_to_br }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="pureva-compare-subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
+
+    <div class="pureva-compare-pills">
+      {% if section.settings.pill_1 != blank %}
+        <span>✓ {{ section.settings.pill_1 }}</span>
+      {% endif %}
+      {% if section.settings.pill_2 != blank %}
+        <span>✓ {{ section.settings.pill_2 }}</span>
+      {% endif %}
+      {% if section.settings.pill_3 != blank %}
+        <span>✓ {{ section.settings.pill_3 }}</span>
+      {% endif %}
+    </div>
+
+    <div class="pureva-compare-stats">
+      {% if section.settings.stat_1_number != blank %}
+        <div class="pureva-stat-item">
+          <strong>{{ section.settings.stat_1_number }}</strong>
+          <span>{{ section.settings.stat_1_text }}</span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.stat_2_number != blank %}
+        <div class="pureva-stat-item">
+          <strong>{{ section.settings.stat_2_number }}</strong>
+          <span>{{ section.settings.stat_2_text }}</span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.stat_3_number != blank %}
+        <div class="pureva-stat-item">
+          <strong>{{ section.settings.stat_3_number }}</strong>
+          <span>{{ section.settings.stat_3_text }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="pureva-table-scroll">
+      <div class="pureva-compare-table">
+        
+        <div class="pureva-table-header pureva-empty-cell"></div>
+
+        <div class="pureva-table-header pureva-main-column pureva-brand-cell">
+          {% if section.settings.brand_logo != blank %}
+            <img
+              src="{{ section.settings.brand_logo | image_url: width: 220 }}"
+              alt="{{ section.settings.brand_name | escape }}"
+              loading="lazy"
+            >
+          {% else %}
+            <strong>{{ section.settings.brand_name }}</strong>
+            {% if section.settings.brand_subtitle != blank %}
+              <span>{{ section.settings.brand_subtitle }}</span>
+            {% endif %}
+          {% endif %}
+        </div>
+
+        <div class="pureva-table-header pureva-competitor-cell">
+          <div class="pureva-column-icon">{{ section.settings.column_2_icon }}</div>
+          <strong>{{ section.settings.column_2_title }}</strong>
+        </div>
+
+        <div class="pureva-table-header pureva-competitor-cell">
+          <div class="pureva-column-icon">{{ section.settings.column_3_icon }}</div>
+          <strong>{{ section.settings.column_3_title }}</strong>
+        </div>
+
+        {% for block in section.blocks %}
+          <div class="pureva-table-cell pureva-feature-cell" {{ block.shopify_attributes }}>
+            {{ block.settings.feature }}
+          </div>
+
+          <div class="pureva-table-cell pureva-main-column">
+            {% if block.settings.brand_type == 'check' %}
+              <span class="pureva-check">✓</span>
+            {% elsif block.settings.brand_type == 'cross' %}
+              <span class="pureva-cross">×</span>
+            {% else %}
+              <span class="pureva-text-value">{{ block.settings.brand_text }}</span>
+            {% endif %}
+          </div>
+
+          <div class="pureva-table-cell">
+            {% if block.settings.column_2_type == 'check' %}
+              <span class="pureva-check">✓</span>
+            {% elsif block.settings.column_2_type == 'cross' %}
+              <span class="pureva-cross">×</span>
+            {% else %}
+              <span class="pureva-text-value">{{ block.settings.column_2_text }}</span>
+            {% endif %}
+          </div>
+
+          <div class="pureva-table-cell">
+            {% if block.settings.column_3_type == 'check' %}
+              <span class="pureva-check">✓</span>
+            {% elsif block.settings.column_3_type == 'cross' %}
+              <span class="pureva-cross">×</span>
+            {% else %}
+              <span class="pureva-text-value {% if block.settings.column_3_badge %}pureva-small-badge{% endif %}">
+                {{ block.settings.column_3_text }}
+              </span>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    {% if section.settings.bottom_note != blank %}
+      <p class="pureva-compare-note">
+        {{ section.settings.bottom_note }}
+      </p>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  .pureva-compare-section {
+    width: 100%;
+    background: var(--pc-bg);
+    color: var(--pc-text);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: var(--pc-padding-y) 20px;
+    overflow: hidden;
+  }
+
+  .pureva-compare-container {
+    width: 100%;
+    max-width: var(--pc-max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pureva-compare-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: var(--pc-pill-bg);
+    color: var(--pc-muted);
+    font-size: {{ section.settings.badge_size }}px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .pureva-compare-heading {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--pc-text);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -1.3px;
+  }
+
+  .pureva-compare-subheading {
+    max-width: 520px;
+    margin: 22px auto 0 auto;
+    color: var(--pc-muted);
+    font-size: {{ section.settings.subheading_size }}px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .pureva-compare-pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .pureva-compare-pills span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 999px;
+    color: var(--pc-text);
+    font-size: {{ section.settings.pill_size }}px;
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .pureva-compare-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 720px;
+    margin: 36px auto 42px auto;
+    border-top: 1px solid rgba(255,255,255,0.16);
+  }
+
+  .pureva-stat-item {
+    padding: 34px 24px 0 24px;
+    border-right: 1px solid rgba(255,255,255,0.16);
+  }
+
+  .pureva-stat-item:last-child {
+    border-right: none;
+  }
+
+  .pureva-stat-item strong {
+    display: block;
+    color: var(--pc-text);
+    font-size: {{ section.settings.stat_number_size }}px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+  }
+
+  .pureva-stat-item span {
+    display: block;
+    margin-top: 14px;
+    color: var(--pc-muted);
+    font-size: {{ section.settings.stat_text_size }}px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .pureva-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pureva-table-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pureva-compare-table {
+    width: 100%;
+    max-width: {{ section.settings.table_width }}px;
+    min-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.55fr 1fr 1fr 1fr;
+    background: var(--pc-card-bg);
+    border-radius: var(--pc-radius);
+    overflow: hidden;
+  }
+
+  .pureva-table-header,
+  .pureva-table-cell {
+    min-height: 74px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #06142d;
+    border-bottom: 1px solid var(--pc-border);
+    font-size: {{ section.settings.table_text_size }}px;
+    line-height: 1.25;
+    font-weight: 800;
+  }
+
+  .pureva-table-header {
+    min-height: 132px;
+    background: #ffffff;
+  }
+
+  .pureva-feature-cell {
+    justify-content: flex-start;
+    text-align: left;
+    background: rgba(248,249,251,0.95);
+    font-weight: 900;
+  }
+
+  .pureva-main-column {
+    background: var(--pc-main);
+    color: var(--pc-main-text);
+  }
+
+  .pureva-brand-cell {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pureva-brand-cell strong {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+    color: var(--pc-main-text);
+  }
+
+  .pureva-brand-cell span {
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .pureva-brand-cell img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+  }
+
+  .pureva-competitor-cell {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .pureva-column-icon {
+    font-size: {{ section.settings.column_icon_size }}px;
+    line-height: 1;
+  }
+
+  .pureva-check,
+  .pureva-cross {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .pureva-check {
+    background: var(--pc-check-bg);
+    color: var(--pc-check-color);
+    border: 2px solid rgba(255,255,255,0.65);
+  }
+
+  .pureva-cross {
+    background: var(--pc-cross-bg);
+    color: var(--pc-cross-color);
+    font-size: 28px;
+  }
+
+  .pureva-text-value {
+    font-size: {{ section.settings.table_value_size }}px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: inherit;
+  }
+
+  .pureva-table-cell:not(.pureva-main-column) .pureva-text-value {
+    color: #06142d;
+  }
+
+  .pureva-small-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffe5e3;
+    color: #e33e35 !important;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .pureva-compare-note {
+    max-width: 720px;
+    margin: 18px auto 0 auto;
+    color: var(--pc-muted);
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 749px) {
+    .pureva-compare-section {
+      padding: var(--pc-mobile-padding-y) 14px;
+    }
+
+    .pureva-compare-badge {
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      font-size: {{ section.settings.mobile_badge_size }}px;
+    }
+
+    .pureva-compare-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+    }
+
+    .pureva-compare-subheading {
+      margin-top: 16px;
+      font-size: {{ section.settings.mobile_subheading_size }}px;
+    }
+
+    .pureva-compare-pills {
+      margin-top: 24px;
+      gap: 8px;
+    }
+
+    .pureva-compare-pills span {
+      padding: 9px 13px;
+      font-size: {{ section.settings.mobile_pill_size }}px;
+    }
+
+    .pureva-compare-stats {
+      grid-template-columns: 1fr;
+      max-width: 330px;
+      margin: 30px auto 34px auto;
+      border-top: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .pureva-stat-item {
+      padding: 22px 0;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .pureva-stat-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pureva-stat-item strong {
+      font-size: {{ section.settings.mobile_stat_number_size }}px;
+    }
+
+    .pureva-stat-item span {
+      margin-top: 9px;
+      font-size: {{ section.settings.mobile_stat_text_size }}px;
+    }
+
+    .pureva-table-scroll {
+      margin-left: -14px;
+      margin-right: -14px;
+      padding: 0 14px;
+    }
+
+    .pureva-compare-table {
+      min-width: 680px;
+      border-radius: {{ section.settings.mobile_table_radius }}px;
+    }
+
+    .pureva-table-header,
+    .pureva-table-cell {
+      min-height: 64px;
+      padding: 16px 14px;
+      font-size: {{ section.settings.mobile_table_text_size }}px;
+    }
+
+    .pureva-table-header {
+      min-height: 110px;
+    }
+
+    .pureva-brand-cell strong {
+      font-size: 21px;
+    }
+
+    .pureva-brand-cell img {
+      max-width: 100px;
+    }
+
+    .pureva-check,
+    .pureva-cross {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      font-size: 22px;
+    }
+
+    .pureva-cross {
+      font-size: 26px;
+    }
+
+    .pureva-text-value {
+      font-size: {{ section.settings.mobile_table_value_size }}px;
+    }
+
+    .pureva-compare-note {
+      font-size: 11px;
+      margin-top: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva comparaison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texte badge",
+      "default": "Comparaison OhPur"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Votre eau au quotidien,\nsans compromis"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "OhPur vous permet de consommer une eau pure, sans plastique et à moindre coût."
+    },
+    {
+      "type": "text",
+      "id": "pill_1",
+      "label": "Pastille 1",
+      "default": "Moins coûteux"
+    },
+    {
+      "type": "text",
+      "id": "pill_2",
+      "label": "Pastille 2",
+      "default": "Plus écologique"
+    },
+    {
+      "type": "text",
+      "id": "pill_3",
+      "label": "Pastille 3",
+      "default": "Plus respectueux de la planète"
+    },
+    {
+      "type": "header",
+      "content": "Statistiques"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Statistique 1 - chiffre",
+      "default": "15 milliards"
+    },
+    {
+      "type": "textarea",
+      "id": "stat_1_text",
+      "label": "Statistique 1 - texte",
+      "default": "bouteilles en plastique vendues par an en France"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Statistique 2 - chiffre",
+      "default": "8%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat_2_text",
+      "label": "Statistique 2 - texte",
+      "default": "du plastique seulement est recyclé"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Statistique 3 - chiffre",
+      "default": "245 000"
+    },
+    {
+      "type": "textarea",
+      "id": "stat_3_text",
+      "label": "Statistique 3 - texte",
+      "default": "microplastiques ingérés par litre d’eau en bouteille"
+    },
+    {
+      "type": "header",
+      "content": "Colonnes du tableau"
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_logo",
+      "label": "Logo colonne principale"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Nom colonne principale",
+      "default": "OhPur."
+    },
+    {
+      "type": "text",
+      "id": "brand_subtitle",
+      "label": "Sous-titre colonne principale",
+      "default": "Comparaison"
+    },
+    {
+      "type": "text",
+      "id": "column_2_icon",
+      "label": "Icône colonne 2",
+      "default": "🚰"
+    },
+    {
+      "type": "text",
+      "id": "column_2_title",
+      "label": "Titre colonne 2",
+      "default": "Eau du robinet"
+    },
+    {
+      "type": "text",
+      "id": "column_3_icon",
+      "label": "Icône colonne 3",
+      "default": "🧴"
+    },
+    {
+      "type": "text",
+      "id": "column_3_title",
+      "label": "Titre colonne 3",
+      "default": "Bouteilles en plastique"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_note",
+      "label": "Note sous le tableau",
+      "default": "Comparaison donnée à titre indicatif."
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond de la section",
+      "default": "#030D4E"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Texte secondaire",
+      "default": "#8EA2CF"
+    },
+    {
+      "type": "color",
+      "id": "pill_background",
+      "label": "Fond badge",
+      "default": "#1D2B70"
+    },
+    {
+      "type": "color",
+      "id": "table_background",
+      "label": "Fond tableau",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "main_column_background",
+      "label": "Fond colonne principale",
+      "default": "#0D2949"
+    },
+    {
+      "type": "color",
+      "id": "main_column_text",
+      "label": "Texte colonne principale",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Bordures tableau",
+      "default": "#E7EAF0"
+    },
+    {
+      "type": "color",
+      "id": "check_background",
+      "label": "Fond check",
+      "default": "#0D2949"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Couleur check",
+      "default": "#D7FAFF"
+    },
+    {
+      "type": "color",
+      "id": "cross_background",
+      "label": "Fond croix",
+      "default": "#FFE5E3"
+    },
+    {
+      "type": "color",
+      "id": "cross_color",
+      "label": "Couleur croix",
+      "default": "#EF3B35"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale section",
+      "min": 900,
+      "max": 1500,
+      "step": 20,
+      "default": 1040,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas ordinateur",
+      "min": 40,
+      "max": 180,
+      "step": 5,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "table_width",
+      "label": "Largeur du tableau",
+      "min": 700,
+      "max": 1100,
+      "step": 20,
+      "default": 860,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "table_radius",
+      "label": "Arrondi tableau",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Taille badge",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 28,
+      "max": 70,
+      "step": 1,
+      "default": 44,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Taille sous-titre",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pill_size",
+      "label": "Taille pastilles",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "label": "Taille chiffres statistiques",
+      "min": 22,
+      "max": 46,
+      "step": 1,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "stat_text_size",
+      "label": "Taille textes statistiques",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "column_icon_size",
+      "label": "Taille icônes colonnes",
+      "min": 20,
+      "max": 42,
+      "step": 1,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "table_text_size",
+      "label": "Taille texte tableau",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "table_value_size",
+      "label": "Taille valeurs texte tableau",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 30,
+      "max": 120,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_size",
+      "label": "Taille badge mobile",
+      "min": 8,
+      "max": 15,
+      "step": 1,
+      "default": 9,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 44,
+      "step": 1,
+      "default": 34,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_size",
+      "label": "Taille sous-titre mobile",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_pill_size",
+      "label": "Taille pastilles mobile",
+      "min": 9,
+      "max": 15,
+      "step": 1,
+      "default": 11,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_stat_number_size",
+      "label": "Taille chiffres mobile",
+      "min": 22,
+      "max": 40,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_stat_text_size",
+      "label": "Taille textes stats mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_table_radius",
+      "label": "Arrondi tableau mobile",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_table_text_size",
+      "label": "Taille texte tableau mobile",
+      "min": 10,
+      "max": 15,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_table_value_size",
+      "label": "Taille valeurs tableau mobile",
+      "min": 10,
+      "max": 15,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ligne comparaison",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature",
+          "label": "Critère",
+          "default": "Réduit les pesticides"
+        },
+        {
+          "type": "select",
+          "id": "brand_type",
+          "label": "Valeur colonne principale",
+          "default": "check",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "cross",
+              "label": "Croix"
+            },
+            {
+              "value": "text",
+              "label": "Texte"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "brand_text",
+          "label": "Texte colonne principale",
+          "default": "Acier inox"
+        },
+        {
+          "type": "select",
+          "id": "column_2_type",
+          "label": "Valeur colonne 2",
+          "default": "cross",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "cross",
+              "label": "Croix"
+            },
+            {
+              "value": "text",
+              "label": "Texte"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "column_2_text",
+          "label": "Texte colonne 2",
+          "default": "Acier inox"
+        },
+        {
+          "type": "select",
+          "id": "column_3_type",
+          "label": "Valeur colonne 3",
+          "default": "check",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "cross",
+              "label": "Croix"
+            },
+            {
+              "value": "text",
+              "label": "Texte"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "column_3_text",
+          "label": "Texte colonne 3",
+          "default": "⚠ Plastique"
+        },
+        {
+          "type": "checkbox",
+          "id": "column_3_badge",
+          "label": "Afficher le texte colonne 3 en badge rouge",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva comparaison",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les pesticides",
+            "brand_type": "check",
+            "column_2_type": "cross",
+            "column_3_type": "check"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les métaux lourds",
+            "brand_type": "check",
+            "column_2_type": "cross",
+            "column_3_type": "check"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les microplastiques",
+            "brand_type": "check",
+            "column_2_type": "cross",
+            "column_3_type": "cross"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Améliore le goût",
+            "brand_type": "check",
+            "column_2_type": "cross",
+            "column_3_type": "check"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Conserve les minéraux",
+            "brand_type": "check",
+            "column_2_type": "check",
+            "column_3_type": "check"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Matériaux utilisés",
+            "brand_type": "text",
+            "brand_text": "Acier inox",
+            "column_2_type": "text",
+            "column_2_text": "Acier inox",
+            "column_3_type": "text",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": true
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature": "Prix au litre",
+            "brand_type": "text",
+            "brand_text": "0,02€",
+            "column_2_type": "text",
+            "column_2_text": "0,003 €",
+            "column_3_type": "text",
+            "column_3_text": "0,37 €"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

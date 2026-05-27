@@ -275,7 +275,7 @@
         "mobile_font_size": 13,
         "mobile_pill_padding_y": 9,
         "mobile_pill_padding_x": 18,
-        "mobile_section_padding_y": 13
+        "mobile_section_padding_y": 0
       }
     },
     "avisclients_CxRbib": {
@@ -389,7 +389,7 @@
         "heading_size": 36,
         "review_title_size": 16,
         "review_text_size": 15,
-        "mobile_padding_y": 20,
+        "mobile_padding_y": 55,
         "mobile_heading_size": 24,
         "mobile_review_title_size": 16,
         "mobile_review_text_size": 14

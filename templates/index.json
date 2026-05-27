@@ -597,8 +597,9 @@
         "benefit_DGb736",
         "benefit_f8tVJb"
       ],
-      "name": "Pureva bénéfices famille",
+      "name": "Bénéfices famille",
       "settings": {
+        "background_image": "shopify://shop_images/DTS_Parenthood_Daniel_Faro_Photos_ID6941.webp",
         "image_alt": "Famille heureuse à la maison",
         "heading": "Les 4 améliorations\nque toute la famille\nressent.",
         "image_position": "center center",
@@ -638,7 +639,7 @@
         "mobile_section_radius": 14,
         "mobile_content_padding": 19,
         "mobile_content_padding_bottom": 19,
-        "mobile_heading_size": 25,
+        "mobile_heading_size": 24,
         "mobile_heading_width": 310,
         "mobile_heading_bottom_spacing": 10,
         "mobile_card_width": 295,
@@ -647,7 +648,7 @@
         "mobile_card_radius": 14,
         "mobile_card_padding_y": 20,
         "mobile_card_padding_x": 18,
-        "mobile_card_text_size": 15,
+        "mobile_card_text_size": 14,
         "mobile_number_size": 24,
         "mobile_number_text_size": 12,
         "mobile_number_position_top": 13,

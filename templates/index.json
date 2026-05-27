@@ -55,8 +55,28 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>",
+            "title": "Est-ce compatible avec mon robinet ?",
+            "content": "<p><strong>Puure® est compatible avec environ 99 % des robinets équipés d'un aérateur circulaire amovible.</strong></p><p>Votre commande inclut 3 adaptateurs pour différentes tailles de robinet.</p><p>Vous n'êtes pas sûr(e) que ça s'adapte au vôtre ? Consultez notre guide d'adaptateurs ici avant de commander.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_jWPDJz": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Que contient le kit ?",
+            "content": "<p><strong>Votre Kit de démarrage Puure® comprend :</strong></p><p>✔ 1x Système de filtration Puure® 3.0 (acier inoxydable 304 qualité médicale)</p><p>✔ 2x Cartouches Puure® 3.0 (6 mois d'autonomie)</p><p>✔ 3x Adaptateurs universels (compatible 99 % des robinets)</p><p>✔ 1x Guide d'installation</p><p>✔ 1x Carte de rappel de remplacement de cartouche</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_mD7JdC": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Est-ce compatible avec mon robinet ?",
+            "content": "<p><strong>Puure® est compatible avec environ 99 % des robinets équipés d'un aérateur circulaire amovible.</strong></p><p>Votre commande inclut 3 adaptateurs pour différentes tailles de robinet.</p><p>Vous n'êtes pas sûr(e) que ça s'adapte au vôtre ? Consultez notre guide d'adaptateurs ici avant de commander.</p>",
             "page": ""
           }
         }
@@ -67,7 +87,9 @@
         "variant_picker_qLYhm6",
         "quantity_selector_WyV4nV",
         "buy_buttons_hzg446",
-        "collapsible_text_TPbMhM"
+        "collapsible_text_TPbMhM",
+        "collapsible_text_jWPDJz",
+        "collapsible_text_mD7JdC"
       ],
       "name": "Featured product",
       "settings": {

@@ -1,63 +1,830 @@
-{% assign has_image = false %}
-{% if block.settings.image != blank and block.settings.show_image %}
-  {% assign has_image = true %}
-{% endif %}
-
-<article
-  class="pureva-review-card {% if has_image %}card-with-image{% else %}card-text-only{% endif %}"
-  {{ block.shopify_attributes }}
+<section
+  class="pureva-reviews-section"
+  style="
+    --section-bg: {{ section.settings.section_background }};
+    --text-color: {{ section.settings.text_color }};
+    --accent-color: {{ section.settings.accent_color }};
+    --card-bg: {{ section.settings.card_background }};
+    --verified-color: {{ section.settings.verified_color }};
+    --star-bg: {{ section.settings.star_background }};
+    --star-color: {{ section.settings.star_color }};
+    --desktop-speed-top: {{ section.settings.desktop_speed_top }}s;
+    --desktop-speed-bottom: {{ section.settings.desktop_speed_bottom }}s;
+    --card-radius: {{ section.settings.card_radius }}px;
+    --image-radius: {{ section.settings.image_radius }}px;
+    --section-padding-desktop: {{ section.settings.desktop_padding_y }}px;
+    --section-padding-mobile: {{ section.settings.mobile_padding_y }}px;
+  "
 >
-  {% if has_image %}
-    <div class="pureva-review-image-wrap">
-      <img
-        src="{{ block.settings.image | image_url: width: 500 }}"
-        alt="{{ block.settings.title | escape }}"
-        class="pureva-review-image"
-        loading="lazy"
-      >
-    </div>
-  {% endif %}
+  <div class="pureva-reviews-header">
+    {% if section.settings.rating_text != blank %}
+      <div class="pureva-rating-line">
+        <span class="pureva-rating-label">{{ section.settings.rating_text }}</span>
 
-  <div class="pureva-review-content">
-    <div class="pureva-review-stars" aria-label="{{ block.settings.rating }} étoiles">
-      {% for i in (1..block.settings.rating) %}
-        <span>★</span>
-      {% endfor %}
-    </div>
+        <span class="pureva-rating-stars" aria-label="{{ section.settings.stars_count }} étoiles">
+          {% for i in (1..section.settings.stars_count) %}
+            <span>★</span>
+          {% endfor %}
+        </span>
 
-    {% if block.settings.title != blank %}
-      <h3 class="pureva-review-title">
-        {{ block.settings.title }}
-      </h3>
+        {% if section.settings.rating_score != blank %}
+          <span class="pureva-rating-score">{{ section.settings.rating_score }}</span>
+        {% endif %}
+      </div>
     {% endif %}
 
-    {% if block.settings.text != blank %}
-      <p class="pureva-review-text">
-        {{ block.settings.text }}
-      </p>
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-reviews-heading">
+        {{ section.settings.heading | newline_to_br }}
+      </h2>
     {% endif %}
+  </div>
 
-    <div class="pureva-review-author">
-      {% if block.settings.initials != blank %}
-        <div class="pureva-review-avatar">
-          {{ block.settings.initials }}
-        </div>
-      {% endif %}
-
-      <div>
-        {% if block.settings.name != blank %}
-          <div class="pureva-review-name">
-            {{ block.settings.name }}
+  <div class="pureva-reviews-desktop">
+    <div class="pureva-marquee-row pureva-marquee-row-top">
+      <div class="pureva-marquee-track">
+        {% for i in (1..2) %}
+          <div class="pureva-marquee-content">
+            {% for block in section.blocks %}
+              {% assign modulo = forloop.index0 | modulo: 2 %}
+              {% if modulo == 0 %}
+                {% render 'pureva-review-card', block: block, section: section %}
+              {% endif %}
+            {% endfor %}
           </div>
-        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
 
-        {% if block.settings.verified_text != blank %}
-          <div class="pureva-review-verified">
-            <span class="pureva-review-check">✓</span>
-            <span>{{ block.settings.verified_text }}</span>
+    <div class="pureva-marquee-row pureva-marquee-row-bottom">
+      <div class="pureva-marquee-track">
+        {% for i in (1..2) %}
+          <div class="pureva-marquee-content">
+            {% for block in section.blocks %}
+              {% assign modulo = forloop.index0 | modulo: 2 %}
+              {% if modulo == 1 %}
+                {% render 'pureva-review-card', block: block, section: section %}
+              {% endif %}
+            {% endfor %}
           </div>
-        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
-</article>
+
+  <div class="pureva-reviews-mobile">
+    <div class="pureva-mobile-slider">
+      {% for block in section.blocks %}
+        {% render 'pureva-review-card', block: block, section: section %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap');
+
+  .pureva-reviews-section {
+    width: 100%;
+    overflow: hidden;
+    background: var(--section-bg);
+    color: var(--text-color);
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    padding: var(--section-padding-desktop) 0;
+  }
+
+  .pureva-reviews-header {
+    max-width: 900px;
+    margin: 0 auto 54px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .pureva-rating-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .pureva-rating-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .pureva-rating-stars span {
+    width: 17px;
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--star-bg);
+    color: var(--star-color);
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .pureva-rating-score {
+    font-weight: 700;
+  }
+
+  .pureva-reviews-heading {
+    margin: 0;
+    color: var(--text-color);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+  }
+
+  .pureva-reviews-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 58px;
+  }
+
+  .pureva-marquee-row {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .pureva-marquee-track {
+    display: flex;
+    width: max-content;
+  }
+
+  .pureva-marquee-row-top .pureva-marquee-track {
+    animation: pureva-scroll-left var(--desktop-speed-top) linear infinite;
+  }
+
+  .pureva-marquee-row-bottom .pureva-marquee-track {
+    animation: pureva-scroll-right var(--desktop-speed-bottom) linear infinite;
+  }
+
+  {% if section.settings.pause_on_hover %}
+    .pureva-marquee-row:hover .pureva-marquee-track {
+      animation-play-state: paused;
+    }
+  {% endif %}
+
+  .pureva-marquee-content {
+    display: flex;
+    align-items: stretch;
+    gap: {{ section.settings.desktop_gap }}px;
+    padding-right: {{ section.settings.desktop_gap }}px;
+  }
+
+  .pureva-review-card {
+    flex: 0 0 auto;
+    width: {{ section.settings.card_width }}px;
+    min-height: 355px;
+    display: grid;
+    grid-template-columns: {% if section.settings.desktop_layout == 'image_left' %}180px 1fr{% else %}1fr{% endif %};
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    color: var(--text-color);
+  }
+
+  .pureva-review-card.card-text-only {
+    grid-template-columns: 1fr;
+  }
+
+  .pureva-review-image-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 355px;
+    overflow: hidden;
+    background: #f3f5f4;
+  }
+
+  .pureva-review-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: var(--image-radius);
+  }
+
+  .pureva-review-content {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+  }
+
+  .pureva-review-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 28px;
+  }
+
+  .pureva-review-stars span {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--star-bg);
+    color: var(--star-color);
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .pureva-review-title {
+    margin: 0 0 17px 0;
+    font-size: {{ section.settings.review_title_size }}px;
+    line-height: 1.28;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: var(--text-color);
+  }
+
+  .pureva-review-text {
+    margin: 0;
+    font-size: {{ section.settings.review_text_size }}px;
+    line-height: 1.55;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .pureva-review-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  .pureva-review-avatar {
+    width: 41px;
+    height: 41px;
+    border-radius: 999px;
+    background: {{ section.settings.avatar_background }};
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .pureva-review-name {
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--text-color);
+  }
+
+  .pureva-review-verified {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .pureva-review-check {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--verified-color);
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .pureva-reviews-mobile {
+    display: none;
+  }
+
+  @keyframes pureva-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes pureva-scroll-right {
+    from {
+      transform: translateX(-50%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .pureva-reviews-section {
+      padding: var(--section-padding-mobile) 0;
+    }
+
+    .pureva-reviews-header {
+      margin-bottom: 34px;
+      text-align: center;
+    }
+
+    .pureva-rating-line {
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .pureva-reviews-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      letter-spacing: -0.7px;
+    }
+
+    .pureva-reviews-desktop {
+      display: none;
+    }
+
+    .pureva-reviews-mobile {
+      display: block;
+      overflow: hidden;
+    }
+
+    .pureva-mobile-slider {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 16px 10px 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pureva-mobile-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pureva-mobile-slider .pureva-review-card {
+      width: 288px;
+      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+      scroll-snap-align: center;
+      border-radius: 12px;
+    }
+
+    .pureva-mobile-slider .pureva-review-image-wrap {
+      height: 300px;
+      min-height: 300px;
+      width: 100%;
+    }
+
+    .pureva-mobile-slider .pureva-review-image {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .pureva-mobile-slider .pureva-review-content {
+      flex: 1;
+      padding: 15px 14px 22px 14px;
+    }
+
+    .pureva-mobile-slider .pureva-review-stars {
+      margin-bottom: 20px;
+    }
+
+    .pureva-mobile-slider .pureva-review-stars span {
+      width: 18px;
+      height: 18px;
+      font-size: 13px;
+    }
+
+    .pureva-mobile-slider .pureva-review-title {
+      font-size: {{ section.settings.mobile_review_title_size }}px;
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .pureva-mobile-slider .pureva-review-text {
+      font-size: {{ section.settings.mobile_review_text_size }}px;
+      line-height: 1.5;
+    }
+
+    .pureva-mobile-slider .pureva-review-author {
+      padding-top: 28px;
+    }
+
+    .pureva-mobile-slider .pureva-review-avatar {
+      width: 45px;
+      height: 45px;
+      font-size: 14px;
+    }
+
+    .pureva-mobile-slider .pureva-review-name {
+      font-size: 14px;
+    }
+
+    .pureva-mobile-slider .pureva-review-verified {
+      font-size: 13px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva avis clients",
+  "settings": [
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Texte note",
+      "default": "Excellent"
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Score",
+      "default": "4.8"
+    },
+    {
+      "type": "range",
+      "id": "stars_count",
+      "label": "Nombre d’étoiles affichées",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Qui de mieux que nos clients\npour en parler ?"
+    },
+    {
+      "type": "header",
+      "content": "Défilement ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "desktop_speed_top",
+      "label": "Vitesse ligne du haut",
+      "min": 15,
+      "max": 120,
+      "step": 5,
+      "default": 55,
+      "unit": "s"
+    },
+    {
+      "type": "range",
+      "id": "desktop_speed_bottom",
+      "label": "Vitesse ligne du bas",
+      "min": 15,
+      "max": 120,
+      "step": 5,
+      "default": 60,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause au survol",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Espace entre les cartes",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Style général"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond de section",
+      "default": "#F8F7F4"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond des cartes",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#0B3330"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur principale",
+      "default": "#0B3330"
+    },
+    {
+      "type": "color",
+      "id": "star_background",
+      "label": "Fond des étoiles",
+      "default": "#00B67A"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Couleur des étoiles",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Couleur badge vérifié",
+      "default": "#00B67A"
+    },
+    {
+      "type": "color",
+      "id": "avatar_background",
+      "label": "Fond initiales client",
+      "default": "#C9FFF0"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas section",
+      "min": 30,
+      "max": 160,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "Largeur des cartes",
+      "min": 360,
+      "max": 720,
+      "step": 10,
+      "default": 560,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Disposition ordinateur",
+      "default": "image_left",
+      "options": [
+        {
+          "value": "image_left",
+          "label": "Image à gauche + texte à droite"
+        },
+        {
+          "value": "text_only",
+          "label": "Texte uniquement"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi des cartes",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi des images",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 28,
+      "max": 70,
+      "step": 1,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "review_title_size",
+      "label": "Taille titre avis",
+      "min": 13,
+      "max": 28,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "review_text_size",
+      "label": "Taille texte avis",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 20,
+      "max": 110,
+      "step": 5,
+      "default": 45,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille du titre mobile",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "default": 31,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_review_title_size",
+      "label": "Taille titre avis mobile",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_review_text_size",
+      "label": "Taille texte avis mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis client",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image de l’avis"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "label": "Afficher l’image",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Nombre d’étoiles",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de l’avis",
+          "default": "Enfin une eau saine... et bonne !"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte de l’avis",
+          "default": "On avait des doutes sur la qualité de notre eau du robinet, surtout pour les enfants. Depuis qu’on utilise Pureva, fini les odeurs, le goût est bien meilleur, et on est surtout rassurés sur ce qu’on consomme."
+        },
+        {
+          "type": "text",
+          "id": "initials",
+          "label": "Initiales client",
+          "default": "CD"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom client",
+          "default": "Camille D."
+        },
+        {
+          "type": "text",
+          "id": "verified_text",
+          "label": "Texte vérifié",
+          "default": "Acheteur vérifié"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva avis clients",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "title": "Enfin une eau saine... et bonne !",
+            "text": "On avait des doutes sur la qualité de notre eau du robinet, surtout pour les enfants. Depuis qu’on utilise Pureva, fini les odeurs, le goût est bien meilleur, et on est vraiment rassurés.",
+            "initials": "CD",
+            "name": "Camille D."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Bien plus simple que mon ancien filtre !",
+            "text": "J’avais un adoucisseur compliqué à entretenir. Pureva, c’est au robinet, tout le temps disponible, et sans bidouille. L’eau sort claire et légère.",
+            "initials": "VB",
+            "name": "Valérie B."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "On a arrêté d’acheter des packs d’eau !",
+            "text": "Entre le plastique, le prix et la corvée de transporter les packs, on cherchait une alternative. Pureva a changé notre quotidien.",
+            "initials": "JM",
+            "name": "Julien M."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "L’eau ne me donne plus mal au ventre",
+            "text": "Je ne supportais plus l’eau du robinet. Depuis que j’ai installé le filtre Pureva, plus aucun souci. C’est un vrai soulagement.",
+            "initials": "SG",
+            "name": "Stéphane G."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Un bon geste, sans contrainte",
+            "text": "Je voulais réduire mon usage de plastique, mais je trouvais les solutions compliquées. Pureva m’a convaincue par sa simplicité.",
+            "initials": "NT",
+            "name": "Nadia T."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Installation rapide",
+            "text": "Installé en quelques minutes seulement. Depuis, on ne rachète presque plus de bouteilles d’eau.",
+            "initials": "ML",
+            "name": "Marc L."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

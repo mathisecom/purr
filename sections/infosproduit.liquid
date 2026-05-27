@@ -1,0 +1,602 @@
+<section
+  class="pureva-data-section"
+  style="
+    --section-bg: {{ section.settings.section_background }};
+    --text-color: {{ section.settings.text_color }};
+    --accent-color: {{ section.settings.accent_color }};
+    --card-bg: {{ section.settings.card_background }};
+    --button-bg: {{ section.settings.button_background }};
+    --button-text: {{ section.settings.button_text_color }};
+    --radius-image: {{ section.settings.image_radius }}px;
+    --radius-card: {{ section.settings.card_radius }}px;
+    --max-width: {{ section.settings.max_width }}px;
+    --desktop-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-data-container">
+    
+    <div class="pureva-data-image-wrap">
+      {% if section.settings.main_image != blank %}
+        <img
+          src="{{ section.settings.main_image | image_url: width: 1000 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="pureva-data-image"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="pureva-data-placeholder">
+          Ajoute ton image ici
+        </div>
+      {% endif %}
+
+      <div class="pureva-data-labels">
+        {% if section.settings.label_left != blank %}
+          <span class="pureva-label pureva-label-light">
+            {{ section.settings.label_left }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.label_right != blank %}
+          <span class="pureva-label pureva-label-dark">
+            {{ section.settings.label_right }}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="pureva-data-content">
+      {% if section.settings.heading != blank %}
+        <h2 class="pureva-data-heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="pureva-data-button"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+
+      <div class="pureva-data-cards">
+        {% for block in section.blocks %}
+          <div class="pureva-data-card" {{ block.shopify_attributes }}>
+            <div class="pureva-data-number">
+              {{ block.settings.number }}
+            </div>
+
+            <div class="pureva-data-divider"></div>
+
+            <div class="pureva-data-text">
+              {{ block.settings.text }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.note != blank %}
+        <p class="pureva-data-note">
+          {{ section.settings.note }}
+        </p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap');
+
+  .pureva-data-section {
+    width: 100%;
+    background: var(--section-bg);
+    color: var(--text-color);
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    padding: var(--desktop-padding-y) 20px;
+    overflow: hidden;
+  }
+
+  .pureva-data-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .pureva-data-image-wrap {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pureva-data-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--radius-image);
+  }
+
+  .pureva-data-placeholder {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: var(--radius-image);
+    background: #f4f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00244a;
+    font-size: 15px;
+  }
+
+  .pureva-data-labels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .pureva-label {
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pureva-label-light {
+    color: var(--accent-color);
+  }
+
+  .pureva-label-dark {
+    color: #ffffff;
+    background: var(--accent-color);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .pureva-data-content {
+    width: 100%;
+  }
+
+  .pureva-data-heading {
+    margin: 0 0 22px 0;
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--accent-color);
+  }
+
+  .pureva-data-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 34px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .pureva-data-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+  }
+
+  .pureva-data-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pureva-data-card {
+    display: grid;
+    grid-template-columns: 120px 1px 1fr;
+    align-items: center;
+    gap: 28px;
+    background: var(--card-bg);
+    border-radius: var(--radius-card);
+    padding: 25px 28px;
+    min-height: 92px;
+  }
+
+  .pureva-data-number {
+    font-size: {{ section.settings.number_size }}px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--accent-color);
+    white-space: nowrap;
+  }
+
+  .pureva-data-divider {
+    width: 1px;
+    height: 38px;
+    background: rgba(0, 36, 74, 0.18);
+  }
+
+  .pureva-data-text {
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: var(--accent-color);
+  }
+
+  .pureva-data-note {
+    margin: 22px 0 0 0;
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 400;
+    color: rgba(0, 36, 74, 0.65);
+  }
+
+  @media screen and (max-width: 900px) {
+    .pureva-data-section {
+      padding: var(--mobile-padding-y) 20px;
+    }
+
+    .pureva-data-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .pureva-data-image {
+      max-width: 390px;
+    }
+
+    .pureva-data-labels {
+      margin-top: 16px;
+      gap: 12px;
+    }
+
+    .pureva-label {
+      font-size: 12px;
+    }
+
+    .pureva-label-dark {
+      padding: 8px 14px;
+    }
+
+    .pureva-data-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      margin-bottom: 18px;
+      letter-spacing: -0.6px;
+    }
+
+    .pureva-data-button {
+      margin-bottom: 28px;
+      padding: 13px 22px;
+      font-size: 13px;
+    }
+
+    .pureva-data-cards {
+      gap: 12px;
+    }
+
+    .pureva-data-card {
+      grid-template-columns: 95px 1px 1fr;
+      gap: 18px;
+      padding: 23px 17px;
+      min-height: 74px;
+      border-radius: 9px;
+    }
+
+    .pureva-data-number {
+      font-size: {{ section.settings.mobile_number_size }}px;
+      letter-spacing: -0.5px;
+    }
+
+    .pureva-data-text {
+      font-size: {{ section.settings.mobile_text_size }}px;
+      line-height: 1.4;
+    }
+
+    .pureva-data-divider {
+      height: 34px;
+    }
+
+    .pureva-data-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .pureva-data-section {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .pureva-data-card {
+      grid-template-columns: 88px 1px 1fr;
+      gap: 15px;
+      padding: 22px 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva données produit",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image principale"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texte alternatif image",
+      "default": "Cartouche neuve et cartouche usagée"
+    },
+    {
+      "type": "text",
+      "id": "label_left",
+      "label": "Label gauche",
+      "default": "Cartouche neuve"
+    },
+    {
+      "type": "text",
+      "id": "label_right",
+      "label": "Label droite",
+      "default": "Cartouche usagée"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi de l’image",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Données OhPur"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton",
+      "default": "Tester OhPur →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note sous les cartes",
+      "default": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille."
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur générale du texte",
+      "default": "#00244A"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur principale",
+      "default": "#00244A"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond des cartes",
+      "default": "#F3F7FB"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond du bouton",
+      "default": "#00244A"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte du bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Tailles ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1180,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas ordinateur",
+      "min": 20,
+      "max": 160,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 24,
+      "max": 70,
+      "step": 1,
+      "default": 38,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Taille des chiffres",
+      "min": 22,
+      "max": 54,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille des textes des cartes",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi des cartes",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 9,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Tailles mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille du titre mobile",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "default": 29,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_size",
+      "label": "Taille des chiffres mobile",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Taille des textes mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Carte donnée",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Chiffre / donnée",
+          "default": "600€"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Jusqu’à 600 € d’économies par an avec OhPur"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva données produit",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "600€",
+            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "1500",
+            "text": "Fini le plastique jetable – jusqu’à 1500 bouteilles évitées*"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "2 min",
+            "text": "Installation simple en 2 min, sans outil"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

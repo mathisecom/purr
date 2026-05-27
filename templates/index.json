@@ -91,6 +91,7 @@
       "blocks": {
         "liquid_V4tcn9": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<div class=\"pureva-rating-line\">\n  <div class=\"pureva-stars\" aria-label=\"5 étoiles sur 5\">\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n  </div>\n\n  <div class=\"pureva-rating-text\">\n    <strong>40 000</strong> utilisateurs conquis\n  </div>\n</div>\n\n<style>\n  .pureva-rating-line {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .pureva-stars {\n    display: flex;\n    align-items: center;\n    gap: 1px;\n    color: #00b67a;\n    font-size: 22px;\n    line-height: 1;\n    letter-spacing: -1px;\n  }\n\n  .pureva-stars span {\n    display: inline-block;\n    line-height: 1;\n  }\n\n  .pureva-rating-text {\n    font-size: 13px;\n    line-height: 1;\n    font-weight: 400;\n    color: #000000;\n    white-space: nowrap;\n  }\n\n  .pureva-rating-text strong {\n    font-weight: 700;\n  }\n\n  @media screen and (max-width: 749px) {\n    .pureva-rating-line {\n      gap: 7px;\n    }\n\n    .pureva-stars {\n      font-size: 21px;\n    }\n\n    .pureva-rating-text {\n      font-size: 13px;\n    }\n  }\n</style>"
           }
@@ -374,13 +375,13 @@
         "pause_on_hover": false,
         "desktop_gap": 24,
         "section_background": "#ffffff",
-        "card_background": "#FFFFFF",
+        "card_background": "#ffffff",
         "text_color": "#08163d",
         "accent_color": "#08163d",
-        "star_background": "#00B67A",
-        "star_color": "#FFFFFF",
-        "verified_color": "#00B67A",
-        "avatar_background": "#C9FFF0",
+        "star_background": "#00b67a",
+        "star_color": "#ffffff",
+        "verified_color": "#00b67a",
+        "avatar_background": "#c9fff0",
         "desktop_padding_y": 70,
         "card_width": 430,
         "desktop_layout": "image_left",

@@ -1,0 +1,907 @@
+<section
+  class="pureva-blue-benefits-section"
+  style="
+    --pbb-bg: {{ section.settings.section_background }};
+    --pbb-text: {{ section.settings.text_color }};
+    --pbb-muted: {{ section.settings.description_color }};
+    --pbb-icon: {{ section.settings.icon_color }};
+    --pbb-highlight-bg: {{ section.settings.highlight_background }};
+    --pbb-highlight-text: {{ section.settings.highlight_text_color }};
+    --pbb-button-bg: {{ section.settings.button_background }};
+    --pbb-button-text: {{ section.settings.button_text_color }};
+    --pbb-max-width: {{ section.settings.max_width }}px;
+    --pbb-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --pbb-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-blue-benefits-container">
+
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-blue-benefits-heading">
+        {{ section.settings.heading_before }}
+        {% if section.settings.highlight_word != blank %}
+          <span>{{ section.settings.highlight_word }}</span>
+        {% endif %}
+        {{ section.settings.heading_after }}
+      </h2>
+    {% endif %}
+
+    <div class="pureva-blue-benefits-grid">
+      {% for block in section.blocks %}
+        <div class="pureva-blue-benefit-card" {{ block.shopify_attributes }}>
+          {% if block.settings.svg_icon != blank %}
+            <div class="pureva-blue-benefit-icon">
+              {{ block.settings.svg_icon }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h3>{{ block.settings.title }}</h3>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p>{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button_label != blank %}
+      <div class="pureva-blue-benefits-button-wrap">
+        <a href="{{ section.settings.button_link }}" class="pureva-blue-benefits-button">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  .pureva-blue-benefits-section {
+    width: 100%;
+    background: var(--pbb-bg);
+    color: var(--pbb-text);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: var(--pbb-padding-y) {{ section.settings.desktop_padding_x }}px;
+    overflow: hidden;
+  }
+
+  .pureva-blue-benefits-container {
+    width: 100%;
+    max-width: var(--pbb-max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pureva-blue-benefits-heading {
+    max-width: {{ section.settings.heading_width }}px;
+    margin: 0 auto {{ section.settings.heading_bottom_spacing }}px auto;
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.12;
+    font-weight: {{ section.settings.heading_weight }};
+    letter-spacing: -1.2px;
+    color: var(--pbb-text);
+  }
+
+  .pureva-blue-benefits-heading span {
+    display: inline-block;
+    padding: 0 8px 2px 8px;
+    background: var(--pbb-highlight-bg);
+    color: var(--pbb-highlight-text);
+    line-height: 1;
+  }
+
+  .pureva-blue-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.card_gap }}px;
+    align-items: start;
+  }
+
+  .pureva-blue-benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--pbb-text);
+  }
+
+  .pureva-blue-benefit-icon {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    margin-bottom: {{ section.settings.icon_bottom_spacing }}px;
+    color: var(--pbb-icon);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pureva-blue-benefit-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .pureva-blue-benefit-icon svg path,
+  .pureva-blue-benefit-icon svg circle,
+  .pureva-blue-benefit-icon svg rect,
+  .pureva-blue-benefit-icon svg line,
+  .pureva-blue-benefit-icon svg polyline,
+  .pureva-blue-benefit-icon svg polygon {
+    stroke: currentColor;
+  }
+
+  .pureva-blue-benefit-card h3 {
+    max-width: {{ section.settings.card_title_width }}px;
+    margin: 0 auto {{ section.settings.card_title_spacing }}px auto;
+    font-size: {{ section.settings.card_title_size }}px;
+    line-height: 1.18;
+    font-weight: {{ section.settings.card_title_weight }};
+    color: var(--pbb-text);
+    letter-spacing: -0.3px;
+  }
+
+  .pureva-blue-benefit-card p {
+    max-width: {{ section.settings.card_text_width }}px;
+    margin: 0 auto;
+    font-size: {{ section.settings.card_text_size }}px;
+    line-height: 1.45;
+    font-weight: {{ section.settings.card_text_weight }};
+    color: var(--pbb-muted);
+  }
+
+  .pureva-blue-benefits-button-wrap {
+    margin-top: {{ section.settings.button_top_spacing }}px;
+  }
+
+  .pureva-blue-benefits-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: {{ section.settings.button_min_width }}px;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
+    border-radius: 999px;
+    background: var(--pbb-button-bg);
+    color: var(--pbb-button-text);
+    font-size: {{ section.settings.button_text_size }}px;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .pureva-blue-benefits-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+  }
+
+  @media screen and (max-width: 749px) {
+    .pureva-blue-benefits-section {
+      padding: var(--pbb-mobile-padding-y) {{ section.settings.mobile_padding_x }}px;
+    }
+
+    .pureva-blue-benefits-heading {
+      max-width: {{ section.settings.mobile_heading_width }}px;
+      margin-bottom: {{ section.settings.mobile_heading_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.12;
+      letter-spacing: -0.8px;
+    }
+
+    .pureva-blue-benefits-grid {
+      display: flex;
+      gap: {{ section.settings.mobile_card_gap }}px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 0 8px 0;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pureva-blue-benefits-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pureva-blue-benefit-card {
+      flex: 0 0 {{ section.settings.mobile_card_width }}px;
+      scroll-snap-align: center;
+      padding: {{ section.settings.mobile_card_padding_y }}px {{ section.settings.mobile_card_padding_x }}px;
+      border-radius: {{ section.settings.mobile_card_radius }}px;
+      background: {{ section.settings.mobile_card_background }};
+      border: 1px solid {{ section.settings.mobile_card_border }};
+    }
+
+    .pureva-blue-benefit-icon {
+      width: {{ section.settings.mobile_icon_size }}px;
+      height: {{ section.settings.mobile_icon_size }}px;
+      margin-bottom: {{ section.settings.mobile_icon_bottom_spacing }}px;
+    }
+
+    .pureva-blue-benefit-card h3 {
+      max-width: 100%;
+      font-size: {{ section.settings.mobile_card_title_size }}px;
+      margin-bottom: {{ section.settings.mobile_card_title_spacing }}px;
+    }
+
+    .pureva-blue-benefit-card p {
+      max-width: 100%;
+      font-size: {{ section.settings.mobile_card_text_size }}px;
+    }
+
+    .pureva-blue-benefits-button-wrap {
+      margin-top: {{ section.settings.mobile_button_top_spacing }}px;
+    }
+
+    .pureva-blue-benefits-button {
+      min-width: {{ section.settings.mobile_button_min_width }}px;
+      padding: {{ section.settings.mobile_button_padding_y }}px {{ section.settings.mobile_button_padding_x }}px;
+      font-size: {{ section.settings.mobile_button_text_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva bénéfices bleu",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre complet pour référence",
+      "default": "Invisible sous l'évier, indispensable au quotidien"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Texte avant le mot surligné",
+      "default": "Invisible sous l'évier,"
+    },
+    {
+      "type": "text",
+      "id": "highlight_word",
+      "label": "Mot surligné",
+      "default": "indispensable"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Texte après le mot surligné",
+      "default": "au quotidien"
+    },
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte bouton",
+      "default": "J’essaye"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien bouton"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond section",
+      "default": "#1D477C"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Texte description",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icônes",
+      "default": "#98E8FF"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Fond mot surligné",
+      "default": "#D8FAFF"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Texte mot surligné",
+      "default": "#123B70"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#123B70"
+    },
+    {
+      "type": "color",
+      "id": "mobile_card_background",
+      "label": "Fond cartes mobile",
+      "default": "#234F86"
+    },
+    {
+      "type": "color",
+      "id": "mobile_card_border",
+      "label": "Bordure cartes mobile",
+      "default": "#3F6A9E"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1180,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas section",
+      "min": 40,
+      "max": 180,
+      "step": 5,
+      "default": 75,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_x",
+      "label": "Marge gauche/droite section",
+      "min": 0,
+      "max": 70,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Nombre de colonnes ordinateur",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espace entre bénéfices",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "heading_width",
+      "label": "Largeur titre",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "default": 620,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 26,
+      "max": 60,
+      "step": 1,
+      "default": 34,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre",
+      "default": "900",
+      "options": [
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "label": "Espace titre / bénéfices",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille icônes",
+      "min": 35,
+      "max": 90,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_bottom_spacing",
+      "label": "Espace icône / titre",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Taille titre bénéfice",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "card_title_weight",
+      "label": "Graisse titre bénéfice",
+      "default": "800",
+      "options": [
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_title_width",
+      "label": "Largeur titre bénéfice",
+      "min": 140,
+      "max": 320,
+      "step": 10,
+      "default": 260,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_spacing",
+      "label": "Espace titre / description",
+      "min": 8,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille description",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "card_text_weight",
+      "label": "Graisse description",
+      "default": "500",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_text_width",
+      "label": "Largeur description",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "default": 300,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Bouton ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "button_top_spacing",
+      "label": "Espace bénéfices / bouton",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_min_width",
+      "label": "Largeur minimum bouton",
+      "min": 80,
+      "max": 180,
+      "step": 5,
+      "default": 105,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "label": "Padding vertical bouton",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Padding horizontal bouton",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Taille texte bouton",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 35,
+      "max": 130,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_x",
+      "label": "Marge gauche/droite mobile",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "label": "Largeur titre mobile",
+      "min": 260,
+      "max": 390,
+      "step": 5,
+      "default": 330,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "default": 29,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_bottom_spacing",
+      "label": "Espace titre / slider",
+      "min": 25,
+      "max": 70,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur carte mobile",
+      "min": 220,
+      "max": 330,
+      "step": 5,
+      "default": 260,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "Espace entre cartes mobile",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_padding_y",
+      "label": "Padding vertical carte mobile",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_padding_x",
+      "label": "Padding horizontal carte mobile",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_radius",
+      "label": "Arrondi carte mobile",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Taille icône mobile",
+      "min": 35,
+      "max": 75,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_bottom_spacing",
+      "label": "Espace icône / titre mobile",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_size",
+      "label": "Taille titre mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_spacing",
+      "label": "Espace titre / description mobile",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "label": "Taille description mobile",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_top_spacing",
+      "label": "Espace slider / bouton mobile",
+      "min": 25,
+      "max": 80,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_min_width",
+      "label": "Largeur bouton mobile",
+      "min": 80,
+      "max": 160,
+      "step": 5,
+      "default": 105,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_y",
+      "label": "Padding vertical bouton mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_x",
+      "label": "Padding horizontal bouton mobile",
+      "min": 18,
+      "max": 38,
+      "step": 1,
+      "default": 25,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_text_size",
+      "label": "Taille texte bouton mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "svg_icon",
+          "label": "Icône SVG",
+          "default": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 22c4.4 0 8-3.4 8-7.7 0-3.4-2.2-6.1-4.1-8.2L12 2 8.1 6.1C6.2 8.2 4 10.9 4 14.3 4 18.6 7.6 22 12 22Z'/><path d='M12 9l1.1 2.7L16 13l-2.9 1.3L12 17l-1.1-2.7L8 13l2.9-1.3L12 9Z' fill='#1D477C'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "1 an d’eau saine"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Fini les consommables réguliers. Installation rapide, c’est simple."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva bénéfices bleu",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "svg_icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 22c4.4 0 8-3.4 8-7.7 0-3.4-2.2-6.1-4.1-8.2L12 2 8.1 6.1C6.2 8.2 4 10.9 4 14.3 4 18.6 7.6 22 12 22Z'/><path d='M12 9l1.1 2.7L16 13l-2.9 1.3L12 17l-1.1-2.7L8 13l2.9-1.3L12 9Z' fill='#1D477C'/></svg>",
+            "title": "1 an d’eau saine",
+            "text": "Fini les consommables réguliers. Installation rapide, c’est simple."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "svg_icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M8.5 6.5 3 12l5.5 5.5 2.8-2.8-2.6-2.7 2.6-2.7-2.8-2.8Z'/><path d='M15.5 6.5 21 12l-5.5 5.5-2.8-2.8 2.6-2.7-2.6-2.7 2.8-2.8Z'/></svg>",
+            "title": "Le meilleur pour votre santé",
+            "text": "Une filtration de pointe pour vous protéger contre de nombreux polluants invisibles : PFAS, microplastiques, pesticides ou encore les bactéries."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "svg_icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 22c4.4 0 8-3.4 8-7.7 0-3.4-2.2-6.1-4.1-8.2L12 2 8.1 6.1C6.2 8.2 4 10.9 4 14.3 4 18.6 7.6 22 12 22Z'/><path d='M12 9l1.1 2.7L16 13l-2.9 1.3L12 17l-1.1-2.7L8 13l2.9-1.3L12 9Z' fill='#1D477C'/></svg>",
+            "title": "Bon goût",
+            "text": "Un effet instantané avec l’élimination du chlore."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "svg_icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M9 2h6v3H9V2Zm-1 5h8c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H8c-.6 0-1-.4-1-1V8c0-.6.4-1 1-1Zm1 3v2h6v-2H9Zm0 4v2h6v-2H9Z'/></svg>",
+            "title": "Fini le plastique",
+            "text": "Une évidence écologique mais aussi économique."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

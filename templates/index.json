@@ -396,6 +396,64 @@
         "mobile_review_text_size": 14
       }
     },
+    "infosproduit_dQxKfJ": {
+      "type": "infosproduit",
+      "blocks": {
+        "stat_LXRNAQ": {
+          "type": "stat",
+          "settings": {
+            "number": "600€",
+            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+          }
+        },
+        "stat_6dgP8z": {
+          "type": "stat",
+          "settings": {
+            "number": "1500",
+            "text": "Fini le plastique jetable – jusqu’à 1500 bouteilles évitées*"
+          }
+        },
+        "stat_Mt6fUD": {
+          "type": "stat",
+          "settings": {
+            "number": "2 min",
+            "text": "Installation simple en 2 min, sans outil"
+          }
+        }
+      },
+      "block_order": [
+        "stat_LXRNAQ",
+        "stat_6dgP8z",
+        "stat_Mt6fUD"
+      ],
+      "name": "Données Produit",
+      "settings": {
+        "image_alt": "Cartouche neuve et cartouche usagée",
+        "label_left": "Cartouche neuve",
+        "label_right": "Cartouche usagée",
+        "image_radius": 18,
+        "heading": "Données OhPur",
+        "button_label": "",
+        "button_link": "",
+        "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
+        "section_background": "#ffffff",
+        "text_color": "#00244a",
+        "accent_color": "#00244a",
+        "card_background": "#f3f7fb",
+        "button_background": "#00244a",
+        "button_text_color": "#ffffff",
+        "max_width": 1180,
+        "desktop_padding_y": 70,
+        "heading_size": 38,
+        "number_size": 32,
+        "text_size": 14,
+        "card_radius": 9,
+        "mobile_padding_y": 35,
+        "mobile_heading_size": 29,
+        "mobile_number_size": 24,
+        "mobile_text_size": 12
+      }
+    },
     "tabsvs_7myebi": {
       "type": "tabsvs",
       "blocks": {
@@ -559,6 +617,182 @@
         "mobile_table_value_size": 12
       }
     },
+    "ingredients_YgGrni": {
+      "type": "ingredients",
+      "blocks": {
+        "layer_pYPEeT": {
+          "type": "layer",
+          "settings": {
+            "image_alt": "Couche de filtration",
+            "step": "Étape 1",
+            "title": "Fibres non tissées",
+            "text": "Bloque la rouille, le sable et les sédiments. Votre eau est plus claire avant même d’atteindre le filtre principal.",
+            "show_arrow": true
+          }
+        },
+        "layer_ct6xmt": {
+          "type": "layer",
+          "settings": {
+            "image_alt": "Couche de filtration",
+            "step": "Étape 2",
+            "title": "Minéraux naturels",
+            "text": "Une première couche inspirée par la nature pour retenir les particules visibles.",
+            "show_arrow": true
+          }
+        },
+        "layer_9LbKCc": {
+          "type": "layer",
+          "settings": {
+            "image_alt": "Couche de filtration",
+            "step": "Étape 3",
+            "title": "Charbon actif",
+            "text": "Aide à réduire le chlore, les goûts et les odeurs pour une eau plus agréable.",
+            "show_arrow": true
+          }
+        },
+        "layer_4BcKBn": {
+          "type": "layer",
+          "settings": {
+            "image_alt": "Couche de filtration",
+            "step": "Étape 4",
+            "title": "Céramique fine",
+            "text": "Filtration précise pour une eau plus claire au quotidien.",
+            "show_arrow": true
+          }
+        },
+        "layer_P7QeTU": {
+          "type": "layer",
+          "settings": {
+            "image_alt": "Couche de filtration",
+            "step": "Étape 5",
+            "title": "Finition naturelle",
+            "text": "Une dernière couche pensée pour préserver la qualité de l’eau filtrée.",
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "layer_pYPEeT",
+        "layer_ct6xmt",
+        "layer_9LbKCc",
+        "layer_4BcKBn",
+        "layer_P7QeTU"
+      ],
+      "name": "Pureva couches filtration",
+      "settings": {
+        "badge_text": "Que contiennent nos cartouches ?",
+        "heading": "La nature filtre l'eau par couches. Nous aussi",
+        "subheading": "Inspiré par la nature, validé par la science",
+        "certification_logo": "shopify://shop_images/NSF_International_logo_svg_06494a68-8744-473a-8717-9e859377eff2.png",
+        "certification_logo_alt": "Certification NSF",
+        "certification_logo_text": "NSF.",
+        "certification_text": "Les composants de la cartouche Pure® sont testés et certifiés par NSF International selon la norme NSF/ANSI 42 pour la sécurité des matériaux. La cartouche Pure® 3.0 est spécifiquement formulée pour les contaminants présents dans l'eau du robinet européenne.",
+        "card_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7\"></path><path d=\"M9 7h8v8\"></path></svg>",
+        "prev_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"></path></svg>",
+        "next_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg>",
+        "section_background": "#F7F7F8",
+        "text_color": "#061A44",
+        "muted_text_color": "#728096",
+        "badge_background": "#E9EEFF",
+        "badge_text_color": "#061A44",
+        "card_background": "#FFFFFF",
+        "card_text_color": "#061A44",
+        "border_color": "#D7DEE9",
+        "button_background": "#FFFFFF",
+        "button_text_color": "#061A44",
+        "certification_background": "rgba(255,255,255,0.35)",
+        "max_width": 1280,
+        "desktop_padding_y": 70,
+        "desktop_padding_x": 20,
+        "badge_size": 13,
+        "badge_padding_y": 10,
+        "badge_padding_x": 20,
+        "badge_radius": 9,
+        "badge_bottom_spacing": 20,
+        "heading_size": 38,
+        "heading_weight": "500",
+        "heading_width": 760,
+        "subheading_size": 17,
+        "subheading_width": 540,
+        "subheading_top_spacing": 14,
+        "certification_width": 610,
+        "certification_top_spacing": 18,
+        "certification_logo_size": 64,
+        "certification_gap": 22,
+        "certification_padding_y": 22,
+        "certification_padding_x": 26,
+        "certification_radius": 16,
+        "certification_text_size": 13,
+        "slider_top_spacing": 35,
+        "slider_padding_y": 10,
+        "card_gap": 28,
+        "side_card_width": 180,
+        "side_card_height": 260,
+        "active_card_width": 380,
+        "active_card_height": 520,
+        "active_card_lift": 0,
+        "side_card_opacity": 100,
+        "card_radius": 16,
+        "image_position": "center center",
+        "info_position_top": 22,
+        "info_position_left": 22,
+        "info_position_right": 72,
+        "info_padding_y": 17,
+        "info_padding_x": 18,
+        "info_radius": 15,
+        "step_size": 12,
+        "card_title_size": 18,
+        "card_text_size": 13,
+        "open_icon_size": 44,
+        "open_icon_top": 22,
+        "open_icon_right": 22,
+        "open_icon_radius": 12,
+        "controls_top_spacing": 16,
+        "controls_gap": 12,
+        "arrow_size": 48,
+        "mobile_padding_y": 50,
+        "mobile_padding_x": 20,
+        "mobile_badge_size": 13,
+        "mobile_badge_padding_y": 10,
+        "mobile_badge_padding_x": 18,
+        "mobile_badge_radius": 8,
+        "mobile_badge_bottom_spacing": 22,
+        "mobile_heading_size": 31,
+        "mobile_heading_width": 360,
+        "mobile_subheading_size": 15,
+        "mobile_subheading_width": 360,
+        "mobile_subheading_top_spacing": 14,
+        "mobile_certification_top_spacing": 14,
+        "mobile_certification_logo_size": 42,
+        "mobile_certification_gap": 13,
+        "mobile_certification_padding_y": 16,
+        "mobile_certification_padding_x": 14,
+        "mobile_certification_radius": 14,
+        "mobile_certification_text_size": 11,
+        "mobile_slider_top_spacing": 45,
+        "mobile_slider_padding_y": 5,
+        "mobile_slider_side_padding": 90,
+        "mobile_card_gap": 28,
+        "mobile_card_width": 250,
+        "mobile_card_height": 400,
+        "mobile_card_radius": 16,
+        "mobile_info_position_top": 18,
+        "mobile_info_position_left": 14,
+        "mobile_info_position_right": 64,
+        "mobile_info_padding_y": 14,
+        "mobile_info_padding_x": 14,
+        "mobile_info_radius": 14,
+        "mobile_step_size": 11,
+        "mobile_card_title_size": 15,
+        "mobile_card_text_size": 11,
+        "mobile_open_icon_size": 40,
+        "mobile_open_icon_top": 18,
+        "mobile_open_icon_right": 18,
+        "mobile_open_icon_radius": 12,
+        "mobile_controls_top_spacing": 28,
+        "mobile_arrow_size": 50
+      }
+    },
     "benefice_G87kVk": {
       "type": "benefice",
       "blocks": {
@@ -655,64 +889,6 @@
         "mobile_number_position_right": 13
       }
     },
-    "infosproduit_dQxKfJ": {
-      "type": "infosproduit",
-      "blocks": {
-        "stat_LXRNAQ": {
-          "type": "stat",
-          "settings": {
-            "number": "600€",
-            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
-          }
-        },
-        "stat_6dgP8z": {
-          "type": "stat",
-          "settings": {
-            "number": "1500",
-            "text": "Fini le plastique jetable – jusqu’à 1500 bouteilles évitées*"
-          }
-        },
-        "stat_Mt6fUD": {
-          "type": "stat",
-          "settings": {
-            "number": "2 min",
-            "text": "Installation simple en 2 min, sans outil"
-          }
-        }
-      },
-      "block_order": [
-        "stat_LXRNAQ",
-        "stat_6dgP8z",
-        "stat_Mt6fUD"
-      ],
-      "name": "Données Produit",
-      "settings": {
-        "image_alt": "Cartouche neuve et cartouche usagée",
-        "label_left": "Cartouche neuve",
-        "label_right": "Cartouche usagée",
-        "image_radius": 18,
-        "heading": "Données OhPur",
-        "button_label": "",
-        "button_link": "",
-        "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
-        "section_background": "#ffffff",
-        "text_color": "#00244a",
-        "accent_color": "#00244a",
-        "card_background": "#f3f7fb",
-        "button_background": "#00244a",
-        "button_text_color": "#ffffff",
-        "max_width": 1180,
-        "desktop_padding_y": 70,
-        "heading_size": 38,
-        "number_size": 32,
-        "text_size": 14,
-        "card_radius": 9,
-        "mobile_padding_y": 10,
-        "mobile_heading_size": 29,
-        "mobile_number_size": 24,
-        "mobile_text_size": 12
-      }
-    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -772,9 +948,10 @@
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
     "avisclients_CxRbib",
-    "tabsvs_7myebi",
-    "benefice_G87kVk",
     "infosproduit_dQxKfJ",
+    "tabsvs_7myebi",
+    "ingredients_YgGrni",
+    "benefice_G87kVk",
     "faq"
   ]
 }

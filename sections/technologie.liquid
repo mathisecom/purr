@@ -1,0 +1,963 @@
+<section
+  class="pureva-tech-section"
+  style="
+    --pureva-bg: {{ section.settings.section_background }};
+    --pureva-card-bg: {{ section.settings.card_background }};
+    --pureva-text: {{ section.settings.text_color }};
+    --pureva-accent: {{ section.settings.accent_color }};
+    --pureva-badge-bg: {{ section.settings.badge_background }};
+    --pureva-badge-text: {{ section.settings.badge_text_color }};
+    --pureva-line: {{ section.settings.line_color }};
+    --pureva-radius: {{ section.settings.section_radius }}px;
+    --pureva-max-width: {{ section.settings.max_width }}px;
+    --pureva-padding-desktop-y: {{ section.settings.desktop_padding_y }}px;
+    --pureva-padding-mobile-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-tech-inner">
+
+    {% if section.settings.badge_text != blank %}
+      <div class="pureva-tech-badge">
+        {{ section.settings.badge_text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-tech-heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="pureva-tech-mobile-benefits">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit' %}
+          <div class="pureva-tech-mobile-benefit" {{ block.shopify_attributes }}>
+            <div class="pureva-tech-benefit-icon">
+              {{ block.settings.icon }}
+            </div>
+
+            <div>
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="pureva-tech-main">
+
+      <div class="pureva-tech-left">
+        {% if section.settings.left_title != blank %}
+          <div class="pureva-tech-callout pureva-callout-left">
+            <div class="pureva-callout-line"></div>
+            <span class="pureva-callout-dot"></span>
+
+            <div class="pureva-callout-content">
+              <h3>{{ section.settings.left_title }}</h3>
+              <p>{{ section.settings.left_text }}</p>
+
+              {% if section.settings.before_after_image != blank %}
+                <div class="pureva-before-after">
+                  <img
+                    src="{{ section.settings.before_after_image | image_url: width: 420 }}"
+                    alt="{{ section.settings.before_after_alt | escape }}"
+                    loading="lazy"
+                  >
+
+                  <div class="pureva-before-after-labels">
+                    {% if section.settings.before_label != blank %}
+                      <span>{{ section.settings.before_label }}</span>
+                    {% endif %}
+
+                    {% if section.settings.after_label != blank %}
+                      <span>{{ section.settings.after_label }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="pureva-tech-product-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            src="{{ section.settings.product_image | image_url: width: 800 }}"
+            alt="{{ section.settings.product_image_alt | escape }}"
+            class="pureva-tech-product-image"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="pureva-tech-placeholder">
+            Ajoute l’image du produit
+          </div>
+        {% endif %}
+
+        <div class="pureva-mobile-hotspot pureva-mobile-hotspot-1">1</div>
+        <div class="pureva-mobile-hotspot pureva-mobile-hotspot-2">2</div>
+        <div class="pureva-mobile-hotspot pureva-mobile-hotspot-3">3</div>
+      </div>
+
+      <div class="pureva-tech-right">
+        {% if section.settings.right_top_title != blank %}
+          <div class="pureva-tech-callout pureva-callout-right pureva-callout-top">
+            <span class="pureva-callout-dot"></span>
+            <div class="pureva-callout-line"></div>
+
+            <div class="pureva-callout-content">
+              <h3>{{ section.settings.right_top_title }}</h3>
+              <p>{{ section.settings.right_top_text }}</p>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if section.settings.right_bottom_title != blank %}
+          <div class="pureva-tech-callout pureva-callout-right pureva-callout-bottom">
+            <span class="pureva-callout-dot"></span>
+            <div class="pureva-callout-line"></div>
+
+            <div class="pureva-callout-content">
+              <h3>{{ section.settings.right_bottom_title }}</h3>
+              <p>{{ section.settings.right_bottom_text }}</p>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div class="pureva-tech-benefits">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit' %}
+          <div class="pureva-tech-benefit" {{ block.shopify_attributes }}>
+            <div class="pureva-tech-benefit-icon">
+              {{ block.settings.icon }}
+            </div>
+
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap');
+
+  .pureva-tech-section {
+    width: 100%;
+    padding: {{ section.settings.outer_padding_y }}px {{ section.settings.outer_padding_x }}px;
+    background: var(--pureva-bg);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    color: var(--pureva-text);
+  }
+
+  .pureva-tech-inner {
+    width: 100%;
+    max-width: var(--pureva-max-width);
+    margin: 0 auto;
+    padding: var(--pureva-padding-desktop-y) 60px;
+    border-radius: var(--pureva-radius);
+    background: var(--pureva-card-bg);
+    overflow: hidden;
+  }
+
+  .pureva-tech-badge {
+    width: fit-content;
+    margin: 0 auto 28px auto;
+    padding: 12px 28px;
+    border-radius: 14px;
+    background: var(--pureva-badge-bg);
+    color: var(--pureva-badge-text);
+    font-size: {{ section.settings.badge_size }}px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .pureva-tech-heading {
+    max-width: 960px;
+    margin: 0 auto 72px auto;
+    text-align: center;
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    color: var(--pureva-text);
+  }
+
+  .pureva-tech-main {
+    display: grid;
+    grid-template-columns: 1fr 340px 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .pureva-tech-product-wrap {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .pureva-tech-product-image {
+    width: 100%;
+    max-width: {{ section.settings.product_image_width }}px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .pureva-tech-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1.35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 20px;
+    color: var(--pureva-text);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .pureva-tech-left,
+  .pureva-tech-right {
+    position: relative;
+  }
+
+  .pureva-tech-callout {
+    display: flex;
+    align-items: flex-start;
+    color: var(--pureva-text);
+  }
+
+  .pureva-callout-content h3 {
+    margin: 0 0 12px 0;
+    font-size: {{ section.settings.callout_title_size }}px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+  }
+
+  .pureva-callout-content p {
+    margin: 0;
+    font-size: {{ section.settings.callout_text_size }}px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .pureva-callout-left {
+    flex-direction: row-reverse;
+    transform: translateX(20px);
+  }
+
+  .pureva-callout-right {
+    transform: translateX(-20px);
+  }
+
+  .pureva-callout-top {
+    margin-bottom: 100px;
+  }
+
+  .pureva-callout-line {
+    width: 90px;
+    height: 2px;
+    background: var(--pureva-line);
+    margin-top: 16px;
+  }
+
+  .pureva-callout-dot {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    border: 3px solid var(--pureva-line);
+    background: var(--pureva-badge-bg);
+    margin-top: 5px;
+    box-shadow: 0 0 0 7px rgba(199, 248, 255, 0.45);
+  }
+
+  .pureva-callout-left .pureva-callout-content {
+    text-align: left;
+    max-width: 260px;
+  }
+
+  .pureva-callout-right .pureva-callout-content {
+    max-width: 300px;
+  }
+
+  .pureva-before-after {
+    position: relative;
+    width: 190px;
+    margin-top: 26px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .pureva-before-after img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .pureva-before-after-labels {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .pureva-before-after-labels span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 58px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--pureva-text);
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .pureva-before-after-labels span:nth-child(2) {
+    background: var(--pureva-badge-bg);
+  }
+
+  .pureva-tech-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1120px;
+    margin: 70px auto 0 auto;
+  }
+
+  .pureva-tech-benefit {
+    text-align: center;
+    color: var(--pureva-text);
+  }
+
+  .pureva-tech-benefit-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 24px auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .pureva-tech-benefit h3 {
+    max-width: 300px;
+    margin: 0 auto 14px auto;
+    font-size: {{ section.settings.benefit_title_size }}px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--pureva-text);
+  }
+
+  .pureva-tech-benefit p {
+    max-width: 310px;
+    margin: 0 auto;
+    font-size: {{ section.settings.benefit_text_size }}px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: var(--pureva-text);
+  }
+
+  .pureva-tech-mobile-benefits,
+  .pureva-mobile-hotspot {
+    display: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    .pureva-tech-section {
+      padding: {{ section.settings.mobile_outer_padding_y }}px {{ section.settings.mobile_outer_padding_x }}px;
+    }
+
+    .pureva-tech-inner {
+      padding: var(--pureva-padding-mobile-y) 26px 0 26px;
+      border-radius: {{ section.settings.mobile_section_radius }}px;
+    }
+
+    .pureva-tech-badge {
+      margin-bottom: 24px;
+      padding: 11px 25px;
+      border-radius: 14px;
+      font-size: {{ section.settings.mobile_badge_size }}px;
+    }
+
+    .pureva-tech-heading {
+      margin-bottom: 42px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.12;
+      letter-spacing: -0.7px;
+    }
+
+    .pureva-tech-main {
+      display: block;
+      max-width: 100%;
+      margin-top: 44px;
+    }
+
+    .pureva-tech-left,
+    .pureva-tech-right {
+      display: none;
+    }
+
+    .pureva-tech-mobile-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      margin-bottom: 20px;
+    }
+
+    .pureva-tech-mobile-benefit {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--pureva-text);
+    }
+
+    .pureva-tech-mobile-benefit .pureva-tech-benefit-icon {
+      width: 35px;
+      height: 35px;
+      margin: 0;
+      font-size: 21px;
+      border-radius: 6px;
+    }
+
+    .pureva-tech-mobile-benefit h3 {
+      margin: 0 0 12px 0;
+      font-size: {{ section.settings.mobile_benefit_title_size }}px;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .pureva-tech-mobile-benefit p {
+      margin: 0;
+      font-size: {{ section.settings.mobile_benefit_text_size }}px;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    .pureva-tech-benefits {
+      display: none;
+    }
+
+    .pureva-tech-product-wrap {
+      width: 100%;
+      height: {{ section.settings.mobile_product_visible_height }}px;
+      overflow: hidden;
+      margin-top: 36px;
+    }
+
+    .pureva-tech-product-image {
+      width: {{ section.settings.mobile_product_width }}%;
+      max-width: none;
+      transform: translateY({{ section.settings.mobile_product_offset_y }}px);
+    }
+
+    .pureva-mobile-hotspot {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: var(--pureva-badge-bg);
+      border: 3px solid var(--pureva-line);
+      color: var(--pureva-text);
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: 0 0 0 6px rgba(199, 248, 255, 0.45);
+      z-index: 3;
+    }
+
+    .pureva-mobile-hotspot-1 {
+      top: 18%;
+      right: 26%;
+    }
+
+    .pureva-mobile-hotspot-2 {
+      top: 58%;
+      left: 40%;
+    }
+
+    .pureva-mobile-hotspot-3 {
+      bottom: 5%;
+      right: 35%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .pureva-tech-inner {
+      padding-left: 26px;
+      padding-right: 26px;
+    }
+
+    .pureva-tech-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva technologie",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu principal"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texte du badge",
+      "default": "Technologie"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Une technologie de filtration naturelle sur votre robinet"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Image principale du produit"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Texte alternatif image produit",
+      "default": "Filtre Pureva démonté"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_after_image",
+      "label": "Image avant/après"
+    },
+    {
+      "type": "text",
+      "id": "before_after_alt",
+      "label": "Texte alternatif image avant/après",
+      "default": "Cartouche avant après"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Label avant",
+      "default": "Avant"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "Label après",
+      "default": "Après"
+    },
+    {
+      "type": "header",
+      "content": "Textes autour du produit"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Titre gauche",
+      "default": "Céramique Diatomée"
+    },
+    {
+      "type": "textarea",
+      "id": "left_text",
+      "label": "Texte gauche",
+      "default": "Finesse de filtration jusqu’à 0,1 micron"
+    },
+    {
+      "type": "text",
+      "id": "right_top_title",
+      "label": "Titre droite haut",
+      "default": "Acier 100% inoxydable"
+    },
+    {
+      "type": "textarea",
+      "id": "right_top_text",
+      "label": "Texte droite haut",
+      "default": "Filtre en acier 100% inoxydable"
+    },
+    {
+      "type": "text",
+      "id": "right_bottom_title",
+      "label": "Titre droite bas",
+      "default": "Charbon actif végétal"
+    },
+    {
+      "type": "textarea",
+      "id": "right_bottom_text",
+      "label": "Texte droite bas",
+      "default": "Issu de fibre de noix de Coco"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond extérieur",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond du bloc",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#001F24"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur principale",
+      "default": "#001F24"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Fond badge / points",
+      "default": "#D7FAFF"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Texte badge",
+      "default": "#001F24"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Traits et contours",
+      "default": "#92F2FF"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1340,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "outer_padding_y",
+      "label": "Marge extérieure haut/bas",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 25,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "outer_padding_x",
+      "label": "Marge extérieure gauche/droite",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge intérieure haut/bas",
+      "min": 40,
+      "max": 140,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi du bloc",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_width",
+      "label": "Largeur image produit",
+      "min": 180,
+      "max": 460,
+      "step": 10,
+      "default": 310,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Taille du badge",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 26,
+      "max": 58,
+      "step": 1,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "callout_title_size",
+      "label": "Taille titres autour produit",
+      "min": 16,
+      "max": 30,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "callout_text_size",
+      "label": "Taille textes autour produit",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "benefit_title_size",
+      "label": "Taille titres avantages",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "benefit_text_size",
+      "label": "Taille textes avantages",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_outer_padding_y",
+      "label": "Marge extérieure mobile haut/bas",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_outer_padding_x",
+      "label": "Marge extérieure mobile gauche/droite",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge intérieure mobile haut",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_radius",
+      "label": "Arrondi mobile du bloc",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_size",
+      "label": "Taille badge mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 22,
+      "max": 36,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_benefit_title_size",
+      "label": "Taille titres avantages mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_benefit_text_size",
+      "label": "Taille textes avantages mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_width",
+      "label": "Largeur image produit mobile",
+      "min": 70,
+      "max": 150,
+      "step": 5,
+      "default": 105,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_visible_height",
+      "label": "Hauteur visible image mobile",
+      "min": 180,
+      "max": 520,
+      "step": 10,
+      "default": 320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_offset_y",
+      "label": "Décalage vertical image mobile",
+      "min": -200,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Avantage",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "default": "♻️"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Titre",
+          "default": "Matériaux naturels et 100% renouvelables"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Céramique diatomée, charbon actif de coco, acier inoxydable."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva technologie",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "♻️",
+            "title": "Matériaux naturels et 100% renouvelables",
+            "text": "Céramique diatomée, charbon actif de coco, acier inoxydable."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🇫🇷",
+            "title": "Filtration testée en laboratoires indépendants français",
+            "text": "Réduction significative des PFAS, pesticides et résidus médicamenteux."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "Eau filtrée à 0,1 micron et pureté jusqu’à 99,9%",
+            "text": "Bloque microplastiques, parasites, bactéries et impuretés invisibles."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

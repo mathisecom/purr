@@ -256,7 +256,7 @@
         "item_YdkBif",
         "item_QUrhxj"
       ],
-      "name": "Pureva Marquee",
+      "name": "Marquee",
       "settings": {
         "speed": 28,
         "direction": "left",
@@ -271,11 +271,11 @@
         "pill_padding_y": 14,
         "pill_padding_x": 22,
         "gap": 18,
-        "section_padding_y": 6,
+        "section_padding_y": 10,
         "mobile_font_size": 13,
         "mobile_pill_padding_y": 9,
         "mobile_pill_padding_x": 18,
-        "mobile_section_padding_y": 0
+        "mobile_section_padding_y": 13
       }
     },
     "avisclients_CxRbib": {
@@ -284,6 +284,7 @@
         "review_dxGHgP": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/gempages_567015059822216273-3139feb5-284e-4a09-9e63-d09abc534f9c.webp",
             "show_image": true,
             "rating": 5,
             "title": "Enfin une eau saine... et bonne !",
@@ -381,14 +382,14 @@
         "verified_color": "#00B67A",
         "avatar_background": "#C9FFF0",
         "desktop_padding_y": 70,
-        "card_width": 440,
+        "card_width": 430,
         "desktop_layout": "image_left",
         "card_radius": 12,
         "image_radius": 12,
         "heading_size": 36,
         "review_title_size": 16,
         "review_text_size": 15,
-        "mobile_padding_y": 35,
+        "mobile_padding_y": 20,
         "mobile_heading_size": 24,
         "mobile_review_title_size": 16,
         "mobile_review_text_size": 14

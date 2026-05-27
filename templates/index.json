@@ -396,6 +396,169 @@
         "mobile_review_text_size": 14
       }
     },
+    "tabsvs_7myebi": {
+      "type": "tabsvs",
+      "blocks": {
+        "row_7a3Pj9": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les pesticides",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_UXYXkz": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les métaux lourds",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_XDJwNC": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les microplastiques",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "cross",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_behNqy": {
+          "type": "row",
+          "settings": {
+            "feature": "Améliore le goût",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_FKVDx6": {
+          "type": "row",
+          "settings": {
+            "feature": "Conserve les minéraux",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "check",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_YxJfAy": {
+          "type": "row",
+          "settings": {
+            "feature": "Matériaux utilisés",
+            "brand_type": "text",
+            "brand_text": "Acier inox",
+            "column_2_type": "text",
+            "column_2_text": "Acier inox",
+            "column_3_type": "text",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": true
+          }
+        },
+        "row_Wqbgxf": {
+          "type": "row",
+          "settings": {
+            "feature": "Prix au litre",
+            "brand_type": "text",
+            "brand_text": "0,02€",
+            "column_2_type": "text",
+            "column_2_text": "0,003 €",
+            "column_3_type": "text",
+            "column_3_text": "0,37 €",
+            "column_3_badge": false
+          }
+        }
+      },
+      "block_order": [
+        "row_7a3Pj9",
+        "row_UXYXkz",
+        "row_XDJwNC",
+        "row_behNqy",
+        "row_FKVDx6",
+        "row_YxJfAy",
+        "row_Wqbgxf"
+      ],
+      "name": "Pureva comparaison",
+      "settings": {
+        "badge_text": "",
+        "heading": "Votre eau au quotidien,\nsans compromis",
+        "subheading": "OhPur vous permet de consommer une eau pure, sans plastique et à moindre coût.",
+        "pill_1": "Moins coûteux",
+        "pill_2": "Plus écologique",
+        "pill_3": "Plus respectueux de la planète",
+        "stat_1_number": "15 milliards",
+        "stat_1_text": "bouteilles en plastique vendues par an en France",
+        "stat_2_number": "8%",
+        "stat_2_text": "du plastique seulement est recyclé",
+        "stat_3_number": "245 000",
+        "stat_3_text": "microplastiques ingérés par litre d’eau en bouteille",
+        "brand_logo": "shopify://shop_images/gempages_567015059822216273-4a378b6f-1c48-4f81-b762-e9f1e23f4ce9.svg",
+        "brand_name": "OhPur.",
+        "brand_subtitle": "Comparaison",
+        "column_2_icon": "",
+        "column_2_title": "Eau du robinet",
+        "column_3_icon": "",
+        "column_3_title": "Bouteilles en plastique",
+        "bottom_note": "",
+        "section_background": "#030D4E",
+        "text_color": "#FFFFFF",
+        "muted_text_color": "#8EA2CF",
+        "pill_background": "#1D2B70",
+        "table_background": "#FFFFFF",
+        "main_column_background": "#0D2949",
+        "main_column_text": "#FFFFFF",
+        "border_color": "#E7EAF0",
+        "check_background": "#0D2949",
+        "check_color": "#D7FAFF",
+        "cross_background": "#FFE5E3",
+        "cross_color": "#EF3B35",
+        "max_width": 1040,
+        "desktop_padding_y": 80,
+        "table_width": 860,
+        "table_radius": 18,
+        "badge_size": 10,
+        "heading_size": 38,
+        "subheading_size": 14,
+        "pill_size": 12,
+        "stat_number_size": 30,
+        "stat_text_size": 12,
+        "column_icon_size": 30,
+        "table_text_size": 13,
+        "table_value_size": 13,
+        "mobile_padding_y": 40,
+        "mobile_badge_size": 9,
+        "mobile_heading_size": 28,
+        "mobile_subheading_size": 13,
+        "mobile_pill_size": 11,
+        "mobile_stat_number_size": 28,
+        "mobile_stat_text_size": 12,
+        "mobile_table_radius": 16,
+        "mobile_table_text_size": 12,
+        "mobile_table_value_size": 12
+      }
+    },
     "infosproduit_dQxKfJ": {
       "type": "infosproduit",
       "blocks": {
@@ -513,6 +676,7 @@
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
     "avisclients_CxRbib",
+    "tabsvs_7myebi",
     "infosproduit_dQxKfJ",
     "faq"
   ]

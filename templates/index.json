@@ -67,9 +67,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -210,6 +210,74 @@
         "input_text_color": ""
       }
     },
+    "marquee_eAYBzE": {
+      "type": "marquee",
+      "blocks": {
+        "item_7qENxt": {
+          "type": "item",
+          "settings": {
+            "icon": "◷",
+            "text": "Installation en moins de 5 min"
+          }
+        },
+        "item_zGYBfD": {
+          "type": "item",
+          "settings": {
+            "icon": "🔧",
+            "text": "Compatible avec 99% des robinets"
+          }
+        },
+        "item_BfVNKH": {
+          "type": "item",
+          "settings": {
+            "icon": "⚗",
+            "text": "Filtration certifiée Eurofins"
+          }
+        },
+        "item_YdkBif": {
+          "type": "item",
+          "settings": {
+            "icon": "€",
+            "text": "Jusqu'à 600€ économisés par an"
+          }
+        },
+        "item_QUrhxj": {
+          "type": "item",
+          "settings": {
+            "icon": "💧",
+            "text": "Eau filtrée en 0,1 micron"
+          }
+        }
+      },
+      "block_order": [
+        "item_7qENxt",
+        "item_zGYBfD",
+        "item_BfVNKH",
+        "item_YdkBif",
+        "item_QUrhxj"
+      ],
+      "name": "Pureva Marquee",
+      "settings": {
+        "speed": 28,
+        "direction": "left",
+        "pause_on_hover": true,
+        "section_background": "#ffffff",
+        "pill_background": "#c9f3f8",
+        "text_color": "#1f3445",
+        "icon_color": "#1f3445",
+        "font_size": 14,
+        "font_weight": "400",
+        "pill_radius": 40,
+        "pill_padding_y": 14,
+        "pill_padding_x": 22,
+        "gap": 18,
+        "section_padding_y": 6,
+        "mobile_font_size": 13,
+        "mobile_pill_padding_y": 9,
+        "mobile_pill_padding_x": 18,
+        "mobile_section_padding_y": 0
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -267,6 +335,7 @@
   "order": [
     "logoscroll_BjQiDb",
     "featured_product_CDz7jQ",
+    "marquee_eAYBzE",
     "faq"
   ]
 }

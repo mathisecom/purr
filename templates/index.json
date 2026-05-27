@@ -522,18 +522,18 @@
         "column_3_icon": "",
         "column_3_title": "Bouteilles en plastique",
         "bottom_note": "",
-        "section_background": "#030D4E",
-        "text_color": "#FFFFFF",
-        "muted_text_color": "#8EA2CF",
-        "pill_background": "#1D2B70",
-        "table_background": "#FFFFFF",
-        "main_column_background": "#0D2949",
-        "main_column_text": "#FFFFFF",
-        "border_color": "#E7EAF0",
-        "check_background": "#0D2949",
-        "check_color": "#D7FAFF",
-        "cross_background": "#FFE5E3",
-        "cross_color": "#EF3B35",
+        "section_background": "#030d4e",
+        "text_color": "#ffffff",
+        "muted_text_color": "#8ea2cf",
+        "pill_background": "#1d2b70",
+        "table_background": "#ffffff",
+        "main_column_background": "#0d2949",
+        "main_column_text": "#ffffff",
+        "border_color": "#e7eaf0",
+        "check_background": "#0d2949",
+        "check_color": "#d7faff",
+        "cross_background": "#ffe5e3",
+        "cross_color": "#ef3b35",
         "max_width": 1040,
         "desktop_padding_y": 80,
         "table_width": 860,
@@ -557,6 +557,101 @@
         "mobile_table_radius": 16,
         "mobile_table_text_size": 12,
         "mobile_table_value_size": 12
+      }
+    },
+    "benefice_G87kVk": {
+      "type": "benefice",
+      "blocks": {
+        "benefit_K4pJif": {
+          "type": "benefit",
+          "settings": {
+            "text": "Votre thé du matin a enfin le goût qu’il devrait avoir",
+            "number": "1"
+          }
+        },
+        "benefit_yd4AGK": {
+          "type": "benefit",
+          "settings": {
+            "text": "La sérénité de savoir que votre eau est filtrée — à chaque verre",
+            "number": "2"
+          }
+        },
+        "benefit_DGb736": {
+          "type": "benefit",
+          "settings": {
+            "text": "Fini les packs d’eau lourds à porter depuis le supermarché chaque semaine",
+            "number": "3"
+          }
+        },
+        "benefit_f8tVJb": {
+          "type": "benefit",
+          "settings": {
+            "text": "Vous ouvrez le robinet et c’est prêt — pas de carafe, pas d’attente",
+            "number": "4"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_K4pJif",
+        "benefit_yd4AGK",
+        "benefit_DGb736",
+        "benefit_f8tVJb"
+      ],
+      "name": "Pureva bénéfices famille",
+      "settings": {
+        "image_alt": "Famille heureuse à la maison",
+        "heading": "Les 4 améliorations\nque toute la famille\nressent.",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "section_background": "#ffffff",
+        "text_color": "#FFFFFF",
+        "card_text_color": "#FFFFFF",
+        "card_background": "linear-gradient(110deg, rgba(83, 98, 111, 0), rgba(32, 36, 38, 0) 100%)",
+        "card_border_color": "rgba(255,255,255,0.18)",
+        "overlay_opacity": 55,
+        "max_width": 1360,
+        "desktop_padding_y": 50,
+        "desktop_padding_x": 15,
+        "desktop_height": 580,
+        "section_radius": 16,
+        "content_padding_desktop": 50,
+        "cards_per_row": 4,
+        "card_gap": 12,
+        "card_height": 130,
+        "card_radius": 16,
+        "card_padding_y": 28,
+        "card_padding_x": 28,
+        "card_blur": 10,
+        "heading_size": 48,
+        "heading_width": 470,
+        "heading_weight": "400",
+        "heading_bottom_spacing": 35,
+        "card_text_size": 16,
+        "card_text_weight": "700",
+        "number_size": 31,
+        "number_text_size": 14,
+        "number_position_top": 16,
+        "number_position_right": 16,
+        "mobile_padding_y": 35,
+        "mobile_padding_x": 15,
+        "mobile_height": 390,
+        "mobile_section_radius": 14,
+        "mobile_content_padding": 19,
+        "mobile_content_padding_bottom": 19,
+        "mobile_heading_size": 25,
+        "mobile_heading_width": 310,
+        "mobile_heading_bottom_spacing": 10,
+        "mobile_card_width": 295,
+        "mobile_card_height": 85,
+        "mobile_card_gap": 12,
+        "mobile_card_radius": 14,
+        "mobile_card_padding_y": 20,
+        "mobile_card_padding_x": 18,
+        "mobile_card_text_size": 15,
+        "mobile_number_size": 24,
+        "mobile_number_text_size": 12,
+        "mobile_number_position_top": 13,
+        "mobile_number_position_right": 13
       }
     },
     "infosproduit_dQxKfJ": {
@@ -677,6 +772,7 @@
     "marquee_eAYBzE",
     "avisclients_CxRbib",
     "tabsvs_7myebi",
+    "benefice_G87kVk",
     "infosproduit_dQxKfJ",
     "faq"
   ]

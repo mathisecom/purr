@@ -428,6 +428,7 @@
       ],
       "name": "Données Produit",
       "settings": {
+        "main_image": "shopify://shop_images/AF7819C0-7549-4356-864A-3384F1D93E34.webp",
         "image_alt": "Cartouche neuve et cartouche usagée",
         "label_left": "Cartouche neuve",
         "label_right": "Cartouche usagée",

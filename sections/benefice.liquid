@@ -1,0 +1,928 @@
+<section
+  class="pureva-family-benefits-section"
+  style="
+    --pfb-section-bg: {{ section.settings.section_background }};
+    --pfb-text: {{ section.settings.text_color }};
+    --pfb-card-text: {{ section.settings.card_text_color }};
+    --pfb-card-bg: {{ section.settings.card_background }};
+    --pfb-card-border: {{ section.settings.card_border_color }};
+    --pfb-radius: {{ section.settings.section_radius }}px;
+    --pfb-card-radius: {{ section.settings.card_radius }}px;
+    --pfb-max-width: {{ section.settings.max_width }}px;
+    --pfb-desktop-height: {{ section.settings.desktop_height }}px;
+    --pfb-mobile-height: {{ section.settings.mobile_height }}px;
+    --pfb-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+  "
+>
+  <div class="pureva-family-benefits-container">
+    <div class="pureva-family-benefits-media">
+      {% if section.settings.background_image != blank %}
+        <img
+          src="{{ section.settings.background_image | image_url: width: 2200 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="pureva-family-benefits-image"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="pureva-family-benefits-placeholder">
+          Ajoute ton image ici
+        </div>
+      {% endif %}
+
+      <div class="pureva-family-benefits-overlay"></div>
+
+      <div class="pureva-family-benefits-content">
+        {% if section.settings.heading != blank %}
+          <h2 class="pureva-family-benefits-heading">
+            {{ section.settings.heading | newline_to_br }}
+          </h2>
+        {% endif %}
+
+        <div class="pureva-family-benefits-cards">
+          {% for block in section.blocks %}
+            <div class="pureva-family-benefit-card" {{ block.shopify_attributes }}>
+              <div class="pureva-family-benefit-text">
+                {{ block.settings.text }}
+              </div>
+
+              {% if block.settings.number != blank %}
+                <div class="pureva-family-benefit-number">
+                  {{ block.settings.number }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap');
+
+  .pureva-family-benefits-section {
+    width: 100%;
+    background: var(--pfb-section-bg);
+    padding: {{ section.settings.desktop_padding_y }}px {{ section.settings.desktop_padding_x }}px;
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+  }
+
+  .pureva-family-benefits-container {
+    width: 100%;
+    max-width: var(--pfb-max-width);
+    margin: 0 auto;
+  }
+
+  .pureva-family-benefits-media {
+    position: relative;
+    width: 100%;
+    min-height: var(--pfb-desktop-height);
+    border-radius: var(--pfb-radius);
+    overflow: hidden;
+    background: #eeeeee;
+  }
+
+  .pureva-family-benefits-image,
+  .pureva-family-benefits-placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pureva-family-benefits-image {
+    object-fit: cover;
+    object-position: {{ section.settings.image_position }};
+    display: block;
+  }
+
+  .pureva-family-benefits-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .pureva-family-benefits-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, calc(var(--pfb-overlay-opacity) * 0.55)) 52%,
+      rgba(0, 0, 0, var(--pfb-overlay-opacity)) 100%
+    );
+    z-index: 1;
+  }
+
+  .pureva-family-benefits-content {
+    position: relative;
+    z-index: 2;
+    min-height: var(--pfb-desktop-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: {{ section.settings.content_padding_desktop }}px;
+  }
+
+  .pureva-family-benefits-heading {
+    max-width: {{ section.settings.heading_width }}px;
+    margin: 0 0 {{ section.settings.heading_bottom_spacing }}px 0;
+    color: var(--pfb-text);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 0.98;
+    font-weight: {{ section.settings.heading_weight }};
+    letter-spacing: -1.6px;
+  }
+
+  .pureva-family-benefits-cards {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.cards_per_row }}, 1fr);
+    gap: {{ section.settings.card_gap }}px;
+  }
+
+  .pureva-family-benefit-card {
+    position: relative;
+    min-height: {{ section.settings.card_height }}px;
+    padding: {{ section.settings.card_padding_y }}px {{ section.settings.card_padding_x }}px;
+    border-radius: var(--pfb-card-radius);
+    border: 1px solid var(--pfb-card-border);
+    background: var(--pfb-card-bg);
+    backdrop-filter: blur({{ section.settings.card_blur }}px);
+    -webkit-backdrop-filter: blur({{ section.settings.card_blur }}px);
+    color: var(--pfb-card-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    overflow: hidden;
+  }
+
+  .pureva-family-benefit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.02)
+    );
+    pointer-events: none;
+  }
+
+  .pureva-family-benefit-text {
+    position: relative;
+    z-index: 1;
+    max-width: 260px;
+    font-size: {{ section.settings.card_text_size }}px;
+    line-height: 1.22;
+    font-weight: {{ section.settings.card_text_weight }};
+  }
+
+  .pureva-family-benefit-number {
+    position: absolute;
+    top: {{ section.settings.number_position_top }}px;
+    right: {{ section.settings.number_position_right }}px;
+    z-index: 1;
+    width: {{ section.settings.number_size }}px;
+    height: {{ section.settings.number_size }}px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.38);
+    background: rgba(255,255,255,0.12);
+    color: var(--pfb-card-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ section.settings.number_text_size }}px;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 989px) {
+    .pureva-family-benefits-section {
+      padding: {{ section.settings.mobile_padding_y }}px {{ section.settings.mobile_padding_x }}px;
+    }
+
+    .pureva-family-benefits-container {
+      max-width: 100%;
+    }
+
+    .pureva-family-benefits-media {
+      min-height: var(--pfb-mobile-height);
+      border-radius: {{ section.settings.mobile_section_radius }}px;
+    }
+
+    .pureva-family-benefits-image {
+      object-position: {{ section.settings.mobile_image_position }};
+    }
+
+    .pureva-family-benefits-content {
+      min-height: var(--pfb-mobile-height);
+      padding: {{ section.settings.mobile_content_padding }}px 0 {{ section.settings.mobile_content_padding_bottom }}px 0;
+      justify-content: flex-end;
+    }
+
+    .pureva-family-benefits-heading {
+      max-width: {{ section.settings.mobile_heading_width }}px;
+      margin: 0 0 {{ section.settings.mobile_heading_bottom_spacing }}px 0;
+      padding: 0 {{ section.settings.mobile_content_padding }}px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.04;
+      letter-spacing: -0.9px;
+    }
+
+    .pureva-family-benefits-cards {
+      display: flex;
+      gap: {{ section.settings.mobile_card_gap }}px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 {{ section.settings.mobile_content_padding }}px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pureva-family-benefits-cards::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pureva-family-benefit-card {
+      flex: 0 0 {{ section.settings.mobile_card_width }}px;
+      min-height: {{ section.settings.mobile_card_height }}px;
+      scroll-snap-align: start;
+      padding: {{ section.settings.mobile_card_padding_y }}px {{ section.settings.mobile_card_padding_x }}px;
+      border-radius: {{ section.settings.mobile_card_radius }}px;
+    }
+
+    .pureva-family-benefit-text {
+      max-width: calc(100% - 34px);
+      font-size: {{ section.settings.mobile_card_text_size }}px;
+      line-height: 1.22;
+    }
+
+    .pureva-family-benefit-number {
+      top: {{ section.settings.mobile_number_position_top }}px;
+      right: {{ section.settings.mobile_number_position_right }}px;
+      width: {{ section.settings.mobile_number_size }}px;
+      height: {{ section.settings.mobile_number_size }}px;
+      font-size: {{ section.settings.mobile_number_text_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva bénéfices famille",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image et contenu"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texte alternatif image",
+      "default": "Famille heureuse à la maison"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Les 4 améliorations\nque toute la famille\nressent."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position image ordinateur",
+      "default": "center center",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Centre"
+        },
+        {
+          "value": "center top",
+          "label": "Centre haut"
+        },
+        {
+          "value": "center bottom",
+          "label": "Centre bas"
+        },
+        {
+          "value": "left center",
+          "label": "Gauche"
+        },
+        {
+          "value": "right center",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Position image mobile",
+      "default": "center center",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Centre"
+        },
+        {
+          "value": "center top",
+          "label": "Centre haut"
+        },
+        {
+          "value": "center bottom",
+          "label": "Centre bas"
+        },
+        {
+          "value": "left center",
+          "label": "Gauche"
+        },
+        {
+          "value": "right center",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond extérieur",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du titre",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Couleur texte cartes",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "card_background",
+      "label": "Fond des cartes",
+      "default": "linear-gradient(110deg, rgba(83, 98, 111, 0.58), rgba(32, 36, 38, 0.72))"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Bordure des cartes",
+      "default": "rgba(255,255,255,0.18)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité du dégradé sombre",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "default": 55,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1360,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas section",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_x",
+      "label": "Marge gauche/droite section",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Hauteur ordinateur",
+      "min": 360,
+      "max": 850,
+      "step": 10,
+      "default": 580,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi du bloc",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_desktop",
+      "label": "Marge intérieure contenu",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cards_per_row",
+      "label": "Nombre de cartes par ligne",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espace entre cartes",
+      "min": 6,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_height",
+      "label": "Hauteur cartes",
+      "min": 90,
+      "max": 190,
+      "step": 5,
+      "default": 130,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y",
+      "label": "Padding vertical cartes",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x",
+      "label": "Padding horizontal cartes",
+      "min": 12,
+      "max": 45,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_blur",
+      "label": "Flou glassmorphism",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 28,
+      "max": 76,
+      "step": 1,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_width",
+      "label": "Largeur titre",
+      "min": 280,
+      "max": 720,
+      "step": 10,
+      "default": 470,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre",
+      "default": "400",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "label": "Espace titre / cartes",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille texte cartes",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "card_text_weight",
+      "label": "Graisse texte cartes",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Taille rond numéro",
+      "min": 20,
+      "max": 42,
+      "step": 1,
+      "default": 31,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_text_size",
+      "label": "Taille numéro",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_position_top",
+      "label": "Position numéro haut",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_position_right",
+      "label": "Position numéro droite",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_x",
+      "label": "Marge gauche/droite mobile",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Hauteur mobile",
+      "min": 360,
+      "max": 760,
+      "step": 10,
+      "default": 450,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_radius",
+      "label": "Arrondi mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding",
+      "label": "Padding contenu mobile",
+      "min": 12,
+      "max": 38,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_bottom",
+      "label": "Padding bas mobile",
+      "min": 12,
+      "max": 55,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 46,
+      "step": 1,
+      "default": 29,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "label": "Largeur titre mobile",
+      "min": 240,
+      "max": 390,
+      "step": 5,
+      "default": 330,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_bottom_spacing",
+      "label": "Espace titre / slider mobile",
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur carte mobile",
+      "min": 220,
+      "max": 340,
+      "step": 5,
+      "default": 305,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_height",
+      "label": "Hauteur carte mobile",
+      "min": 70,
+      "max": 150,
+      "step": 5,
+      "default": 105,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "Espace cartes mobile",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_radius",
+      "label": "Arrondi cartes mobile",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_padding_y",
+      "label": "Padding vertical cartes mobile",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_padding_x",
+      "label": "Padding horizontal cartes mobile",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "label": "Taille texte cartes mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_size",
+      "label": "Taille rond numéro mobile",
+      "min": 22,
+      "max": 38,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_text_size",
+      "label": "Taille numéro mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_position_top",
+      "label": "Position numéro haut mobile",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_position_right",
+      "label": "Position numéro droite mobile",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte du bénéfice",
+          "default": "Votre thé du matin a enfin le goût qu’il devrait avoir"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Numéro",
+          "default": "1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva bénéfices famille",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Votre thé du matin a enfin le goût qu’il devrait avoir",
+            "number": "1"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "La sérénité de savoir que votre eau est filtrée — à chaque verre",
+            "number": "2"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Fini les packs d’eau lourds à porter depuis le supermarché chaque semaine",
+            "number": "3"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Vous ouvrez le robinet et c’est prêt — pas de carafe, pas d’attente",
+            "number": "4"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

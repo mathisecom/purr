@@ -278,6 +278,64 @@
         "mobile_section_padding_y": 0
       }
     },
+    "infosproduit_dQxKfJ": {
+      "type": "infosproduit",
+      "blocks": {
+        "stat_LXRNAQ": {
+          "type": "stat",
+          "settings": {
+            "number": "600€",
+            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+          }
+        },
+        "stat_6dgP8z": {
+          "type": "stat",
+          "settings": {
+            "number": "1500",
+            "text": "Fini le plastique jetable – jusqu’à 1500 bouteilles évitées*"
+          }
+        },
+        "stat_Mt6fUD": {
+          "type": "stat",
+          "settings": {
+            "number": "2 min",
+            "text": "Installation simple en 2 min, sans outil"
+          }
+        }
+      },
+      "block_order": [
+        "stat_LXRNAQ",
+        "stat_6dgP8z",
+        "stat_Mt6fUD"
+      ],
+      "name": "Données Produit",
+      "settings": {
+        "image_alt": "Cartouche neuve et cartouche usagée",
+        "label_left": "Cartouche neuve",
+        "label_right": "Cartouche usagée",
+        "image_radius": 18,
+        "heading": "Données OhPur",
+        "button_label": "Tester OhPur →",
+        "button_link": "",
+        "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
+        "section_background": "#ffffff",
+        "text_color": "#00244A",
+        "accent_color": "#00244A",
+        "card_background": "#F3F7FB",
+        "button_background": "#00244A",
+        "button_text_color": "#ffffff",
+        "max_width": 1180,
+        "desktop_padding_y": 70,
+        "heading_size": 38,
+        "number_size": 32,
+        "text_size": 14,
+        "card_radius": 9,
+        "mobile_padding_y": 35,
+        "mobile_heading_size": 29,
+        "mobile_number_size": 24,
+        "mobile_text_size": 12
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -336,6 +394,7 @@
     "logoscroll_BjQiDb",
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
+    "infosproduit_dQxKfJ",
     "faq"
   ]
 }

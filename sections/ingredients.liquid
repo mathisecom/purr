@@ -1,0 +1,1770 @@
+<section
+  id="pureva-layers-{{ section.id }}"
+  class="pureva-layers-section"
+  style="
+    --pl-bg: {{ section.settings.section_background }};
+    --pl-text: {{ section.settings.text_color }};
+    --pl-muted: {{ section.settings.muted_text_color }};
+    --pl-badge-bg: {{ section.settings.badge_background }};
+    --pl-badge-text: {{ section.settings.badge_text_color }};
+    --pl-card-bg: {{ section.settings.card_background }};
+    --pl-card-text: {{ section.settings.card_text_color }};
+    --pl-border: {{ section.settings.border_color }};
+    --pl-button-bg: {{ section.settings.button_background }};
+    --pl-button-text: {{ section.settings.button_text_color }};
+    --pl-max-width: {{ section.settings.max_width }}px;
+    --pl-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --pl-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-layers-container">
+
+    {% if section.settings.badge_text != blank %}
+      <div class="pureva-layers-badge">
+        {{ section.settings.badge_text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-layers-heading">
+        {{ section.settings.heading | newline_to_br }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="pureva-layers-subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
+
+    {% if section.settings.certification_text != blank %}
+      <div class="pureva-layers-certification">
+        {% if section.settings.certification_logo != blank %}
+          <div class="pureva-certification-logo">
+            <img
+              src="{{ section.settings.certification_logo | image_url: width: 160 }}"
+              alt="{{ section.settings.certification_logo_alt | escape }}"
+              loading="lazy"
+            >
+          </div>
+        {% else %}
+          <div class="pureva-certification-logo pureva-certification-logo-text">
+            {{ section.settings.certification_logo_text }}
+          </div>
+        {% endif %}
+
+        <div class="pureva-certification-text">
+          {{ section.settings.certification_text }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="pureva-layers-slider-wrap">
+      <div class="pureva-layers-slider" data-slider>
+        {% for block in section.blocks %}
+          <article
+            class="pureva-layer-card {% if forloop.index == 3 %}is-active{% endif %}"
+            data-card
+            {{ block.shopify_attributes }}
+          >
+            <div class="pureva-layer-image-wrap">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 900 }}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  class="pureva-layer-image"
+                  loading="lazy"
+                >
+              {% else %}
+                <div class="pureva-layer-placeholder">
+                  Image
+                </div>
+              {% endif %}
+
+              <div class="pureva-layer-info">
+                {% if block.settings.step != blank %}
+                  <span class="pureva-layer-step">
+                    {{ block.settings.step }}
+                  </span>
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                  <h3>
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <p>
+                    {{ block.settings.text }}
+                  </p>
+                {% endif %}
+              </div>
+
+              {% if block.settings.show_arrow %}
+                <div class="pureva-layer-open-icon">
+                  {{ section.settings.card_arrow_svg }}
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <div class="pureva-layers-controls">
+        <button class="pureva-layers-arrow" type="button" data-prev aria-label="Carte précédente">
+          {{ section.settings.prev_arrow_svg }}
+        </button>
+
+        <button class="pureva-layers-arrow" type="button" data-next aria-label="Carte suivante">
+          {{ section.settings.next_arrow_svg }}
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  #pureva-layers-{{ section.id }} {
+    width: 100%;
+    background: var(--pl-bg);
+    color: var(--pl-text);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: var(--pl-padding-y) {{ section.settings.desktop_padding_x }}px;
+    overflow: hidden;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-container {
+    width: 100%;
+    max-width: var(--pl-max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: {{ section.settings.badge_bottom_spacing }}px;
+    padding: {{ section.settings.badge_padding_y }}px {{ section.settings.badge_padding_x }}px;
+    border-radius: {{ section.settings.badge_radius }}px;
+    background: var(--pl-badge-bg);
+    color: var(--pl-badge-text);
+    font-size: {{ section.settings.badge_size }}px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-heading {
+    max-width: {{ section.settings.heading_width }}px;
+    margin: 0 auto;
+    color: var(--pl-text);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.08;
+    font-weight: {{ section.settings.heading_weight }};
+    letter-spacing: -1.2px;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-subheading {
+    max-width: {{ section.settings.subheading_width }}px;
+    margin: {{ section.settings.subheading_top_spacing }}px auto 0 auto;
+    color: var(--pl-muted);
+    font-size: {{ section.settings.subheading_size }}px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-certification {
+    width: 100%;
+    max-width: {{ section.settings.certification_width }}px;
+    margin: {{ section.settings.certification_top_spacing }}px auto 0 auto;
+    padding: {{ section.settings.certification_padding_y }}px {{ section.settings.certification_padding_x }}px;
+    border: 1px solid var(--pl-border);
+    border-radius: {{ section.settings.certification_radius }}px;
+    background: {{ section.settings.certification_background }};
+    display: grid;
+    grid-template-columns: {{ section.settings.certification_logo_size }}px 1fr;
+    gap: {{ section.settings.certification_gap }}px;
+    align-items: center;
+    text-align: left;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-certification-logo {
+    width: {{ section.settings.certification_logo_size }}px;
+    height: {{ section.settings.certification_logo_size }}px;
+    border-radius: 999px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-certification-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-certification-logo-text {
+    background: #0068a9;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-certification-text {
+    color: var(--pl-muted);
+    font-size: {{ section.settings.certification_text_size }}px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-slider-wrap {
+    margin-top: {{ section.settings.slider_top_spacing }}px;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.card_gap }}px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: {{ section.settings.slider_padding_y }}px 0;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-card {
+    flex: 0 0 {{ section.settings.side_card_width }}px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: {{ section.settings.side_card_opacity | divided_by: 100.0 }};
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-card.is-active {
+    flex-basis: {{ section.settings.active_card_width }}px;
+    opacity: 1;
+    transform: translateY(-{{ section.settings.active_card_lift }}px);
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-image-wrap {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.side_card_height }}px;
+    border-radius: {{ section.settings.card_radius }}px;
+    overflow: hidden;
+    background: #e9edf3;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-card.is-active .pureva-layer-image-wrap {
+    height: {{ section.settings.active_card_height }}px;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-image,
+  #pureva-layers-{{ section.id }} .pureva-layer-placeholder {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-image {
+    object-fit: cover;
+    object-position: {{ section.settings.image_position }};
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pl-muted);
+    font-weight: 700;
+    background: #dde3ec;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-info {
+    position: absolute;
+    top: {{ section.settings.info_position_top }}px;
+    left: {{ section.settings.info_position_left }}px;
+    right: {{ section.settings.info_position_right }}px;
+    padding: {{ section.settings.info_padding_y }}px {{ section.settings.info_padding_x }}px;
+    border-radius: {{ section.settings.info_radius }}px;
+    background: var(--pl-card-bg);
+    color: var(--pl-card-text);
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(11, 22, 45, 0.08);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-card.is-active .pureva-layer-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-step {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--pl-muted);
+    font-size: {{ section.settings.step_size }}px;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-info h3 {
+    margin: 0 0 8px 0;
+    color: var(--pl-card-text);
+    font-size: {{ section.settings.card_title_size }}px;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-info p {
+    margin: 0;
+    color: var(--pl-muted);
+    font-size: {{ section.settings.card_text_size }}px;
+    line-height: 1.38;
+    font-weight: 600;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-open-icon {
+    position: absolute;
+    top: {{ section.settings.open_icon_top }}px;
+    right: {{ section.settings.open_icon_right }}px;
+    width: {{ section.settings.open_icon_size }}px;
+    height: {{ section.settings.open_icon_size }}px;
+    border-radius: {{ section.settings.open_icon_radius }}px;
+    background: var(--pl-button-bg);
+    color: var(--pl-button-text);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-card.is-active .pureva-layer-open-icon {
+    display: flex;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-open-icon svg,
+  #pureva-layers-{{ section.id }} .pureva-layers-arrow svg {
+    width: 48%;
+    height: 48%;
+    display: block;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layer-open-icon svg path,
+  #pureva-layers-{{ section.id }} .pureva-layers-arrow svg path {
+    stroke: currentColor;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: {{ section.settings.controls_gap }}px;
+    margin-top: {{ section.settings.controls_top_spacing }}px;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-arrow {
+    width: {{ section.settings.arrow_size }}px;
+    height: {{ section.settings.arrow_size }}px;
+    border: none;
+    border-radius: 999px;
+    background: var(--pl-button-bg);
+    color: var(--pl-button-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(11, 22, 45, 0.08);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  #pureva-layers-{{ section.id }} .pureva-layers-arrow:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+
+  @media screen and (max-width: 749px) {
+    #pureva-layers-{{ section.id }} {
+      padding: var(--pl-mobile-padding-y) {{ section.settings.mobile_padding_x }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-badge {
+      margin-bottom: {{ section.settings.mobile_badge_bottom_spacing }}px;
+      padding: {{ section.settings.mobile_badge_padding_y }}px {{ section.settings.mobile_badge_padding_x }}px;
+      border-radius: {{ section.settings.mobile_badge_radius }}px;
+      font-size: {{ section.settings.mobile_badge_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-heading {
+      max-width: {{ section.settings.mobile_heading_width }}px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-subheading {
+      max-width: {{ section.settings.mobile_subheading_width }}px;
+      margin-top: {{ section.settings.mobile_subheading_top_spacing }}px;
+      font-size: {{ section.settings.mobile_subheading_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-certification {
+      max-width: 100%;
+      margin-top: {{ section.settings.mobile_certification_top_spacing }}px;
+      padding: {{ section.settings.mobile_certification_padding_y }}px {{ section.settings.mobile_certification_padding_x }}px;
+      border-radius: {{ section.settings.mobile_certification_radius }}px;
+      grid-template-columns: {{ section.settings.mobile_certification_logo_size }}px 1fr;
+      gap: {{ section.settings.mobile_certification_gap }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-certification-logo {
+      width: {{ section.settings.mobile_certification_logo_size }}px;
+      height: {{ section.settings.mobile_certification_logo_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-certification-logo-text {
+      font-size: 19px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-certification-text {
+      font-size: {{ section.settings.mobile_certification_text_size }}px;
+      line-height: 1.45;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-slider-wrap {
+      margin-top: {{ section.settings.mobile_slider_top_spacing }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-slider {
+      justify-content: flex-start;
+      gap: {{ section.settings.mobile_card_gap }}px;
+      margin-left: -{{ section.settings.mobile_padding_x }}px;
+      margin-right: -{{ section.settings.mobile_padding_x }}px;
+      padding: {{ section.settings.mobile_slider_padding_y }}px {{ section.settings.mobile_slider_side_padding }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-card,
+    #pureva-layers-{{ section.id }} .pureva-layer-card.is-active {
+      flex: 0 0 {{ section.settings.mobile_card_width }}px;
+      opacity: 1;
+      transform: none;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-image-wrap,
+    #pureva-layers-{{ section.id }} .pureva-layer-card.is-active .pureva-layer-image-wrap {
+      height: {{ section.settings.mobile_card_height }}px;
+      border-radius: {{ section.settings.mobile_card_radius }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-info {
+      top: {{ section.settings.mobile_info_position_top }}px;
+      left: {{ section.settings.mobile_info_position_left }}px;
+      right: {{ section.settings.mobile_info_position_right }}px;
+      padding: {{ section.settings.mobile_info_padding_y }}px {{ section.settings.mobile_info_padding_x }}px;
+      border-radius: {{ section.settings.mobile_info_radius }}px;
+      opacity: 1;
+      transform: none;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-step {
+      font-size: {{ section.settings.mobile_step_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-info h3 {
+      font-size: {{ section.settings.mobile_card_title_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-info p {
+      font-size: {{ section.settings.mobile_card_text_size }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layer-open-icon,
+    #pureva-layers-{{ section.id }} .pureva-layer-card.is-active .pureva-layer-open-icon {
+      display: flex;
+      width: {{ section.settings.mobile_open_icon_size }}px;
+      height: {{ section.settings.mobile_open_icon_size }}px;
+      top: {{ section.settings.mobile_open_icon_top }}px;
+      right: {{ section.settings.mobile_open_icon_right }}px;
+      border-radius: {{ section.settings.mobile_open_icon_radius }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-controls {
+      margin-top: {{ section.settings.mobile_controls_top_spacing }}px;
+    }
+
+    #pureva-layers-{{ section.id }} .pureva-layers-arrow {
+      width: {{ section.settings.mobile_arrow_size }}px;
+      height: {{ section.settings.mobile_arrow_size }}px;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const section = document.querySelector('#pureva-layers-{{ section.id }}');
+    if (!section) return;
+
+    const slider = section.querySelector('[data-slider]');
+    const cards = Array.from(section.querySelectorAll('[data-card]'));
+    const prev = section.querySelector('[data-prev]');
+    const next = section.querySelector('[data-next]');
+
+    if (!slider || !cards.length) return;
+
+    let activeIndex = Math.min(2, cards.length - 1);
+
+    const setActive = (index, scroll = true) => {
+      activeIndex = (index + cards.length) % cards.length;
+
+      cards.forEach((card, i) => {
+        card.classList.toggle('is-active', i === activeIndex);
+      });
+
+      if (scroll) {
+        cards[activeIndex].scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    };
+
+    prev?.addEventListener('click', () => {
+      setActive(activeIndex - 1);
+    });
+
+    next?.addEventListener('click', () => {
+      setActive(activeIndex + 1);
+    });
+
+    cards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        setActive(index);
+      });
+    });
+
+    let scrollTimer;
+    slider.addEventListener('scroll', () => {
+      window.clearTimeout(scrollTimer);
+
+      scrollTimer = window.setTimeout(() => {
+        const sliderRect = slider.getBoundingClientRect();
+        const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const distance = Math.abs(sliderCenter - cardCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        setActive(closestIndex, false);
+      }, 80);
+    });
+
+    setActive(activeIndex, false);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Pureva couches filtration",
+  "settings": [
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texte du badge",
+      "default": "Que contiennent nos cartouches ?"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "La nature filtre l'eau par couches. Nous aussi"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Inspiré par la nature, validé par la science"
+    },
+    {
+      "type": "header",
+      "content": "Certification"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_logo",
+      "label": "Logo certification"
+    },
+    {
+      "type": "text",
+      "id": "certification_logo_alt",
+      "label": "Texte alternatif du logo",
+      "default": "Certification NSF"
+    },
+    {
+      "type": "text",
+      "id": "certification_logo_text",
+      "label": "Texte logo si aucune image",
+      "default": "NSF."
+    },
+    {
+      "type": "textarea",
+      "id": "certification_text",
+      "label": "Texte certification",
+      "default": "Les composants de la cartouche Pure® sont testés et certifiés par NSF International selon la norme NSF/ANSI 42 pour la sécurité des matériaux. La cartouche Pure® 3.0 est spécifiquement formulée pour les contaminants présents dans l'eau du robinet européenne."
+    },
+    {
+      "type": "header",
+      "content": "Icônes SVG"
+    },
+    {
+      "type": "textarea",
+      "id": "card_arrow_svg",
+      "label": "Icône flèche dans la carte",
+      "default": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17L17 7'/><path d='M9 7h8v8'/></svg>"
+    },
+    {
+      "type": "textarea",
+      "id": "prev_arrow_svg",
+      "label": "Icône bouton précédent",
+      "default": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M15 18l-6-6 6-6'/></svg>"
+    },
+    {
+      "type": "textarea",
+      "id": "next_arrow_svg",
+      "label": "Icône bouton suivant",
+      "default": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18l6-6-6-6'/></svg>"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond section",
+      "default": "#F7F7F8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#061A44"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Texte secondaire",
+      "default": "#728096"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Fond badge",
+      "default": "#E9EEFF"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Texte badge",
+      "default": "#061A44"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond carte texte",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Texte carte",
+      "default": "#061A44"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Bordures",
+      "default": "#D7DEE9"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond boutons",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Couleur icônes boutons",
+      "default": "#061A44"
+    },
+    {
+      "type": "color_background",
+      "id": "certification_background",
+      "label": "Fond certification",
+      "default": "rgba(255,255,255,0.35)"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1280,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas",
+      "min": 40,
+      "max": 160,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_x",
+      "label": "Marge gauche/droite",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Taille badge",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_y",
+      "label": "Padding vertical badge",
+      "min": 6,
+      "max": 18,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_x",
+      "label": "Padding horizontal badge",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "label": "Arrondi badge",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 9,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_bottom_spacing",
+      "label": "Espace badge / titre",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 28,
+      "max": 58,
+      "step": 1,
+      "default": 38,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre",
+      "default": "500",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_width",
+      "label": "Largeur titre",
+      "min": 420,
+      "max": 1000,
+      "step": 10,
+      "default": 760,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Taille sous-titre",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_width",
+      "label": "Largeur sous-titre",
+      "min": 300,
+      "max": 760,
+      "step": 10,
+      "default": 540,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_top_spacing",
+      "label": "Espace titre / sous-titre",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Certification ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "certification_width",
+      "label": "Largeur bloc certification",
+      "min": 420,
+      "max": 760,
+      "step": 10,
+      "default": 610,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_top_spacing",
+      "label": "Espace sous-titre / certification",
+      "min": 10,
+      "max": 45,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_logo_size",
+      "label": "Taille logo certification",
+      "min": 42,
+      "max": 90,
+      "step": 2,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_gap",
+      "label": "Espace logo / texte",
+      "min": 12,
+      "max": 34,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_padding_y",
+      "label": "Padding vertical certification",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_padding_x",
+      "label": "Padding horizontal certification",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_radius",
+      "label": "Arrondi certification",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "certification_text_size",
+      "label": "Taille texte certification",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Slider ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "slider_top_spacing",
+      "label": "Espace certification / slider",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slider_padding_y",
+      "label": "Padding vertical slider",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espace entre cartes",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "side_card_width",
+      "label": "Largeur cartes secondaires",
+      "min": 110,
+      "max": 260,
+      "step": 10,
+      "default": 180,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "side_card_height",
+      "label": "Hauteur cartes secondaires",
+      "min": 150,
+      "max": 340,
+      "step": 10,
+      "default": 260,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "active_card_width",
+      "label": "Largeur carte active",
+      "min": 240,
+      "max": 520,
+      "step": 10,
+      "default": 380,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "active_card_height",
+      "label": "Hauteur carte active",
+      "min": 320,
+      "max": 620,
+      "step": 10,
+      "default": 520,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "active_card_lift",
+      "label": "Décalage carte active vers le haut",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "side_card_opacity",
+      "label": "Opacité cartes secondaires",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position image",
+      "default": "center center",
+      "options": [
+        { "value": "center center", "label": "Centre" },
+        { "value": "center top", "label": "Centre haut" },
+        { "value": "center bottom", "label": "Centre bas" },
+        { "value": "left center", "label": "Gauche" },
+        { "value": "right center", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Carte texte ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "info_position_top",
+      "label": "Position carte texte haut",
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "info_position_left",
+      "label": "Position carte texte gauche",
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "info_position_right",
+      "label": "Position carte texte droite",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "info_padding_y",
+      "label": "Padding vertical carte texte",
+      "min": 10,
+      "max": 26,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "info_padding_x",
+      "label": "Padding horizontal carte texte",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "info_radius",
+      "label": "Arrondi carte texte",
+      "min": 0,
+      "max": 26,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "step_size",
+      "label": "Taille étape",
+      "min": 10,
+      "max": 17,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Taille titre carte",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille texte carte",
+      "min": 11,
+      "max": 17,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Boutons ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "open_icon_size",
+      "label": "Taille icône carte",
+      "min": 32,
+      "max": 64,
+      "step": 2,
+      "default": 44,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "open_icon_top",
+      "label": "Position icône carte haut",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "open_icon_right",
+      "label": "Position icône carte droite",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "open_icon_radius",
+      "label": "Arrondi icône carte",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "controls_top_spacing",
+      "label": "Espace slider / flèches",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "controls_gap",
+      "label": "Espace entre flèches",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "Taille flèches",
+      "min": 34,
+      "max": 62,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile global"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 30,
+      "max": 120,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_x",
+      "label": "Marge gauche/droite mobile",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_size",
+      "label": "Taille badge mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_padding_y",
+      "label": "Padding vertical badge mobile",
+      "min": 6,
+      "max": 16,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_padding_x",
+      "label": "Padding horizontal badge mobile",
+      "min": 12,
+      "max": 34,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_radius",
+      "label": "Arrondi badge mobile",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_bottom_spacing",
+      "label": "Espace badge / titre mobile",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "default": 31,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_width",
+      "label": "Largeur titre mobile",
+      "min": 260,
+      "max": 390,
+      "step": 5,
+      "default": 360,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_size",
+      "label": "Taille sous-titre mobile",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_width",
+      "label": "Largeur sous-titre mobile",
+      "min": 260,
+      "max": 390,
+      "step": 5,
+      "default": 360,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_top_spacing",
+      "label": "Espace titre / sous-titre mobile",
+      "min": 8,
+      "max": 26,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Certification mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_top_spacing",
+      "label": "Espace sous-titre / certification mobile",
+      "min": 10,
+      "max": 38,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_logo_size",
+      "label": "Taille logo mobile",
+      "min": 42,
+      "max": 76,
+      "step": 2,
+      "default": 58,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_gap",
+      "label": "Espace logo / texte mobile",
+      "min": 10,
+      "max": 26,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_padding_y",
+      "label": "Padding vertical certification mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_padding_x",
+      "label": "Padding horizontal certification mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_radius",
+      "label": "Arrondi certification mobile",
+      "min": 0,
+      "max": 26,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_certification_text_size",
+      "label": "Taille texte certification mobile",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Slider mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_slider_top_spacing",
+      "label": "Espace certification / slider mobile",
+      "min": 24,
+      "max": 70,
+      "step": 1,
+      "default": 45,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_slider_padding_y",
+      "label": "Padding vertical slider mobile",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "default": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_slider_side_padding",
+      "label": "Padding côtés slider mobile",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "default": 90,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "Espace cartes mobile",
+      "min": 14,
+      "max": 42,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur cartes mobile",
+      "min": 230,
+      "max": 340,
+      "step": 5,
+      "default": 250,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_height",
+      "label": "Hauteur cartes mobile",
+      "min": 320,
+      "max": 520,
+      "step": 10,
+      "default": 400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_radius",
+      "label": "Arrondi cartes mobile",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Carte texte mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_position_top",
+      "label": "Position texte haut mobile",
+      "min": 10,
+      "max": 54,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_position_left",
+      "label": "Position texte gauche mobile",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_position_right",
+      "label": "Position texte droite mobile",
+      "min": 42,
+      "max": 90,
+      "step": 2,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_padding_y",
+      "label": "Padding vertical texte mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_padding_x",
+      "label": "Padding horizontal texte mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_info_radius",
+      "label": "Arrondi texte mobile",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_step_size",
+      "label": "Taille étape mobile",
+      "min": 9,
+      "max": 15,
+      "step": 1,
+      "default": 11,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_size",
+      "label": "Taille titre carte mobile",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "label": "Taille texte carte mobile",
+      "min": 10,
+      "max": 15,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Boutons mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_open_icon_size",
+      "label": "Taille icône carte mobile",
+      "min": 32,
+      "max": 58,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_open_icon_top",
+      "label": "Position icône haut mobile",
+      "min": 10,
+      "max": 34,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_open_icon_right",
+      "label": "Position icône droite mobile",
+      "min": 10,
+      "max": 34,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_open_icon_radius",
+      "label": "Arrondi icône mobile",
+      "min": 0,
+      "max": 18,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_controls_top_spacing",
+      "label": "Espace slider / flèches mobile",
+      "min": 18,
+      "max": 46,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_arrow_size",
+      "label": "Taille flèches mobile",
+      "min": 38,
+      "max": 64,
+      "step": 2,
+      "default": 50,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "layer",
+      "name": "Couche / bénéfice",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Texte alternatif image",
+          "default": "Couche de filtration"
+        },
+        {
+          "type": "text",
+          "id": "step",
+          "label": "Étape",
+          "default": "Étape 1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Fibres non tissées"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Bloque la rouille, le sable et les sédiments. Votre eau est plus claire avant même d’atteindre le filtre principal."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Afficher l’icône flèche",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva couches filtration",
+      "blocks": [
+        {
+          "type": "layer",
+          "settings": {
+            "step": "Étape 1",
+            "title": "Fibres non tissées",
+            "text": "Bloque la rouille, le sable et les sédiments. Votre eau est plus claire avant même d’atteindre le filtre principal."
+          }
+        },
+        {
+          "type": "layer",
+          "settings": {
+            "step": "Étape 2",
+            "title": "Minéraux naturels",
+            "text": "Une première couche inspirée par la nature pour retenir les particules visibles."
+          }
+        },
+        {
+          "type": "layer",
+          "settings": {
+            "step": "Étape 3",
+            "title": "Charbon actif",
+            "text": "Aide à réduire le chlore, les goûts et les odeurs pour une eau plus agréable."
+          }
+        },
+        {
+          "type": "layer",
+          "settings": {
+            "step": "Étape 4",
+            "title": "Céramique fine",
+            "text": "Filtration précise pour une eau plus claire au quotidien."
+          }
+        },
+        {
+          "type": "layer",
+          "settings": {
+            "step": "Étape 5",
+            "title": "Finition naturelle",
+            "text": "Une dernière couche pensée pour préserver la qualité de l’eau filtrée."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

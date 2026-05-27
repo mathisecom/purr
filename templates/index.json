@@ -572,7 +572,7 @@
         "benefit_yd4AGK": {
           "type": "benefit",
           "settings": {
-            "text": "La sérénité de savoir que votre eau est filtrée — à chaque verre",
+            "text": "La sérénité de savoir que votre eau est filtrée, à chaque verre",
             "number": "2"
           }
         },
@@ -586,7 +586,7 @@
         "benefit_f8tVJb": {
           "type": "benefit",
           "settings": {
-            "text": "Vous ouvrez le robinet et c’est prêt — pas de carafe, pas d’attente",
+            "text": "Vous ouvrez le robinet et c’est prêt, pas de carafe, pas d’attente",
             "number": "4"
           }
         }

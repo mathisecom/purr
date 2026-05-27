@@ -707,7 +707,7 @@
         "number_size": 32,
         "text_size": 14,
         "card_radius": 9,
-        "mobile_padding_y": 35,
+        "mobile_padding_y": 10,
         "mobile_heading_size": 29,
         "mobile_number_size": 24,
         "mobile_text_size": 12

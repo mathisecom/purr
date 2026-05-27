@@ -278,6 +278,122 @@
         "mobile_section_padding_y": 0
       }
     },
+    "avisclients_CxRbib": {
+      "type": "avisclients",
+      "blocks": {
+        "review_dxGHgP": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Enfin une eau saine... et bonne !",
+            "text": "On avait des doutes sur la qualité de notre eau du robinet, surtout pour les enfants. Depuis qu’on utilise Pureva, fini les odeurs, le goût est bien meilleur, et on est vraiment rassurés.",
+            "initials": "CD",
+            "name": "Camille D.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_YgnXAy": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Bien plus simple que mon ancien filtre !",
+            "text": "J’avais un adoucisseur compliqué à entretenir. Pureva, c’est au robinet, tout le temps disponible, et sans bidouille. L’eau sort claire et légère.",
+            "initials": "VB",
+            "name": "Valérie B.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_W7jT4z": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "On a arrêté d’acheter des packs d’eau !",
+            "text": "Entre le plastique, le prix et la corvée de transporter les packs, on cherchait une alternative. Pureva a changé notre quotidien.",
+            "initials": "JM",
+            "name": "Julien M.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_hd3c3D": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "L’eau ne me donne plus mal au ventre",
+            "text": "Je ne supportais plus l’eau du robinet. Depuis que j’ai installé le filtre Pureva, plus aucun souci. C’est un vrai soulagement.",
+            "initials": "SG",
+            "name": "Stéphane G.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_rtxAwi": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Un bon geste, sans contrainte",
+            "text": "Je voulais réduire mon usage de plastique, mais je trouvais les solutions compliquées. Pureva m’a convaincue par sa simplicité.",
+            "initials": "NT",
+            "name": "Nadia T.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_FJpDFy": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Installation rapide",
+            "text": "Installé en quelques minutes seulement. Depuis, on ne rachète presque plus de bouteilles d’eau.",
+            "initials": "ML",
+            "name": "Marc L.",
+            "verified_text": "Acheteur vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_dxGHgP",
+        "review_YgnXAy",
+        "review_W7jT4z",
+        "review_hd3c3D",
+        "review_rtxAwi",
+        "review_FJpDFy"
+      ],
+      "name": "Pureva avis clients",
+      "settings": {
+        "rating_text": "Excellent",
+        "rating_score": "4.8",
+        "stars_count": 5,
+        "heading": "Qui de mieux que nos clients\npour en parler ?",
+        "desktop_speed_top": 15,
+        "desktop_speed_bottom": 15,
+        "pause_on_hover": false,
+        "desktop_gap": 24,
+        "section_background": "#ffffff",
+        "card_background": "#FFFFFF",
+        "text_color": "#08163d",
+        "accent_color": "#08163d",
+        "star_background": "#00B67A",
+        "star_color": "#FFFFFF",
+        "verified_color": "#00B67A",
+        "avatar_background": "#C9FFF0",
+        "desktop_padding_y": 70,
+        "card_width": 440,
+        "desktop_layout": "image_left",
+        "card_radius": 12,
+        "image_radius": 12,
+        "heading_size": 36,
+        "review_title_size": 16,
+        "review_text_size": 15,
+        "mobile_padding_y": 35,
+        "mobile_heading_size": 24,
+        "mobile_review_title_size": 16,
+        "mobile_review_text_size": 14
+      }
+    },
     "infosproduit_dQxKfJ": {
       "type": "infosproduit",
       "blocks": {
@@ -315,14 +431,14 @@
         "label_right": "Cartouche usagée",
         "image_radius": 18,
         "heading": "Données OhPur",
-        "button_label": "Tester OhPur →",
+        "button_label": "",
         "button_link": "",
         "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
         "section_background": "#ffffff",
-        "text_color": "#00244A",
-        "accent_color": "#00244A",
-        "card_background": "#F3F7FB",
-        "button_background": "#00244A",
+        "text_color": "#00244a",
+        "accent_color": "#00244a",
+        "card_background": "#f3f7fb",
+        "button_background": "#00244a",
         "button_text_color": "#ffffff",
         "max_width": 1180,
         "desktop_padding_y": 70,
@@ -394,6 +510,7 @@
     "logoscroll_BjQiDb",
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
+    "avisclients_CxRbib",
     "infosproduit_dQxKfJ",
     "faq"
   ]

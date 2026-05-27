@@ -89,10 +89,16 @@
     "featured_product_CDz7jQ": {
       "type": "featured-product",
       "blocks": {
-        "title_aBz9iz": {
-          "type": "title",
+        "liquid_V4tcn9": {
+          "type": "liquid",
           "settings": {
-            "heading_tag": "h2"
+            "liquid": ""
+          }
+        },
+        "liquid_3EHbrb": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
           }
         },
         "liquid_ezeUwP": {
@@ -173,7 +179,8 @@
         }
       },
       "block_order": [
-        "title_aBz9iz",
+        "liquid_V4tcn9",
+        "liquid_3EHbrb",
         "liquid_ezeUwP",
         "price_kMemri",
         "variant_picker_qLYhm6",

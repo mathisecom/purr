@@ -1,0 +1,400 @@
+<section
+  class="pureva-marquee-section"
+  style="
+    --pureva-bg: {{ section.settings.section_background }};
+    --pureva-pill-bg: {{ section.settings.pill_background }};
+    --pureva-text-color: {{ section.settings.text_color }};
+    --pureva-icon-color: {{ section.settings.icon_color }};
+    --pureva-font-size: {{ section.settings.font_size }}px;
+    --pureva-pill-radius: {{ section.settings.pill_radius }}px;
+    --pureva-pill-padding-y: {{ section.settings.pill_padding_y }}px;
+    --pureva-pill-padding-x: {{ section.settings.pill_padding_x }}px;
+    --pureva-gap: {{ section.settings.gap }}px;
+    --pureva-speed: {{ section.settings.speed }}s;
+  "
+>
+  <div class="pureva-marquee-wrapper">
+    <div class="pureva-marquee-track">
+
+      {% for i in (1..2) %}
+        <div class="pureva-marquee-content" aria-hidden="{% if i == 2 %}true{% else %}false{% endif %}">
+          {% for block in section.blocks %}
+            <div class="pureva-marquee-pill" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <span class="pureva-marquee-icon">
+                  {{ block.settings.icon }}
+                </span>
+              {% endif %}
+
+              <span class="pureva-marquee-text">
+                {{ block.settings.text }}
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .pureva-marquee-section {
+    width: 100%;
+    background: var(--pureva-bg);
+    overflow: hidden;
+    padding: {{ section.settings.section_padding_y }}px 0;
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+  }
+
+  .pureva-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .pureva-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: pureva-marquee-scroll var(--pureva-speed) linear infinite;
+  }
+
+  .pureva-marquee-section:hover .pureva-marquee-track {
+    {% if section.settings.pause_on_hover %}
+      animation-play-state: paused;
+    {% endif %}
+  }
+
+  .pureva-marquee-content {
+    display: flex;
+    align-items: center;
+    gap: var(--pureva-gap);
+    padding-right: var(--pureva-gap);
+  }
+
+  .pureva-marquee-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    white-space: nowrap;
+    background: var(--pureva-pill-bg);
+    color: var(--pureva-text-color);
+    font-size: var(--pureva-font-size);
+    font-weight: {{ section.settings.font_weight }};
+    line-height: 1;
+    border-radius: var(--pureva-pill-radius);
+    padding: var(--pureva-pill-padding-y) var(--pureva-pill-padding-x);
+  }
+
+  .pureva-marquee-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pureva-icon-color);
+    font-size: calc(var(--pureva-font-size) + 2px);
+    line-height: 1;
+  }
+
+  .pureva-marquee-text {
+    display: inline-block;
+  }
+
+  @keyframes pureva-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  {% if section.settings.direction == 'right' %}
+    .pureva-marquee-track {
+      animation-direction: reverse;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .pureva-marquee-section {
+      padding: {{ section.settings.mobile_section_padding_y }}px 0;
+    }
+
+    .pureva-marquee-pill {
+      font-size: {{ section.settings.mobile_font_size }}px;
+      padding: {{ section.settings.mobile_pill_padding_y }}px {{ section.settings.mobile_pill_padding_x }}px;
+      gap: 7px;
+    }
+
+    .pureva-marquee-icon {
+      font-size: calc({{ section.settings.mobile_font_size }}px + 2px);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva Marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Défilement"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse du défilement",
+      "min": 8,
+      "max": 80,
+      "step": 1,
+      "default": 28,
+      "unit": "s"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Sens du défilement",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Vers la gauche"
+        },
+        {
+          "value": "right",
+          "label": "Vers la droite"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause au survol",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "pill_background",
+      "label": "Fond des pastilles",
+      "default": "#c9f3f8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#1f3445"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur des icônes",
+      "default": "#1f3445"
+    },
+    {
+      "type": "header",
+      "content": "Style ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Taille du texte",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Épaisseur du texte",
+      "default": "400",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "pill_radius",
+      "label": "Arrondi des pastilles",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pill_padding_y",
+      "label": "Hauteur intérieure des pastilles",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pill_padding_x",
+      "label": "Largeur intérieure des pastilles",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Espace entre les pastilles",
+      "min": 6,
+      "max": 50,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_y",
+      "label": "Marge intérieure haut/bas",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 6,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Style mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "label": "Taille du texte mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_pill_padding_y",
+      "label": "Hauteur intérieure mobile",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_pill_padding_x",
+      "label": "Largeur intérieure mobile",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_padding_y",
+      "label": "Marge intérieure mobile haut/bas",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 5,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "default": "◷",
+          "info": "Tu peux mettre un emoji, un symbole ou une icône copiée depuis Lucide/Heroicons."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Installation en moins de 5 min"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva Marquee",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "◷",
+            "text": "Installation en moins de 5 min"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "🔧",
+            "text": "Compatible avec 99% des robinets"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "⚗",
+            "text": "Filtration certifiée Eurofins"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "€",
+            "text": "Jusqu'à 600€ économisés par an"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "💧",
+            "text": "Eau filtrée en 0,1 micron"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1076,57 +1076,189 @@
         "mobile_number_position_right": 13
       }
     },
-    "faq": {
-      "type": "faq",
+    "faqpuure_AehWUN": {
+      "type": "faqpuure",
       "blocks": {
-        "166442457738b23caf-0": {
-          "type": "item",
+        "question_tER3pr": {
+          "type": "question",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "question": "Comment fonctionne le système de filtration Pure® ?",
+            "answer": "Le système de filtration utilise plusieurs couches complémentaires pour améliorer le goût de l’eau et réduire les impuretés du quotidien."
           }
         },
-        "166442457738b23caf-1": {
-          "type": "item",
+        "question_dx3Cqg": {
+          "type": "question",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "question": "Combien de temps prend l’installation ?",
+            "answer": "L’installation est rapide et se fait en quelques minutes seulement, sans outil compliqué."
           }
         },
-        "166442457738b23caf-2": {
-          "type": "item",
+        "question_KbqrVG": {
+          "type": "question",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "question": "Et si je ne suis pas doué en bricolage ?",
+            "answer": "Aucun problème : le filtre est conçu pour être simple à installer, même sans expérience."
+          }
+        },
+        "question_Cky8jG": {
+          "type": "question",
+          "settings": {
+            "question": "Quelle est la durée de vie d’une cartouche ?",
+            "answer": "La durée dépend de votre consommation et de la qualité de votre eau, mais elle est pensée pour un usage quotidien confortable."
+          }
+        },
+        "question_f6KcHj": {
+          "type": "question",
+          "settings": {
+            "question": "Le filtre est-il compatible avec tous les robinets ?",
+            "answer": "Il est compatible avec la majorité des robinets standards. Des adaptateurs peuvent être nécessaires selon le modèle."
+          }
+        },
+        "question_YCagHT": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je modifier ou annuler mon abonnement à tout moment ?",
+            "answer": "Oui, vous pouvez modifier ou annuler votre abonnement selon les conditions définies sur votre boutique."
+          }
+        },
+        "question_gLPUBa": {
+          "type": "question",
+          "settings": {
+            "question": "Le filtre Pure® est-il garanti ?",
+            "answer": "Oui, le produit peut être couvert par une garantie selon les conditions affichées sur votre boutique."
+          }
+        },
+        "question_yGbUaG": {
+          "type": "question",
+          "settings": {
+            "question": "Et si je ne suis pas satisfait ?",
+            "answer": "Vous pouvez proposer une période d’essai ou une garantie satisfaction selon votre politique commerciale."
+          }
+        },
+        "question_CaTHHY": {
+          "type": "question",
+          "settings": {
+            "question": "Quand puis-je commencer à profiter de mon eau filtrée ?",
+            "answer": "Dès l’installation terminée, vous pouvez commencer à utiliser votre filtre."
+          }
+        },
+        "benefit_tdTCYE": {
+          "type": "benefit",
+          "settings": {
+            "title": "Garantie 2 ans",
+            "text": "Une qualité conçue pour durer."
+          }
+        },
+        "benefit_xc7RYe": {
+          "type": "benefit",
+          "settings": {
+            "title": "Essayez-le pendant 100 jours",
+            "text": "Satisfait ou remboursé, sans engagement."
+          }
+        },
+        "benefit_6aRWBt": {
+          "type": "benefit",
+          "settings": {
+            "title": "Livraison offerte",
+            "text": "Expédié directement chez vous."
           }
         }
       },
       "block_order": [
-        "166442457738b23caf-0",
-        "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "question_tER3pr",
+        "question_dx3Cqg",
+        "question_KbqrVG",
+        "question_Cky8jG",
+        "question_f6KcHj",
+        "question_YCagHT",
+        "question_gLPUBa",
+        "question_yGbUaG",
+        "question_CaTHHY",
+        "benefit_tdTCYE",
+        "benefit_xc7RYe",
+        "benefit_6aRWBt"
       ],
-      "disabled": true,
+      "name": "® FAQ",
       "settings": {
-        "full_width": false,
-        "subheading": "",
-        "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
-        "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "",
-        "button_url": "",
-        "text_position": "start",
-        "background": "#ffffff",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "button_background": "",
-        "button_text_color": "",
-        "accordion_background": "",
-        "accordion_text_color": ""
+        "heading": "F.A.Q",
+        "description": "Une question ? Nous avons la réponse ! Notre équipe d’experts est là pour vous, du lundi au samedi, de 9h à 18h.",
+        "button_label": "puuresav@gmail.com",
+        "button_link": "",
+        "avatar_alt_1": "Expert support 1",
+        "avatar_alt_2": "Expert support 2",
+        "avatar_alt_3": "Expert support 3",
+        "open_first": false,
+        "close_others": true,
+        "check_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"></path></svg>",
+        "section_background": "#F4F4F4",
+        "text_color": "#08164C",
+        "muted_text_color": "#4E5878",
+        "border_color": "#D8DCE6",
+        "card_background": "#FFFFFF",
+        "icon_background": "#14244D",
+        "icon_color": "#FFFFFF",
+        "button_background": "transparent",
+        "button_text_color": "#14244D",
+        "max_width": 1180,
+        "desktop_padding_y": 95,
+        "desktop_padding_x": 20,
+        "left_column_width": 4,
+        "right_column_width": 6,
+        "desktop_gap": 95,
+        "heading_size": 30,
+        "heading_weight": "800",
+        "heading_bottom_spacing": 25,
+        "description_size": 14,
+        "description_weight": "500",
+        "description_width": 470,
+        "description_bottom_spacing": 32,
+        "avatar_size": 28,
+        "avatar_overlap": 8,
+        "button_width": 470,
+        "button_height": 48,
+        "button_text_size": 14,
+        "question_size": 14,
+        "question_weight": "800",
+        "question_padding_y": 20,
+        "plus_size": 25,
+        "answer_size": 14,
+        "answer_bottom_padding": 18,
+        "benefits_top_spacing": 28,
+        "benefits_columns_desktop": 3,
+        "benefits_gap": 20,
+        "benefit_height": 80,
+        "benefit_padding_y": 18,
+        "benefit_padding_x": 24,
+        "benefit_icon_size": 28,
+        "benefit_icon_overlap": 12,
+        "benefit_icon_offset": 36,
+        "benefit_title_size": 13,
+        "benefit_text_size": 13,
+        "mobile_padding_y": 55,
+        "mobile_padding_x": 20,
+        "mobile_gap": 42,
+        "mobile_heading_size": 29,
+        "mobile_heading_bottom_spacing": 22,
+        "mobile_description_size": 14,
+        "mobile_description_bottom_spacing": 28,
+        "mobile_avatar_size": 28,
+        "mobile_avatar_overlap": 8,
+        "mobile_button_height": 48,
+        "mobile_button_text_size": 14,
+        "mobile_question_size": 14,
+        "mobile_question_padding_y": 18,
+        "mobile_plus_size": 24,
+        "mobile_answer_size": 14,
+        "mobile_benefits_top_spacing": 28,
+        "mobile_benefits_gap": 16,
+        "mobile_benefit_height": 80,
+        "mobile_benefit_padding_y": 18,
+        "mobile_benefit_padding_x": 22,
+        "mobile_benefit_icon_size": 28,
+        "mobile_benefit_icon_overlap": 10,
+        "mobile_benefit_icon_offset": 38,
+        "mobile_benefit_title_size": 13,
+        "mobile_benefit_text_size": 13
       }
     }
   },
@@ -1141,6 +1273,6 @@
     "tabsvs_7myebi",
     "ingredients_YgGrni",
     "benefice_G87kVk",
-    "faq"
+    "faqpuure_AehWUN"
   ]
 }

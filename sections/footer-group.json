@@ -94,8 +94,8 @@
           "settings": {
             "image_width": 150,
             "heading_size": "h4",
-            "title": "Newsletters",
-            "content": ""
+            "title": "Une eau (vraiment) pure. Simplement.",
+            "content": "<p>Recevez des offres exclusives, des mises à jour sur la qualité de l'eau dans votre région, et plus encore en vous inscrivant à notre newsletter</p>"
           }
         },
         "links": {
@@ -119,7 +119,7 @@
           "settings": {
             "title": "Notre Mission",
             "content": "<p>Essentielle à la vie, l’eau est devenue une source de stress, de contaminations et d’inégalités. Chez , nous pensons que personne ne devrait jamais avoir à douter de la qualité de l’eau qui sort de son robinet.</p>",
-            "enable_follow_on_shop": true
+            "enable_follow_on_shop": false
           }
         }
       },

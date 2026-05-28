@@ -1164,6 +1164,131 @@
         "mobile_arrow_size": 50
       }
     },
+    "infosfiltres_HHQ3zk": {
+      "type": "infosfiltres",
+      "blocks": {
+        "contaminant_EzfmTM": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Chlore & sous-produits chimiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_3XMXxG": {
+          "type": "contaminant",
+          "settings": {
+            "question": "PFAS (polluants éternels)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_4EJcyQ": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Fluorure",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_xJqTNe": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Microplastiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_Pd3ptf": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Pesticides & résidus agricoles",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_pYxEwV": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Métaux lourds (plomb, mercure, cadmium)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_wVaNnU": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Sédiments & rouille",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_mYxMTG": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Hydrocarbures & composés organiques volatils (COV)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_it8N9F": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Résidus pharmaceutiques & polluants organiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        }
+      },
+      "block_order": [
+        "contaminant_EzfmTM",
+        "contaminant_3XMXxG",
+        "contaminant_4EJcyQ",
+        "contaminant_xJqTNe",
+        "contaminant_Pd3ptf",
+        "contaminant_pYxEwV",
+        "contaminant_wVaNnU",
+        "contaminant_mYxMTG",
+        "contaminant_it8N9F"
+      ],
+      "name": "Pureva filtration liste",
+      "settings": {
+        "product_image": "shopify://shop_images/wefilter_fr.webp",
+        "product_image_alt": "",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "open_first": false,
+        "close_others": true,
+        "section_background": "#f7f7f8",
+        "image_card_background": "#FFFFFF",
+        "blue_background": "#2764FF",
+        "blue_text_color": "#FFFFFF",
+        "accordion_border_color": "rgba(255,255,255,0.14)",
+        "max_width": 1120,
+        "desktop_padding_y": 45,
+        "desktop_padding_x": 20,
+        "desktop_gap": 80,
+        "image_column_width": 6,
+        "accordion_column_width": 5,
+        "image_card_height": 560,
+        "card_radius": 18,
+        "accordion_radius": 16,
+        "accordion_padding_y": 17,
+        "accordion_padding_x": 22,
+        "accordion_shadow": "0 24px 55px rgba(39,100,255,0.28)",
+        "question_height": 56,
+        "question_size": 14,
+        "question_weight": "600",
+        "plus_size": 25,
+        "plus_text_size": 22,
+        "answer_size": 13,
+        "answer_bottom_padding": 14,
+        "mobile_padding_y": 15,
+        "mobile_padding_x": 8,
+        "mobile_card_radius": 18,
+        "mobile_image_card_height": 350,
+        "mobile_accordion_overlap": -40,
+        "mobile_accordion_radius": 22,
+        "mobile_accordion_padding_y": 17,
+        "mobile_accordion_padding_x": 21,
+        "mobile_question_height": 55,
+        "mobile_question_size": 14,
+        "mobile_plus_size": 25,
+        "mobile_plus_text_size": 22,
+        "mobile_answer_size": 13
+      }
+    },
     "benefice_G87kVk": {
       "type": "benefice",
       "blocks": {
@@ -1458,6 +1583,7 @@
     "infosproduit_dQxKfJ",
     "tabsvs_7myebi",
     "ingredients_YgGrni",
+    "infosfiltres_HHQ3zk",
     "benefice_G87kVk",
     "faqpuure_AehWUN"
   ]

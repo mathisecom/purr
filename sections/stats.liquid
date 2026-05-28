@@ -1,0 +1,457 @@
+<section
+  id="pureva-stats-bar-{{ section.id }}"
+  class="pureva-stats-bar"
+  style="
+    --psb-bg: {{ section.settings.section_background }};
+    --psb-text: {{ section.settings.text_color }};
+    --psb-muted: {{ section.settings.muted_text_color }};
+    --psb-divider: {{ section.settings.divider_color }};
+    --psb-max-width: {{ section.settings.max_width }}px;
+    --psb-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --psb-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-stats-bar__inner">
+    {% for block in section.blocks %}
+      <div class="pureva-stats-bar__item" {{ block.shopify_attributes }}>
+        {% if block.settings.number != blank %}
+          <div class="pureva-stats-bar__number">
+            {{ block.settings.number }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.text != blank %}
+          <div class="pureva-stats-bar__text">
+            {{ block.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  #pureva-stats-bar-{{ section.id }} {
+    width: 100%;
+    background: var(--psb-bg);
+    color: var(--psb-text);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: var(--psb-padding-y) {{ section.settings.desktop_padding_x }}px;
+    overflow: hidden;
+  }
+
+  #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__inner {
+    width: 100%;
+    max-width: var(--psb-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    align-items: center;
+  }
+
+  #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__item {
+    position: relative;
+    text-align: center;
+    padding: 0 {{ section.settings.item_padding_x }}px;
+  }
+
+  #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: {{ section.settings.divider_height }}px;
+    background: var(--psb-divider);
+    transform: translateY(-50%);
+    opacity: {{ section.settings.divider_opacity | divided_by: 100.0 }};
+  }
+
+  #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__number {
+    margin: 0 0 {{ section.settings.number_bottom_spacing }}px 0;
+    color: var(--psb-text);
+    font-size: {{ section.settings.number_size }}px;
+    line-height: 1;
+    font-weight: {{ section.settings.number_weight }};
+    letter-spacing: -0.8px;
+  }
+
+  #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__text {
+    max-width: {{ section.settings.text_width }}px;
+    margin: 0 auto;
+    color: var(--psb-muted);
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.2;
+    font-weight: {{ section.settings.text_weight }};
+  }
+
+  @media screen and (max-width: 749px) {
+    #pureva-stats-bar-{{ section.id }} {
+      padding: var(--psb-mobile-padding-y) {{ section.settings.mobile_padding_x }}px;
+    }
+
+    #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__inner {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+    }
+
+    #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__item {
+      padding: 0 {{ section.settings.mobile_item_padding_x }}px;
+    }
+
+    #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__item:not(:last-child)::after {
+      height: {{ section.settings.mobile_divider_height }}px;
+    }
+
+    #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__number {
+      margin-bottom: {{ section.settings.mobile_number_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_number_size }}px;
+      letter-spacing: -0.4px;
+    }
+
+    #pureva-stats-bar-{{ section.id }} .pureva-stats-bar__text {
+      max-width: {{ section.settings.mobile_text_width }}px;
+      font-size: {{ section.settings.mobile_text_size }}px;
+      line-height: 1.15;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva barre statistiques",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond de la section",
+      "default": "#213B65"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur des chiffres",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Couleur des textes",
+      "default": "#B9C8E0"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Couleur séparateurs",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "divider_opacity",
+      "label": "Opacité séparateurs",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 25,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 700,
+      "max": 1600,
+      "step": 20,
+      "default": 760,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "default": 25,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_x",
+      "label": "Marge gauche/droite",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Nombre de colonnes ordinateur",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "item_padding_x",
+      "label": "Padding horizontal des blocs",
+      "min": 10,
+      "max": 70,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "label": "Hauteur séparateurs",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Taille des chiffres",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "default": 31,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "number_weight",
+      "label": "Graisse des chiffres",
+      "default": "900",
+      "options": [
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "number_bottom_spacing",
+      "label": "Espace chiffre / texte",
+      "min": 0,
+      "max": 18,
+      "step": 1,
+      "default": 7,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille des textes",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Graisse des textes",
+      "default": "500",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Largeur texte",
+      "min": 100,
+      "max": 260,
+      "step": 10,
+      "default": 200,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_x",
+      "label": "Marge gauche/droite mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Nombre de colonnes mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_padding_x",
+      "label": "Padding horizontal blocs mobile",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_divider_height",
+      "label": "Hauteur séparateurs mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 38,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_size",
+      "label": "Taille chiffres mobile",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "default": 21,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_bottom_spacing",
+      "label": "Espace chiffre / texte mobile",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Taille textes mobile",
+      "min": 8,
+      "max": 14,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_width",
+      "label": "Largeur texte mobile",
+      "min": 70,
+      "max": 140,
+      "step": 5,
+      "default": 105,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistique",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Chiffre",
+          "default": "92%"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "cheaper than bottled water per liter"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva barre statistiques",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "92%",
+            "text": "cheaper than bottled water per liter"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "2,000×",
+            "text": "finer filtration than a standard jug"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "150+",
+            "text": "contaminants removed from your water"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

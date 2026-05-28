@@ -1,0 +1,1302 @@
+<section
+  id="pureva-hero-{{ section.id }}"
+  class="pureva-hero-banner"
+  style="
+    --phb-bg: {{ section.settings.section_background }};
+    --phb-text: {{ section.settings.text_color }};
+    --phb-muted: {{ section.settings.subtext_color }};
+    --phb-stars: {{ section.settings.star_color }};
+    --phb-button-bg: {{ section.settings.button_background }};
+    --phb-button-text: {{ section.settings.button_text_color }};
+    --phb-card-bg: {{ section.settings.product_card_background }};
+    --phb-card-text: {{ section.settings.product_card_text_color }};
+    --phb-radius: {{ section.settings.section_radius }}px;
+    --phb-max-width: {{ section.settings.max_width }}px;
+    --phb-desktop-height: {{ section.settings.desktop_height }}px;
+    --phb-mobile-height: {{ section.settings.mobile_height }}px;
+  "
+>
+  <div class="pureva-hero-inner">
+    <picture>
+      {% if section.settings.mobile_image != blank %}
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ section.settings.mobile_image | image_url: width: 900 }}"
+        >
+      {% endif %}
+
+      {% if section.settings.desktop_image != blank %}
+        <img
+          src="{{ section.settings.desktop_image | image_url: width: 2400 }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          class="pureva-hero-image"
+          loading="{% if section.settings.lazy_load %}lazy{% else %}eager{% endif %}"
+        >
+      {% else %}
+        <div class="pureva-hero-placeholder">
+          Ajoute ton image de bannière
+        </div>
+      {% endif %}
+    </picture>
+
+    <div class="pureva-hero-overlay"></div>
+
+    <div class="pureva-hero-content">
+      <div class="pureva-hero-text-block">
+        {% if section.settings.rating_text != blank %}
+          <div class="pureva-hero-rating">
+            <span class="pureva-hero-stars">
+              {% for i in (1..5) %}
+                ★
+              {% endfor %}
+            </span>
+            <span>{{ section.settings.rating_text }}</span>
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h1 class="pureva-hero-heading">
+            {{ section.settings.heading | newline_to_br }}
+          </h1>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <p class="pureva-hero-subheading">
+            {{ section.settings.subheading }}
+          </p>
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+          <a href="{{ section.settings.button_link }}" class="pureva-hero-button">
+            {{ section.settings.button_label }}
+            {% if section.settings.button_arrow != blank %}
+              <span>{{ section.settings.button_arrow }}</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.show_product_card %}
+      <div class="pureva-hero-product-card">
+        {% if section.settings.product_card_image != blank %}
+          <img
+            src="{{ section.settings.product_card_image | image_url: width: 220 }}"
+            alt="{{ section.settings.product_card_title | escape }}"
+            loading="lazy"
+          >
+        {% endif %}
+
+        <div class="pureva-hero-product-info">
+          {% if section.settings.product_card_rating != blank %}
+            <div class="pureva-hero-product-rating">
+              <span>★★★★★</span>
+              <small>{{ section.settings.product_card_rating }}</small>
+            </div>
+          {% endif %}
+
+          {% if section.settings.product_card_title != blank %}
+            <strong>{{ section.settings.product_card_title }}</strong>
+          {% endif %}
+
+          {% if section.settings.product_card_subtitle != blank %}
+            <p>{{ section.settings.product_card_subtitle }}</p>
+          {% endif %}
+
+          {% if section.settings.product_card_price != blank %}
+            <b>{{ section.settings.product_card_price }}</b>
+          {% endif %}
+        </div>
+
+        {% if section.settings.product_card_arrow != blank %}
+          <div class="pureva-hero-product-arrow">
+            {{ section.settings.product_card_arrow }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  #pureva-hero-{{ section.id }} {
+    width: 100%;
+    background: var(--phb-bg);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: {{ section.settings.desktop_outer_padding_y }}px {{ section.settings.desktop_outer_padding_x }}px;
+    overflow: hidden;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-inner {
+    position: relative;
+    width: 100%;
+    max-width: var(--phb-max-width);
+    min-height: var(--phb-desktop-height);
+    margin: 0 auto;
+    border-radius: var(--phb-radius);
+    overflow: hidden;
+    background: #eef2f1;
+  }
+
+  #pureva-hero-{{ section.id }} picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-image,
+  #pureva-hero-{{ section.id }} .pureva-hero-placeholder {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-image {
+    object-fit: cover;
+    object-position: {{ section.settings.desktop_image_position }};
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #123b3e;
+    font-weight: 700;
+    background: #eef2f1;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: {{ section.settings.desktop_overlay }};
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    pointer-events: none;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-content {
+    position: relative;
+    z-index: 2;
+    min-height: var(--phb-desktop-height);
+    display: flex;
+    align-items: {{ section.settings.desktop_vertical_align }};
+    justify-content: {{ section.settings.desktop_horizontal_align }};
+    padding: {{ section.settings.desktop_content_padding_y }}px {{ section.settings.desktop_content_padding_x }}px;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-text-block {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    text-align: {{ section.settings.desktop_text_align }};
+    color: var(--phb-text);
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: {{ section.settings.rating_bottom_spacing }}px;
+    color: var(--phb-text);
+    font-size: {{ section.settings.rating_text_size }}px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-stars {
+    color: var(--phb-stars);
+    letter-spacing: -1px;
+    font-size: {{ section.settings.star_size }}px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-heading {
+    margin: 0;
+    color: var(--phb-text);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: {{ section.settings.heading_line_height | divided_by: 100.0 }};
+    font-weight: {{ section.settings.heading_weight }};
+    letter-spacing: -1.2px;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-subheading {
+    max-width: {{ section.settings.subheading_width }}px;
+    margin: {{ section.settings.subheading_top_spacing }}px auto 0 auto;
+    color: var(--phb-muted);
+    font-size: {{ section.settings.subheading_size }}px;
+    line-height: 1.45;
+    font-weight: {{ section.settings.subheading_weight }};
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: {{ section.settings.button_top_spacing }}px;
+    min-width: {{ section.settings.button_min_width }}px;
+    min-height: {{ section.settings.button_height }}px;
+    padding: 0 {{ section.settings.button_padding_x }}px;
+    border-radius: 999px;
+    background: var(--phb-button-bg);
+    color: var(--phb-button-text);
+    font-size: {{ section.settings.button_text_size }}px;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-button:hover {
+    transform: translateY(-1px);
+    opacity: .92;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-button span {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-card {
+    position: absolute;
+    z-index: 3;
+    left: {{ section.settings.product_card_left }}%;
+    bottom: {{ section.settings.product_card_bottom }}px;
+    width: {{ section.settings.product_card_width }}px;
+    min-height: {{ section.settings.product_card_height }}px;
+    padding: {{ section.settings.product_card_padding }}px;
+    border-radius: {{ section.settings.product_card_radius }}px;
+    background: var(--phb-card-bg);
+    color: var(--phb-card-text);
+    display: grid;
+    grid-template-columns: {{ section.settings.product_card_image_size }}px 1fr {{ section.settings.product_card_arrow_size }}px;
+    gap: 14px;
+    align-items: center;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-card > img {
+    width: {{ section.settings.product_card_image_size }}px;
+    height: {{ section.settings.product_card_image_size }}px;
+    object-fit: cover;
+    border-radius: {{ section.settings.product_card_image_radius }}px;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-rating span {
+    color: var(--phb-stars);
+    letter-spacing: -1px;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-rating small {
+    color: var(--phb-card-text);
+    font-weight: 600;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-info strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: {{ section.settings.product_card_title_size }}px;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-info p,
+  #pureva-hero-{{ section.id }} .pureva-hero-product-info b {
+    display: block;
+    margin: 0;
+    font-size: {{ section.settings.product_card_text_size }}px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  #pureva-hero-{{ section.id }} .pureva-hero-product-arrow {
+    width: {{ section.settings.product_card_arrow_size }}px;
+    height: {{ section.settings.product_card_arrow_size }}px;
+    border-radius: 999px;
+    background: var(--phb-button-bg);
+    color: var(--phb-button-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+  }
+
+  @media screen and (max-width: 749px) {
+    #pureva-hero-{{ section.id }} {
+      padding: {{ section.settings.mobile_outer_padding_y }}px {{ section.settings.mobile_outer_padding_x }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-inner {
+      min-height: var(--phb-mobile-height);
+      border-radius: {{ section.settings.mobile_section_radius }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-image {
+      object-position: {{ section.settings.mobile_image_position }};
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-overlay {
+      background: {{ section.settings.mobile_overlay }};
+      opacity: {{ section.settings.mobile_overlay_opacity | divided_by: 100.0 }};
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-content {
+      min-height: var(--phb-mobile-height);
+      justify-content: {{ section.settings.mobile_horizontal_align }};
+      align-items: {{ section.settings.mobile_vertical_align }};
+      padding: {{ section.settings.mobile_content_padding_y }}px {{ section.settings.mobile_content_padding_x }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-text-block {
+      max-width: {{ section.settings.mobile_content_width }}px;
+      text-align: {{ section.settings.mobile_text_align }};
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-rating {
+      gap: 7px;
+      margin-bottom: {{ section.settings.mobile_rating_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_rating_text_size }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-stars {
+      font-size: {{ section.settings.mobile_star_size }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: {{ section.settings.mobile_heading_line_height | divided_by: 100.0 }};
+      letter-spacing: -0.8px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-subheading {
+      max-width: {{ section.settings.mobile_subheading_width }}px;
+      margin-top: {{ section.settings.mobile_subheading_top_spacing }}px;
+      font-size: {{ section.settings.mobile_subheading_size }}px;
+      line-height: 1.35;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-button {
+      width: {{ section.settings.mobile_button_width }}%;
+      min-width: 0;
+      min-height: {{ section.settings.mobile_button_height }}px;
+      margin-top: {{ section.settings.mobile_button_top_spacing }}px;
+      padding: 0 {{ section.settings.mobile_button_padding_x }}px;
+      font-size: {{ section.settings.mobile_button_text_size }}px;
+    }
+
+    #pureva-hero-{{ section.id }} .pureva-hero-product-card {
+      display: {% if section.settings.show_product_card_mobile %}grid{% else %}none{% endif %};
+      left: {{ section.settings.mobile_product_card_left }}px;
+      right: {{ section.settings.mobile_product_card_right }}px;
+      bottom: {{ section.settings.mobile_product_card_bottom }}px;
+      width: auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva bannière hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texte alternatif image",
+      "default": "Filtre Pureva installé sur un robinet"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "Position image desktop",
+      "default": "center center",
+      "options": [
+        { "value": "center center", "label": "Centre" },
+        { "value": "center top", "label": "Centre haut" },
+        { "value": "center bottom", "label": "Centre bas" },
+        { "value": "left center", "label": "Gauche" },
+        { "value": "right center", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Position image mobile",
+      "default": "center center",
+      "options": [
+        { "value": "center center", "label": "Centre" },
+        { "value": "center top", "label": "Centre haut" },
+        { "value": "center bottom", "label": "Centre bas" },
+        { "value": "left center", "label": "Gauche" },
+        { "value": "right center", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "lazy_load",
+      "label": "Charger l’image en lazy-load",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Texte"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Texte note",
+      "default": "Excellent pour +40.000 utilisateurs"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Transformez votre robinet\nen source d’eau saine"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Le filtre à eau Pureva protège votre santé des polluants et améliore le goût de l’eau"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte bouton",
+      "default": "Commencer dès 39,90€"
+    },
+    {
+      "type": "text",
+      "id": "button_arrow",
+      "label": "Icône bouton",
+      "default": "→"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien bouton"
+    },
+    {
+      "type": "header",
+      "content": "Carte produit flottante"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_card",
+      "label": "Afficher la carte produit sur desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_card_mobile",
+      "label": "Afficher la carte produit sur mobile",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "product_card_image",
+      "label": "Image carte produit"
+    },
+    {
+      "type": "text",
+      "id": "product_card_rating",
+      "label": "Note carte produit",
+      "default": "+800 avis vérifiés"
+    },
+    {
+      "type": "text",
+      "id": "product_card_title",
+      "label": "Titre carte produit",
+      "default": "Filtre à eau Pureva One"
+    },
+    {
+      "type": "text",
+      "id": "product_card_subtitle",
+      "label": "Sous-titre carte produit",
+      "default": "Cartouches + Filtre"
+    },
+    {
+      "type": "text",
+      "id": "product_card_price",
+      "label": "Prix carte produit",
+      "default": "à partir de 39,90€"
+    },
+    {
+      "type": "text",
+      "id": "product_card_arrow",
+      "label": "Icône carte produit",
+      "default": "↗"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond extérieur",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#173D3F"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Sous-texte",
+      "default": "#173D3F"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Étoiles",
+      "default": "#00B67A"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond bouton",
+      "default": "#00494C"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "product_card_background",
+      "label": "Fond carte produit",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "product_card_text_color",
+      "label": "Texte carte produit",
+      "default": "#173D3F"
+    },
+    {
+      "type": "color_background",
+      "id": "desktop_overlay",
+      "label": "Overlay desktop",
+      "default": "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 52%, rgba(255,255,255,0.76) 100%)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité overlay desktop",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "color_background",
+      "id": "mobile_overlay",
+      "label": "Overlay mobile",
+      "default": "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.38) 42%, rgba(255,255,255,0.78) 100%)"
+    },
+    {
+      "type": "range",
+      "id": "mobile_overlay_opacity",
+      "label": "Opacité overlay mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions desktop"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 1000,
+      "max": 2600,
+      "step": 20,
+      "default": 2600,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Hauteur desktop",
+      "min": 420,
+      "max": 900,
+      "step": 10,
+      "default": 620,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi desktop",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_outer_padding_y",
+      "label": "Marge extérieure haut/bas",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_outer_padding_x",
+      "label": "Marge extérieure gauche/droite",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "desktop_horizontal_align",
+      "label": "Position horizontale contenu desktop",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_vertical_align",
+      "label": "Position verticale contenu desktop",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Bas" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_align",
+      "label": "Alignement texte desktop",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_padding_y",
+      "label": "Padding vertical contenu desktop",
+      "min": 20,
+      "max": 160,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_padding_x",
+      "label": "Padding horizontal contenu desktop",
+      "min": 20,
+      "max": 240,
+      "step": 5,
+      "default": 190,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur contenu desktop",
+      "min": 360,
+      "max": 820,
+      "step": 10,
+      "default": 620,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie desktop"
+    },
+    {
+      "type": "range",
+      "id": "rating_text_size",
+      "label": "Taille texte note",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Taille étoiles",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "rating_bottom_spacing",
+      "label": "Espace note / titre",
+      "min": 10,
+      "max": 45,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 32,
+      "max": 82,
+      "step": 1,
+      "default": 47,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Interligne titre",
+      "min": 85,
+      "max": 130,
+      "step": 1,
+      "default": 108,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre",
+      "default": "800",
+      "options": [
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" },
+        { "value": "900", "label": "Black" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Taille sous-titre",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_width",
+      "label": "Largeur sous-titre",
+      "min": 300,
+      "max": 760,
+      "step": 10,
+      "default": 620,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "subheading_weight",
+      "label": "Graisse sous-titre",
+      "default": "500",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "subheading_top_spacing",
+      "label": "Espace titre / sous-titre",
+      "min": 10,
+      "max": 45,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_top_spacing",
+      "label": "Espace sous-titre / bouton",
+      "min": 18,
+      "max": 70,
+      "step": 1,
+      "default": 38,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_min_width",
+      "label": "Largeur minimum bouton",
+      "min": 150,
+      "max": 360,
+      "step": 5,
+      "default": 270,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Hauteur bouton",
+      "min": 42,
+      "max": 78,
+      "step": 1,
+      "default": 58,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Padding horizontal bouton",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "default": 34,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Taille texte bouton",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Carte produit desktop"
+    },
+    {
+      "type": "range",
+      "id": "product_card_left",
+      "label": "Position carte depuis la gauche",
+      "min": 0,
+      "max": 70,
+      "step": 1,
+      "default": 19,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "product_card_bottom",
+      "label": "Position carte depuis le bas",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "default": 65,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_width",
+      "label": "Largeur carte",
+      "min": 260,
+      "max": 460,
+      "step": 10,
+      "default": 360,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_height",
+      "label": "Hauteur minimum carte",
+      "min": 80,
+      "max": 160,
+      "step": 5,
+      "default": 110,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_padding",
+      "label": "Padding carte",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_radius",
+      "label": "Arrondi carte",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_image_size",
+      "label": "Taille image carte",
+      "min": 55,
+      "max": 100,
+      "step": 1,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_image_radius",
+      "label": "Arrondi image carte",
+      "min": 0,
+      "max": 18,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_arrow_size",
+      "label": "Taille rond flèche",
+      "min": 24,
+      "max": 46,
+      "step": 1,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_title_size",
+      "label": "Taille titre carte",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_card_text_size",
+      "label": "Taille texte carte",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Hauteur mobile",
+      "min": 480,
+      "max": 850,
+      "step": 10,
+      "default": 580,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_radius",
+      "label": "Arrondi mobile",
+      "min": 0,
+      "max": 36,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_outer_padding_y",
+      "label": "Marge extérieure haut/bas mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_outer_padding_x",
+      "label": "Marge extérieure gauche/droite mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "mobile_horizontal_align",
+      "label": "Position horizontale contenu mobile",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_align",
+      "label": "Position verticale contenu mobile",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Bas" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Alignement texte mobile",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_width",
+      "label": "Largeur contenu mobile",
+      "min": 280,
+      "max": 420,
+      "step": 5,
+      "default": 390,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_y",
+      "label": "Padding vertical contenu mobile",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_x",
+      "label": "Padding horizontal contenu mobile",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_rating_text_size",
+      "label": "Taille note mobile",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_star_size",
+      "label": "Taille étoiles mobile",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_rating_bottom_spacing",
+      "label": "Espace note / titre mobile",
+      "min": 10,
+      "max": 35,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 28,
+      "max": 48,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "label": "Interligne titre mobile",
+      "min": 90,
+      "max": 130,
+      "step": 1,
+      "default": 108,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_size",
+      "label": "Taille sous-titre mobile",
+      "min": 12,
+      "max": 19,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_width",
+      "label": "Largeur sous-titre mobile",
+      "min": 260,
+      "max": 390,
+      "step": 5,
+      "default": 355,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_top_spacing",
+      "label": "Espace titre / sous-titre mobile",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_width",
+      "label": "Largeur bouton mobile",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "default": 88,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_height",
+      "label": "Hauteur bouton mobile",
+      "min": 46,
+      "max": 70,
+      "step": 1,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_x",
+      "label": "Padding bouton mobile",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_text_size",
+      "label": "Taille texte bouton mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_top_spacing",
+      "label": "Espace sous-titre / bouton mobile",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_card_left",
+      "label": "Carte mobile gauche",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_card_right",
+      "label": "Carte mobile droite",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_card_bottom",
+      "label": "Carte mobile bas",
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "default": 25,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva bannière hero"
+    }
+  ]
+}
+{% endschema %}

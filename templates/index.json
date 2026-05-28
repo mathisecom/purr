@@ -754,7 +754,7 @@
         "stat_2_text": "du plastique seulement est recyclé",
         "stat_3_number": "245 000",
         "stat_3_text": "microplastiques ingérés par litre d’eau en bouteille",
-        "brand_logo": "shopify://shop_images/gempages_567015059822216273-4a378b6f-1c48-4f81-b762-e9f1e23f4ce9.svg",
+        "brand_logo": "shopify://shop_images/Puure_logo_white.svg",
         "brand_name": "OhPur.",
         "brand_subtitle": "Comparaison",
         "column_2_icon": "",
@@ -762,10 +762,10 @@
         "column_3_icon": "",
         "column_3_title": "Bouteilles en plastique",
         "bottom_note": "",
-        "section_background": "#030d4e",
+        "section_background": "#08163d",
         "text_color": "#ffffff",
         "muted_text_color": "#8ea2cf",
-        "pill_background": "#1d2b70",
+        "pill_background": "#08163d",
         "table_background": "#ffffff",
         "main_column_background": "#0d2949",
         "main_column_text": "#ffffff",
@@ -805,6 +805,7 @@
         "layer_pYPEeT": {
           "type": "layer",
           "settings": {
+            "image": "shopify://shop_images/Fabrikk2.jpg",
             "image_alt": "Couche de filtration",
             "step": "Étape 1",
             "title": "Fibres non tissées",
@@ -815,6 +816,7 @@
         "layer_ct6xmt": {
           "type": "layer",
           "settings": {
+            "image": "shopify://shop_images/chaux-calcinee-magnesienne1280x1707.jpg",
             "image_alt": "Couche de filtration",
             "step": "Étape 2",
             "title": "Minéraux naturels",
@@ -825,6 +827,7 @@
         "layer_9LbKCc": {
           "type": "layer",
           "settings": {
+            "image": "shopify://shop_images/Coconut-Based-Granular-Activated-Carbon-1024x850.webp",
             "image_alt": "Couche de filtration",
             "step": "Étape 3",
             "title": "Charbon actif",
@@ -835,6 +838,7 @@
         "layer_4BcKBn": {
           "type": "layer",
           "settings": {
+            "image": "shopify://shop_images/DTS_Our_Summer_Daniel_Faro_Photos_ID5819.jpg",
             "image_alt": "Couche de filtration",
             "step": "Étape 4",
             "title": "Céramique fine",
@@ -845,6 +849,7 @@
         "layer_P7QeTU": {
           "type": "layer",
           "settings": {
+            "image": "shopify://shop_images/calcium-alkaline-ceramic-balls35239281283.webp",
             "image_alt": "Couche de filtration",
             "step": "Étape 5",
             "title": "Finition naturelle",

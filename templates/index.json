@@ -279,6 +279,61 @@
         "mobile_section_padding_y": 0
       }
     },
+    "press_ppPgea": {
+      "type": "press",
+      "blocks": {
+        "quote_Utifmx": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Le_Monde_svg.avif",
+            "logo_width": 100,
+            "author": "Publié le 23 janvier 2025",
+            "content": "PFAS : l’eau potable en France est massivement contaminée par les « polluants éternels »",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "quote_zfDCjQ": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Franceinfo_svg.webp",
+            "logo_width": 140,
+            "author": "Publié le 18/11/2024 22:20",
+            "content": "Pesticides : un rapport alerte sur la dégradation de la qualité de l'eau potable",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "quote_NeETFY": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/images.avif",
+            "logo_width": 125,
+            "author": "Publié le 27 janvier 2025",
+            "content": "Les bouteilles d’eau minérale françaises largement contaminées par les microplastiques",
+            "show_rating": false,
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "quote_Utifmx",
+        "quote_zfDCjQ",
+        "quote_NeETFY"
+      ],
+      "name": "Press",
+      "settings": {
+        "full_width": true,
+        "content_size": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
     "avisclients_CxRbib": {
       "type": "avisclients",
       "blocks": {
@@ -691,16 +746,16 @@
         "card_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7\"></path><path d=\"M9 7h8v8\"></path></svg>",
         "prev_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"></path></svg>",
         "next_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg>",
-        "section_background": "#F7F7F8",
-        "text_color": "#061A44",
+        "section_background": "#f7f7f8",
+        "text_color": "#061a44",
         "muted_text_color": "#728096",
-        "badge_background": "#E9EEFF",
-        "badge_text_color": "#061A44",
-        "card_background": "#FFFFFF",
-        "card_text_color": "#061A44",
-        "border_color": "#D7DEE9",
-        "button_background": "#FFFFFF",
-        "button_text_color": "#061A44",
+        "badge_background": "#e9eeff",
+        "badge_text_color": "#061a44",
+        "card_background": "#ffffff",
+        "card_text_color": "#061a44",
+        "border_color": "#d7dee9",
+        "button_background": "#ffffff",
+        "button_text_color": "#061a44",
         "certification_background": "rgba(255,255,255,0.35)",
         "max_width": 1280,
         "desktop_padding_y": 70,
@@ -948,6 +1003,7 @@
     "logoscroll_BjQiDb",
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
+    "press_ppPgea",
     "avisclients_CxRbib",
     "infosproduit_dQxKfJ",
     "tabsvs_7myebi",

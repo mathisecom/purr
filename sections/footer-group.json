@@ -113,12 +113,21 @@
             "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
             "enable_follow_on_shop": false
           }
+        },
+        "text_q873kD": {
+          "type": "text",
+          "settings": {
+            "title": "Notre Mission",
+            "content": "<p>Essentielle à la vie, l’eau est devenue une source de stress, de contaminations et d’inégalités. Chez , nous pensons que personne ne devrait jamais avoir à douter de la qualité de l’eau qui sort de son robinet.</p>",
+            "enable_follow_on_shop": true
+          }
         }
       },
       "block_order": [
         "newsletter",
         "links",
-        "text"
+        "text",
+        "text_q873kD"
       ],
       "settings": {
         "show_social_media": true,

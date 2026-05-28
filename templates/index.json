@@ -94,21 +94,21 @@
           "type": "stat",
           "settings": {
             "number": "92%",
-            "text": "cheaper than bottled water per liter"
+            "text": "Fois moins cher que l'eau en bouteille, au litre"
           }
         },
         "stat_zzAPe4": {
           "type": "stat",
           "settings": {
             "number": "2,000×",
-            "text": "finer filtration than a standard jug"
+            "text": "Plus efficace qu'une carafe filtrante classique"
           }
         },
         "stat_mVrcKq": {
           "type": "stat",
           "settings": {
             "number": "150+",
-            "text": "contaminants removed from your water"
+            "text": "contaminants éliminés de votre eau"
           }
         }
       },

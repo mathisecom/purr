@@ -41,9 +41,14 @@
     "checkout_button_color": "#1a1a1a",
     "content_for_index": [],
     "blocks": {
+      "9696655121035291526": {
+        "type": "shopify://apps/rapi/blocks/app-embed/99617c17-a32b-4e70-a883-7a155610d032",
+        "disabled": false,
+        "settings": {}
+      },
       "6478312753674380289": {
         "type": "shopify://apps/gempages-builder/blocks/embed-gp-script-head/20b379d4-1b20-474c-a6ca-665c331919f3",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     }

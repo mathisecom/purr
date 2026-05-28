@@ -1,0 +1,1278 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "logoscroll_BjQiDb": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_mbJBHm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Figma_Image_7.avif",
+            "url": ""
+          }
+        },
+        "image_ekttxE": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Figma_Image_8.png",
+            "url": ""
+          }
+        },
+        "image_i7eihz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/France_3_1.avif",
+            "url": ""
+          }
+        },
+        "image_a6Wb4x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Les_Echos_8d7091b0-5c03-45ed-b5ac-4f0f3d6cce04.avif",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_mbJBHm",
+        "image_ekttxE",
+        "image_i7eihz",
+        "image_a6Wb4x"
+      ],
+      "disabled": true,
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 16,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 68,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#ffffff",
+        "layout_border_color": "#121212",
+        "background_color": "#ffffff",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "featured_product_CDz7jQ": {
+      "type": "featured-product",
+      "blocks": {
+        "liquid_V4tcn9": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"pureva-rating-line\">\n  <div class=\"pureva-stars\" aria-label=\"5 étoiles sur 5\">\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n  </div>\n\n  <div class=\"pureva-rating-text\">\n    <strong>40 000</strong> utilisateurs conquis\n  </div>\n</div>\n\n<style>\n  .pureva-rating-line {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .pureva-stars {\n    display: flex;\n    align-items: center;\n    gap: 1px;\n    color: #00b67a;\n    font-size: 22px;\n    line-height: 1;\n    letter-spacing: -1px;\n  }\n\n  .pureva-stars span {\n    display: inline-block;\n    line-height: 1;\n  }\n\n  .pureva-rating-text {\n    font-size: 13px;\n    line-height: 1;\n    font-weight: 400;\n    color: #000000;\n    white-space: nowrap;\n  }\n\n  .pureva-rating-text strong {\n    font-weight: 700;\n  }\n\n  @media screen and (max-width: 749px) {\n    .pureva-rating-line {\n      gap: 7px;\n    }\n\n    .pureva-stars {\n      font-size: 21px;\n    }\n\n    .pureva-rating-text {\n      font-size: 13px;\n    }\n  }\n</style>"
+          }
+        },
+        "liquid_3EHbrb": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"pureva-product-header\">\n  <div class=\"pureva-title-row\">\n    <h1 class=\"pureva-product-title\">Filtre Puure®</h1>\n    <div class=\"pureva-daily-price\">Dès <strong>0,27 €</strong>/jour</div>\n  </div>\n\n  <p class=\"pureva-product-subtitle\">\n    Transformez votre robinet en source d’eau pure\n  </p>\n</div>\n\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');\n\n  .pureva-product-header {\n    width: 100%;\n    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .pureva-title-row {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: 14px;\n    width: 100%;\n  }\n\n  .pureva-product-title {\n    margin: 0;\n    padding: 0;\n    font-size: 24px;\n    line-height: 1.05;\n    font-weight: 600;\n    letter-spacing: -0.3px;\n    color: #000000;\n  }\n\n  .pureva-daily-price {\n    margin-top: 5px;\n    font-size: 14px;\n    line-height: 1.1;\n    font-weight: 400;\n    white-space: nowrap;\n    color: #000000;\n    text-align: right;\n  }\n\n  .pureva-daily-price strong {\n    font-weight: 600;\n  }\n\n  .pureva-product-subtitle {\n    margin: 5px 0 0 0;\n    padding: 0;\n    font-size: 13px;\n    line-height: 1.25;\n    font-weight: 400;\n    color: #000000;\n  }\n\n  @media screen and (max-width: 749px) {\n    .pureva-product-title {\n      font-size: 25px;\n    }\n\n    .pureva-daily-price {\n      margin-top: 5px;\n      font-size: 13px;\n    }\n\n    .pureva-product-subtitle {\n      font-size: 12.5px;\n    }\n  }\n</style>"
+          }
+        },
+        "liquid_ezeUwP": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"custom-benefits-list\">\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Une eau plus pure, un goût meilleur</span>\n  </div>\n\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Certifié en laboratoires indépendants</span>\n  </div>\n\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Compatible avec 99% des robinets</span>\n  </div>\n</div>\n\n<style>\n  .custom-benefits-list {\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    font-family: Instrument Sans, sans-serif;\n    font-size: 13px;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .custom-benefit-item {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    line-height: 1.2;\n  }\n\n  .custom-check-icon {\n    width: 18px;\n    height: 18px;\n    min-width: 18px;\n    border-radius: 50%;\n    background-color: #d8f5f6;\n    color: #111111;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n  }\n</style>"
+          }
+        },
+        "price_kMemri": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "variant_picker_qLYhm6": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_WyV4nV": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_hzg446": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_gifM4f": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_eqMLbV\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_77mC7N\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <style>\n  .payment-icons__list {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    list-style: none;\n    padding: 0;\n    margin: 16px 0;\n  }\n  .payment-icons__item {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    line-height: 0;\n  }\n  .payment-icons__item svg {\n    display: block;\n    width: 38px;\n    height: 24px;\n  }\n  @media (max-width: 480px) {\n    .payment-icons__list {\n      gap: 6px;\n    }\n    .payment-icons__item svg {\n      width: 34px;\n      height: 22px;\n    }\n  }\n</style>\n\n<ul class=\"payment-icons__list\" role=\"list\">\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"pi-american_express\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-american_express\">American Express</title><path fill=\"#000\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z\" opacity=\".07\"></path><path fill=\"#006FCF\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z\"></path><path fill=\"#FFF\" d=\"M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z\"></path><path fill=\"#006FCF\" d=\"M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z\"></path><path fill=\"#006FCF\" d=\"m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z\"></path><path fill=\"#FFF\" d=\"M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z\"></path><path fill=\"#006FCF\" d=\"m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z\"></path><path fill=\"#006FCF\" d=\"M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" x=\"0\" y=\"0\" width=\"38\" height=\"24\" viewBox=\"0 0 165.521 105.965\" xml:space=\"preserve\" aria-labelledby=\"pi-apple_pay\"><title id=\"pi-apple_pay\">Apple Pay</title><path fill=\"#000\" d=\"M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z\"></path><path fill=\"#FFF\" d=\"M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875\"></path><g><g><path fill=\"#000\" d=\"M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858\"></path><path fill=\"#000\" d=\"M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048\"></path></g><g><path fill=\"#000\" d=\"M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z\"></path><path fill=\"#000\" d=\"M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z\"></path><path fill=\"#000\" d=\"M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z\"></path></g></g></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" aria-labelledby=\"pi-bancontact\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-bancontact\">Bancontact</title><path fill=\"#000\" opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M4.703 3.077h28.594c.139 0 .276.023.405.068.128.045.244.11.343.194a.9.9 0 0 1 .229.29c.053.107.08.223.08.34V20.03a.829.829 0 0 1-.31.631 1.164 1.164 0 0 1-.747.262H4.703a1.23 1.23 0 0 1-.405-.068 1.09 1.09 0 0 1-.343-.194.9.9 0 0 1-.229-.29.773.773 0 0 1-.08-.34V3.97c0-.118.027-.234.08-.342a.899.899 0 0 1 .23-.29c.098-.082.214-.148.342-.193a1.23 1.23 0 0 1 .405-.068Z\" fill=\"#fff\"></path><path d=\"M6.38 18.562v-3.077h1.125c.818 0 1.344.259 1.344.795 0 .304-.167.515-.401.638.338.132.536.387.536.734 0 .62-.536.91-1.37.91H6.38Zm.724-1.798h.537c.328 0 .468-.136.468-.387 0-.268-.255-.356-.599-.356h-.406v.743Zm0 1.262h.448c.438 0 .693-.093.693-.383 0-.286-.219-.404-.63-.404h-.51v.787Zm3.284.589c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.156.002.31.014.464.035v-.105c0-.269-.183-.396-.531-.396a2.128 2.128 0 0 0-.688.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.767 0 1.147.343 1.147.936v1.222c-.214.093-.615.194-1.136.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.947.947 0 0 0 .365-.061Zm1.204.444v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.167-.444-.484-.444a1.267 1.267 0 0 0-.459.079v1.719h-.713Zm4.886-2.167-.135.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.652.25-.652.664 0 .453.24.685.688.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.553 2.22c-.802 0-1.302-.47-1.302-1.178 0-.704.5-1.174 1.302-1.174.807 0 1.297.47 1.297 1.173 0 .708-.49 1.179-1.297 1.179Zm0-.502c.37 0 .563-.259.563-.677 0-.413-.193-.672-.563-.672-.364 0-.568.26-.568.672 0 .418.204.677.568.677Zm1.713.449v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.166-.444-.484-.444a1.268 1.268 0 0 0-.459.079v1.719h-.713Zm3.996.053c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.355v-.488l.718-.03v.518h.578v.484h-.578v.94c0 .256.125.374.36.374.093 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Zm1.814 0c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.155.002.31.014.464.035v-.105c0-.269-.183-.396-.532-.396a2.128 2.128 0 0 0-.687.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.766 0 1.146.343 1.146.936v1.222c-.213.093-.614.194-1.135.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.946.946 0 0 0 .365-.061Zm3.157-1.723-.136.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.651.25-.651.664 0 .453.24.685.687.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.58 2.22c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.354v-.488l.72-.03v.518h.577v.484h-.578v.94c0 .256.125.374.36.374.092 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Z\" fill=\"#1E3764\"></path><path d=\"M11.394 13.946c3.803 0 5.705-2.14 7.606-4.28H6.38v4.28h5.014Z\" fill=\"url(#pi-bancontact-a)\"></path><path d=\"M26.607 5.385c-3.804 0-5.705 2.14-7.607 4.28h12.62v-4.28h-5.013Z\" fill=\"url(#pi-bancontact-b)\"></path><defs><linearGradient id=\"pi-bancontact-a\" x1=\"8.933\" y1=\"12.003\" x2=\"17.734\" y2=\"8.13\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#005AB9\"></stop><stop offset=\"1\" stop-color=\"#1E3764\"></stop></linearGradient><linearGradient id=\"pi-bancontact-b\" x1=\"19.764\" y1=\"10.037\" x2=\"29.171\" y2=\"6.235\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FBA900\"></stop><stop offset=\"1\" stop-color=\"#FFD800\"></stop></linearGradient></defs></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-maestro\"><title id=\"pi-maestro\">Maestro</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#00A2E5\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#7375CF\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-master\"><title id=\"pi-master\">Mastercard</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#F79E1B\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#FF5F00\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\" aria-labelledby=\"pi-shopify_pay\"><title id=\"pi-shopify_pay\">Shop Pay</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\" fill=\"#000\"></path><path d=\"M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z\" fill=\"#5A31F4\"></path><path d=\"M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z\" fill=\"#fff\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-visa\"><title id=\"pi-visa\">Visa</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z\" fill=\"#142688\"></path></svg>\n  </li>\n</ul>\n            </div></div>\n            </div></div>"
+          }
+        },
+        "collapsible_text_TPbMhM": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Est-ce compatible avec mon robinet ?",
+            "content": "<p><strong>Puure® est compatible avec environ 99 % des robinets équipés d'un aérateur circulaire amovible.</strong></p><p>Votre commande inclut 3 adaptateurs pour différentes tailles de robinet.</p><p>Vous n'êtes pas sûr(e) que ça s'adapte au vôtre ? Consultez notre guide d'adaptateurs ici avant de commander.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_jWPDJz": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Que contient le kit ?",
+            "content": "<p><strong>Votre Kit de démarrage Puure® comprend :</strong></p><p>✔ 1x Système de filtration Puure® 3.0 (acier inoxydable 304 qualité médicale)</p><p>✔ 2x Cartouches Puure® 3.0 (6 mois d'autonomie)</p><p>✔ 3x Adaptateurs universels (compatible 99 % des robinets)</p><p>✔ 1x Guide d'installation</p><p>✔ 1x Carte de rappel de remplacement de cartouche</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_mD7JdC": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "L'installation est-elle facile ?",
+            "content": "<p><strong>Oui — environ 30 secondes, sans aucun outil.</strong></p><p>Dévissez simplement l'aérateur de votre robinet, vissez l'adaptateur Puure®, puis clipsez le système de filtration. C'est tout.</p><p>Compatible avec 99 % des robinets standards équipés d'un aérateur amovible. Votre kit comprend 3 tailles d'adaptateur pour un ajustement parfait.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "liquid_V4tcn9",
+        "liquid_3EHbrb",
+        "liquid_ezeUwP",
+        "price_kMemri",
+        "variant_picker_qLYhm6",
+        "quantity_selector_WyV4nV",
+        "buy_buttons_hzg446",
+        "liquid_gifM4f",
+        "collapsible_text_TPbMhM",
+        "collapsible_text_jWPDJz",
+        "collapsible_text_mD7JdC"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "full_width": true,
+        "product": "pomme-de-douche-clear",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "marquee_eAYBzE": {
+      "type": "marquee",
+      "blocks": {
+        "item_7qENxt": {
+          "type": "item",
+          "settings": {
+            "icon": "◷",
+            "text": "Installation en moins de 5 min"
+          }
+        },
+        "item_zGYBfD": {
+          "type": "item",
+          "settings": {
+            "icon": "🔧",
+            "text": "Compatible avec 99% des robinets"
+          }
+        },
+        "item_BfVNKH": {
+          "type": "item",
+          "settings": {
+            "icon": "⚗",
+            "text": "Filtration certifiée Eurofins"
+          }
+        },
+        "item_YdkBif": {
+          "type": "item",
+          "settings": {
+            "icon": "€",
+            "text": "Jusqu'à 600€ économisés par an"
+          }
+        },
+        "item_QUrhxj": {
+          "type": "item",
+          "settings": {
+            "icon": "💧",
+            "text": "Eau filtrée en 0,1 micron"
+          }
+        }
+      },
+      "block_order": [
+        "item_7qENxt",
+        "item_zGYBfD",
+        "item_BfVNKH",
+        "item_YdkBif",
+        "item_QUrhxj"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "speed": 28,
+        "direction": "left",
+        "pause_on_hover": true,
+        "section_background": "#ffffff",
+        "pill_background": "#08163d",
+        "text_color": "#ffffff",
+        "icon_color": "#ffffff",
+        "font_size": 14,
+        "font_weight": "400",
+        "pill_radius": 40,
+        "pill_padding_y": 14,
+        "pill_padding_x": 22,
+        "gap": 18,
+        "section_padding_y": 10,
+        "mobile_font_size": 13,
+        "mobile_pill_padding_y": 9,
+        "mobile_pill_padding_x": 18,
+        "mobile_section_padding_y": 0
+      }
+    },
+    "press_ppPgea": {
+      "type": "press",
+      "blocks": {
+        "quote_Utifmx": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Le_Monde_svg.avif",
+            "logo_width": 100,
+            "author": "Publié le 23 janvier 2025",
+            "content": "PFAS : l’eau potable en France est massivement contaminée par les « polluants éternels »",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "quote_zfDCjQ": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Franceinfo_svg.webp",
+            "logo_width": 140,
+            "author": "Publié le 18/11/2024 22:20",
+            "content": "Pesticides : un rapport alerte sur la dégradation de la qualité de l'eau potable",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "quote_NeETFY": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/images.avif",
+            "logo_width": 125,
+            "author": "Publié le 27 janvier 2025",
+            "content": "Les bouteilles d’eau minérale françaises largement contaminées par les microplastiques",
+            "show_rating": false,
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "quote_Utifmx",
+        "quote_zfDCjQ",
+        "quote_NeETFY"
+      ],
+      "name": "Press",
+      "settings": {
+        "full_width": true,
+        "content_size": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "whychoose_7AXKL8": {
+      "type": "whychoose",
+      "blocks": {
+        "benefit_UDy6zN": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🧬",
+            "title": "Efficace",
+            "highlight": "sur 70+ contaminants",
+            "text": "Calcaire, fluor, chlore, métaux lourds, PFAS, pesticides, microplastiques et bien plus encore."
+          }
+        },
+        "benefit_xxzgeM": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🚰",
+            "title": "adapté",
+            "highlight": "pour 100% des robinets",
+            "text": "Installez-le vous-même en seulement 10 minutes sur une large gamme de robinets."
+          }
+        },
+        "benefit_PnEAxW": {
+          "type": "benefit",
+          "settings": {
+            "icon": "😋",
+            "title": "Sublime",
+            "highlight": "le goût de l’eau",
+            "text": "Prouvé par des tests à l’aveugle : 9 utilisateurs sur 10 confirment une eau plus fraîche et agréable à boire."
+          }
+        },
+        "benefit_CKaDmV": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⛰️",
+            "title": "Préserve",
+            "highlight": "Les minéraux essentiels",
+            "text": "Conserve les minéraux essentiels de votre eau du robinet tout en la rendant plus légère et plus fraîche."
+          }
+        },
+        "benefit_beEPFy": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌍",
+            "title": "Remplace",
+            "highlight": "jusqu’à 2000 bouteilles en plastique",
+            "text": "Réduisez les déchets plastiques et économisez entre 1500 € et 2000 € chaque année !"
+          }
+        },
+        "benefit_wyfci9": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔬",
+            "title": "Certifié",
+            "highlight": "par des laboratoires indépendants",
+            "text": "Entièrement testé et conforme aux normes Européennes garantissant une filtration de l’eau optimale pour votre sécurité."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_UDy6zN",
+        "benefit_xxzgeM",
+        "benefit_PnEAxW",
+        "benefit_CKaDmV",
+        "benefit_beEPFy",
+        "benefit_wyfci9"
+      ],
+      "name": "Pureva pourquoi choisir",
+      "settings": {
+        "heading": "Pourquoi choisir Puure® ?",
+        "section_background": "#fdfdfd",
+        "text_color": "#102652",
+        "muted_text_color": "#102652",
+        "highlight_background": "#eeff1f",
+        "highlight_text_color": "#102652",
+        "divider_color": "#102652",
+        "mobile_card_background": "rgba(255,255,255,0)",
+        "max_width": 1320,
+        "desktop_padding_y": 20,
+        "desktop_padding_x": 20,
+        "columns_desktop": 6,
+        "item_min_height": 230,
+        "item_padding_x": 24,
+        "divider_style": "dotted",
+        "divider_top": 38,
+        "divider_height": 220,
+        "heading_size": 28,
+        "heading_weight": "800",
+        "heading_bottom_spacing": 55,
+        "icon_box_height": 55,
+        "icon_size": 42,
+        "icon_bottom_spacing": 15,
+        "title_size": 28,
+        "title_weight": "800",
+        "title_bottom_spacing": 14,
+        "highlight_size": 14,
+        "highlight_weight": "800",
+        "highlight_padding_y": 2,
+        "highlight_padding_x": 4,
+        "highlight_bottom_spacing": 13,
+        "text_size": 13,
+        "text_weight": "400",
+        "text_width": 180,
+        "mobile_slider": true,
+        "mobile_padding_y": 25,
+        "mobile_padding_x": 15,
+        "columns_mobile": "1",
+        "mobile_card_width": 270,
+        "mobile_slider_gap": 16,
+        "mobile_grid_gap": 22,
+        "mobile_card_radius": 16,
+        "mobile_item_min_height": 250,
+        "mobile_item_padding_y": 22,
+        "mobile_item_padding_x": 20,
+        "mobile_heading_size": 27,
+        "mobile_heading_bottom_spacing": 35,
+        "mobile_icon_box_height": 56,
+        "mobile_icon_size": 42,
+        "mobile_icon_bottom_spacing": 14,
+        "mobile_title_size": 26,
+        "mobile_title_bottom_spacing": 12,
+        "mobile_highlight_size": 13,
+        "mobile_highlight_bottom_spacing": 12,
+        "mobile_text_size": 13
+      }
+    },
+    "avisclients_CxRbib": {
+      "type": "avisclients",
+      "blocks": {
+        "review_dxGHgP": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/gempages_567015059822216273-3139feb5-284e-4a09-9e63-d09abc534f9c.webp",
+            "show_image": true,
+            "rating": 5,
+            "title": "Enfin une eau saine... et bonne !",
+            "text": "On avait des doutes sur la qualité de notre eau du robinet, surtout pour les enfants. Depuis qu’on utilise Pureva, fini les odeurs, le goût est bien meilleur, et on est vraiment rassurés.",
+            "initials": "CD",
+            "name": "Camille D.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_YgnXAy": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Bien plus simple que mon ancien filtre !",
+            "text": "J’avais un adoucisseur compliqué à entretenir. Pureva, c’est au robinet, tout le temps disponible, et sans bidouille. L’eau sort claire et légère.",
+            "initials": "VB",
+            "name": "Valérie B.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_W7jT4z": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "On a arrêté d’acheter des packs d’eau !",
+            "text": "Entre le plastique, le prix et la corvée de transporter les packs, on cherchait une alternative. Pureva a changé notre quotidien.",
+            "initials": "JM",
+            "name": "Julien M.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_hd3c3D": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "L’eau ne me donne plus mal au ventre",
+            "text": "Je ne supportais plus l’eau du robinet. Depuis que j’ai installé le filtre Pureva, plus aucun souci. C’est un vrai soulagement.",
+            "initials": "SG",
+            "name": "Stéphane G.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_rtxAwi": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Un bon geste, sans contrainte",
+            "text": "Je voulais réduire mon usage de plastique, mais je trouvais les solutions compliquées. Pureva m’a convaincue par sa simplicité.",
+            "initials": "NT",
+            "name": "Nadia T.",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_FJpDFy": {
+          "type": "review",
+          "settings": {
+            "show_image": true,
+            "rating": 5,
+            "title": "Installation rapide",
+            "text": "Installé en quelques minutes seulement. Depuis, on ne rachète presque plus de bouteilles d’eau.",
+            "initials": "ML",
+            "name": "Marc L.",
+            "verified_text": "Acheteur vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_dxGHgP",
+        "review_YgnXAy",
+        "review_W7jT4z",
+        "review_hd3c3D",
+        "review_rtxAwi",
+        "review_FJpDFy"
+      ],
+      "name": "Pureva avis clients",
+      "settings": {
+        "rating_text": "Excellent",
+        "rating_score": "4.8",
+        "stars_count": 5,
+        "heading": "Qui de mieux que nos clients\npour en parler ?",
+        "desktop_speed_top": 15,
+        "desktop_speed_bottom": 15,
+        "pause_on_hover": false,
+        "desktop_gap": 24,
+        "section_background": "#ffffff",
+        "card_background": "#ffffff",
+        "text_color": "#08163d",
+        "accent_color": "#08163d",
+        "star_background": "#00b67a",
+        "star_color": "#ffffff",
+        "verified_color": "#00b67a",
+        "avatar_background": "#c9fff0",
+        "desktop_padding_y": 70,
+        "card_width": 460,
+        "desktop_layout": "image_left",
+        "card_radius": 12,
+        "image_radius": 12,
+        "heading_size": 36,
+        "review_title_size": 16,
+        "review_text_size": 15,
+        "mobile_padding_y": 40,
+        "mobile_heading_size": 24,
+        "mobile_review_title_size": 16,
+        "mobile_review_text_size": 14
+      }
+    },
+    "infosproduit_dQxKfJ": {
+      "type": "infosproduit",
+      "blocks": {
+        "stat_LXRNAQ": {
+          "type": "stat",
+          "settings": {
+            "number": "600€",
+            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+          }
+        },
+        "stat_6dgP8z": {
+          "type": "stat",
+          "settings": {
+            "number": "1500",
+            "text": "Fini le plastique jetable – jusqu’à 1500 bouteilles évitées*"
+          }
+        },
+        "stat_Mt6fUD": {
+          "type": "stat",
+          "settings": {
+            "number": "2 min",
+            "text": "Installation simple en 2 min, sans outil"
+          }
+        }
+      },
+      "block_order": [
+        "stat_LXRNAQ",
+        "stat_6dgP8z",
+        "stat_Mt6fUD"
+      ],
+      "name": "Données Produit",
+      "settings": {
+        "main_image": "shopify://shop_images/AF7819C0-7549-4356-864A-3384F1D93E34.webp",
+        "image_alt": "Cartouche neuve et cartouche usagée",
+        "label_left": "Cartouche neuve",
+        "label_right": "Cartouche usagée",
+        "image_radius": 18,
+        "heading": "Données OhPur",
+        "button_label": "",
+        "button_link": "",
+        "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
+        "section_background": "#ffffff",
+        "text_color": "#00244a",
+        "accent_color": "#00244a",
+        "card_background": "#f3f7fb",
+        "button_background": "#00244a",
+        "button_text_color": "#ffffff",
+        "max_width": 1180,
+        "desktop_padding_y": 70,
+        "heading_size": 38,
+        "number_size": 32,
+        "text_size": 14,
+        "card_radius": 9,
+        "mobile_padding_y": 35,
+        "mobile_heading_size": 29,
+        "mobile_number_size": 24,
+        "mobile_text_size": 12
+      }
+    },
+    "tabsvs_7myebi": {
+      "type": "tabsvs",
+      "blocks": {
+        "row_7a3Pj9": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les pesticides",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_UXYXkz": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les métaux lourds",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_XDJwNC": {
+          "type": "row",
+          "settings": {
+            "feature": "Réduit les microplastiques",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "cross",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_behNqy": {
+          "type": "row",
+          "settings": {
+            "feature": "Améliore le goût",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "cross",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_FKVDx6": {
+          "type": "row",
+          "settings": {
+            "feature": "Conserve les minéraux",
+            "brand_type": "check",
+            "brand_text": "Acier inox",
+            "column_2_type": "check",
+            "column_2_text": "Acier inox",
+            "column_3_type": "check",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": false
+          }
+        },
+        "row_YxJfAy": {
+          "type": "row",
+          "settings": {
+            "feature": "Matériaux utilisés",
+            "brand_type": "text",
+            "brand_text": "Acier inox",
+            "column_2_type": "text",
+            "column_2_text": "Acier inox",
+            "column_3_type": "text",
+            "column_3_text": "⚠ Plastique",
+            "column_3_badge": true
+          }
+        },
+        "row_Wqbgxf": {
+          "type": "row",
+          "settings": {
+            "feature": "Prix au litre",
+            "brand_type": "text",
+            "brand_text": "0,02€",
+            "column_2_type": "text",
+            "column_2_text": "0,003 €",
+            "column_3_type": "text",
+            "column_3_text": "0,37 €",
+            "column_3_badge": false
+          }
+        }
+      },
+      "block_order": [
+        "row_7a3Pj9",
+        "row_UXYXkz",
+        "row_XDJwNC",
+        "row_behNqy",
+        "row_FKVDx6",
+        "row_YxJfAy",
+        "row_Wqbgxf"
+      ],
+      "name": "Pureva comparaison",
+      "settings": {
+        "badge_text": "",
+        "heading": "Votre eau au quotidien,\nsans compromis",
+        "subheading": "OhPur vous permet de consommer une eau pure, sans plastique et à moindre coût.",
+        "pill_1": "Moins coûteux",
+        "pill_2": "Plus écologique",
+        "pill_3": "Plus respectueux de la planète",
+        "stat_1_number": "15 milliards",
+        "stat_1_text": "bouteilles en plastique vendues par an en France",
+        "stat_2_number": "8%",
+        "stat_2_text": "du plastique seulement est recyclé",
+        "stat_3_number": "245 000",
+        "stat_3_text": "microplastiques ingérés par litre d’eau en bouteille",
+        "brand_logo": "shopify://shop_images/Puure_logo_white.svg",
+        "brand_name": "OhPur.",
+        "brand_subtitle": "Comparaison",
+        "column_2_icon": "",
+        "column_2_title": "Eau du robinet",
+        "column_3_icon": "",
+        "column_3_title": "Bouteilles en plastique",
+        "bottom_note": "",
+        "section_background": "#08163d",
+        "text_color": "#ffffff",
+        "muted_text_color": "#8ea2cf",
+        "pill_background": "#08163d",
+        "table_background": "#ffffff",
+        "main_column_background": "#0d2949",
+        "main_column_text": "#ffffff",
+        "border_color": "#e7eaf0",
+        "check_background": "#0d2949",
+        "check_color": "#d7faff",
+        "cross_background": "#ffe5e3",
+        "cross_color": "#ef3b35",
+        "max_width": 1040,
+        "desktop_padding_y": 80,
+        "table_width": 860,
+        "table_radius": 18,
+        "badge_size": 10,
+        "heading_size": 38,
+        "subheading_size": 14,
+        "pill_size": 12,
+        "stat_number_size": 30,
+        "stat_text_size": 12,
+        "column_icon_size": 30,
+        "table_text_size": 13,
+        "table_value_size": 13,
+        "mobile_padding_y": 40,
+        "mobile_badge_size": 9,
+        "mobile_heading_size": 28,
+        "mobile_subheading_size": 13,
+        "mobile_pill_size": 11,
+        "mobile_stat_number_size": 28,
+        "mobile_stat_text_size": 12,
+        "mobile_table_radius": 16,
+        "mobile_table_text_size": 12,
+        "mobile_table_value_size": 12
+      }
+    },
+    "ingredients_YgGrni": {
+      "type": "ingredients",
+      "blocks": {
+        "layer_pYPEeT": {
+          "type": "layer",
+          "settings": {
+            "image": "shopify://shop_images/Fabrikk2.jpg",
+            "image_alt": "Couche de filtration",
+            "step": "Étape 1",
+            "title": "Fibres non tissées",
+            "text": "Bloque la rouille, le sable et les sédiments. Votre eau est plus claire avant même d’atteindre le filtre principal.",
+            "show_arrow": true
+          }
+        },
+        "layer_ct6xmt": {
+          "type": "layer",
+          "settings": {
+            "image": "shopify://shop_images/chaux-calcinee-magnesienne1280x1707.jpg",
+            "image_alt": "Couche de filtration",
+            "step": "Étape 2",
+            "title": "Minéraux naturels",
+            "text": "Une première couche inspirée par la nature pour retenir les particules visibles.",
+            "show_arrow": true
+          }
+        },
+        "layer_9LbKCc": {
+          "type": "layer",
+          "settings": {
+            "image": "shopify://shop_images/Coconut-Based-Granular-Activated-Carbon-1024x850.webp",
+            "image_alt": "Couche de filtration",
+            "step": "Étape 3",
+            "title": "Charbon actif",
+            "text": "Aide à réduire le chlore, les goûts et les odeurs pour une eau plus agréable.",
+            "show_arrow": true
+          }
+        },
+        "layer_4BcKBn": {
+          "type": "layer",
+          "settings": {
+            "image": "shopify://shop_images/DTS_Our_Summer_Daniel_Faro_Photos_ID5819.jpg",
+            "image_alt": "Couche de filtration",
+            "step": "Étape 4",
+            "title": "Céramique fine",
+            "text": "Filtration précise pour une eau plus claire au quotidien.",
+            "show_arrow": true
+          }
+        },
+        "layer_P7QeTU": {
+          "type": "layer",
+          "settings": {
+            "image": "shopify://shop_images/calcium-alkaline-ceramic-balls35239281283.webp",
+            "image_alt": "Couche de filtration",
+            "step": "Étape 5",
+            "title": "Finition naturelle",
+            "text": "Une dernière couche pensée pour préserver la qualité de l’eau filtrée.",
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "layer_pYPEeT",
+        "layer_ct6xmt",
+        "layer_9LbKCc",
+        "layer_4BcKBn",
+        "layer_P7QeTU"
+      ],
+      "name": "Pureva couches filtration",
+      "settings": {
+        "badge_text": "Que contiennent nos cartouches ?",
+        "heading": "La nature filtre l'eau par couches. Nous aussi",
+        "subheading": "Inspiré par la nature, validé par la science",
+        "certification_logo": "shopify://shop_images/NSF_International_logo_svg_06494a68-8744-473a-8717-9e859377eff2.png",
+        "certification_logo_alt": "Certification NSF",
+        "certification_logo_text": "NSF.",
+        "certification_text": "Les composants de la cartouche Pure® sont testés et certifiés par NSF International selon la norme NSF/ANSI 42 pour la sécurité des matériaux. La cartouche Pure® 3.0 est spécifiquement formulée pour les contaminants présents dans l'eau du robinet européenne.",
+        "card_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7\"></path><path d=\"M9 7h8v8\"></path></svg>",
+        "prev_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"></path></svg>",
+        "next_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg>",
+        "section_background": "#f7f7f8",
+        "text_color": "#061a44",
+        "muted_text_color": "#728096",
+        "badge_background": "#e9eeff",
+        "badge_text_color": "#061a44",
+        "card_background": "#ffffff",
+        "card_text_color": "#061a44",
+        "border_color": "#d7dee9",
+        "button_background": "#ffffff",
+        "button_text_color": "#061a44",
+        "certification_background": "rgba(255,255,255,0.35)",
+        "max_width": 1280,
+        "desktop_padding_y": 70,
+        "desktop_padding_x": 20,
+        "badge_size": 13,
+        "badge_padding_y": 10,
+        "badge_padding_x": 20,
+        "badge_radius": 9,
+        "badge_bottom_spacing": 20,
+        "heading_size": 38,
+        "heading_weight": "500",
+        "heading_width": 760,
+        "subheading_size": 17,
+        "subheading_width": 540,
+        "subheading_top_spacing": 14,
+        "certification_width": 610,
+        "certification_top_spacing": 18,
+        "certification_logo_size": 64,
+        "certification_gap": 22,
+        "certification_padding_y": 22,
+        "certification_padding_x": 26,
+        "certification_radius": 16,
+        "certification_text_size": 13,
+        "slider_top_spacing": 35,
+        "slider_padding_y": 10,
+        "card_gap": 28,
+        "side_card_width": 180,
+        "side_card_height": 260,
+        "active_card_width": 380,
+        "active_card_height": 520,
+        "active_card_lift": 0,
+        "side_card_opacity": 100,
+        "card_radius": 16,
+        "image_position": "center center",
+        "info_position_top": 22,
+        "info_position_left": 22,
+        "info_position_right": 72,
+        "info_padding_y": 17,
+        "info_padding_x": 18,
+        "info_radius": 15,
+        "step_size": 12,
+        "card_title_size": 18,
+        "card_text_size": 13,
+        "open_icon_size": 44,
+        "open_icon_top": 22,
+        "open_icon_right": 22,
+        "open_icon_radius": 12,
+        "controls_top_spacing": 16,
+        "controls_gap": 12,
+        "arrow_size": 48,
+        "mobile_padding_y": 50,
+        "mobile_padding_x": 20,
+        "mobile_badge_size": 13,
+        "mobile_badge_padding_y": 10,
+        "mobile_badge_padding_x": 18,
+        "mobile_badge_radius": 8,
+        "mobile_badge_bottom_spacing": 22,
+        "mobile_heading_size": 31,
+        "mobile_heading_width": 360,
+        "mobile_subheading_size": 15,
+        "mobile_subheading_width": 360,
+        "mobile_subheading_top_spacing": 14,
+        "mobile_certification_top_spacing": 14,
+        "mobile_certification_logo_size": 42,
+        "mobile_certification_gap": 13,
+        "mobile_certification_padding_y": 16,
+        "mobile_certification_padding_x": 14,
+        "mobile_certification_radius": 14,
+        "mobile_certification_text_size": 11,
+        "mobile_slider_top_spacing": 45,
+        "mobile_slider_padding_y": 5,
+        "mobile_slider_side_padding": 90,
+        "mobile_card_gap": 28,
+        "mobile_card_width": 250,
+        "mobile_card_height": 400,
+        "mobile_card_radius": 16,
+        "mobile_info_position_top": 18,
+        "mobile_info_position_left": 14,
+        "mobile_info_position_right": 64,
+        "mobile_info_padding_y": 14,
+        "mobile_info_padding_x": 14,
+        "mobile_info_radius": 14,
+        "mobile_step_size": 11,
+        "mobile_card_title_size": 15,
+        "mobile_card_text_size": 11,
+        "mobile_open_icon_size": 40,
+        "mobile_open_icon_top": 18,
+        "mobile_open_icon_right": 18,
+        "mobile_open_icon_radius": 12,
+        "mobile_controls_top_spacing": 28,
+        "mobile_arrow_size": 50
+      }
+    },
+    "benefice_G87kVk": {
+      "type": "benefice",
+      "blocks": {
+        "benefit_K4pJif": {
+          "type": "benefit",
+          "settings": {
+            "text": "Votre thé du matin a enfin le goût qu’il devrait avoir",
+            "number": "1"
+          }
+        },
+        "benefit_yd4AGK": {
+          "type": "benefit",
+          "settings": {
+            "text": "La sérénité de savoir que votre eau est filtrée, à chaque verre",
+            "number": "2"
+          }
+        },
+        "benefit_DGb736": {
+          "type": "benefit",
+          "settings": {
+            "text": "Fini les packs d’eau lourds à porter depuis le supermarché chaque semaine",
+            "number": "3"
+          }
+        },
+        "benefit_f8tVJb": {
+          "type": "benefit",
+          "settings": {
+            "text": "Vous ouvrez le robinet et c’est prêt, pas de carafe, pas d’attente",
+            "number": "4"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_K4pJif",
+        "benefit_yd4AGK",
+        "benefit_DGb736",
+        "benefit_f8tVJb"
+      ],
+      "name": "Bénéfices famille",
+      "settings": {
+        "background_image": "shopify://shop_images/DTS_Parenthood_Daniel_Faro_Photos_ID6941.webp",
+        "image_alt": "Famille heureuse à la maison",
+        "heading": "Les 4 améliorations\nque toute la famille\nressent.",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "section_background": "#ffffff",
+        "text_color": "#ffffff",
+        "card_text_color": "#ffffff",
+        "card_background": "linear-gradient(110deg, rgba(83, 98, 111, 0), rgba(32, 36, 38, 0) 100%)",
+        "card_border_color": "#ffffff2e",
+        "overlay_opacity": 55,
+        "max_width": 1360,
+        "desktop_padding_y": 50,
+        "desktop_padding_x": 15,
+        "desktop_height": 580,
+        "section_radius": 16,
+        "content_padding_desktop": 50,
+        "cards_per_row": 4,
+        "card_gap": 12,
+        "card_height": 100,
+        "card_radius": 12,
+        "card_padding_y": 28,
+        "card_padding_x": 28,
+        "card_blur": 10,
+        "heading_size": 33,
+        "heading_width": 460,
+        "heading_weight": "400",
+        "heading_bottom_spacing": 20,
+        "card_text_size": 14,
+        "card_text_weight": "700",
+        "number_size": 31,
+        "number_text_size": 14,
+        "number_position_top": 16,
+        "number_position_right": 16,
+        "mobile_padding_y": 35,
+        "mobile_padding_x": 15,
+        "mobile_height": 390,
+        "mobile_section_radius": 14,
+        "mobile_content_padding": 19,
+        "mobile_content_padding_bottom": 19,
+        "mobile_heading_size": 24,
+        "mobile_heading_width": 310,
+        "mobile_heading_bottom_spacing": 10,
+        "mobile_card_width": 295,
+        "mobile_card_height": 85,
+        "mobile_card_gap": 12,
+        "mobile_card_radius": 14,
+        "mobile_card_padding_y": 20,
+        "mobile_card_padding_x": 18,
+        "mobile_card_text_size": 14,
+        "mobile_number_size": 24,
+        "mobile_number_text_size": 12,
+        "mobile_number_position_top": 13,
+        "mobile_number_position_right": 13
+      }
+    },
+    "faqpuure_AehWUN": {
+      "type": "faqpuure",
+      "blocks": {
+        "question_tER3pr": {
+          "type": "question",
+          "settings": {
+            "question": "Comment fonctionne le système de filtration Pure® ?",
+            "answer": "Le système de filtration utilise plusieurs couches complémentaires pour améliorer le goût de l’eau et réduire les impuretés du quotidien."
+          }
+        },
+        "question_dx3Cqg": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps prend l’installation ?",
+            "answer": "L’installation est rapide et se fait en quelques minutes seulement, sans outil compliqué."
+          }
+        },
+        "question_KbqrVG": {
+          "type": "question",
+          "settings": {
+            "question": "Et si je ne suis pas doué en bricolage ?",
+            "answer": "Aucun problème : le filtre est conçu pour être simple à installer, même sans expérience."
+          }
+        },
+        "question_Cky8jG": {
+          "type": "question",
+          "settings": {
+            "question": "Quelle est la durée de vie d’une cartouche ?",
+            "answer": "La durée dépend de votre consommation et de la qualité de votre eau, mais elle est pensée pour un usage quotidien confortable."
+          }
+        },
+        "question_f6KcHj": {
+          "type": "question",
+          "settings": {
+            "question": "Le filtre est-il compatible avec tous les robinets ?",
+            "answer": "Il est compatible avec la majorité des robinets standards. Des adaptateurs peuvent être nécessaires selon le modèle."
+          }
+        },
+        "question_YCagHT": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je modifier ou annuler mon abonnement à tout moment ?",
+            "answer": "Oui, vous pouvez modifier ou annuler votre abonnement selon les conditions définies sur votre boutique."
+          }
+        },
+        "question_gLPUBa": {
+          "type": "question",
+          "settings": {
+            "question": "Le filtre Pure® est-il garanti ?",
+            "answer": "Oui, le produit peut être couvert par une garantie selon les conditions affichées sur votre boutique."
+          }
+        },
+        "question_yGbUaG": {
+          "type": "question",
+          "settings": {
+            "question": "Et si je ne suis pas satisfait ?",
+            "answer": "Vous pouvez proposer une période d’essai ou une garantie satisfaction selon votre politique commerciale."
+          }
+        },
+        "question_CaTHHY": {
+          "type": "question",
+          "settings": {
+            "question": "Quand puis-je commencer à profiter de mon eau filtrée ?",
+            "answer": "Dès l’installation terminée, vous pouvez commencer à utiliser votre filtre."
+          }
+        },
+        "benefit_tdTCYE": {
+          "type": "benefit",
+          "settings": {
+            "title": "Garantie 2 ans",
+            "text": "Une qualité conçue pour durer."
+          }
+        },
+        "benefit_xc7RYe": {
+          "type": "benefit",
+          "settings": {
+            "title": "Essayez-le pendant 100 jours",
+            "text": "Satisfait ou remboursé, sans engagement."
+          }
+        },
+        "benefit_6aRWBt": {
+          "type": "benefit",
+          "settings": {
+            "title": "Livraison offerte",
+            "text": "Expédié directement chez vous."
+          }
+        }
+      },
+      "block_order": [
+        "question_tER3pr",
+        "question_dx3Cqg",
+        "question_KbqrVG",
+        "question_Cky8jG",
+        "question_f6KcHj",
+        "question_YCagHT",
+        "question_gLPUBa",
+        "question_yGbUaG",
+        "question_CaTHHY",
+        "benefit_tdTCYE",
+        "benefit_xc7RYe",
+        "benefit_6aRWBt"
+      ],
+      "name": "® FAQ",
+      "settings": {
+        "heading": "F.A.Q",
+        "description": "Une question ? Nous avons la réponse ! Notre équipe d’experts est là pour vous, du lundi au samedi, de 9h à 18h.",
+        "button_label": "puuresav@gmail.com",
+        "button_link": "",
+        "avatar_alt_1": "Expert support 1",
+        "avatar_alt_2": "Expert support 2",
+        "avatar_alt_3": "Expert support 3",
+        "open_first": false,
+        "close_others": true,
+        "check_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"></path></svg>",
+        "section_background": "#f4f4f4",
+        "text_color": "#08164c",
+        "muted_text_color": "#4e5878",
+        "border_color": "#d8dce6",
+        "card_background": "#ffffff",
+        "icon_background": "#14244d",
+        "icon_color": "#ffffff",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "#14244d",
+        "max_width": 1180,
+        "desktop_padding_y": 95,
+        "desktop_padding_x": 20,
+        "left_column_width": 4,
+        "right_column_width": 6,
+        "desktop_gap": 95,
+        "heading_size": 30,
+        "heading_weight": "800",
+        "heading_bottom_spacing": 25,
+        "description_size": 14,
+        "description_weight": "500",
+        "description_width": 470,
+        "description_bottom_spacing": 32,
+        "avatar_size": 28,
+        "avatar_overlap": 8,
+        "button_width": 470,
+        "button_height": 48,
+        "button_text_size": 14,
+        "question_size": 14,
+        "question_weight": "800",
+        "question_padding_y": 20,
+        "plus_size": 25,
+        "answer_size": 14,
+        "answer_bottom_padding": 18,
+        "benefits_top_spacing": 28,
+        "benefits_columns_desktop": 3,
+        "benefits_gap": 20,
+        "benefit_height": 80,
+        "benefit_padding_y": 18,
+        "benefit_padding_x": 24,
+        "benefit_icon_size": 28,
+        "benefit_icon_overlap": 12,
+        "benefit_icon_offset": 36,
+        "benefit_title_size": 13,
+        "benefit_text_size": 13,
+        "mobile_padding_y": 55,
+        "mobile_padding_x": 20,
+        "mobile_gap": 42,
+        "mobile_heading_size": 29,
+        "mobile_heading_bottom_spacing": 22,
+        "mobile_description_size": 14,
+        "mobile_description_bottom_spacing": 28,
+        "mobile_avatar_size": 28,
+        "mobile_avatar_overlap": 8,
+        "mobile_button_height": 48,
+        "mobile_button_text_size": 14,
+        "mobile_question_size": 14,
+        "mobile_question_padding_y": 18,
+        "mobile_plus_size": 24,
+        "mobile_answer_size": 14,
+        "mobile_benefits_top_spacing": 28,
+        "mobile_benefits_gap": 16,
+        "mobile_benefit_height": 80,
+        "mobile_benefit_padding_y": 18,
+        "mobile_benefit_padding_x": 22,
+        "mobile_benefit_icon_size": 28,
+        "mobile_benefit_icon_overlap": 10,
+        "mobile_benefit_icon_offset": 38,
+        "mobile_benefit_title_size": 13,
+        "mobile_benefit_text_size": 13
+      }
+    }
+  },
+  "order": [
+    "logoscroll_BjQiDb",
+    "featured_product_CDz7jQ",
+    "marquee_eAYBzE",
+    "press_ppPgea",
+    "whychoose_7AXKL8",
+    "avisclients_CxRbib",
+    "infosproduit_dQxKfJ",
+    "tabsvs_7myebi",
+    "ingredients_YgGrni",
+    "benefice_G87kVk",
+    "faqpuure_AehWUN"
+  ]
+}

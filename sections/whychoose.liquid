@@ -1,0 +1,894 @@
+<section
+  id="pureva-why-{{ section.id }}"
+  class="pureva-why-section"
+  style="
+    --why-bg: {{ section.settings.section_background }};
+    --why-text: {{ section.settings.text_color }};
+    --why-muted: {{ section.settings.muted_text_color }};
+    --why-highlight-bg: {{ section.settings.highlight_background }};
+    --why-highlight-text: {{ section.settings.highlight_text_color }};
+    --why-divider: {{ section.settings.divider_color }};
+    --why-card-bg-mobile: {{ section.settings.mobile_card_background }};
+    --why-max-width: {{ section.settings.max_width }}px;
+    --why-padding-y: {{ section.settings.desktop_padding_y }}px;
+    --why-mobile-padding-y: {{ section.settings.mobile_padding_y }}px;
+  "
+>
+  <div class="pureva-why-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="pureva-why-heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="pureva-why-grid {% if section.settings.mobile_slider %}is-mobile-slider{% endif %}">
+      {% for block in section.blocks %}
+        <div class="pureva-why-item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="pureva-why-icon">
+              {{ block.settings.icon }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h3>
+              {{ block.settings.title }}
+            </h3>
+          {% endif %}
+
+          {% if block.settings.highlight != blank %}
+            <div class="pureva-why-highlight">
+              {{ block.settings.highlight }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p>
+              {{ block.settings.text }}
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800;900&display=swap');
+
+  #pureva-why-{{ section.id }} {
+    width: 100%;
+    background: var(--why-bg);
+    color: var(--why-text);
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+    padding: var(--why-padding-y) {{ section.settings.desktop_padding_x }}px;
+    overflow: hidden;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-container {
+    width: 100%;
+    max-width: var(--why-max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-heading {
+    margin: 0 0 {{ section.settings.heading_bottom_spacing }}px 0;
+    color: var(--why-text);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.1;
+    font-weight: {{ section.settings.heading_weight }};
+    letter-spacing: -0.6px;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    align-items: start;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-item {
+    position: relative;
+    min-height: {{ section.settings.item_min_height }}px;
+    padding: 0 {{ section.settings.item_padding_x }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: {{ section.settings.divider_top }}px;
+    right: 0;
+    width: 1px;
+    height: {{ section.settings.divider_height }}px;
+    border-right: 1px {{ section.settings.divider_style }} var(--why-divider);
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-icon {
+    height: {{ section.settings.icon_box_height }}px;
+    margin-bottom: {{ section.settings.icon_bottom_spacing }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ section.settings.icon_size }}px;
+    line-height: 1;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-icon svg {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    display: block;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-item h3 {
+    margin: 0 0 {{ section.settings.title_bottom_spacing }}px 0;
+    color: var(--why-text);
+    font-size: {{ section.settings.title_size }}px;
+    line-height: 1.05;
+    font-weight: {{ section.settings.title_weight }};
+    letter-spacing: -0.7px;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-highlight {
+    display: inline;
+    width: fit-content;
+    margin: 0 auto {{ section.settings.highlight_bottom_spacing }}px auto;
+    padding: {{ section.settings.highlight_padding_y }}px {{ section.settings.highlight_padding_x }}px;
+    background: var(--why-highlight-bg);
+    color: var(--why-highlight-text);
+    font-size: {{ section.settings.highlight_size }}px;
+    line-height: 1.15;
+    font-weight: {{ section.settings.highlight_weight }};
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  #pureva-why-{{ section.id }} .pureva-why-item p {
+    max-width: {{ section.settings.text_width }}px;
+    margin: 0 auto;
+    color: var(--why-muted);
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.35;
+    font-weight: {{ section.settings.text_weight }};
+  }
+
+  @media screen and (max-width: 989px) {
+    #pureva-why-{{ section.id }} {
+      padding: var(--why-mobile-padding-y) {{ section.settings.mobile_padding_x }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-heading {
+      margin-bottom: {{ section.settings.mobile_heading_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-grid {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      gap: {{ section.settings.mobile_grid_gap }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-grid.is-mobile-slider {
+      display: flex;
+      gap: {{ section.settings.mobile_slider_gap }}px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 0 8px 0;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-grid.is-mobile-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-grid.is-mobile-slider .pureva-why-item {
+      flex: 0 0 {{ section.settings.mobile_card_width }}px;
+      scroll-snap-align: center;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-item {
+      min-height: {{ section.settings.mobile_item_min_height }}px;
+      padding: {{ section.settings.mobile_item_padding_y }}px {{ section.settings.mobile_item_padding_x }}px;
+      border-radius: {{ section.settings.mobile_card_radius }}px;
+      background: var(--why-card-bg-mobile);
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-item::after {
+      display: none;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-icon {
+      height: {{ section.settings.mobile_icon_box_height }}px;
+      margin-bottom: {{ section.settings.mobile_icon_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_icon_size }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-icon svg {
+      width: {{ section.settings.mobile_icon_size }}px;
+      height: {{ section.settings.mobile_icon_size }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-item h3 {
+      margin-bottom: {{ section.settings.mobile_title_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_title_size }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-highlight {
+      margin-bottom: {{ section.settings.mobile_highlight_bottom_spacing }}px;
+      font-size: {{ section.settings.mobile_highlight_size }}px;
+    }
+
+    #pureva-why-{{ section.id }} .pureva-why-item p {
+      max-width: 100%;
+      font-size: {{ section.settings.mobile_text_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pureva pourquoi choisir",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre de section",
+      "default": "Pourquoi choisir Puure® ?"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Fond section",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#102652"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Texte description",
+      "default": "#102652"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Fond surlignage",
+      "default": "#EEFF1F"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Texte surlignage",
+      "default": "#102652"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Couleur séparateurs",
+      "default": "#102652"
+    },
+    {
+      "type": "color_background",
+      "id": "mobile_card_background",
+      "label": "Fond cartes mobile",
+      "default": "rgba(255,255,255,0)"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1700,
+      "step": 20,
+      "default": 1320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_y",
+      "label": "Marge haut/bas",
+      "min": 20,
+      "max": 140,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_x",
+      "label": "Marge gauche/droite",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Colonnes ordinateur",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "item_min_height",
+      "label": "Hauteur minimum item",
+      "min": 180,
+      "max": 360,
+      "step": 10,
+      "default": 230,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_padding_x",
+      "label": "Padding horizontal item",
+      "min": 8,
+      "max": 38,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Séparateurs ordinateur"
+    },
+    {
+      "type": "select",
+      "id": "divider_style",
+      "label": "Style séparateur",
+      "default": "dotted",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Plein"
+        },
+        {
+          "value": "dotted",
+          "label": "Pointillé"
+        },
+        {
+          "value": "dashed",
+          "label": "Tirets"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "divider_top",
+      "label": "Position séparateur haut",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "default": 38,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "label": "Hauteur séparateur",
+      "min": 120,
+      "max": 300,
+      "step": 5,
+      "default": 220,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typographie ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre section",
+      "min": 22,
+      "max": 52,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre section",
+      "default": "800",
+      "options": [
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" },
+        { "value": "900", "label": "Black" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "label": "Espace titre / bénéfices",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_box_height",
+      "label": "Hauteur zone icône",
+      "min": 40,
+      "max": 90,
+      "step": 5,
+      "default": 55,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille icône",
+      "min": 24,
+      "max": 70,
+      "step": 1,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_bottom_spacing",
+      "label": "Espace icône / titre",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille titre item",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Graisse titre item",
+      "default": "800",
+      "options": [
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" },
+        { "value": "900", "label": "Black" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_spacing",
+      "label": "Espace titre / surlignage",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "highlight_size",
+      "label": "Taille texte surligné",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "highlight_weight",
+      "label": "Graisse texte surligné",
+      "default": "800",
+      "options": [
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" },
+        { "value": "900", "label": "Black" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "highlight_padding_y",
+      "label": "Padding vertical surlignage",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "highlight_padding_x",
+      "label": "Padding horizontal surlignage",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "highlight_bottom_spacing",
+      "label": "Espace surlignage / texte",
+      "min": 6,
+      "max": 22,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille description",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Graisse description",
+      "default": "400",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Largeur description",
+      "min": 120,
+      "max": 260,
+      "step": 10,
+      "default": 180,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_slider",
+      "label": "Afficher les bénéfices en slider mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_y",
+      "label": "Marge haut/bas mobile",
+      "min": 25,
+      "max": 100,
+      "step": 5,
+      "default": 45,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_x",
+      "label": "Marge gauche/droite mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Colonnes mobile si slider désactivé",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 colonne"
+        },
+        {
+          "value": "2",
+          "label": "2 colonnes"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur carte slider mobile",
+      "min": 220,
+      "max": 330,
+      "step": 5,
+      "default": 260,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_slider_gap",
+      "label": "Espace cartes slider",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_grid_gap",
+      "label": "Espace cartes grille mobile",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_radius",
+      "label": "Arrondi cartes mobile",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_min_height",
+      "label": "Hauteur minimum carte mobile",
+      "min": 190,
+      "max": 340,
+      "step": 10,
+      "default": 250,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_padding_y",
+      "label": "Padding vertical carte mobile",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_padding_x",
+      "label": "Padding horizontal carte mobile",
+      "min": 14,
+      "max": 34,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 22,
+      "max": 38,
+      "step": 1,
+      "default": 27,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_bottom_spacing",
+      "label": "Espace titre / cartes mobile",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "default": 35,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_box_height",
+      "label": "Hauteur zone icône mobile",
+      "min": 38,
+      "max": 80,
+      "step": 2,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Taille icône mobile",
+      "min": 24,
+      "max": 62,
+      "step": 1,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_bottom_spacing",
+      "label": "Espace icône / titre mobile",
+      "min": 8,
+      "max": 28,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "label": "Taille titre item mobile",
+      "min": 20,
+      "max": 34,
+      "step": 1,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_bottom_spacing",
+      "label": "Espace titre / surlignage mobile",
+      "min": 6,
+      "max": 22,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_highlight_size",
+      "label": "Taille surlignage mobile",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_highlight_bottom_spacing",
+      "label": "Espace surlignage / texte mobile",
+      "min": 6,
+      "max": 20,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Taille description mobile",
+      "min": 11,
+      "max": 17,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "icon",
+          "label": "Icône",
+          "default": "🧬",
+          "info": "Tu peux mettre un emoji ou coller un SVG complet."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Efficace"
+        },
+        {
+          "type": "textarea",
+          "id": "highlight",
+          "label": "Texte surligné",
+          "default": "sur 70+ contaminants"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Calcaire, fluor, chlore, métaux lourds, PFAS, pesticides, microplastiques et bien plus encore."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pureva pourquoi choisir",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🧬",
+            "title": "Efficace",
+            "highlight": "sur 70+ contaminants",
+            "text": "Calcaire, fluor, chlore, métaux lourds, PFAS, pesticides, microplastiques et bien plus encore."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🚰",
+            "title": "adapté",
+            "highlight": "pour 100% des robinets",
+            "text": "Installez-le vous-même en seulement 10 minutes sur une large gamme de robinets."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "😋",
+            "title": "Sublime",
+            "highlight": "le goût de l’eau",
+            "text": "Prouvé par des tests à l’aveugle : 9 utilisateurs sur 10 confirment une eau plus fraîche et agréable à boire."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "⛰️",
+            "title": "Préserve",
+            "highlight": "Les minéraux essentiels",
+            "text": "Conserve les minéraux essentiels de votre eau du robinet tout en la rendant plus légère et plus fraîche."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌍",
+            "title": "Remplace",
+            "highlight": "jusqu’à 2000 bouteilles en plastique",
+            "text": "Réduisez les déchets plastiques et économisez entre 1500 € et 2000 € chaque année !"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔬",
+            "title": "Certifié",
+            "highlight": "par des laboratoires indépendants",
+            "text": "Entièrement testé et conforme aux normes Européennes garantissant une filtration de l’eau optimale pour votre sécurité."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

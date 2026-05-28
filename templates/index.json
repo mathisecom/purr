@@ -584,7 +584,7 @@
           "type": "stat",
           "settings": {
             "number": "600€",
-            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+            "text": "Jusqu’à 600 € d’économies par an avec Puure"
           }
         },
         "stat_6dgP8z": {
@@ -614,7 +614,7 @@
         "label_left": "Cartouche neuve",
         "label_right": "Cartouche usagée",
         "image_radius": 18,
-        "heading": "Données OhPur",
+        "heading": "Données Puure",
         "button_label": "",
         "button_link": "",
         "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
@@ -744,7 +744,7 @@
       "settings": {
         "badge_text": "",
         "heading": "Votre eau au quotidien,\nsans compromis",
-        "subheading": "OhPur vous permet de consommer une eau pure, sans plastique et à moindre coût.",
+        "subheading": "Puure vous permet de consommer une eau pure, sans plastique et à moindre coût.",
         "pill_1": "Moins coûteux",
         "pill_2": "Plus écologique",
         "pill_3": "Plus respectueux de la planète",
@@ -755,7 +755,7 @@
         "stat_3_number": "245 000",
         "stat_3_text": "microplastiques ingérés par litre d’eau en bouteille",
         "brand_logo": "shopify://shop_images/Puure_logo_white.svg",
-        "brand_name": "OhPur.",
+        "brand_name": "Puure.",
         "brand_subtitle": "Comparaison",
         "column_2_icon": "",
         "column_2_title": "Eau du robinet",

@@ -22,8 +22,8 @@
         "rating_text": "Excellent pour +40.000 utilisateurs",
         "heading": "Transformez votre robinet\nen source d’eau saine",
         "subheading": "Le filtre à eau Puure protège votre santé des polluants et améliore le goût de l’eau",
-        "button_label": "DÉCOUVRIR",
-        "button_arrow": "",
+        "button_label": "Profitez de L'Offre",
+        "button_arrow": "→",
         "button_link": "",
         "show_product_card": false,
         "show_product_card_mobile": false,
@@ -81,7 +81,7 @@
         "product_card_arrow_size": 30,
         "product_card_title_size": 15,
         "product_card_text_size": 13,
-        "mobile_height": 740,
+        "mobile_height": 720,
         "mobile_section_radius": 0,
         "mobile_outer_padding_y": 0,
         "mobile_outer_padding_x": 0,
@@ -385,7 +385,7 @@
         "enable_video_looping": false,
         "enable_image_zoom": false,
         "max_image_zoom_level": 3,
-        "background": "",
+        "background": "#fcfafa",
         "background_gradient": "",
         "text_color": "#08163d",
         "input_background": "rgba(0,0,0,0)",
@@ -453,11 +453,11 @@
         "pill_padding_y": 14,
         "pill_padding_x": 22,
         "gap": 18,
-        "section_padding_y": 10,
+        "section_padding_y": 44,
         "mobile_font_size": 13,
-        "mobile_pill_padding_y": 9,
+        "mobile_pill_padding_y": 11,
         "mobile_pill_padding_x": 18,
-        "mobile_section_padding_y": 0
+        "mobile_section_padding_y": 32
       }
     },
     "press_ppPgea": {

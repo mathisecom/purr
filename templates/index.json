@@ -119,7 +119,7 @@
       ],
       "name": "Pureva barre statistiques",
       "settings": {
-        "section_background": "#213B65",
+        "section_background": "#08163d",
         "text_color": "#FFFFFF",
         "muted_text_color": "#B9C8E0",
         "divider_color": "#FFFFFF",
@@ -140,11 +140,11 @@
         "mobile_padding_x": 4,
         "columns_mobile": 3,
         "mobile_item_padding_x": 8,
-        "mobile_divider_height": 38,
-        "mobile_number_size": 21,
-        "mobile_number_bottom_spacing": 5,
+        "mobile_divider_height": 36,
+        "mobile_number_size": 19,
+        "mobile_number_bottom_spacing": 6,
         "mobile_text_size": 9,
-        "mobile_text_width": 105
+        "mobile_text_width": 115
       }
     },
     "featured_product_CDz7jQ": {

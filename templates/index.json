@@ -32,13 +32,13 @@
         "product_card_subtitle": "Cartouches + Filtre",
         "product_card_price": "à partir de 59,90€",
         "product_card_arrow": "↗",
-        "section_background": "#F4F4F4",
+        "section_background": "#f4f4f4",
         "text_color": "#ffffff",
         "subtext_color": "#ffffff",
-        "star_color": "#00B67A",
+        "star_color": "#00b67a",
         "button_background": "#08163d",
-        "button_text_color": "#FFFFFF",
-        "product_card_background": "#FFFFFF",
+        "button_text_color": "#ffffff",
+        "product_card_background": "#ffffff",
         "product_card_text_color": "#08163d",
         "desktop_overlay": "linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.45) 52%, rgba(255, 255, 255, 0.76) 100%)",
         "overlay_opacity": 100,
@@ -109,84 +109,6 @@
         "mobile_product_card_bottom": 25
       }
     },
-    "logoscroll_BjQiDb": {
-      "type": "logoscroll",
-      "blocks": {
-        "image_mbJBHm": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Figma_Image_7.avif",
-            "url": ""
-          }
-        },
-        "image_ekttxE": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Figma_Image_8.png",
-            "url": ""
-          }
-        },
-        "image_i7eihz": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/France_3_1.avif",
-            "url": ""
-          }
-        },
-        "image_a6Wb4x": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Les_Echos_8d7091b0-5c03-45ed-b5ac-4f0f3d6cce04.avif",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_mbJBHm",
-        "image_ekttxE",
-        "image_i7eihz",
-        "image_a6Wb4x"
-      ],
-      "disabled": true,
-      "name": "SS - Scrolling logo cloud #5",
-      "settings": {
-        "layout_radius": 30,
-        "layout_border_thickness": 0,
-        "heading": "",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 18,
-        "heading_size_mobile": 18,
-        "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 16,
-        "scrolling_direction": "left",
-        "pause_hover": false,
-        "scrolling_gap": 70,
-        "scrolling_gap_mobile": 68,
-        "card_width_desktop": 130,
-        "card_width_mobile": 100,
-        "heading_color": "#121212",
-        "layout_bg_color": "#ffffff",
-        "layout_border_color": "#121212",
-        "background_color": "#ffffff",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_horizontal": 0,
-        "margin_horizontal_mobile": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 0,
-        "full_width": true,
-        "content_width": 1200,
-        "border_thickness": 0,
-        "section_radius": 0,
-        "lazy": true
-      }
-    },
     "stats_TTB79g": {
       "type": "stats",
       "blocks": {
@@ -245,6 +167,83 @@
         "mobile_number_bottom_spacing": 6,
         "mobile_text_size": 9,
         "mobile_text_width": 115
+      }
+    },
+    "logoscroll_BjQiDb": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_mbJBHm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Figma_Image_7.avif",
+            "url": ""
+          }
+        },
+        "image_ekttxE": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Figma_Image_8.png",
+            "url": ""
+          }
+        },
+        "image_i7eihz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/France_3_1.avif",
+            "url": ""
+          }
+        },
+        "image_a6Wb4x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Les_Echos_8d7091b0-5c03-45ed-b5ac-4f0f3d6cce04.avif",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_mbJBHm",
+        "image_ekttxE",
+        "image_i7eihz",
+        "image_a6Wb4x"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 16,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 68,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#fcfafa",
+        "layout_border_color": "#121212",
+        "background_color": "#fcfafa",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
       }
     },
     "featured_product_CDz7jQ": {
@@ -1444,8 +1443,8 @@
   },
   "order": [
     "herobanner_aQXwMb",
-    "logoscroll_BjQiDb",
     "stats_TTB79g",
+    "logoscroll_BjQiDb",
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
     "press_ppPgea",

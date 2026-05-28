@@ -116,8 +116,15 @@
             "show_taxes_notice": false
           }
         },
+        "rapi_rapi_bundle_JYWHpV": {
+          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "settings": {
+            "product": "{{section.settings.product}}"
+          }
+        },
         "variant_picker_qLYhm6": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "hide_sold_out_variants": false,
             "stack_blocks": true,
@@ -185,6 +192,7 @@
         "liquid_3EHbrb",
         "liquid_ezeUwP",
         "price_kMemri",
+        "rapi_rapi_bundle_JYWHpV",
         "variant_picker_qLYhm6",
         "quantity_selector_WyV4nV",
         "buy_buttons_hzg446",

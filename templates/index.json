@@ -13,7 +13,7 @@
       "type": "herobanner",
       "name": "Pureva bannière hero",
       "settings": {
-        "desktop_image": "shopify://shop_images/9jqtpdgsXfGeBoIffP4XliSG9imz61aJL6QfZ4fV.webp",
+        "desktop_image": "shopify://shop_images/sstf_homepage_banner.webp",
         "mobile_image": "shopify://shop_images/Mobile_Banner_1.webp",
         "image_alt": "",
         "desktop_image_position": "center center",
@@ -51,7 +51,7 @@
         "desktop_outer_padding_x": 0,
         "desktop_horizontal_align": "flex-end",
         "desktop_vertical_align": "center",
-        "desktop_text_align": "center",
+        "desktop_text_align": "left",
         "desktop_content_padding_y": 70,
         "desktop_content_padding_x": 190,
         "content_width": 620,

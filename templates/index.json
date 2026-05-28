@@ -335,6 +335,131 @@
         "logo_item_border": ""
       }
     },
+    "whychoose_7AXKL8": {
+      "type": "whychoose",
+      "blocks": {
+        "benefit_UDy6zN": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🧬",
+            "title": "Efficace",
+            "highlight": "sur 70+ contaminants",
+            "text": "Calcaire, fluor, chlore, métaux lourds, PFAS, pesticides, microplastiques et bien plus encore."
+          }
+        },
+        "benefit_xxzgeM": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🚰",
+            "title": "adapté",
+            "highlight": "pour 100% des robinets",
+            "text": "Installez-le vous-même en seulement 10 minutes sur une large gamme de robinets."
+          }
+        },
+        "benefit_PnEAxW": {
+          "type": "benefit",
+          "settings": {
+            "icon": "😋",
+            "title": "Sublime",
+            "highlight": "le goût de l’eau",
+            "text": "Prouvé par des tests à l’aveugle : 9 utilisateurs sur 10 confirment une eau plus fraîche et agréable à boire."
+          }
+        },
+        "benefit_CKaDmV": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⛰️",
+            "title": "Préserve",
+            "highlight": "Les minéraux essentiels",
+            "text": "Conserve les minéraux essentiels de votre eau du robinet tout en la rendant plus légère et plus fraîche."
+          }
+        },
+        "benefit_beEPFy": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌍",
+            "title": "Remplace",
+            "highlight": "jusqu’à 2000 bouteilles en plastique",
+            "text": "Réduisez les déchets plastiques et économisez entre 1500 € et 2000 € chaque année !"
+          }
+        },
+        "benefit_wyfci9": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🔬",
+            "title": "Certifié",
+            "highlight": "par des laboratoires indépendants",
+            "text": "Entièrement testé et conforme aux normes Européennes garantissant une filtration de l’eau optimale pour votre sécurité."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_UDy6zN",
+        "benefit_xxzgeM",
+        "benefit_PnEAxW",
+        "benefit_CKaDmV",
+        "benefit_beEPFy",
+        "benefit_wyfci9"
+      ],
+      "name": "Pureva pourquoi choisir",
+      "settings": {
+        "heading": "Pourquoi choisir Puure® ?",
+        "section_background": "#fdfdfd",
+        "text_color": "#102652",
+        "muted_text_color": "#102652",
+        "highlight_background": "#EEFF1F",
+        "highlight_text_color": "#102652",
+        "divider_color": "#102652",
+        "mobile_card_background": "rgba(255,255,255,0)",
+        "max_width": 1320,
+        "desktop_padding_y": 20,
+        "desktop_padding_x": 20,
+        "columns_desktop": 6,
+        "item_min_height": 230,
+        "item_padding_x": 24,
+        "divider_style": "dotted",
+        "divider_top": 38,
+        "divider_height": 220,
+        "heading_size": 28,
+        "heading_weight": "800",
+        "heading_bottom_spacing": 55,
+        "icon_box_height": 55,
+        "icon_size": 42,
+        "icon_bottom_spacing": 15,
+        "title_size": 28,
+        "title_weight": "800",
+        "title_bottom_spacing": 14,
+        "highlight_size": 14,
+        "highlight_weight": "800",
+        "highlight_padding_y": 2,
+        "highlight_padding_x": 4,
+        "highlight_bottom_spacing": 13,
+        "text_size": 13,
+        "text_weight": "400",
+        "text_width": 180,
+        "mobile_slider": true,
+        "mobile_padding_y": 45,
+        "mobile_padding_x": 18,
+        "columns_mobile": "1",
+        "mobile_card_width": 260,
+        "mobile_slider_gap": 16,
+        "mobile_grid_gap": 22,
+        "mobile_card_radius": 16,
+        "mobile_item_min_height": 250,
+        "mobile_item_padding_y": 22,
+        "mobile_item_padding_x": 20,
+        "mobile_heading_size": 27,
+        "mobile_heading_bottom_spacing": 35,
+        "mobile_icon_box_height": 56,
+        "mobile_icon_size": 42,
+        "mobile_icon_bottom_spacing": 14,
+        "mobile_title_size": 26,
+        "mobile_title_bottom_spacing": 12,
+        "mobile_highlight_size": 13,
+        "mobile_highlight_bottom_spacing": 12,
+        "mobile_text_size": 13
+      }
+    },
     "avisclients_CxRbib": {
       "type": "avisclients",
       "blocks": {
@@ -1005,6 +1130,7 @@
     "featured_product_CDz7jQ",
     "marquee_eAYBzE",
     "press_ppPgea",
+    "whychoose_7AXKL8",
     "avisclients_CxRbib",
     "infosproduit_dQxKfJ",
     "tabsvs_7myebi",

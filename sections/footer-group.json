@@ -92,6 +92,7 @@
         "newsletter": {
           "type": "newsletter",
           "settings": {
+            "image": "shopify://shop_images/Puure_logo_white.svg",
             "image_width": 150,
             "heading_size": "h4",
             "title": "Une eau (vraiment) pure. Simplement.",

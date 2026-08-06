@@ -1,0 +1,1236 @@
+{% comment %}
+  What to Expect — Collagen Eye Patches
+  Shopify OS 2.0 section
+  Responsive tabbed slider for desktop, tablet and mobile.
+{% endcomment %}
+
+{%- liquid
+  assign section_id = 'EyePatchTimeline-' | append: section.id
+  assign slide_count = section.blocks.size
+  assign fallback_product = section.settings.product
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="eye-timeline"
+  style="
+    --et-bg: {{ section.settings.background_color }};
+    --et-heading: {{ section.settings.heading_color }};
+    --et-text: {{ section.settings.text_color }};
+    --et-card-bg: {{ section.settings.card_background }};
+    --et-card-text: {{ section.settings.card_text_color }};
+    --et-accent: {{ section.settings.accent_color }};
+    --et-accent-text: {{ section.settings.accent_text_color }};
+    --et-tab-bg: {{ section.settings.tab_background }};
+    --et-tab-text: {{ section.settings.tab_text_color }};
+    --et-border: {{ section.settings.border_color }};
+    --et-max-width: {{ section.settings.max_width }}px;
+    --et-gap: {{ section.settings.desktop_gap }}px;
+    --et-radius: {{ section.settings.card_radius }}px;
+    --et-heading-desktop: {{ section.settings.heading_size_desktop }}px;
+    --et-heading-mobile: {{ section.settings.heading_size_mobile }}px;
+    --et-intro-desktop: {{ section.settings.intro_size_desktop }}px;
+    --et-intro-mobile: {{ section.settings.intro_size_mobile }}px;
+    --et-tab-desktop: {{ section.settings.tab_size_desktop }}px;
+    --et-tab-mobile: {{ section.settings.tab_size_mobile }}px;
+    --et-card-title-desktop: {{ section.settings.card_title_size_desktop }}px;
+    --et-card-title-mobile: {{ section.settings.card_title_size_mobile }}px;
+    --et-card-text-desktop: {{ section.settings.card_text_size_desktop }}px;
+    --et-card-text-mobile: {{ section.settings.card_text_size_mobile }}px;
+    --et-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --et-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --et-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --et-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --et-card-min-height: {{ section.settings.card_min_height }}px;
+    --et-card-min-height-mobile: {{ section.settings.card_min_height_mobile }}px;
+  "
+  data-eye-timeline
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
+>
+  <div class="eye-timeline__inner">
+    <div class="eye-timeline__layout">
+      <div class="eye-timeline__intro-column">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="eye-timeline__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="eye-timeline__heading">{{ section.settings.heading | escape | newline_to_br }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.intro != blank -%}
+          <div class="eye-timeline__intro rte">{{ section.settings.intro }}</div>
+        {%- endif -%}
+
+        {%- if slide_count > 0 -%}
+          <div class="eye-timeline__tabs" role="tablist" aria-label="{{ section.settings.tabs_label | escape }}">
+            {%- for block in section.blocks -%}
+              <button
+                id="{{ section_id }}-tab-{{ forloop.index0 }}"
+                class="eye-timeline__tab{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                role="tab"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="{{ section_id }}-panel-{{ forloop.index0 }}"
+                tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                data-timeline-tab="{{ forloop.index0 }}"
+              >
+                {%- if block.settings.icon != blank -%}
+                  <span class="eye-timeline__tab-icon" aria-hidden="true">{{ block.settings.icon | escape }}</span>
+                {%- endif -%}
+                <span>{{ block.settings.tab_label | default: block.settings.title | escape }}</span>
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="eye-timeline__slider-column">
+        {%- if slide_count > 0 -%}
+          <div
+            class="eye-timeline__viewport"
+            data-timeline-viewport
+            aria-roledescription="carousel"
+            aria-label="{{ section.settings.slider_label | escape }}"
+          >
+            <div class="eye-timeline__track" data-timeline-track>
+              {%- for block in section.blocks -%}
+                {%- liquid
+                  assign slide_image = block.settings.image
+                  if slide_image == blank and fallback_product != blank
+                    assign slide_image = fallback_product.featured_image
+                  endif
+                  assign image_alt = slide_image.alt | default: block.settings.title
+                -%}
+
+                <article
+                  id="{{ section_id }}-panel-{{ forloop.index0 }}"
+                  class="eye-timeline__slide{% if forloop.first %} is-active{% endif %}"
+                  role="tabpanel"
+                  aria-labelledby="{{ section_id }}-tab-{{ forloop.index0 }}"
+                  aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+                  tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                  data-timeline-slide
+                  data-block-id="{{ block.id }}"
+                  style="--et-slide-bg: {{ block.settings.card_background }};"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="eye-timeline__slide-content">
+                    {%- if block.settings.icon != blank -%}
+                      <span class="eye-timeline__feature-icon" aria-hidden="true">{{ block.settings.icon | escape }}</span>
+                    {%- endif -%}
+
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="eye-timeline__slide-title">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.text != blank -%}
+                      <div class="eye-timeline__slide-text rte">{{ block.settings.text }}</div>
+                    {%- endif -%}
+
+                    {%- if block.settings.highlight != blank -%}
+                      <p class="eye-timeline__highlight">
+                        <span class="eye-timeline__highlight-icon" aria-hidden="true">✦</span>
+                        <strong>{{ block.settings.highlight | escape }}</strong>
+                      </p>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="eye-timeline__media" aria-hidden="{% if slide_image == blank %}true{% else %}false{% endif %}">
+                    {%- if slide_image != blank -%}
+                      {{ slide_image
+                        | image_url: width: 1100
+                        | image_tag:
+                          class: 'eye-timeline__image',
+                          loading: 'lazy',
+                          widths: '320, 480, 640, 800, 1100',
+                          sizes: '(min-width: 990px) 34vw, (min-width: 750px) 42vw, 40vw',
+                          alt: image_alt
+                      }}
+                    {%- else -%}
+                      <div class="eye-timeline__placeholder" aria-hidden="true">
+                        <span class="eye-timeline__patch eye-timeline__patch--one"></span>
+                        <span class="eye-timeline__patch eye-timeline__patch--two"></span>
+                        <span class="eye-timeline__spark eye-timeline__spark--one">✦</span>
+                        <span class="eye-timeline__spark eye-timeline__spark--two">✧</span>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </article>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {%- if section.settings.show_progress and slide_count > 1 -%}
+            <div class="eye-timeline__progress" aria-hidden="true">
+              {%- for block in section.blocks -%}
+                <span class="eye-timeline__progress-segment{% if forloop.first %} is-active{% endif %}" data-timeline-progress></span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          <div class="eye-timeline__empty">Add timeline blocks in the theme editor.</div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <div class="eye-timeline__note rte">{{ section.settings.note }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  #{{ section_id }},
+  #{{ section_id }} * {
+    box-sizing: border-box;
+  }
+
+  #{{ section_id }} {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--et-bg);
+    color: var(--et-text);
+  }
+
+  #{{ section_id }} .eye-timeline__inner {
+    width: min(100%, var(--et-max-width));
+    margin: 0 auto;
+    padding: var(--et-padding-top-desktop) 24px var(--et-padding-bottom-desktop);
+  }
+
+  #{{ section_id }} .eye-timeline__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: var(--et-gap);
+  }
+
+  #{{ section_id }} .eye-timeline__intro-column,
+  #{{ section_id }} .eye-timeline__slider-column,
+  #{{ section_id }} .eye-timeline__viewport,
+  #{{ section_id }} .eye-timeline__track,
+  #{{ section_id }} .eye-timeline__slide,
+  #{{ section_id }} .eye-timeline__slide-content,
+  #{{ section_id }} .eye-timeline__media {
+    min-width: 0;
+  }
+
+  #{{ section_id }} .eye-timeline__eyebrow {
+    margin: 0 0 10px;
+    color: var(--et-accent);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #{{ section_id }} .eye-timeline__heading {
+    margin: 0;
+    max-width: 760px;
+    color: var(--et-heading);
+    font-size: var(--et-heading-desktop);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  #{{ section_id }} .eye-timeline__intro {
+    max-width: 650px;
+    margin-top: 24px;
+    color: var(--et-text);
+    font-size: var(--et-intro-desktop);
+    line-height: 1.35;
+  }
+
+  #{{ section_id }} .eye-timeline__intro > *:first-child,
+  #{{ section_id }} .eye-timeline__slide-text > *:first-child,
+  #{{ section_id }} .eye-timeline__note > *:first-child {
+    margin-top: 0;
+  }
+
+  #{{ section_id }} .eye-timeline__intro > *:last-child,
+  #{{ section_id }} .eye-timeline__slide-text > *:last-child,
+  #{{ section_id }} .eye-timeline__note > *:last-child {
+    margin-bottom: 0;
+  }
+
+  #{{ section_id }} .eye-timeline__tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 38px;
+  }
+
+  #{{ section_id }} .eye-timeline__tab {
+    appearance: none;
+    display: flex;
+    min-width: 0;
+    min-height: 58px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--et-border);
+    border-radius: 9px;
+    background: var(--et-tab-bg);
+    color: var(--et-tab-text);
+    font: inherit;
+    font-size: var(--et-tab-desktop);
+    font-weight: 750;
+    line-height: 1.15;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  #{{ section_id }} .eye-timeline__tab:hover {
+    transform: translateY(-1px);
+  }
+
+  #{{ section_id }} .eye-timeline__tab.is-active {
+    border-color: var(--et-card-bg);
+    background: var(--et-card-bg);
+    color: var(--et-card-text);
+  }
+
+  #{{ section_id }} .eye-timeline__tab:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--et-accent) 45%, transparent);
+    outline-offset: 3px;
+  }
+
+  #{{ section_id }} .eye-timeline__tab-icon {
+    flex: 0 0 auto;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+
+  #{{ section_id }} .eye-timeline__viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--et-radius);
+    touch-action: pan-y;
+  }
+
+  #{{ section_id }} .eye-timeline__track {
+    display: flex;
+    width: 100%;
+    transition: transform 420ms cubic-bezier(.22,.61,.36,1);
+    will-change: transform;
+  }
+
+  #{{ section_id }} .eye-timeline__slide {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(170px, 0.82fr);
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: var(--et-card-min-height);
+    overflow: hidden;
+    border-radius: var(--et-radius);
+    background: var(--et-slide-bg, var(--et-card-bg));
+    color: var(--et-card-text);
+    isolation: isolate;
+  }
+
+  #{{ section_id }} .eye-timeline__slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 84% 20%, rgba(255,255,255,.10), transparent 34%);
+    pointer-events: none;
+  }
+
+  #{{ section_id }} .eye-timeline__slide-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(26px, 4vw, 48px);
+  }
+
+  #{{ section_id }} .eye-timeline__feature-icon {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.10);
+    color: var(--et-accent);
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  #{{ section_id }} .eye-timeline__slide-title {
+    margin: 0;
+    color: inherit;
+    font-size: var(--et-card-title-desktop);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+  }
+
+  #{{ section_id }} .eye-timeline__slide-text {
+    margin-top: 20px;
+    color: inherit;
+    font-size: var(--et-card-text-desktop);
+    line-height: 1.32;
+    opacity: .96;
+  }
+
+  #{{ section_id }} .eye-timeline__highlight {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: center;
+    gap: 9px;
+    margin: auto 0 0;
+    padding: 10px 13px;
+    border-radius: 8px;
+    background: var(--et-accent);
+    color: var(--et-accent-text);
+    font-size: max(13px, calc(var(--et-card-text-desktop) - 1px));
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  #{{ section_id }} .eye-timeline__highlight-icon {
+    flex: 0 0 auto;
+    font-size: 16px;
+  }
+
+  #{{ section_id }} .eye-timeline__media {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #{{ section_id }} .eye-timeline__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: scale(1.04);
+  }
+
+  #{{ section_id }} .eye-timeline__placeholder {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  #{{ section_id }} .eye-timeline__patch {
+    position: absolute;
+    display: block;
+    width: 130px;
+    height: 54px;
+    border-radius: 50% 50% 58% 42% / 52% 52% 48% 48%;
+    background: linear-gradient(145deg, rgba(238,242,243,.95), rgba(238,242,243,.42));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.65), 0 18px 30px rgba(0,0,0,.15);
+  }
+
+  #{{ section_id }} .eye-timeline__patch--one {
+    right: 18%;
+    top: 29%;
+    transform: rotate(-13deg);
+  }
+
+  #{{ section_id }} .eye-timeline__patch--two {
+    right: 5%;
+    top: 49%;
+    transform: rotate(15deg) scale(.9);
+  }
+
+  #{{ section_id }} .eye-timeline__spark {
+    position: absolute;
+    color: var(--et-accent);
+    line-height: 1;
+  }
+
+  #{{ section_id }} .eye-timeline__spark--one {
+    right: 22%;
+    top: 17%;
+    font-size: 34px;
+  }
+
+  #{{ section_id }} .eye-timeline__spark--two {
+    right: 7%;
+    top: 26%;
+    font-size: 24px;
+  }
+
+  #{{ section_id }} .eye-timeline__progress {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  #{{ section_id }} .eye-timeline__progress-segment {
+    width: 38px;
+    height: 3px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--et-heading) 24%, transparent);
+    transition: width 180ms ease, background-color 180ms ease;
+  }
+
+  #{{ section_id }} .eye-timeline__progress-segment.is-active {
+    width: 58px;
+    background: var(--et-accent);
+  }
+
+  #{{ section_id }} .eye-timeline__note {
+    width: min(100%, 880px);
+    margin: 28px auto 0;
+    color: var(--et-text);
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+    opacity: .75;
+  }
+
+  #{{ section_id }} .eye-timeline__empty {
+    padding: 40px;
+    border: 1px dashed var(--et-border);
+    border-radius: var(--et-radius);
+    color: var(--et-text);
+    text-align: center;
+  }
+
+  @media (max-width: 989px) {
+    #{{ section_id }} .eye-timeline__layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 34px;
+    }
+
+    #{{ section_id }} .eye-timeline__intro-column {
+      width: min(100%, 720px);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #{{ section_id }} .eye-timeline__intro {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    #{{ section_id }} .eye-timeline__tabs {
+      width: min(100%, 700px);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 749px) {
+    #{{ section_id }} .eye-timeline__inner {
+      padding: var(--et-padding-top-mobile) 18px var(--et-padding-bottom-mobile);
+    }
+
+    #{{ section_id }} .eye-timeline__layout {
+      gap: 28px;
+    }
+
+    #{{ section_id }} .eye-timeline__heading {
+      font-size: var(--et-heading-mobile);
+      line-height: 1.01;
+    }
+
+    #{{ section_id }} .eye-timeline__intro {
+      margin-top: 20px;
+      font-size: var(--et-intro-mobile);
+      line-height: 1.3;
+    }
+
+    #{{ section_id }} .eye-timeline__tabs {
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    #{{ section_id }} .eye-timeline__tab {
+      min-height: 50px;
+      gap: 7px;
+      padding: 10px 8px;
+      border-radius: 8px;
+      font-size: var(--et-tab-mobile);
+    }
+
+    #{{ section_id }} .eye-timeline__slide {
+      grid-template-columns: minmax(0, 1fr) minmax(105px, 38%);
+      min-height: var(--et-card-min-height-mobile);
+    }
+
+    #{{ section_id }} .eye-timeline__slide-content {
+      padding: 22px 0 20px 18px;
+    }
+
+    #{{ section_id }} .eye-timeline__feature-icon {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      font-size: 21px;
+    }
+
+    #{{ section_id }} .eye-timeline__slide-title {
+      font-size: var(--et-card-title-mobile);
+      line-height: 1.08;
+    }
+
+    #{{ section_id }} .eye-timeline__slide-text {
+      margin-top: 15px;
+      padding-right: 8px;
+      font-size: var(--et-card-text-mobile);
+      line-height: 1.28;
+    }
+
+    #{{ section_id }} .eye-timeline__highlight {
+      margin-top: auto;
+      margin-right: -70px;
+      padding: 9px 10px;
+      font-size: max(12px, calc(var(--et-card-text-mobile) - 1px));
+    }
+
+    #{{ section_id }} .eye-timeline__image {
+      object-position: 55% bottom;
+      transform: scale(1.12);
+    }
+
+    #{{ section_id }} .eye-timeline__patch {
+      width: 92px;
+      height: 40px;
+    }
+
+    #{{ section_id }} .eye-timeline__patch--one {
+      right: 7%;
+      top: 27%;
+    }
+
+    #{{ section_id }} .eye-timeline__patch--two {
+      right: -14%;
+      top: 47%;
+    }
+
+    #{{ section_id }} .eye-timeline__progress-segment {
+      width: 28px;
+    }
+
+    #{{ section_id }} .eye-timeline__progress-segment.is-active {
+      width: 44px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #{{ section_id }} .eye-timeline__inner {
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+
+    #{{ section_id }} .eye-timeline__tab {
+      font-size: max(11px, calc(var(--et-tab-mobile) - 1px));
+    }
+
+    #{{ section_id }} .eye-timeline__slide {
+      grid-template-columns: minmax(0, 1fr) 104px;
+    }
+
+    #{{ section_id }} .eye-timeline__slide-content {
+      padding-left: 15px;
+    }
+
+    #{{ section_id }} .eye-timeline__highlight {
+      margin-right: -55px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{{ section_id }} .eye-timeline__track,
+    #{{ section_id }} .eye-timeline__tab,
+    #{{ section_id }} .eye-timeline__progress-segment {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById('{{ section_id }}');
+    if (!root || root.dataset.timelineReady === 'true') return;
+    root.dataset.timelineReady = 'true';
+
+    const tabs = Array.from(root.querySelectorAll('[data-timeline-tab]'));
+    const slides = Array.from(root.querySelectorAll('[data-timeline-slide]'));
+    const progress = Array.from(root.querySelectorAll('[data-timeline-progress]'));
+    const track = root.querySelector('[data-timeline-track]');
+    const viewport = root.querySelector('[data-timeline-viewport]');
+
+    if (!track || !viewport || tabs.length === 0 || slides.length === 0) return;
+
+    let activeIndex = 0;
+    let pointerStartX = null;
+    let autoplayTimer = null;
+    const autoplayEnabled = root.dataset.autoplay === 'true';
+    const autoplaySpeed = Math.max(3000, Number(root.dataset.autoplaySpeed) || 6000);
+
+    const setActive = (nextIndex, focusTab = false) => {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
+
+      tabs.forEach((tab, index) => {
+        const selected = index === activeIndex;
+        tab.classList.toggle('is-active', selected);
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        tab.tabIndex = selected ? 0 : -1;
+      });
+
+      slides.forEach((slide, index) => {
+        const selected = index === activeIndex;
+        slide.classList.toggle('is-active', selected);
+        slide.setAttribute('aria-hidden', selected ? 'false' : 'true');
+        slide.tabIndex = selected ? 0 : -1;
+      });
+
+      progress.forEach((item, index) => {
+        item.classList.toggle('is-active', index === activeIndex);
+      });
+
+      if (focusTab) tabs[activeIndex]?.focus();
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (!autoplayEnabled || slides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      autoplayTimer = window.setInterval(() => setActive(activeIndex + 1), autoplaySpeed);
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        setActive(index);
+        startAutoplay();
+      });
+
+      tab.addEventListener('keydown', (event) => {
+        let nextIndex = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = activeIndex + 1;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = activeIndex - 1;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+
+        if (nextIndex !== null) {
+          event.preventDefault();
+          setActive(nextIndex, true);
+          startAutoplay();
+        }
+      });
+    });
+
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      pointerStartX = event.clientX;
+      stopAutoplay();
+    });
+
+    viewport.addEventListener('pointerup', (event) => {
+      if (pointerStartX === null) return;
+      const distance = event.clientX - pointerStartX;
+      pointerStartX = null;
+
+      if (Math.abs(distance) >= 45) {
+        setActive(activeIndex + (distance < 0 ? 1 : -1));
+      }
+      startAutoplay();
+    });
+
+    viewport.addEventListener('pointercancel', () => {
+      pointerStartX = null;
+      startAutoplay();
+    });
+
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+    root.addEventListener('focusin', stopAutoplay);
+    root.addEventListener('focusout', startAutoplay);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    document.addEventListener('shopify:block:select', (event) => {
+      const selectedSlide = root.querySelector(`[data-block-id="${event.detail.blockId}"]`);
+      if (!selectedSlide) return;
+      const selectedIndex = slides.indexOf(selectedSlide);
+      if (selectedIndex >= 0) setActive(selectedIndex);
+      stopAutoplay();
+    });
+
+    setActive(0);
+    startAutoplay();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Eye patches timeline",
+  "tag": "section",
+  "class": "section-eye-patches-timeline",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "YOUR CONSISTENT SKINCARE ROUTINE"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What to Expect\nWeek by Week"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>Every skin journey is different. Here is what many customers may notice when Collagen Eye Patches become part of a consistent routine.</p>"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Fallback product image",
+      "info": "Used when a timeline block does not have its own image."
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Optional note",
+      "default": "<p>Individual results vary. This section describes cosmetic appearance and routine-based expectations.</p>"
+    },
+    {
+      "type": "text",
+      "id": "tabs_label",
+      "label": "Tabs accessibility label",
+      "default": "Choose a timeline stage"
+    },
+    {
+      "type": "text",
+      "id": "slider_label",
+      "label": "Slider accessibility label",
+      "default": "Collagen Eye Patches timeline"
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay delay",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_progress",
+      "label": "Show progress indicators",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "label": "Card minimum height",
+      "min": 260,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "default": 330
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Mobile card minimum height",
+      "min": 260,
+      "max": 460,
+      "step": 10,
+      "unit": "px",
+      "default": 310
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Brand colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text color",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Default card and active tab",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#00A896"
+    },
+    {
+      "type": "color",
+      "id": "accent_text_color",
+      "label": "Accent label text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tab_background",
+      "label": "Inactive tab background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Inactive tab text",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Borders",
+      "default": "#CBD5D8"
+    },
+    {
+      "type": "header",
+      "content": "Typography — desktop"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "intro_size_desktop",
+      "label": "Introduction size",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "tab_size_desktop",
+      "label": "Tab text size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Card title size",
+      "min": 18,
+      "max": 38,
+      "step": 1,
+      "unit": "px",
+      "default": 23
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Card body size",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Typography — mobile"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 31
+    },
+    {
+      "type": "range",
+      "id": "intro_size_mobile",
+      "label": "Introduction size",
+      "min": 13,
+      "max": 21,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tab_size_mobile",
+      "label": "Tab text size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Card title size",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Card body size",
+      "min": 12,
+      "max": 19,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Layout and spacing"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum content width",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1420
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Desktop column gap",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 44
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stage",
+      "name": "Timeline stage",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab label",
+          "default": "Week 1–2"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon or symbol",
+          "default": "✦"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card title",
+          "default": "A More Refreshed Look"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Card text",
+          "default": "<p>The cooling patches help the under-eye area feel hydrated and comfortable. Tired-looking eyes may appear fresher after each use.</p>"
+        },
+        {
+          "type": "text",
+          "id": "highlight",
+          "label": "Highlight label",
+          "default": "Hydration and comfort become noticeable"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background",
+          "default": "#2E4347"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Eye patches timeline",
+      "blocks": [
+        {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 1–2",
+            "icon": "✦",
+            "title": "A More Refreshed Look",
+            "text": "<p>The cooling patches help the under-eye area feel hydrated and comfortable. Tired-looking eyes may appear fresher after each use.</p>",
+            "highlight": "Hydration and comfort become noticeable",
+            "card_background": "#2E4347"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 3–4",
+            "icon": "◌",
+            "title": "Smoother-Looking Skin",
+            "text": "<p>With consistent use, the eye area can look more supple and the appearance of fine dehydration lines may begin to soften.</p>",
+            "highlight": "Fine lines may look softened",
+            "card_background": "#003049"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 5–6",
+            "icon": "✧",
+            "title": "Brighter, Less Tired-Looking Eyes",
+            "text": "<p>A regular routine may help puffiness and shadowing look less noticeable, leaving the under-eye area visibly brighter.</p>",
+            "highlight": "Eyes look brighter and more awake",
+            "card_background": "#2E4347"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 6–8+",
+            "icon": "∞",
+            "title": "Maintain Your Results",
+            "text": "<p>Continued use helps maintain a smoother, firmer-looking and refreshed eye area as part of your ongoing skincare routine.</p>",
+            "highlight": "Consistency supports lasting-looking results",
+            "card_background": "#003049"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

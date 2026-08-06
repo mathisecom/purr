@@ -238,6 +238,7 @@
         "review_fGpiAJ": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/Eye_Pacthes_-_fFoto_Michelle_Maxime.webp",
             "image_alt": "",
             "rating": 5,
             "rating_label": "Noté 5,0",
@@ -250,6 +251,7 @@
         "review_6eckHK": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/image1-vmake.webp",
             "image_alt": "",
             "rating": 5,
             "rating_label": "Noté 5,0",

@@ -440,34 +440,34 @@
 
 {% schema %}
 {
-  "name": "Pureva FAQ",
+  "name": "Eye Patches FAQ",
   "settings": [
     {
       "type": "header",
-      "content": "Colonne gauche"
+      "content": "Left column"
     },
     {
       "type": "text",
       "id": "heading",
-      "label": "Titre",
-      "default": "F.A.Q"
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "Une question ? Nous avons la réponse ! Notre équipe d’experts est là pour vous, du lundi au samedi, de 9h à 18h."
+      "default": "Everything you need to know about using our Collagen Eye Patches. Still need help? Our support team is happy to assist."
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Texte bouton",
-      "default": "sav@puurefrance.fr"
+      "label": "Button text",
+      "default": "Contact our support team"
     },
     {
       "type": "url",
       "id": "button_link",
-      "label": "Lien bouton"
+      "label": "Button link"
     },
     {
       "type": "image_picker",
@@ -477,7 +477,7 @@
     {
       "type": "text",
       "id": "avatar_alt_1",
-      "label": "Texte alternatif avatar 1",
+      "label": "Avatar 1 alt text",
       "default": "Expert support 1"
     },
     {
@@ -488,7 +488,7 @@
     {
       "type": "text",
       "id": "avatar_alt_2",
-      "label": "Texte alternatif avatar 2",
+      "label": "Avatar 2 alt text",
       "default": "Expert support 2"
     },
     {
@@ -499,97 +499,97 @@
     {
       "type": "text",
       "id": "avatar_alt_3",
-      "label": "Texte alternatif avatar 3",
+      "label": "Avatar 3 alt text",
       "default": "Expert support 3"
     },
     {
       "type": "header",
-      "content": "Comportement FAQ"
+      "content": "FAQ behavior"
     },
     {
       "type": "checkbox",
       "id": "open_first",
-      "label": "Ouvrir la première question par défaut",
+      "label": "Open the first question by default",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "close_others",
-      "label": "Fermer les autres questions à l’ouverture",
+      "label": "Close other questions when one opens",
       "default": true
     },
     {
       "type": "textarea",
       "id": "check_icon_svg",
-      "label": "Icône check SVG",
+      "label": "Check icon SVG",
       "default": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>"
     },
     {
       "type": "header",
-      "content": "Couleurs"
+      "content": "Colors"
     },
     {
       "type": "color",
       "id": "section_background",
-      "label": "Fond section",
-      "default": "#F4F4F4"
+      "label": "Section background",
+      "default": "#EEF2F3"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Texte principal",
-      "default": "#08164C"
+      "label": "Main text",
+      "default": "#003049"
     },
     {
       "type": "color",
       "id": "muted_text_color",
-      "label": "Texte réponse",
-      "default": "#4E5878"
+      "label": "Answer text",
+      "default": "#2E4347"
     },
     {
       "type": "color",
       "id": "border_color",
-      "label": "Bordures FAQ",
-      "default": "#D8DCE6"
+      "label": "FAQ borders",
+      "default": "#B8C5C9"
     },
     {
       "type": "color",
       "id": "card_background",
-      "label": "Fond cartes avantages",
+      "label": "Benefit card background",
       "default": "#FFFFFF"
     },
     {
       "type": "color",
       "id": "icon_background",
-      "label": "Fond icône avantage",
-      "default": "#14244D"
+      "label": "Benefit icon background",
+      "default": "#003049"
     },
     {
       "type": "color",
       "id": "icon_color",
-      "label": "Couleur icône avantage",
+      "label": "Benefit icon color",
       "default": "#FFFFFF"
     },
     {
       "type": "color",
       "id": "button_background",
-      "label": "Fond bouton",
+      "label": "Button background",
       "default": "transparent"
     },
     {
       "type": "color",
       "id": "button_text_color",
-      "label": "Texte / bordure bouton",
-      "default": "#14244D"
+      "label": "Button text and border",
+      "default": "#003049"
     },
     {
       "type": "header",
-      "content": "Dimensions ordinateur"
+      "content": "Desktop dimensions"
     },
     {
       "type": "range",
       "id": "max_width",
-      "label": "Largeur maximale",
+      "label": "Maximum width",
       "min": 900,
       "max": 1600,
       "step": 20,
@@ -599,7 +599,7 @@
     {
       "type": "range",
       "id": "desktop_padding_y",
-      "label": "Marge haut/bas",
+      "label": "Top and bottom padding",
       "min": 40,
       "max": 180,
       "step": 5,
@@ -609,7 +609,7 @@
     {
       "type": "range",
       "id": "desktop_padding_x",
-      "label": "Marge gauche/droite",
+      "label": "Left and right padding",
       "min": 10,
       "max": 80,
       "step": 5,
@@ -619,7 +619,7 @@
     {
       "type": "range",
       "id": "left_column_width",
-      "label": "Largeur colonne gauche",
+      "label": "Left column width",
       "min": 1,
       "max": 6,
       "step": 1,
@@ -628,7 +628,7 @@
     {
       "type": "range",
       "id": "right_column_width",
-      "label": "Largeur colonne droite",
+      "label": "Right column width",
       "min": 4,
       "max": 9,
       "step": 1,
@@ -637,7 +637,7 @@
     {
       "type": "range",
       "id": "desktop_gap",
-      "label": "Espace entre colonnes",
+      "label": "Space between columns",
       "min": 40,
       "max": 180,
       "step": 5,
@@ -646,12 +646,12 @@
     },
     {
       "type": "header",
-      "content": "Typographie gauche"
+      "content": "Left-column typography"
     },
     {
       "type": "range",
       "id": "heading_size",
-      "label": "Taille titre",
+      "label": "Heading size",
       "min": 22,
       "max": 52,
       "step": 1,
@@ -661,7 +661,7 @@
     {
       "type": "select",
       "id": "heading_weight",
-      "label": "Graisse titre",
+      "label": "Heading weight",
       "default": "800",
       "options": [
         { "value": "500", "label": "Medium" },
@@ -674,7 +674,7 @@
     {
       "type": "range",
       "id": "heading_bottom_spacing",
-      "label": "Espace titre / texte",
+      "label": "Heading to text spacing",
       "min": 10,
       "max": 45,
       "step": 1,
@@ -684,7 +684,7 @@
     {
       "type": "range",
       "id": "description_size",
-      "label": "Taille description",
+      "label": "Description size",
       "min": 12,
       "max": 22,
       "step": 1,
@@ -694,7 +694,7 @@
     {
       "type": "select",
       "id": "description_weight",
-      "label": "Graisse description",
+      "label": "Description weight",
       "default": "500",
       "options": [
         { "value": "400", "label": "Normal" },
@@ -705,7 +705,7 @@
     {
       "type": "range",
       "id": "description_width",
-      "label": "Largeur description",
+      "label": "Description width",
       "min": 260,
       "max": 560,
       "step": 10,
@@ -715,7 +715,7 @@
     {
       "type": "range",
       "id": "description_bottom_spacing",
-      "label": "Espace description / bouton",
+      "label": "Description to button spacing",
       "min": 18,
       "max": 50,
       "step": 1,
@@ -725,7 +725,7 @@
     {
       "type": "range",
       "id": "avatar_size",
-      "label": "Taille avatars",
+      "label": "Avatar size",
       "min": 22,
       "max": 48,
       "step": 1,
@@ -735,7 +735,7 @@
     {
       "type": "range",
       "id": "avatar_overlap",
-      "label": "Chevauchement avatars",
+      "label": "Avatar overlap",
       "min": 0,
       "max": 18,
       "step": 1,
@@ -744,12 +744,12 @@
     },
     {
       "type": "header",
-      "content": "Bouton"
+      "content": "Button"
     },
     {
       "type": "range",
       "id": "button_width",
-      "label": "Largeur bouton",
+      "label": "Button width",
       "min": 220,
       "max": 520,
       "step": 10,
@@ -759,7 +759,7 @@
     {
       "type": "range",
       "id": "button_height",
-      "label": "Hauteur bouton",
+      "label": "Button height",
       "min": 42,
       "max": 70,
       "step": 1,
@@ -769,7 +769,7 @@
     {
       "type": "range",
       "id": "button_text_size",
-      "label": "Taille texte bouton",
+      "label": "Button text size",
       "min": 11,
       "max": 18,
       "step": 1,
@@ -783,7 +783,7 @@
     {
       "type": "range",
       "id": "question_size",
-      "label": "Taille questions",
+      "label": "Question size",
       "min": 12,
       "max": 20,
       "step": 1,
@@ -793,7 +793,7 @@
     {
       "type": "select",
       "id": "question_weight",
-      "label": "Graisse questions",
+      "label": "Question weight",
       "default": "800",
       "options": [
         { "value": "600", "label": "Semi-bold" },
@@ -805,7 +805,7 @@
     {
       "type": "range",
       "id": "question_padding_y",
-      "label": "Padding vertical questions",
+      "label": "Question vertical padding",
       "min": 12,
       "max": 32,
       "step": 1,
@@ -815,7 +815,7 @@
     {
       "type": "range",
       "id": "plus_size",
-      "label": "Taille symbole +",
+      "label": "Plus icon size",
       "min": 16,
       "max": 34,
       "step": 1,
@@ -825,7 +825,7 @@
     {
       "type": "range",
       "id": "answer_size",
-      "label": "Taille réponses",
+      "label": "Answer size",
       "min": 12,
       "max": 18,
       "step": 1,
@@ -835,7 +835,7 @@
     {
       "type": "range",
       "id": "answer_bottom_padding",
-      "label": "Padding bas réponse",
+      "label": "Answer bottom padding",
       "min": 10,
       "max": 32,
       "step": 1,
@@ -844,12 +844,12 @@
     },
     {
       "type": "header",
-      "content": "Avantages"
+      "content": "Benefits"
     },
     {
       "type": "range",
       "id": "benefits_top_spacing",
-      "label": "Espace FAQ / avantages",
+      "label": "FAQ to benefits spacing",
       "min": 20,
       "max": 60,
       "step": 1,
@@ -859,7 +859,7 @@
     {
       "type": "range",
       "id": "benefits_columns_desktop",
-      "label": "Colonnes avantages ordinateur",
+      "label": "Benefit columns on desktop",
       "min": 1,
       "max": 3,
       "step": 1,
@@ -868,7 +868,7 @@
     {
       "type": "range",
       "id": "benefits_gap",
-      "label": "Espace entre avantages",
+      "label": "Space between benefits",
       "min": 12,
       "max": 34,
       "step": 1,
@@ -878,7 +878,7 @@
     {
       "type": "range",
       "id": "benefit_height",
-      "label": "Hauteur avantages",
+      "label": "Benefit card height",
       "min": 70,
       "max": 130,
       "step": 5,
@@ -888,7 +888,7 @@
     {
       "type": "range",
       "id": "benefit_padding_y",
-      "label": "Padding vertical avantages",
+      "label": "Benefit vertical padding",
       "min": 12,
       "max": 30,
       "step": 1,
@@ -898,7 +898,7 @@
     {
       "type": "range",
       "id": "benefit_padding_x",
-      "label": "Padding horizontal avantages",
+      "label": "Benefit horizontal padding",
       "min": 12,
       "max": 34,
       "step": 1,
@@ -908,7 +908,7 @@
     {
       "type": "range",
       "id": "benefit_icon_size",
-      "label": "Taille icône avantage",
+      "label": "Benefit icon size",
       "min": 22,
       "max": 44,
       "step": 1,
@@ -918,7 +918,7 @@
     {
       "type": "range",
       "id": "benefit_icon_overlap",
-      "label": "Décalage icône gauche",
+      "label": "Benefit icon left offset",
       "min": 0,
       "max": 22,
       "step": 1,
@@ -928,7 +928,7 @@
     {
       "type": "range",
       "id": "benefit_icon_offset",
-      "label": "Décalage contenu avantage",
+      "label": "Benefit content offset",
       "min": 28,
       "max": 70,
       "step": 1,
@@ -938,7 +938,7 @@
     {
       "type": "range",
       "id": "benefit_title_size",
-      "label": "Taille titre avantage",
+      "label": "Benefit title size",
       "min": 11,
       "max": 17,
       "step": 1,
@@ -948,7 +948,7 @@
     {
       "type": "range",
       "id": "benefit_text_size",
-      "label": "Taille texte avantage",
+      "label": "Benefit text size",
       "min": 11,
       "max": 17,
       "step": 1,
@@ -962,7 +962,7 @@
     {
       "type": "range",
       "id": "mobile_padding_y",
-      "label": "Marge haut/bas mobile",
+      "label": "Mobile top and bottom padding",
       "min": 35,
       "max": 130,
       "step": 5,
@@ -972,7 +972,7 @@
     {
       "type": "range",
       "id": "mobile_padding_x",
-      "label": "Marge gauche/droite mobile",
+      "label": "Mobile left and right padding",
       "min": 14,
       "max": 30,
       "step": 1,
@@ -982,7 +982,7 @@
     {
       "type": "range",
       "id": "mobile_gap",
-      "label": "Espace colonnes mobile",
+      "label": "Mobile column spacing",
       "min": 24,
       "max": 70,
       "step": 1,
@@ -992,7 +992,7 @@
     {
       "type": "range",
       "id": "mobile_heading_size",
-      "label": "Taille titre mobile",
+      "label": "Mobile heading size",
       "min": 22,
       "max": 40,
       "step": 1,
@@ -1002,7 +1002,7 @@
     {
       "type": "range",
       "id": "mobile_heading_bottom_spacing",
-      "label": "Espace titre / texte mobile",
+      "label": "Mobile heading to text spacing",
       "min": 12,
       "max": 40,
       "step": 1,
@@ -1012,7 +1012,7 @@
     {
       "type": "range",
       "id": "mobile_description_size",
-      "label": "Taille description mobile",
+      "label": "Mobile description size",
       "min": 12,
       "max": 18,
       "step": 1,
@@ -1022,7 +1022,7 @@
     {
       "type": "range",
       "id": "mobile_description_bottom_spacing",
-      "label": "Espace description / bouton mobile",
+      "label": "Mobile description to button spacing",
       "min": 18,
       "max": 44,
       "step": 1,
@@ -1032,7 +1032,7 @@
     {
       "type": "range",
       "id": "mobile_avatar_size",
-      "label": "Taille avatars mobile",
+      "label": "Mobile avatar size",
       "min": 22,
       "max": 42,
       "step": 1,
@@ -1042,7 +1042,7 @@
     {
       "type": "range",
       "id": "mobile_avatar_overlap",
-      "label": "Chevauchement avatars mobile",
+      "label": "Mobile avatar overlap",
       "min": 0,
       "max": 16,
       "step": 1,
@@ -1052,7 +1052,7 @@
     {
       "type": "range",
       "id": "mobile_button_height",
-      "label": "Hauteur bouton mobile",
+      "label": "Mobile button height",
       "min": 42,
       "max": 64,
       "step": 1,
@@ -1062,7 +1062,7 @@
     {
       "type": "range",
       "id": "mobile_button_text_size",
-      "label": "Taille texte bouton mobile",
+      "label": "Mobile button text size",
       "min": 11,
       "max": 17,
       "step": 1,
@@ -1072,7 +1072,7 @@
     {
       "type": "range",
       "id": "mobile_question_size",
-      "label": "Taille questions mobile",
+      "label": "Mobile question size",
       "min": 12,
       "max": 18,
       "step": 1,
@@ -1082,7 +1082,7 @@
     {
       "type": "range",
       "id": "mobile_question_padding_y",
-      "label": "Padding vertical questions mobile",
+      "label": "Mobile question vertical padding",
       "min": 12,
       "max": 28,
       "step": 1,
@@ -1092,7 +1092,7 @@
     {
       "type": "range",
       "id": "mobile_plus_size",
-      "label": "Taille + mobile",
+      "label": "Mobile plus icon size",
       "min": 16,
       "max": 30,
       "step": 1,
@@ -1102,7 +1102,7 @@
     {
       "type": "range",
       "id": "mobile_answer_size",
-      "label": "Taille réponses mobile",
+      "label": "Mobile answer size",
       "min": 12,
       "max": 17,
       "step": 1,
@@ -1112,7 +1112,7 @@
     {
       "type": "range",
       "id": "mobile_benefits_top_spacing",
-      "label": "Espace FAQ / avantages mobile",
+      "label": "Mobile FAQ to benefits spacing",
       "min": 20,
       "max": 55,
       "step": 1,
@@ -1122,7 +1122,7 @@
     {
       "type": "range",
       "id": "mobile_benefits_gap",
-      "label": "Espace avantages mobile",
+      "label": "Mobile benefit spacing",
       "min": 12,
       "max": 28,
       "step": 1,
@@ -1132,7 +1132,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_height",
-      "label": "Hauteur avantages mobile",
+      "label": "Mobile benefit card height",
       "min": 70,
       "max": 120,
       "step": 5,
@@ -1142,7 +1142,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_padding_y",
-      "label": "Padding vertical avantage mobile",
+      "label": "Mobile benefit vertical padding",
       "min": 12,
       "max": 28,
       "step": 1,
@@ -1152,7 +1152,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_padding_x",
-      "label": "Padding horizontal avantage mobile",
+      "label": "Mobile benefit horizontal padding",
       "min": 12,
       "max": 30,
       "step": 1,
@@ -1162,7 +1162,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_icon_size",
-      "label": "Taille icône avantage mobile",
+      "label": "Mobile benefit icon size",
       "min": 22,
       "max": 40,
       "step": 1,
@@ -1172,7 +1172,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_icon_overlap",
-      "label": "Décalage icône mobile",
+      "label": "Mobile benefit icon offset",
       "min": 0,
       "max": 18,
       "step": 1,
@@ -1182,7 +1182,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_icon_offset",
-      "label": "Décalage contenu mobile",
+      "label": "Mobile benefit content offset",
       "min": 28,
       "max": 64,
       "step": 1,
@@ -1192,7 +1192,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_title_size",
-      "label": "Taille titre avantage mobile",
+      "label": "Mobile benefit title size",
       "min": 11,
       "max": 16,
       "step": 1,
@@ -1202,7 +1202,7 @@
     {
       "type": "range",
       "id": "mobile_benefit_text_size",
-      "label": "Taille texte avantage mobile",
+      "label": "Mobile benefit text size",
       "min": 11,
       "max": 16,
       "step": 1,
@@ -1213,44 +1213,44 @@
   "blocks": [
     {
       "type": "question",
-      "name": "Question FAQ",
+      "name": "FAQ question",
       "settings": [
         {
           "type": "text",
           "id": "question",
           "label": "Question",
-          "default": "Comment fonctionne le système de filtration Pure® ?"
+          "default": "How do Collagen Eye Patches work?"
         },
         {
           "type": "textarea",
           "id": "answer",
-          "label": "Réponse",
-          "default": "Le système utilise plusieurs couches de filtration pour aider à réduire les impuretés, améliorer le goût de l’eau et offrir une utilisation simple au quotidien."
+          "label": "Answer",
+          "default": "They create a cooling, hydrating layer over the under-eye area to help skin look smoother, plumper and more refreshed. Cosmetic results may vary from person to person."
         }
       ]
     },
     {
       "type": "benefit",
-      "name": "Avantage bas",
+      "name": "Bottom benefit",
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "Titre avantage",
-          "default": "Garantie 2 ans"
+          "label": "Benefit title",
+          "default": "Customer Support"
         },
         {
           "type": "textarea",
           "id": "text",
-          "label": "Texte avantage",
-          "default": "Une qualité conçue pour durer."
+          "label": "Benefit text",
+          "default": "Our team is here to help with your order and product routine."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Pureva FAQ",
+      "name": "Eye Patches FAQ",
       "blocks": [
         {
           "type": "question",

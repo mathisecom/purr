@@ -661,6 +661,78 @@
         "padding_bottom_mobile": 24
       }
     },
+    "proofeyes_tgwDAU": {
+      "type": "proofeyes",
+      "blocks": {
+        "result_bNCJb9": {
+          "type": "result",
+          "settings": {
+            "percentage": "86%",
+            "text": "said their under-eye area looked more refreshed after use",
+            "benefit": "Brighter-looking eyes",
+            "meter_value": 86
+          }
+        },
+        "result_Keqimi": {
+          "type": "result",
+          "settings": {
+            "percentage": "91%",
+            "text": "noticed smoother-looking skin with consistent use",
+            "benefit": "Smoother-looking skin",
+            "meter_value": 91
+          }
+        },
+        "result_pmmetf": {
+          "type": "result",
+          "settings": {
+            "percentage": "81%",
+            "text": "reported a reduced look of puffiness and dark circles",
+            "benefit": "More rested-looking eyes",
+            "meter_value": 81
+          }
+        }
+      },
+      "block_order": [
+        "result_bNCJb9",
+        "result_Keqimi",
+        "result_pmmetf"
+      ],
+      "name": "Eye Results Slider",
+      "settings": {
+        "eyebrow": "REAL CUSTOMER FEEDBACK",
+        "heading": "Proof Is in the Results",
+        "subheading": "<p>See what customers noticed after adding Collagen Eye Patches to their skincare routine.</p>",
+        "decorative_image_alt": "Collagen Eye Patches",
+        "show_image_mobile": true,
+        "image_width_desktop": 320,
+        "image_offset_x": 20,
+        "image_offset_y": 20,
+        "show_arrows": false,
+        "show_dots": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "mobile_card_width": 85,
+        "card_min_height": 230,
+        "card_min_height_mobile": 300,
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 34,
+        "body_size_desktop": 16,
+        "body_size_mobile": 16,
+        "percent_size_desktop": 58,
+        "percent_size_mobile": 48,
+        "background_color": "#EEF2F3",
+        "card_color": "#FFFFFF",
+        "heading_color": "#003049",
+        "text_color": "#2E4347",
+        "accent_color": "#003049",
+        "line_color": "#B8C9CD",
+        "corner_radius": 10,
+        "max_width": 1380,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "disclaimer": "<p>Results may vary. Replace the sample percentages with substantiated data before publishing.</p>"
+      }
+    },
     "herobanner_aQXwMb": {
       "type": "herobanner",
       "disabled": true,
@@ -2236,6 +2308,7 @@
     "whatexpect_pBkHyR",
     "easysteps_pyKtnL",
     "ingredientslider_xXbFrr",
+    "proofeyes_tgwDAU",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

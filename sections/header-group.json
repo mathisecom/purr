@@ -31,7 +31,7 @@
         "message_kAJjU6": {
           "type": "message",
           "settings": {
-            "text": "Free Worldwide Shipping",
+            "text": "Announce something here",
             "url": ""
           }
         }
@@ -48,9 +48,9 @@
         "text_size": "text-xs",
         "navigation_mode": "arrows",
         "scrolling_speed": 10,
-        "background": "#E8ECEE",
+        "background": "#003049",
         "background_gradient": "",
-        "text_color": "#003049"
+        "text_color": "#ffffff"
       }
     },
     "header": {

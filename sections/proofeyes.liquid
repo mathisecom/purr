@@ -1,0 +1,981 @@
+{% comment %}
+  Shopify OS 2.0 section — Proof / Results slider for Collagen Eye Patches
+  File: sections/proof-results-eye-patches-slider.liquid
+{% endcomment %}
+
+<section
+  id="EyePatchProof-{{ section.id }}"
+  class="epr"
+  style="
+    --epr-bg: {{ section.settings.background_color }};
+    --epr-card: {{ section.settings.card_color }};
+    --epr-heading: {{ section.settings.heading_color }};
+    --epr-text: {{ section.settings.text_color }};
+    --epr-accent: {{ section.settings.accent_color }};
+    --epr-line: {{ section.settings.line_color }};
+    --epr-radius: {{ section.settings.corner_radius }}px;
+    --epr-max-width: {{ section.settings.max_width }}px;
+    --epr-top: {{ section.settings.padding_top }}px;
+    --epr-bottom: {{ section.settings.padding_bottom }}px;
+    --epr-heading-desktop: {{ section.settings.heading_size_desktop }}px;
+    --epr-heading-mobile: {{ section.settings.heading_size_mobile }}px;
+    --epr-body-desktop: {{ section.settings.body_size_desktop }}px;
+    --epr-body-mobile: {{ section.settings.body_size_mobile }}px;
+    --epr-percent-desktop: {{ section.settings.percent_size_desktop }}px;
+    --epr-percent-mobile: {{ section.settings.percent_size_mobile }}px;
+    --epr-mobile-card-width: {{ section.settings.mobile_card_width }}vw;
+  "
+>
+  <div class="epr__inner">
+    <div class="epr__header">
+      <div class="epr__heading-wrap">
+        {% if section.settings.eyebrow != blank %}
+          <p class="epr__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="epr__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <div class="epr__subheading rte">{{ section.settings.subheading }}</div>
+        {% endif %}
+      </div>
+
+      {% if section.settings.decorative_image != blank %}
+        <div class="epr__decor epr__decor--desktop" aria-hidden="true">
+          <img
+            src="{{ section.settings.decorative_image | image_url: width: 760 }}"
+            alt=""
+            width="{{ section.settings.decorative_image.width }}"
+            height="{{ section.settings.decorative_image.height }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="epr__slider-shell">
+        {% if section.settings.show_arrows %}
+          <button class="epr__arrow epr__arrow--prev" type="button" data-epr-prev aria-label="Previous result">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+          </button>
+        {% endif %}
+
+        <div class="epr__track" data-epr-track tabindex="0" aria-label="Customer results">
+          {% for block in section.blocks %}
+            <article class="epr__card" data-epr-slide {{ block.shopify_attributes }}>
+              {% if block.settings.percentage != blank %}
+                <div class="epr__percentage">{{ block.settings.percentage }}</div>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <div class="epr__card-text">{{ block.settings.text }}</div>
+              {% endif %}
+
+              <div class="epr__meter" aria-hidden="true">
+                <span style="width: {{ block.settings.meter_value }}%;"></span>
+              </div>
+
+              {% if block.settings.benefit != blank %}
+                <div class="epr__benefit">
+                  <span class="epr__check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.7 14.2 5l3.1-.4.9 3 2.8 1.5-1.5 2.8.4 3.1-3 .9-1.5 2.8-3.1-.4L10 20.6l-2.2-2.3-3.1.4-.9-3L1 14.2l1.5-2.8-.4-3.1 3-.9L6.6 4.6l3.1.4L12 2.7Z"/><path d="m8.1 12 2.4 2.4 5-5"/></svg>
+                  </span>
+                  <span>{{ block.settings.benefit }}</span>
+                </div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+
+        {% if section.settings.show_arrows %}
+          <button class="epr__arrow epr__arrow--next" type="button" data-epr-next aria-label="Next result">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+          </button>
+        {% endif %}
+      </div>
+
+      {% if section.settings.show_dots %}
+        <div class="epr__dots" data-epr-dots aria-label="Slider pagination">
+          {% for block in section.blocks %}
+            <button
+              type="button"
+              class="epr__dot{% if forloop.first %} is-active{% endif %}"
+              data-epr-dot="{{ forloop.index0 }}"
+              aria-label="Go to result {{ forloop.index }}"
+              aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+            ></button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if section.settings.decorative_image != blank and section.settings.show_image_mobile %}
+      <div class="epr__decor-mobile">
+        <img
+          src="{{ section.settings.decorative_image | image_url: width: 760 }}"
+          alt="{{ section.settings.decorative_image_alt | escape }}"
+          width="{{ section.settings.decorative_image.width }}"
+          height="{{ section.settings.decorative_image.height }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.disclaimer != blank %}
+      <div class="epr__disclaimer rte">{{ section.settings.disclaimer }}</div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #EyePatchProof-{{ section.id }} {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+    padding: var(--epr-top) 18px var(--epr-bottom);
+    background: var(--epr-bg);
+    color: var(--epr-text);
+  }
+
+  #EyePatchProof-{{ section.id }} *,
+  #EyePatchProof-{{ section.id }} *::before,
+  #EyePatchProof-{{ section.id }} *::after {
+    box-sizing: border-box;
+  }
+
+  #EyePatchProof-{{ section.id }} img,
+  #EyePatchProof-{{ section.id }} svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__inner {
+    width: min(100%, var(--epr-max-width));
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 0;
+    margin-bottom: 34px;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__heading-wrap {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 800px);
+    min-width: 0;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__eyebrow {
+    margin: 0 0 9px;
+    color: var(--epr-accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__heading {
+    margin: 0;
+    max-width: 100%;
+    color: var(--epr-heading);
+    font-size: var(--epr-heading-desktop);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__subheading {
+    width: min(100%, 820px);
+    margin-top: 20px;
+    color: var(--epr-text);
+    font-size: var(--epr-body-desktop);
+    line-height: 1.45;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__subheading p {
+    margin: 0;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__decor--desktop {
+    position: absolute;
+    z-index: 1;
+    top: calc({{ section.settings.image_offset_y }}px * -1);
+    right: {{ section.settings.image_offset_x }}px;
+    width: min({{ section.settings.image_width_desktop }}px, 38vw);
+    pointer-events: none;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__decor--desktop img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__slider-shell {
+    position: relative;
+    min-width: 0;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 32px) / 3);
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 1px 8px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: {{ section.settings.card_min_height }}px;
+    padding: clamp(22px, 2.4vw, 34px);
+    overflow: hidden;
+    scroll-snap-align: start;
+    border: 1px solid var(--epr-accent);
+    border-radius: var(--epr-radius);
+    background: var(--epr-card);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__percentage {
+    margin: 0 0 8px;
+    color: var(--epr-heading);
+    font-size: var(--epr-percent-desktop);
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -.055em;
+    line-height: .95;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__card-text {
+    min-width: 0;
+    color: var(--epr-text);
+    font-size: var(--epr-body-desktop);
+    line-height: 1.28;
+    overflow-wrap: anywhere;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__meter {
+    width: 100%;
+    height: 2px;
+    margin: auto 0 19px;
+    padding-top: 22px;
+    border-bottom: 2px solid var(--epr-line);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__meter span {
+    display: block;
+    height: 2px;
+    margin-bottom: -2px;
+    background: var(--epr-accent);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__benefit {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    color: var(--epr-accent);
+    font-size: calc(var(--epr-body-desktop) * .92);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__benefit > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__check {
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__check svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__check svg path:last-child {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--epr-accent);
+    border-radius: 50%;
+    background: var(--epr-card);
+    color: var(--epr-heading);
+    box-shadow: 0 8px 22px rgba(0, 48, 73, .10);
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease, background .2s ease;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow:hover:not(:disabled) {
+    background: var(--epr-bg);
+    transform: translateY(-50%) scale(1.04);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow:disabled {
+    opacity: .28;
+    cursor: default;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow--prev {
+    left: -21px;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__arrow--next {
+    right: -21px;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 17px;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 99px;
+    background: var(--epr-line);
+    cursor: pointer;
+    transition: width .2s ease, background .2s ease;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__dot.is-active {
+    width: 28px;
+    background: var(--epr-accent);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__decor-mobile {
+    display: none;
+    margin-top: 18px;
+    overflow: hidden;
+    border: 1px solid var(--epr-accent);
+    border-radius: var(--epr-radius);
+    background: var(--epr-card);
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__decor-mobile img {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__disclaimer {
+    margin-top: 14px;
+    color: var(--epr-text);
+    font-size: 11px;
+    line-height: 1.4;
+    opacity: .68;
+  }
+
+  #EyePatchProof-{{ section.id }} .epr__disclaimer p {
+    margin: 0;
+  }
+
+  @media (max-width: 989px) {
+    #EyePatchProof-{{ section.id }} .epr__track {
+      grid-auto-columns: calc((100% - 16px) / 2);
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__decor--desktop {
+      width: min({{ section.settings.image_width_desktop | times: 0.8 }}px, 34vw);
+    }
+  }
+
+  @media (max-width: 749px) {
+    #EyePatchProof-{{ section.id }} {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__header {
+      margin-bottom: 22px;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__heading {
+      font-size: var(--epr-heading-mobile);
+      line-height: 1.02;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__subheading {
+      margin-top: 16px;
+      font-size: var(--epr-body-mobile);
+      line-height: 1.38;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__decor--desktop {
+      display: none;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__track {
+      grid-auto-columns: minmax(0, var(--epr-mobile-card-width));
+      gap: 10px;
+      padding-right: 10vw;
+      scroll-padding-inline: 0;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__card {
+      min-height: {{ section.settings.card_min_height_mobile }}px;
+      padding: 20px 17px;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__percentage {
+      font-size: var(--epr-percent-mobile);
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__card-text {
+      font-size: var(--epr-body-mobile);
+      line-height: 1.25;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__benefit {
+      font-size: calc(var(--epr-body-mobile) * .94);
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__arrow {
+      display: none;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__decor-mobile {
+      display: block;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #EyePatchProof-{{ section.id }} {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    #EyePatchProof-{{ section.id }} .epr__track {
+      grid-auto-columns: minmax(0, min(var(--epr-mobile-card-width), 88vw));
+      padding-right: 8vw;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #EyePatchProof-{{ section.id }} .epr__track {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById('EyePatchProof-{{ section.id }}');
+    if (!root || root.dataset.eprInitialized === 'true') return;
+    root.dataset.eprInitialized = 'true';
+
+    const track = root.querySelector('[data-epr-track]');
+    if (!track) return;
+
+    const slides = [...root.querySelectorAll('[data-epr-slide]')];
+    const prev = root.querySelector('[data-epr-prev]');
+    const next = root.querySelector('[data-epr-next]');
+    const dots = [...root.querySelectorAll('[data-epr-dot]')];
+    const autoplayEnabled = {{ section.settings.autoplay | json }};
+    const autoplayDelay = {{ section.settings.autoplay_speed | times: 1000 }};
+    let current = 0;
+    let autoplayTimer = null;
+    let scrollTimer = null;
+
+    const gap = () => parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+    const step = () => (slides[0]?.getBoundingClientRect().width || track.clientWidth) + gap();
+    const maxIndex = () => Math.max(0, slides.length - Math.max(1, Math.round(track.clientWidth / Math.max(step(), 1))));
+
+    const updateUI = () => {
+      const index = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / Math.max(step(), 1))));
+      current = index;
+
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === current;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-current', String(active));
+      });
+
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    };
+
+    const goTo = (index, smooth = true) => {
+      const target = Math.max(0, Math.min(index, slides.length - 1));
+      track.scrollTo({ left: target * step(), behavior: smooth ? 'smooth' : 'auto' });
+      current = target;
+      window.setTimeout(updateUI, smooth ? 260 : 0);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (!autoplayEnabled || slides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      autoplayTimer = window.setInterval(() => {
+        const nextIndex = current >= maxIndex() ? 0 : current + 1;
+        goTo(nextIndex);
+      }, autoplayDelay);
+    };
+
+    prev?.addEventListener('click', () => goTo(current - 1));
+    next?.addEventListener('click', () => goTo(current + 1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.eprDot || 0)));
+    });
+
+    track.addEventListener('scroll', () => {
+      if (scrollTimer) window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(updateUI, 80);
+    }, { passive: true });
+
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(current + 1);
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(current - 1);
+      }
+    });
+
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+    root.addEventListener('focusin', stopAutoplay);
+    root.addEventListener('focusout', startAutoplay);
+    root.addEventListener('touchstart', stopAutoplay, { passive: true });
+    root.addEventListener('touchend', startAutoplay, { passive: true });
+
+    window.addEventListener('resize', () => {
+      goTo(current, false);
+      updateUI();
+    }, { passive: true });
+
+    updateUI();
+    startAutoplay();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Eye Results Slider",
+  "tag": "section",
+  "class": "section-eye-patches-results-slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "REAL CUSTOMER FEEDBACK"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Proof Is in the Results"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>See what customers noticed after adding Collagen Eye Patches to their skincare routine.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "decorative_image",
+      "label": "Decorative product or model image"
+    },
+    {
+      "type": "text",
+      "id": "decorative_image_alt",
+      "label": "Decorative image alt text",
+      "default": "Collagen Eye Patches"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_mobile",
+      "label": "Show decorative image below slider on mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_width_desktop",
+      "label": "Decorative image width — desktop",
+      "min": 140,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "image_offset_x",
+      "label": "Decorative image horizontal position",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_offset_y",
+      "label": "Decorative image vertical position",
+      "min": -80,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show pagination dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay delay",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Card width — mobile",
+      "min": 72,
+      "max": 94,
+      "step": 1,
+      "unit": "%",
+      "default": 84
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "label": "Card minimum height — desktop",
+      "min": 180,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "default": 230
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Card minimum height — mobile",
+      "min": 220,
+      "max": 440,
+      "step": 10,
+      "unit": "px",
+      "default": 270
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size — desktop",
+      "min": 26,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 26,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "label": "Body text size — desktop",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "label": "Body text size — mobile",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "percent_size_desktop",
+      "label": "Percentage size — desktop",
+      "min": 38,
+      "max": 84,
+      "step": 2,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "percent_size_mobile",
+      "label": "Percentage size — mobile",
+      "min": 38,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading and percentage color",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Inactive line color",
+      "default": "#B8C9CD"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum content width",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1380
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Optional claim disclaimer",
+      "info": "Use verified customer or study data only.",
+      "default": "<p>Results may vary. Replace the sample percentages with substantiated data before publishing.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "result",
+      "name": "Result card",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "percentage",
+          "label": "Percentage",
+          "default": "86%"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Result text",
+          "default": "said their under-eye area looked more refreshed after use"
+        },
+        {
+          "type": "text",
+          "id": "benefit",
+          "label": "Benefit label",
+          "default": "Brighter-looking eyes"
+        },
+        {
+          "type": "range",
+          "id": "meter_value",
+          "label": "Progress line value",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 86
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Eye Results Slider",
+      "blocks": [
+        {
+          "type": "result",
+          "settings": {
+            "percentage": "86%",
+            "text": "said their under-eye area looked more refreshed after use",
+            "benefit": "Brighter-looking eyes",
+            "meter_value": 86
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "percentage": "91%",
+            "text": "noticed smoother-looking skin with consistent use",
+            "benefit": "Smoother-looking skin",
+            "meter_value": 91
+          }
+        },
+        {
+          "type": "result",
+          "settings": {
+            "percentage": "81%",
+            "text": "reported a reduced look of puffiness and dark circles",
+            "benefit": "More rested-looking eyes",
+            "meter_value": 81
+          }
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product", "page", "index"]
+  }
+}
+{% endschema %}

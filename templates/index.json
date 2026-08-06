@@ -569,6 +569,7 @@
         "ingredient_C9Bhcc": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/2_cbccc6c5-5a5a-4eb9-b1e4-888198c6ab0e.webp",
             "title": "Caffeine Complex",
             "text": "<p>Helps visibly reduce the look of puffiness and tired-looking eyes for a fresher, more awake appearance.</p>",
             "benefit": "Reduced look of puffiness",
@@ -580,6 +581,7 @@
         "ingredient_hDdq4C": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/3_dbaab273-a8b0-4d56-8799-5e2697a21aa2.webp",
             "title": "Niacinamide + Hyaluronic Acid",
             "text": "<p>A brightening and hydrating duo that helps soften the look of fine lines while replenishing moisture.</p>",
             "benefit": "Brighter, hydrated eyes",
@@ -591,6 +593,7 @@
         "ingredient_Rt3G9g": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/1_d6f324f3-fa94-4be6-a71a-7772b1a3fbfc.webp",
             "title": "Peptide Blend",
             "text": "<p>Supports the look of elasticity and helps the under-eye area appear smoother and more refined over time.</p>",
             "benefit": "Smoother-looking texture",

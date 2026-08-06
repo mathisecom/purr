@@ -37,7 +37,7 @@
         "enable_sticky": false,
         "autoplay": false,
         "cycle_speed": 6,
-        "text_size": "text-xs",
+        "text_size": "text-xxs",
         "navigation_mode": "scrolling",
         "scrolling_speed": 10,
         "background": "#08163d",
@@ -50,7 +50,6 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "logo": "shopify://shop_images/Puure_logo_1.svg",
         "logo_max_width": 120,
         "logo_mobile_max_width": 115,
         "menu": "main-menu",

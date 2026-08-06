@@ -9,6 +9,114 @@
  */
 {
   "sections": {
+    "fiche_produit_premium_p9aLWz": {
+      "type": "fiche-produit-premium",
+      "blocks": {
+        "benefit_mPwV8Q": {
+          "type": "benefit",
+          "settings": {
+            "icon": "eye",
+            "text": "<p>Technologie précise et douce, adaptée aux zones délicates.</p>"
+          }
+        },
+        "benefit_KGbreG": {
+          "type": "benefit",
+          "settings": {
+            "icon": "sparkle",
+            "text": "<p>Aide à améliorer visiblement l’apparence de la peau.</p>"
+          }
+        },
+        "benefit_atw8KC": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "text": "<p>Formule pensée pour une utilisation simple et confortable.</p>"
+          }
+        },
+        "benefit_46V3ck": {
+          "type": "benefit",
+          "settings": {
+            "icon": "face",
+            "text": "<p>Peut être utilisée sur plusieurs zones ciblées du visage.</p>"
+          }
+        },
+        "accordion_rQamhm": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Description",
+            "content": "<p>Présentez votre produit, ses bénéfices et sa technologie.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_cCqeF7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Ingrédients clés",
+            "content": "<p>Listez ici les ingrédients ou matériaux principaux.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_nch7iE": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Conseils d’utilisation",
+            "content": "<p>Expliquez comment utiliser le produit étape par étape.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_LX7kCi": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Livraison et retours",
+            "content": "<p>Ajoutez vos délais, conditions de livraison et politique de retour.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "benefit_mPwV8Q",
+        "benefit_KGbreG",
+        "benefit_atw8KC",
+        "benefit_46V3ck",
+        "accordion_rQamhm",
+        "accordion_cCqeF7",
+        "accordion_nch7iE",
+        "accordion_LX7kCi"
+      ],
+      "name": "Fiche produit premium",
+      "settings": {
+        "product": "",
+        "promo_badge": "Jusqu’à -33%",
+        "trust_text": "<p>Déjà adopté par plus de 500 clientes</p>",
+        "intro": "",
+        "show_rating": true,
+        "rating_value": 4.8,
+        "review_count": "201 avis",
+        "clinician_title": "Choix des professionnels",
+        "clinician_text": "<p>Recommandé par des professionnels et spécialistes, sans contrepartie.</p>",
+        "one_time_label": "Achat unique",
+        "subscribe_label": "S’abonner et économiser",
+        "popular_variant_position": 1,
+        "popular_badge": "Le plus populaire",
+        "guarantee_line": "Garantie satisfait ou remboursé 90 jours",
+        "button_label": "AJOUTER AU PANIER",
+        "sold_out_label": "ÉPUISÉ",
+        "show_payment_icons": true,
+        "moneyback_days": "90",
+        "moneyback_text": "<p><strong>Essayez sans risque pendant 90 jours.</strong> Sans résultat visible, vous êtes remboursé.</p>",
+        "accordion_heading": "Questions fréquentes",
+        "background_color": "#ffffff",
+        "panel_color": "#eef2f3",
+        "text_color": "#171717",
+        "muted_color": "#607178",
+        "line_color": "#8da1a6",
+        "dark_color": "#29474e",
+        "accent_color": "#08b77a",
+        "corner_radius": 10,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
     "herobanner_aQXwMb": {
       "type": "herobanner",
       "disabled": true,
@@ -1655,6 +1763,7 @@
     }
   },
   "order": [
+    "fiche_produit_premium_p9aLWz",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "logoscroll_BjQiDb",

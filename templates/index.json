@@ -337,16 +337,16 @@
         "heading": "A brighter, fresher-looking eye area in minutes",
         "left_title": "Ordinary Eye Patches",
         "right_title": "Collagen Eye Patches",
-        "section_background": "#F7F7F7",
-        "left_background": "#EEF2F3",
+        "section_background": "#f7f7f7",
+        "left_background": "#eef2f3",
         "right_background": "#003049",
-        "left_text_color": "#2E4347",
-        "right_text_color": "#EEF2F3",
-        "left_icon_color": "#D95D50",
-        "right_icon_color": "#22D3A7",
-        "left_divider_color": "#D8E0E2",
-        "right_divider_color": "#60777D",
-        "border_color": "#FFFFFF",
+        "left_text_color": "#2e4347",
+        "right_text_color": "#eef2f3",
+        "left_icon_color": "#d95d50",
+        "right_icon_color": "#22d3a7",
+        "left_divider_color": "#d8e0e2",
+        "right_divider_color": "#60777d",
+        "border_color": "#ffffff",
         "title_size_desktop": 24,
         "text_size_desktop": 17,
         "title_size_mobile": 16,
@@ -358,6 +358,69 @@
         "padding_top_mobile": 24,
         "padding_bottom_mobile": 24,
         "mobile_side_padding": 11
+      }
+    },
+    "easysteps_pyKtnL": {
+      "type": "easysteps",
+      "blocks": {
+        "step_zLVGUX": {
+          "type": "step",
+          "settings": {
+            "title": "Cleanse & Prep",
+            "text": "<p>Start with clean, dry skin. Gently cleanse the under-eye area and pat dry before application.</p>"
+          }
+        },
+        "step_fLKfLq": {
+          "type": "step",
+          "settings": {
+            "title": "Apply",
+            "text": "<p>Remove the Collagen Eye Patches from the tray and place one under each eye. Smooth gently for a comfortable fit.</p>"
+          }
+        },
+        "step_VTVHTW": {
+          "type": "step",
+          "settings": {
+            "title": "Relax & Finish",
+            "text": "<p>Leave on for 15–20 minutes, or as directed. Remove the patches and gently pat in any remaining serum.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_zLVGUX",
+        "step_fLKfLq",
+        "step_VTVHTW"
+      ],
+      "name": "3 Easy Steps — Eye Patches",
+      "settings": {
+        "eyebrow": "3 Easy Steps",
+        "heading": "For Brighter, Smoother-Looking Eyes",
+        "show_step_numbers": false,
+        "max_width": 1200,
+        "columns_desktop": 3,
+        "gap_desktop": 18,
+        "gap_mobile": 30,
+        "mobile_image_width": 38,
+        "text_alignment": "left",
+        "image_ratio": "1 / 1",
+        "image_fit": "cover",
+        "image_radius": 14,
+        "image_background": "#EEF2F3",
+        "eyebrow_size_desktop": 28,
+        "heading_size_desktop": 30,
+        "step_title_size_desktop": 16,
+        "text_size_desktop": 15,
+        "eyebrow_size_mobile": 24,
+        "heading_size_mobile": 28,
+        "step_title_size_mobile": 15,
+        "text_size_mobile": 13,
+        "background_color": "#EEF2F3",
+        "heading_color": "#003049",
+        "text_color": "#2E4347",
+        "accent_color": "#003049",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 36
       }
     },
     "herobanner_aQXwMb": {
@@ -1932,6 +1995,7 @@
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
     "comparatif_wAMHKE",
+    "easysteps_pyKtnL",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

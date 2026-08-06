@@ -179,9 +179,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 20,
@@ -274,15 +274,90 @@
         "review_size_desktop": 16,
         "review_size_mobile": 16,
         "background_color": "#003049",
-        "card_background_color": "#EEF2F3",
-        "heading_color": "#EEF2F3",
-        "text_color": "#2E4347",
+        "card_background_color": "#eef2f3",
+        "heading_color": "#eef2f3",
+        "text_color": "#2e4347",
         "accent_color": "#003049",
-        "secondary_color": "#2E4347",
-        "star_color": "#F6B800",
+        "secondary_color": "#2e4347",
+        "star_color": "#f6b800",
         "max_width": 1200,
         "padding_top": 32,
         "padding_bottom": 32
+      }
+    },
+    "comparatif_wEAWVm": {
+      "type": "comparatif",
+      "blocks": {
+        "comparison_row_hgJMPY": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Reste à la surface de la peau</p>",
+            "right_text": "<p>Patchs hydrogel confortables qui épousent le contour des yeux</p>"
+          }
+        },
+        "comparison_row_3Q7Wb9": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Peut sembler lourd sous les yeux</p>",
+            "right_text": "<p>Texture légère, fraîche et agréable à porter</p>"
+          }
+        },
+        "comparison_row_ABAjqw": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Hydratation basique uniquement</p>",
+            "right_text": "<p>Formule enrichie en collagène pour une peau visiblement plus lisse</p>"
+          }
+        },
+        "comparison_row_RzEPKm": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Peu de différence visible dès la première utilisation</p>",
+            "right_text": "<p>Aide à réveiller et illuminer le regard dès l'application</p>"
+          }
+        },
+        "comparison_row_M3jF9R": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Les poches restent souvent inchangées</p>",
+            "right_text": "<p>Aide à réduire visiblement l'apparence des poches et des cernes</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_hgJMPY",
+        "comparison_row_3Q7Wb9",
+        "comparison_row_ABAjqw",
+        "comparison_row_RzEPKm",
+        "comparison_row_M3jF9R"
+      ],
+      "name": "Comparatif Eye Patches",
+      "settings": {
+        "eyebrow": "Pourquoi choisir nos patchs ?",
+        "heading": "La différence se voit dès la première utilisation",
+        "left_title": "Patchs Ordinaires",
+        "right_title": "Collagen Eye Patches",
+        "section_background": "#F7F7F7",
+        "left_background": "#EEF2F3",
+        "right_background": "#003049",
+        "left_text_color": "#2E4347",
+        "right_text_color": "#EEF2F3",
+        "left_icon_color": "#D95D50",
+        "right_icon_color": "#22D3A7",
+        "left_divider_color": "#D8E0E2",
+        "right_divider_color": "#60777D",
+        "border_color": "#D8D3C9",
+        "title_size_desktop": 24,
+        "text_size_desktop": 17,
+        "title_size_mobile": 17,
+        "text_size_mobile": 13,
+        "max_width": 1160,
+        "border_radius": 24,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "mobile_side_padding": 11
       }
     },
     "herobanner_aQXwMb": {
@@ -1856,6 +1931,7 @@
     "fiche_produit_premium_p9aLWz",
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
+    "comparatif_wEAWVm",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

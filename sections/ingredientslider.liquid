@@ -1,0 +1,1235 @@
+{% comment %}
+  Ingredients Slider — Collagen Eye Patches
+  Responsive Shopify OS 2.0 section.
+  Desktop: multi-card carousel. Mobile: swipeable card slider with next-card preview.
+{% endcomment %}
+
+{%- liquid
+  assign section_id = 'IngredientsSlider-' | append: section.id
+  assign ingredient_count = section.blocks.size
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="ingredients-slider"
+  style="
+    --is-bg: {{ section.settings.background_color }};
+    --is-heading: {{ section.settings.heading_color }};
+    --is-text: {{ section.settings.text_color }};
+    --is-accent: {{ section.settings.accent_color }};
+    --is-card-bg: {{ section.settings.card_background }};
+    --is-border: {{ section.settings.border_color }};
+    --is-tag-bg: {{ section.settings.tag_background }};
+    --is-tag-text: {{ section.settings.tag_text_color }};
+    --is-max-width: {{ section.settings.max_width }}px;
+    --is-gap: {{ section.settings.card_gap }}px;
+    --is-radius: {{ section.settings.card_radius }}px;
+    --is-media-height: {{ section.settings.media_height }}px;
+    --is-cards-desktop: {{ section.settings.cards_desktop }};
+    --is-mobile-card-width: {{ section.settings.mobile_card_width }}%;
+    --is-kicker-desktop: {{ section.settings.kicker_size_desktop }}px;
+    --is-kicker-mobile: {{ section.settings.kicker_size_mobile }}px;
+    --is-heading-desktop: {{ section.settings.heading_size_desktop }}px;
+    --is-heading-mobile: {{ section.settings.heading_size_mobile }}px;
+    --is-card-title-desktop: {{ section.settings.card_title_size_desktop }}px;
+    --is-card-title-mobile: {{ section.settings.card_title_size_mobile }}px;
+    --is-body-desktop: {{ section.settings.body_size_desktop }}px;
+    --is-body-mobile: {{ section.settings.body_size_mobile }}px;
+    --is-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --is-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --is-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --is-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+  data-ingredients-slider
+>
+  <div class="ingredients-slider__inner">
+    {%- if section.settings.show_badges -%}
+      <div class="ingredients-slider__badges" aria-label="Product qualities">
+        {%- for index in (1..5) -%}
+          {%- capture badge_key -%}badge_{{ index }}{%- endcapture -%}
+          {%- assign badge_text = section.settings[badge_key] -%}
+          {%- if badge_text != blank -%}
+            <span class="ingredients-slider__badge">{{ badge_text | escape }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <header class="ingredients-slider__header">
+      {%- if section.settings.kicker != blank -%}
+        <p class="ingredients-slider__kicker">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ingredients-slider__heading">{{ section.settings.heading | escape | newline_to_br }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.intro != blank -%}
+        <div class="ingredients-slider__intro rte">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </header>
+
+    <div class="ingredients-slider__carousel" data-carousel>
+      <div
+        class="ingredients-slider__track{% if ingredient_count == 1 %} ingredients-slider__track--single{% endif %}"
+        data-track
+        role="region"
+        aria-label="{{ section.settings.carousel_label | escape }}"
+        tabindex="0"
+      >
+        {%- for block in section.blocks -%}
+          <article
+            class="ingredients-slider__card"
+            data-card
+            role="group"
+            aria-roledescription="slide"
+            aria-label="{{ forloop.index }} of {{ ingredient_count }}"
+            {{ block.shopify_attributes }}
+          >
+            <div
+              class="ingredients-slider__media"
+              style="
+                --block-media-bg: {{ block.settings.media_background }};
+                --block-circle: {{ block.settings.circle_color }};
+                --block-circle-small: {{ block.settings.small_circle_color }};
+              "
+            >
+              {%- if block.settings.image != blank -%}
+                {%- liquid
+                  assign image_alt = block.settings.image.alt | default: block.settings.title
+                -%}
+                {{ block.settings.image
+                  | image_url: width: 1000
+                  | image_tag:
+                    class: 'ingredients-slider__image',
+                    loading: 'lazy',
+                    widths: '320, 480, 640, 800, 1000',
+                    sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 86vw',
+                    alt: image_alt
+                }}
+              {%- else -%}
+                <div class="ingredients-slider__art" aria-hidden="true">
+                  <span class="ingredients-slider__circle ingredients-slider__circle--large"></span>
+                  <span class="ingredients-slider__circle ingredients-slider__circle--small"></span>
+                  <span class="ingredients-slider__circle ingredients-slider__circle--shine"></span>
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="ingredients-slider__content">
+              {%- if block.settings.title != blank -%}
+                <h3 class="ingredients-slider__card-title">
+                  <span>{{ block.settings.title | escape }}</span>
+                </h3>
+              {%- endif -%}
+
+              {%- if block.settings.text != blank -%}
+                <div class="ingredients-slider__text rte">{{ block.settings.text }}</div>
+              {%- endif -%}
+
+              {%- if block.settings.benefit != blank -%}
+                <p class="ingredients-slider__benefit">
+                  <span class="ingredients-slider__check" aria-hidden="true">✓</span>
+                  <strong>{{ block.settings.benefit | escape }}</strong>
+                </p>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- else -%}
+          <div class="ingredients-slider__empty">
+            Add ingredient blocks in the theme editor.
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if ingredient_count > 1 -%}
+        <button
+          class="ingredients-slider__arrow ingredients-slider__arrow--prev"
+          type="button"
+          data-prev
+          aria-label="Previous ingredient"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <button
+          class="ingredients-slider__arrow ingredients-slider__arrow--next"
+          type="button"
+          data-next
+          aria-label="Next ingredient"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="ingredients-slider__footer">
+          <div class="ingredients-slider__dots" data-dots aria-label="Choose an ingredient slide">
+            {%- for block in section.blocks -%}
+              <button
+                type="button"
+                class="ingredients-slider__dot{% if forloop.first %} is-active{% endif %}"
+                data-dot="{{ forloop.index0 }}"
+                aria-label="Go to ingredient {{ forloop.index }}"
+                aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+              ></button>
+            {%- endfor -%}
+          </div>
+
+          <div class="ingredients-slider__mobile-controls">
+            <button type="button" class="ingredients-slider__mobile-arrow" data-mobile-prev aria-label="Previous ingredient">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="ingredients-slider__mobile-arrow" data-mobile-next aria-label="Next ingredient">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #{{ section_id }},
+  #{{ section_id }} * {
+    box-sizing: border-box;
+  }
+
+  #{{ section_id }} {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--is-bg);
+    color: var(--is-text);
+  }
+
+  #{{ section_id }} .ingredients-slider__inner {
+    width: min(100%, var(--is-max-width));
+    margin: 0 auto;
+    padding: var(--is-padding-top-desktop) 24px var(--is-padding-bottom-desktop);
+  }
+
+  #{{ section_id }} .ingredients-slider__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto clamp(38px, 5vw, 64px);
+  }
+
+  #{{ section_id }} .ingredients-slider__badge {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border: 1px solid var(--is-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--is-heading);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  #{{ section_id }} .ingredients-slider__header {
+    width: min(100%, 920px);
+    margin: 0 auto clamp(34px, 5vw, 62px);
+    text-align: center;
+  }
+
+  #{{ section_id }} .ingredients-slider__kicker,
+  #{{ section_id }} .ingredients-slider__heading,
+  #{{ section_id }} .ingredients-slider__intro,
+  #{{ section_id }} .ingredients-slider__card-title,
+  #{{ section_id }} .ingredients-slider__text,
+  #{{ section_id }} .ingredients-slider__benefit {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #{{ section_id }} .ingredients-slider__kicker {
+    margin: 0 0 4px;
+    color: var(--is-heading);
+    font-family: inherit;
+    font-size: var(--is-kicker-desktop);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  #{{ section_id }} .ingredients-slider__heading {
+    margin: 0;
+    color: var(--is-heading);
+    font-family: inherit;
+    font-size: var(--is-heading-desktop);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+
+  #{{ section_id }} .ingredients-slider__intro {
+    width: min(100%, 700px);
+    margin: 18px auto 0;
+    color: var(--is-text);
+    font-size: var(--is-body-desktop);
+    line-height: 1.55;
+  }
+
+  #{{ section_id }} .ingredients-slider__intro > *:first-child,
+  #{{ section_id }} .ingredients-slider__text > *:first-child {
+    margin-top: 0;
+  }
+
+  #{{ section_id }} .ingredients-slider__intro > *:last-child,
+  #{{ section_id }} .ingredients-slider__text > *:last-child {
+    margin-bottom: 0;
+  }
+
+  #{{ section_id }} .ingredients-slider__carousel {
+    position: relative;
+    min-width: 0;
+  }
+
+  #{{ section_id }} .ingredients-slider__track {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: var(--is-gap);
+    padding: 2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #{{ section_id }} .ingredients-slider__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #{{ section_id }} .ingredients-slider__track:focus-visible {
+    outline: 2px solid var(--is-accent);
+    outline-offset: 5px;
+    border-radius: var(--is-radius);
+  }
+
+  #{{ section_id }} .ingredients-slider__card {
+    display: flex;
+    flex: 0 0 calc((100% - (var(--is-gap) * (var(--is-cards-desktop) - 1))) / var(--is-cards-desktop));
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    scroll-snap-align: start;
+    border: 1px solid var(--is-border);
+    border-radius: var(--is-radius);
+    background: var(--is-card-bg);
+  }
+
+  #{{ section_id }} .ingredients-slider__track--single .ingredients-slider__card {
+    flex-basis: min(100%, 420px);
+    margin-inline: auto;
+  }
+
+  #{{ section_id }} .ingredients-slider__media {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: var(--is-media-height);
+    min-height: 180px;
+    place-items: center;
+    overflow: hidden;
+    background: var(--block-media-bg);
+  }
+
+  #{{ section_id }} .ingredients-slider__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    object-position: center;
+  }
+
+  #{{ section_id }} .ingredients-slider__art {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+
+  #{{ section_id }} .ingredients-slider__circle {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+  }
+
+  #{{ section_id }} .ingredients-slider__circle--large {
+    inset: 12px;
+    background: var(--block-circle);
+  }
+
+  #{{ section_id }} .ingredients-slider__circle--small {
+    top: 15px;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+    background: var(--block-circle-small);
+    opacity: 0.82;
+  }
+
+  #{{ section_id }} .ingredients-slider__circle--shine {
+    top: 34px;
+    left: 39px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  #{{ section_id }} .ingredients-slider__content {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 24px 24px;
+  }
+
+  #{{ section_id }} .ingredients-slider__card-title {
+    margin: 0 0 16px;
+    color: var(--is-heading);
+    font-family: inherit;
+    font-size: var(--is-card-title-desktop);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  #{{ section_id }} .ingredients-slider__card-title span {
+    display: inline-flex;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--is-tag-bg);
+    color: var(--is-tag-text);
+  }
+
+  #{{ section_id }} .ingredients-slider__text {
+    color: var(--is-text);
+    font-size: var(--is-body-desktop);
+    line-height: 1.48;
+  }
+
+  #{{ section_id }} .ingredients-slider__text p {
+    margin: 0;
+  }
+
+  #{{ section_id }} .ingredients-slider__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: auto 0 0;
+    padding-top: 18px;
+    color: var(--is-heading);
+    font-size: var(--is-body-desktop);
+    line-height: 1.3;
+  }
+
+  #{{ section_id }} .ingredients-slider__check {
+    color: var(--is-accent);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow,
+  #{{ section_id }} .ingredients-slider__mobile-arrow {
+    display: grid;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--is-border);
+    border-radius: 999px;
+    background: var(--is-heading);
+    color: #ffffff;
+    cursor: pointer;
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 46px;
+    height: 46px;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 24px rgba(0, 48, 73, 0.14);
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow--prev {
+    left: -23px;
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow--next {
+    right: -23px;
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow:hover,
+  #{{ section_id }} .ingredients-slider__mobile-arrow:hover {
+    transform: translateY(-50%) scale(1.04);
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow:disabled,
+  #{{ section_id }} .ingredients-slider__mobile-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  #{{ section_id }} .ingredients-slider__arrow svg,
+  #{{ section_id }} .ingredients-slider__mobile-arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #{{ section_id }} .ingredients-slider__footer {
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  #{{ section_id }} .ingredients-slider__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  #{{ section_id }} .ingredients-slider__dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--is-heading);
+    opacity: 0.24;
+    cursor: pointer;
+    transition: width 180ms ease, opacity 180ms ease;
+  }
+
+  #{{ section_id }} .ingredients-slider__dot.is-active {
+    width: 34px;
+    opacity: 1;
+  }
+
+  #{{ section_id }} .ingredients-slider__mobile-controls {
+    display: none;
+  }
+
+  #{{ section_id }} .ingredients-slider__empty {
+    width: 100%;
+    padding: 40px 20px;
+    border: 1px dashed var(--is-border);
+    border-radius: var(--is-radius);
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1180px) {
+    #{{ section_id }} .ingredients-slider__arrow--prev {
+      left: 8px;
+    }
+
+    #{{ section_id }} .ingredients-slider__arrow--next {
+      right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    #{{ section_id }} .ingredients-slider__card {
+      flex-basis: calc((100% - var(--is-gap)) / 2);
+    }
+
+    #{{ section_id }} .ingredients-slider__arrow {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section_id }} .ingredients-slider__inner {
+      padding: var(--is-padding-top-mobile) 14px var(--is-padding-bottom-mobile);
+    }
+
+    #{{ section_id }} .ingredients-slider__badges {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 8px;
+      margin-bottom: 36px;
+      padding-bottom: 2px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+    }
+
+    #{{ section_id }} .ingredients-slider__badges::-webkit-scrollbar {
+      display: none;
+    }
+
+    #{{ section_id }} .ingredients-slider__badge {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 7px 13px;
+      font-size: 11px;
+    }
+
+    #{{ section_id }} .ingredients-slider__header {
+      margin-bottom: 32px;
+    }
+
+    #{{ section_id }} .ingredients-slider__kicker {
+      margin-bottom: 4px;
+      font-size: var(--is-kicker-mobile);
+      line-height: 1.08;
+    }
+
+    #{{ section_id }} .ingredients-slider__heading {
+      font-size: var(--is-heading-mobile);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+    }
+
+    #{{ section_id }} .ingredients-slider__intro {
+      margin-top: 14px;
+      font-size: var(--is-body-mobile);
+    }
+
+    #{{ section_id }} .ingredients-slider__track {
+      width: calc(100% + 14px);
+      margin-right: -14px;
+      padding-right: 14px;
+      scroll-padding-inline: 2px 14px;
+    }
+
+    #{{ section_id }} .ingredients-slider__card {
+      flex-basis: var(--is-mobile-card-width);
+    }
+
+    #{{ section_id }} .ingredients-slider__track--single {
+      width: 100%;
+      margin-right: 0;
+      padding-right: 2px;
+    }
+
+    #{{ section_id }} .ingredients-slider__track--single .ingredients-slider__card {
+      flex-basis: 100%;
+    }
+
+    #{{ section_id }} .ingredients-slider__media {
+      height: min(var(--is-media-height), 240px);
+    }
+
+    #{{ section_id }} .ingredients-slider__art {
+      width: 128px;
+      height: 128px;
+    }
+
+    #{{ section_id }} .ingredients-slider__content {
+      padding: 19px 18px 21px;
+    }
+
+    #{{ section_id }} .ingredients-slider__card-title {
+      margin-bottom: 13px;
+      font-size: var(--is-card-title-mobile);
+    }
+
+    #{{ section_id }} .ingredients-slider__card-title span {
+      padding: 6px 12px;
+    }
+
+    #{{ section_id }} .ingredients-slider__text,
+    #{{ section_id }} .ingredients-slider__benefit {
+      font-size: var(--is-body-mobile);
+    }
+
+    #{{ section_id }} .ingredients-slider__footer {
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    #{{ section_id }} .ingredients-slider__mobile-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    #{{ section_id }} .ingredients-slider__mobile-arrow {
+      width: 38px;
+      height: 38px;
+    }
+
+    #{{ section_id }} .ingredients-slider__mobile-arrow:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{{ section_id }} .ingredients-slider__track {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById('{{ section_id }}');
+    if (!root || root.dataset.sliderInitialized === 'true') return;
+
+    const track = root.querySelector('[data-track]');
+    const cards = Array.from(root.querySelectorAll('[data-card]'));
+    const dots = Array.from(root.querySelectorAll('[data-dot]'));
+    const prevButtons = Array.from(root.querySelectorAll('[data-prev], [data-mobile-prev]'));
+    const nextButtons = Array.from(root.querySelectorAll('[data-next], [data-mobile-next]'));
+
+    if (!track || cards.length < 2) return;
+    root.dataset.sliderInitialized = 'true';
+
+    let activeIndex = 0;
+    let ticking = false;
+
+    const cardTarget = (index) => {
+      const card = cards[index];
+      if (!card) return 0;
+      const rawTarget = card.offsetLeft - track.offsetLeft;
+      const maxTarget = Math.max(0, track.scrollWidth - track.clientWidth);
+      return Math.max(0, Math.min(rawTarget, maxTarget));
+    };
+
+    const setActive = (index) => {
+      activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+
+      dots.forEach((dot, dotIndex) => {
+        const selected = dotIndex === activeIndex;
+        dot.classList.toggle('is-active', selected);
+        dot.setAttribute('aria-current', selected ? 'true' : 'false');
+      });
+
+      const atStart = activeIndex <= 0;
+      const atEnd = activeIndex >= cards.length - 1;
+      prevButtons.forEach((button) => { button.disabled = atStart; });
+      nextButtons.forEach((button) => { button.disabled = atEnd; });
+    };
+
+    const goTo = (index) => {
+      const nextIndex = Math.max(0, Math.min(index, cards.length - 1));
+      track.scrollTo({ left: cardTarget(nextIndex), behavior: 'smooth' });
+      setActive(nextIndex);
+    };
+
+    const closestCardIndex = () => {
+      const left = track.scrollLeft;
+      let closestIndex = 0;
+      let smallestDistance = Number.POSITIVE_INFINITY;
+
+      cards.forEach((card, index) => {
+        const distance = Math.abs(cardTarget(index) - left);
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    };
+
+    track.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setActive(closestCardIndex());
+        ticking = false;
+      });
+    }, { passive: true });
+
+    prevButtons.forEach((button) => {
+      button.addEventListener('click', () => goTo(activeIndex - 1));
+    });
+
+    nextButtons.forEach((button) => {
+      button.addEventListener('click', () => goTo(activeIndex + 1));
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.dot)));
+    });
+
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(activeIndex + 1);
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(activeIndex - 1);
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => goTo(activeIndex), 120);
+    });
+
+    setActive(0);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Ingredients slider",
+  "tag": "section",
+  "class": "section-ingredients-slider",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small heading",
+      "default": "3 Powerful Ingredients"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "For Brighter, Smoother-Looking Eyes"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text"
+    },
+    {
+      "type": "text",
+      "id": "carousel_label",
+      "label": "Carousel accessibility label",
+      "default": "Key eye patch ingredients"
+    },
+    {
+      "type": "header",
+      "content": "Quality badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show quality badges",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_1",
+      "label": "Badge 1",
+      "default": "Cruelty-Free"
+    },
+    {
+      "type": "text",
+      "id": "badge_2",
+      "label": "Badge 2",
+      "default": "Dermatologist Tested"
+    },
+    {
+      "type": "text",
+      "id": "badge_3",
+      "label": "Badge 3",
+      "default": "Skin-Loving Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "badge_4",
+      "label": "Badge 4",
+      "default": "Sensitive Skin Friendly"
+    },
+    {
+      "type": "text",
+      "id": "badge_5",
+      "label": "Badge 5",
+      "default": "No Harsh Chemicals"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum section width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "cards_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Cards visible on desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "min": 78,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Card width on mobile",
+      "default": 88,
+      "info": "Use less than 100% to preview the next card."
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "media_height",
+      "min": 180,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "label": "Image area height",
+      "default": 270
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Typography — desktop"
+    },
+    {
+      "type": "range",
+      "id": "kicker_size_desktop",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "Small heading size",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Main heading size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "min": 13,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "label": "Ingredient title size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Typography — mobile"
+    },
+    {
+      "type": "range",
+      "id": "kicker_size_mobile",
+      "min": 16,
+      "max": 34,
+      "step": 1,
+      "unit": "px",
+      "label": "Small heading size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Main heading size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Ingredient title size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent and check color",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Borders",
+      "default": "#CCD8DC"
+    },
+    {
+      "type": "color",
+      "id": "tag_background",
+      "label": "Ingredient title background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "color",
+      "id": "tag_text_color",
+      "label": "Ingredient title text",
+      "default": "#2E4347"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding — desktop",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding — desktop",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding — mobile",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding — mobile",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Leave empty to use the abstract circle design."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient name",
+          "default": "Marine Collagen"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>Helps support a smoother, firmer-looking under-eye area while keeping delicate skin feeling soft and conditioned.</p>"
+        },
+        {
+          "type": "text",
+          "id": "benefit",
+          "label": "Key benefit",
+          "default": "Firmer-looking skin"
+        },
+        {
+          "type": "color",
+          "id": "media_background",
+          "label": "Image area background",
+          "default": "#F3ECE2"
+        },
+        {
+          "type": "color",
+          "id": "circle_color",
+          "label": "Large circle color",
+          "default": "#C79B70"
+        },
+        {
+          "type": "color",
+          "id": "small_circle_color",
+          "label": "Small circle color",
+          "default": "#E8D8C6"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients slider — Eye Patches",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Marine Collagen",
+            "text": "<p>Helps support a smoother, firmer-looking under-eye area while keeping delicate skin feeling soft and conditioned.</p>",
+            "benefit": "Firmer-looking skin",
+            "media_background": "#F3ECE2",
+            "circle_color": "#C79B70",
+            "small_circle_color": "#E8D8C6"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Caffeine Complex",
+            "text": "<p>Helps visibly reduce the look of puffiness and tired-looking eyes for a fresher, more awake appearance.</p>",
+            "benefit": "Reduced look of puffiness",
+            "media_background": "#F5E3E3",
+            "circle_color": "#E5AAA5",
+            "small_circle_color": "#F2D3D0"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Niacinamide + Hyaluronic Acid",
+            "text": "<p>A brightening and hydrating duo that helps soften the look of fine lines while replenishing moisture.</p>",
+            "benefit": "Brighter, hydrated eyes",
+            "media_background": "#E6F0F0",
+            "circle_color": "#C7DFDF",
+            "small_circle_color": "#D2B996"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Peptide Blend",
+            "text": "<p>Supports the look of elasticity and helps the under-eye area appear smoother and more refined over time.</p>",
+            "benefit": "Smoother-looking texture",
+            "media_background": "#E9EDF2",
+            "circle_color": "#A9BAC8",
+            "small_circle_color": "#D6E0E7"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Vitamin C",
+            "text": "<p>Helps revive dull-looking skin and improve the appearance of uneven tone for a naturally luminous look.</p>",
+            "benefit": "More radiant-looking eyes",
+            "media_background": "#F5EFE0",
+            "circle_color": "#D9B765",
+            "small_circle_color": "#EEE0B8"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

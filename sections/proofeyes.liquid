@@ -26,7 +26,7 @@
 
 <section
   id="EyePatchProof-{{ section.id }}"
-  class="epr"
+  class="epr{% if section.settings.eyebrow == blank and section.settings.heading == blank and section.settings.subheading == blank %} epr--no-mobile-header{% endif %}"
   style="
     --epr-bg: {{ section.settings.background_color }};
     --epr-card: {{ section.settings.card_color }};
@@ -579,6 +579,18 @@
     #EyePatchProof-{{ section.id }} {
       padding-left: 18px;
       padding-right: 18px;
+    }
+
+    /* When all heading fields are empty, remove the reserved mobile header area. */
+    #EyePatchProof-{{ section.id }}.epr--no-mobile-header {
+      padding-top: 0;
+    }
+
+    #EyePatchProof-{{ section.id }}.epr--no-mobile-header .epr__header {
+      display: none;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
     }
 
     #EyePatchProof-{{ section.id }} .epr__header {

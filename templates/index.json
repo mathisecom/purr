@@ -474,6 +474,113 @@
         "disclaimer": ""
       }
     },
+    "ingredientslider_xXbFrr": {
+      "type": "ingredientslider",
+      "blocks": {
+        "ingredient_U8JYFL": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Marine Collagen",
+            "text": "<p>Helps support a smoother, firmer-looking under-eye area while keeping delicate skin feeling soft and conditioned.</p>",
+            "benefit": "Firmer-looking skin",
+            "media_background": "#f3ece2",
+            "circle_color": "#c79b70",
+            "small_circle_color": "#e8d8c6"
+          }
+        },
+        "ingredient_C9Bhcc": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Caffeine Complex",
+            "text": "<p>Helps visibly reduce the look of puffiness and tired-looking eyes for a fresher, more awake appearance.</p>",
+            "benefit": "Reduced look of puffiness",
+            "media_background": "#f5e3e3",
+            "circle_color": "#e5aaa5",
+            "small_circle_color": "#f2d3d0"
+          }
+        },
+        "ingredient_hDdq4C": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Niacinamide + Hyaluronic Acid",
+            "text": "<p>A brightening and hydrating duo that helps soften the look of fine lines while replenishing moisture.</p>",
+            "benefit": "Brighter, hydrated eyes",
+            "media_background": "#e6f0f0",
+            "circle_color": "#c7dfdf",
+            "small_circle_color": "#d2b996"
+          }
+        },
+        "ingredient_Rt3G9g": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Peptide Blend",
+            "text": "<p>Supports the look of elasticity and helps the under-eye area appear smoother and more refined over time.</p>",
+            "benefit": "Smoother-looking texture",
+            "media_background": "#e9edf2",
+            "circle_color": "#a9bac8",
+            "small_circle_color": "#d6e0e7"
+          }
+        },
+        "ingredient_rGgwnT": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Vitamin C",
+            "text": "<p>Helps revive dull-looking skin and improve the appearance of uneven tone for a naturally luminous look.</p>",
+            "benefit": "More radiant-looking eyes",
+            "media_background": "#f5efe0",
+            "circle_color": "#d9b765",
+            "small_circle_color": "#eee0b8"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_U8JYFL",
+        "ingredient_C9Bhcc",
+        "ingredient_hDdq4C",
+        "ingredient_Rt3G9g",
+        "ingredient_rGgwnT"
+      ],
+      "name": "Ingredients slider — Eye Patches",
+      "settings": {
+        "kicker": "3 Powerful Ingredients",
+        "heading": "For Brighter, Smoother-Looking Eyes",
+        "intro": "",
+        "carousel_label": "Key eye patch ingredients",
+        "show_badges": true,
+        "badge_1": "Cruelty-Free",
+        "badge_2": "Dermatologist Tested",
+        "badge_3": "Skin-Loving Ingredients",
+        "badge_4": "Sensitive Skin Friendly",
+        "badge_5": "No Harsh Chemicals",
+        "max_width": 1200,
+        "cards_desktop": 3,
+        "mobile_card_width": 88,
+        "card_gap": 24,
+        "media_height": 270,
+        "image_fit": "cover",
+        "card_radius": 12,
+        "kicker_size_desktop": 28,
+        "heading_size_desktop": 28,
+        "card_title_size_desktop": 13,
+        "body_size_desktop": 14,
+        "kicker_size_mobile": 24,
+        "heading_size_mobile": 28,
+        "card_title_size_mobile": 12,
+        "body_size_mobile": 14,
+        "background_color": "#ffffff",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "card_background": "#ffffff",
+        "border_color": "#ccd8dc",
+        "tag_background": "#003049",
+        "tag_text_color": "#ffffff",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    },
     "whatexpect_pBkHyR": {
       "type": "whatexpect",
       "blocks": {
@@ -632,113 +739,6 @@
         "padding_bottom_desktop": 64,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 36
-      }
-    },
-    "ingredientslider_xXbFrr": {
-      "type": "ingredientslider",
-      "blocks": {
-        "ingredient_U8JYFL": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Marine Collagen",
-            "text": "<p>Helps support a smoother, firmer-looking under-eye area while keeping delicate skin feeling soft and conditioned.</p>",
-            "benefit": "Firmer-looking skin",
-            "media_background": "#f3ece2",
-            "circle_color": "#c79b70",
-            "small_circle_color": "#e8d8c6"
-          }
-        },
-        "ingredient_C9Bhcc": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Caffeine Complex",
-            "text": "<p>Helps visibly reduce the look of puffiness and tired-looking eyes for a fresher, more awake appearance.</p>",
-            "benefit": "Reduced look of puffiness",
-            "media_background": "#f5e3e3",
-            "circle_color": "#e5aaa5",
-            "small_circle_color": "#f2d3d0"
-          }
-        },
-        "ingredient_hDdq4C": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Niacinamide + Hyaluronic Acid",
-            "text": "<p>A brightening and hydrating duo that helps soften the look of fine lines while replenishing moisture.</p>",
-            "benefit": "Brighter, hydrated eyes",
-            "media_background": "#e6f0f0",
-            "circle_color": "#c7dfdf",
-            "small_circle_color": "#d2b996"
-          }
-        },
-        "ingredient_Rt3G9g": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Peptide Blend",
-            "text": "<p>Supports the look of elasticity and helps the under-eye area appear smoother and more refined over time.</p>",
-            "benefit": "Smoother-looking texture",
-            "media_background": "#e9edf2",
-            "circle_color": "#a9bac8",
-            "small_circle_color": "#d6e0e7"
-          }
-        },
-        "ingredient_rGgwnT": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Vitamin C",
-            "text": "<p>Helps revive dull-looking skin and improve the appearance of uneven tone for a naturally luminous look.</p>",
-            "benefit": "More radiant-looking eyes",
-            "media_background": "#f5efe0",
-            "circle_color": "#d9b765",
-            "small_circle_color": "#eee0b8"
-          }
-        }
-      },
-      "block_order": [
-        "ingredient_U8JYFL",
-        "ingredient_C9Bhcc",
-        "ingredient_hDdq4C",
-        "ingredient_Rt3G9g",
-        "ingredient_rGgwnT"
-      ],
-      "name": "Ingredients slider — Eye Patches",
-      "settings": {
-        "kicker": "3 Powerful Ingredients",
-        "heading": "For Brighter, Smoother-Looking Eyes",
-        "intro": "",
-        "carousel_label": "Key eye patch ingredients",
-        "show_badges": true,
-        "badge_1": "Cruelty-Free",
-        "badge_2": "Dermatologist Tested",
-        "badge_3": "Skin-Loving Ingredients",
-        "badge_4": "Sensitive Skin Friendly",
-        "badge_5": "No Harsh Chemicals",
-        "max_width": 1200,
-        "cards_desktop": 3,
-        "mobile_card_width": 88,
-        "card_gap": 24,
-        "media_height": 270,
-        "image_fit": "cover",
-        "card_radius": 12,
-        "kicker_size_desktop": 28,
-        "heading_size_desktop": 28,
-        "card_title_size_desktop": 13,
-        "body_size_desktop": 14,
-        "kicker_size_mobile": 24,
-        "heading_size_mobile": 28,
-        "card_title_size_mobile": 12,
-        "body_size_mobile": 14,
-        "background_color": "#ffffff",
-        "heading_color": "#003049",
-        "text_color": "#2e4347",
-        "accent_color": "#003049",
-        "card_background": "#ffffff",
-        "border_color": "#ccd8dc",
-        "tag_background": "#003049",
-        "tag_text_color": "#ffffff",
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 72,
-        "padding_top_mobile": 24,
-        "padding_bottom_mobile": 24
       }
     },
     "herobanner_aQXwMb": {
@@ -2314,9 +2314,9 @@
     "avisclientcollagene_TQE9aF",
     "comparatif_wAMHKE",
     "proofeyes_tgwDAU",
+    "ingredientslider_xXbFrr",
     "whatexpect_pBkHyR",
     "easysteps_pyKtnL",
-    "ingredientslider_xXbFrr",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

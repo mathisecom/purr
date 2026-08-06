@@ -461,7 +461,7 @@
         "body_size_mobile": 13,
         "percent_size_desktop": 58,
         "percent_size_mobile": 44,
-        "background_color": "#ffffff",
+        "background_color": "#F7F7F7",
         "card_color": "#ffffff",
         "heading_color": "#003049",
         "text_color": "#2e4347",
@@ -469,7 +469,7 @@
         "line_color": "#b8c9cd",
         "corner_radius": 10,
         "max_width": 1380,
-        "padding_top": 0,
+        "padding_top": 32,
         "padding_bottom": 32,
         "disclaimer": ""
       }

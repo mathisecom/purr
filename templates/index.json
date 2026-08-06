@@ -75,6 +75,7 @@
         "video_testimonial_x74eBU": {
           "type": "video_testimonial",
           "settings": {
+            "video": "shopify://files/videos/3e742f4831e643ccbe07382f121437e6.HD-1080p-7.2Mbps-64989763.mp4",
             "caption": "",
             "accessible_label": ""
           }
@@ -82,6 +83,7 @@
         "video_testimonial_xHU4wg": {
           "type": "video_testimonial",
           "settings": {
+            "video": "shopify://files/videos/63924037e0984f6ba6d6ca8b4dad4e1d.HD-1080p-7.2Mbps-64989762.mp4",
             "caption": "",
             "accessible_label": ""
           }
@@ -89,6 +91,7 @@
         "video_testimonial_UkXBqF": {
           "type": "video_testimonial",
           "settings": {
+            "video": "shopify://files/videos/def39fa8ca6a40c087512110a3167648.HD-1080p-7.2Mbps-64989765.mp4",
             "caption": "",
             "accessible_label": ""
           }
@@ -133,9 +136,9 @@
         "video_heading": "\"really my under-eye life-saver\"",
         "video_title_size_desktop": 24,
         "video_title_size_mobile": 18,
-        "video_card_width": 250,
-        "video_mobile_width": 82,
-        "video_spacing_top": 40,
+        "video_card_width": 180,
+        "video_mobile_width": 70,
+        "video_spacing_top": 36,
         "title_size_desktop": 32,
         "title_size_mobile": 27,
         "body_text_size": 12,

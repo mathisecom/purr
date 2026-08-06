@@ -1,6 +1,6 @@
 {% comment %}
-  Section Shopify OS 2.0 — Fiche produit premium responsive avec réglages typographiques
-  À placer dans : sections/fiche-produit-premium.liquid
+  Shopify OS 2.0 section — Responsive premium product page with typography settings
+  Place in: sections/premium-product-page.liquid
 {% endcomment %}
 
 {% liquid
@@ -36,12 +36,16 @@
     --pfp-body-size: {{ section.settings.body_text_size }}px;
     --pfp-small-size: {{ section.settings.small_text_size }}px;
     --pfp-button-size: {{ section.settings.button_text_size }}px;
+    --pfp-video-title-desktop: {{ section.settings.video_title_size_desktop }}px;
+    --pfp-video-title-mobile: {{ section.settings.video_title_size_mobile }}px;
+    --pfp-video-card-width: {{ section.settings.video_card_width }}px;
+    --pfp-video-mobile-width: {{ section.settings.video_mobile_width }}vw;
   "
 >
   {% if featured_product == blank %}
     <div class="pfp__empty page-width">
-      <h2>Sélectionnez un produit</h2>
-      <p>Choisissez un produit dans les réglages de cette section.</p>
+      <h2>Select a product</h2>
+      <p>Choose a product in this section’s settings.</p>
     </div>
   {% else %}
     <div class="pfp__container">
@@ -69,7 +73,7 @@
           </div>
 
           {% if featured_product.media.size > 1 %}
-            <div class="pfp__thumbs" aria-label="Galerie du produit">
+            <div class="pfp__thumbs" aria-label="Product gallery">
               {% for media in featured_product.media limit: 8 %}
                 {% if media.preview_image != blank %}
                   <button
@@ -77,7 +81,7 @@
                     type="button"
                     data-full-image="{{ media.preview_image | image_url: width: 1200 }}"
                     data-alt="{{ media.alt | default: featured_product.title | escape }}"
-                    aria-label="Afficher l’image {{ forloop.index }}"
+                    aria-label="View image {{ forloop.index }}"
                     aria-pressed="{% if media.id == current_media.id %}true{% else %}false{% endif %}"
                   >
                     <img
@@ -122,9 +126,9 @@
         </div>
 
         {% if section.settings.show_rating %}
-          <div class="pfp__rating" aria-label="Note {{ section.settings.rating_value }} sur 5">
+          <div class="pfp__rating" aria-label="Rated {{ section.settings.rating_value }} out of 5">
             <span class="pfp__stars" aria-hidden="true">★★★★★</span>
-            <span>{{ section.settings.rating_value }} sur 5</span>
+            <span>{{ section.settings.rating_value }} out of 5</span>
             {% if section.settings.review_count != blank %}
               <span>({{ section.settings.review_count }})</span>
             {% endif %}
@@ -181,7 +185,7 @@
           <input type="hidden" name="quantity" value="1">
 
           {% if featured_product.selling_plan_groups.size > 0 %}
-            <div class="pfp__purchase-tabs" role="group" aria-label="Mode d’achat">
+            <div class="pfp__purchase-tabs" role="group" aria-label="Purchase option">
               <button class="pfp__purchase-tab is-active" type="button" data-mode="onetime" aria-pressed="true">
                 {{ section.settings.one_time_label }}
               </button>
@@ -198,7 +202,7 @@
             >
           {% endif %}
 
-          <div class="pfp__variant-list" role="radiogroup" aria-label="Choisissez une option">
+          <div class="pfp__variant-list" role="radiogroup" aria-label="Choose an option">
             {% for variant in featured_product.variants %}
               {% liquid
                 assign allocation = variant.selling_plan_allocations.first
@@ -261,7 +265,7 @@
                     {% if variant.id == current_variant.id %}{{ variant.price | money }}{% else %}{{ variant.price | money }}{% endif %}
                   </strong>
                   <del data-card-compare>{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money }}{% endif %}</del>
-                  <small data-card-saving>{% if onetime_saving > 0 %}Économisez {{ onetime_saving }}%{% endif %}</small>
+                  <small data-card-saving>{% if onetime_saving > 0 %}Save {{ onetime_saving }}%{% endif %}</small>
                 </span>
               </label>
             {% endfor %}
@@ -289,7 +293,7 @@
           </button>
 
           {% if section.settings.show_payment_icons %}
-            <div class="pfp__payments" aria-label="Moyens de paiement acceptés">
+            <div class="pfp__payments" aria-label="Accepted payment methods">
               {% for type in shop.enabled_payment_types %}
                 {{ type | payment_type_svg_tag: class: 'pfp__payment-icon' }}
               {% endfor %}
@@ -299,7 +303,7 @@
 
         {% if section.settings.moneyback_text != blank %}
           <div class="pfp__moneyback">
-            <span class="pfp__moneyback-seal" aria-hidden="true">{{ section.settings.moneyback_days }}<small>J</small></span>
+            <span class="pfp__moneyback-seal" aria-hidden="true">{{ section.settings.moneyback_days }}<small>DAYS</small></span>
             <div>{{ section.settings.moneyback_text }}</div>
           </div>
         {% endif %}
@@ -324,6 +328,76 @@
         {% endif %}
       </div>
     </div>
+
+    {% assign video_blocks = section.blocks | where: 'type', 'video_testimonial' %}
+    {% if section.settings.show_video_slider and video_blocks.size > 0 %}
+      <div class="pfp__video-showcase" aria-labelledby="PremiumVideoHeading-{{ section.id }}">
+        {% if section.settings.video_heading != blank %}
+          <h2 id="PremiumVideoHeading-{{ section.id }}" class="pfp__video-heading">
+            {{ section.settings.video_heading }}
+          </h2>
+        {% endif %}
+        <div class="pfp__video-track" data-video-track tabindex="0" aria-label="Customer video reviews">
+          {% for block in video_blocks %}
+            {% liquid
+              assign customer_video = block.settings.video
+              assign video_poster = block.settings.cover_image
+              if video_poster == blank and customer_video != blank
+                assign video_poster = customer_video.preview_image
+              endif
+            %}
+
+            <article class="pfp__video-card" data-video-card {{ block.shopify_attributes }}>
+              <div class="pfp__video-media">
+                {% if customer_video != blank %}
+                  <video
+                    class="pfp__customer-video"
+                    playsinline
+                    preload="metadata"
+                    {% if video_poster != blank %}poster="{{ video_poster | image_url: width: 900 }}"{% endif %}
+                    aria-label="{{ block.settings.accessible_label | default: 'Customer review video' | escape }}"
+                  >
+                    {% for source in customer_video.sources %}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {% endfor %}
+                  </video>
+
+                  <button
+                    class="pfp__video-play"
+                    type="button"
+                    data-video-play
+                    aria-label="Play video"
+                  >
+                    <span aria-hidden="true"></span>
+                  </button>
+                {% elsif video_poster != blank %}
+                  <img
+                    class="pfp__video-poster"
+                    src="{{ video_poster | image_url: width: 900 }}"
+                    alt="{{ block.settings.accessible_label | escape }}"
+                    width="{{ video_poster.width }}"
+                    height="{{ video_poster.height }}"
+                    loading="lazy"
+                  >
+                  <span class="pfp__video-play pfp__video-play--placeholder" aria-hidden="true"><span></span></span>
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'pfp__video-placeholder' }}
+                  <span class="pfp__video-play pfp__video-play--placeholder" aria-hidden="true"><span></span></span>
+                {% endif %}
+
+                {% if block.settings.caption != blank %}
+                  <div class="pfp__video-caption">{{ block.settings.caption }}</div>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+
+        <div class="pfp__video-progress" aria-hidden="true">
+          <span data-video-progress></span>
+        </div>
+      </div>
+    {% endif %}
   {% endif %}
 </section>
 
@@ -862,6 +936,162 @@
     border-radius: var(--pfp-radius);
   }
 
+  #PremiumProduct-{{ section.id }} .pfp__video-showcase {
+    width: min(100%, 1180px);
+    min-width: 0;
+    max-width: 100%;
+    margin: {{ section.settings.video_spacing_top }}px auto 0;
+    overflow: hidden;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-heading {
+    max-width: 100%;
+    margin: 0 0 8px;
+    color: var(--pfp-text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: var(--pfp-video-title-desktop);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: .015em;
+    overflow-wrap: anywhere;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-subheading {
+    max-width: 720px;
+    margin: 0 0 18px;
+    color: var(--pfp-muted);
+    font-size: var(--pfp-body-size);
+    line-height: 1.5;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-subheading p { margin: 0; }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, var(--pfp-video-card-width));
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0 0 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x pan-y;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-track::-webkit-scrollbar { display: none; }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-card {
+    width: 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: var(--pfp-radius);
+    background: var(--pfp-panel);
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__customer-video,
+  #PremiumProduct-{{ section.id }} .pfp__video-poster,
+  #PremiumProduct-{{ section.id }} .pfp__video-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-play {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: var(--pfp-text);
+    background: rgba(255,255,255,.76);
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    backdrop-filter: blur(4px);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease, background .2s ease;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-play:hover {
+    background: rgba(255,255,255,.92);
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-play > span {
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid currentColor;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-card.is-playing .pfp__video-play {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-play--placeholder {
+    pointer-events: none;
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-caption {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #fff;
+    background: rgba(0,48,73,.78);
+    font-size: var(--pfp-small-size);
+    font-weight: 700;
+    line-height: 1.3;
+    backdrop-filter: blur(5px);
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-progress {
+    position: relative;
+    width: min(100%, 720px);
+    height: 2px;
+    margin: 8px 4px 0;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--pfp-text) 18%, transparent);
+  }
+
+  #PremiumProduct-{{ section.id }} .pfp__video-progress > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background: var(--pfp-text);
+    transform: translateX(0);
+    transform-origin: left center;
+    transition: transform .08s linear;
+  }
+
   @media (max-width: 989px) {
     #PremiumProduct-{{ section.id }} .pfp__container {
       grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
@@ -883,6 +1113,35 @@
     #PremiumProduct-{{ section.id }} {
       padding-left: 14px;
       padding-right: 14px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-showcase {
+      width: 100%;
+      margin-top: {{ section.settings.video_spacing_top }}px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-heading {
+      margin-bottom: 8px;
+      font-size: var(--pfp-video-title-mobile);
+      line-height: 1.08;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-subheading { margin-bottom: 14px; }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-track {
+      grid-auto-columns: minmax(0, var(--pfp-video-mobile-width));
+      gap: 12px;
+      padding-right: 8vw;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-play {
+      width: 54px;
+      height: 54px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__video-progress {
+      width: calc(100% - 8px);
+      margin-top: 6px;
     }
 
     #PremiumProduct-{{ section.id }} .pfp__container {
@@ -1033,6 +1292,9 @@
     const addButton = root.querySelector('[data-add-button]');
     const addText = root.querySelector('[data-add-text]');
     const soldOutLabel = {{ section.settings.sold_out_label | json }};
+    const videoTrack = root.querySelector('[data-video-track]');
+    const videoProgress = root.querySelector('[data-video-progress]');
+    const videoPlayButtons = [...root.querySelectorAll('[data-video-play]')];
     let purchaseMode = 'onetime';
 
     const selectedCard = () => root.querySelector('[data-variant-card] input[name="id"]:checked')?.closest('[data-variant-card]');
@@ -1061,7 +1323,7 @@
 
         if (priceNode) priceNode.textContent = price || '';
         if (compareNode) compareNode.textContent = compare || '';
-        if (savingNode) savingNode.textContent = Number(saving) > 0 ? `Économisez ${saving}%` : '';
+        if (savingNode) savingNode.textContent = Number(saving) > 0 ? `Save ${saving}%` : '';
       });
     };
 
@@ -1137,6 +1399,53 @@
       });
     });
 
+    const updateVideoProgress = () => {
+      if (!videoTrack || !videoProgress) return;
+
+      const maxScroll = Math.max(0, videoTrack.scrollWidth - videoTrack.clientWidth);
+      const visibleRatio = Math.min(1, videoTrack.clientWidth / Math.max(videoTrack.scrollWidth, 1));
+      const thumbPercent = Math.max(14, visibleRatio * 100);
+      const travelPercent = 100 - thumbPercent;
+      const scrollRatio = maxScroll > 0 ? videoTrack.scrollLeft / maxScroll : 0;
+
+      videoProgress.style.width = `${thumbPercent}%`;
+      videoProgress.style.transform = `translateX(${scrollRatio * travelPercent / (thumbPercent / 100)}%)`;
+    };
+
+    if (videoTrack) {
+      videoTrack.addEventListener('scroll', updateVideoProgress, { passive: true });
+      window.addEventListener('resize', updateVideoProgress, { passive: true });
+      requestAnimationFrame(updateVideoProgress);
+    }
+
+    videoPlayButtons.forEach((button) => {
+      const card = button.closest('[data-video-card]');
+      const video = card?.querySelector('video');
+      if (!video) return;
+
+      const setPlayingState = (playing) => {
+        card.classList.toggle('is-playing', playing);
+        button.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+      };
+
+      const toggleVideo = () => {
+        if (video.paused) {
+          root.querySelectorAll('.pfp__customer-video').forEach((otherVideo) => {
+            if (otherVideo !== video) otherVideo.pause();
+          });
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      };
+
+      button.addEventListener('click', toggleVideo);
+      video.addEventListener('click', toggleVideo);
+      video.addEventListener('play', () => setPlayingState(true));
+      video.addEventListener('pause', () => setPlayingState(false));
+      video.addEventListener('ended', () => setPlayingState(false));
+    });
+
     document.addEventListener('shopify:section:load', (event) => {
       if (event.detail.sectionId === '{{ section.id }}') {
         root.dataset.initialized = 'false';
@@ -1149,48 +1458,48 @@
 
 {% schema %}
 {
-  "name": "Fiche produit premium",
+  "name": "Premium product page",
   "tag": "section",
   "class": "section-fiche-produit-premium",
   "settings": [
     {
       "type": "product",
       "id": "product",
-      "label": "Produit (hors modèle produit)"
+      "label": "Product (outside product template)"
     },
     {
       "type": "text",
       "id": "promo_badge",
-      "label": "Badge promotionnel",
-      "default": "Jusqu’à -33%"
+      "label": "Promotional badge",
+      "default": "Up to 33% OFF"
     },
     {
       "type": "image_picker",
       "id": "trust_image",
-      "label": "Image des avatars / confiance"
+      "label": "Trust avatars / image"
     },
     {
       "type": "richtext",
       "id": "trust_text",
-      "label": "Texte de confiance",
-      "default": "<p>Déjà adopté par plus de 500 clientes</p>"
+      "label": "Trust text",
+      "default": "<p>Trusted by over 500 customers</p>"
     },
     {
       "type": "richtext",
       "id": "intro",
-      "label": "Introduction personnalisée",
-      "info": "Laissez vide pour reprendre automatiquement la description du produit."
+      "label": "Custom introduction",
+      "info": "Leave blank to automatically use the product description."
     },
     {
       "type": "checkbox",
       "id": "show_rating",
-      "label": "Afficher la note",
+      "label": "Show rating",
       "default": true
     },
     {
       "type": "range",
       "id": "rating_value",
-      "label": "Note",
+      "label": "Rating",
       "min": 0,
       "max": 5,
       "step": 0.1,
@@ -1199,18 +1508,18 @@
     {
       "type": "text",
       "id": "review_count",
-      "label": "Nombre d’avis",
-      "default": "201 avis"
+      "label": "Review count",
+      "default": "201 reviews"
     },
     {
       "type": "header",
-      "content": "Preuve sociale"
+      "content": "Social proof"
     },
     {
       "type": "text",
       "id": "clinician_title",
-      "label": "Titre",
-      "default": "Choix des professionnels"
+      "label": "Heading",
+      "default": "Clinicians’ Choice"
     },
     {
       "type": "image_picker",
@@ -1220,29 +1529,29 @@
     {
       "type": "richtext",
       "id": "clinician_text",
-      "label": "Texte",
-      "default": "<p>Recommandé par des professionnels et spécialistes, sans contrepartie.</p>"
+      "label": "Text",
+      "default": "<p>Recommended by skincare professionals and specialists, with no compensation.</p>"
     },
     {
       "type": "header",
-      "content": "Options d’achat"
+      "content": "Purchase options"
     },
     {
       "type": "text",
       "id": "one_time_label",
-      "label": "Libellé achat unique",
-      "default": "Achat unique"
+      "label": "One-time purchase label",
+      "default": "One-time purchase"
     },
     {
       "type": "text",
       "id": "subscribe_label",
-      "label": "Libellé abonnement",
-      "default": "S’abonner et économiser"
+      "label": "Subscription label",
+      "default": "Subscribe & save"
     },
     {
       "type": "range",
       "id": "popular_variant_position",
-      "label": "Position de la variante populaire",
+      "label": "Popular variant position",
       "min": 1,
       "max": 10,
       "step": 1,
@@ -1251,63 +1560,129 @@
     {
       "type": "text",
       "id": "popular_badge",
-      "label": "Badge variante populaire",
-      "default": "Le plus populaire"
+      "label": "Popular variant badge",
+      "default": "Most popular"
     },
     {
       "type": "text",
       "id": "guarantee_line",
-      "label": "Ligne au-dessus du bouton",
-      "default": "Garantie satisfait ou remboursé 90 jours"
+      "label": "Line above the button",
+      "default": "90-day money-back guarantee"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Texte du bouton",
-      "default": "AJOUTER AU PANIER"
+      "label": "Button text",
+      "default": "ADD TO CART"
     },
     {
       "type": "text",
       "id": "sold_out_label",
-      "label": "Texte produit épuisé",
-      "default": "ÉPUISÉ"
+      "label": "Sold-out text",
+      "default": "SOLD OUT"
     },
     {
       "type": "checkbox",
       "id": "show_payment_icons",
-      "label": "Afficher les moyens de paiement",
+      "label": "Show payment icons",
       "default": true
     },
     {
       "type": "header",
-      "content": "Garantie"
+      "content": "Guarantee"
     },
     {
       "type": "text",
       "id": "moneyback_days",
-      "label": "Nombre de jours",
+      "label": "Number of days",
       "default": "90"
     },
     {
       "type": "richtext",
       "id": "moneyback_text",
-      "label": "Texte de garantie",
-      "default": "<p><strong>Essayez sans risque pendant 90 jours.</strong> Sans résultat visible, vous êtes remboursé.</p>"
+      "label": "Guarantee text",
+      "default": "<p><strong>Try it risk-free for 90 days.</strong> If you do not see visible results, you can request a refund.</p>"
     },
     {
       "type": "text",
       "id": "accordion_heading",
-      "label": "Titre des accordéons",
-      "default": "Questions fréquentes"
+      "label": "Accordion heading",
+      "default": "Frequently Asked"
     },
     {
       "type": "header",
-      "content": "Typographie"
+      "content": "Customer video slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video_slider",
+      "label": "Show video slider",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "video_heading",
+      "label": "Slider heading",
+      "default": "\"really my under-eye life-saver\""
+    },
+    {
+      "type": "range",
+      "id": "video_title_size_desktop",
+      "label": "Video heading — desktop",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "video_title_size_mobile",
+      "label": "Video heading — mobile",
+      "min": 18,
+      "max": 38,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "video_card_width",
+      "label": "Video width — desktop",
+      "min": 180,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "video_mobile_width",
+      "label": "Video width — mobile",
+      "min": 68,
+      "max": 92,
+      "step": 1,
+      "unit": "%",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "video_spacing_top",
+      "label": "Top spacing — desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Typography"
     },
     {
       "type": "range",
       "id": "title_size_desktop",
-      "label": "Titre principal — ordinateur",
+      "label": "Main heading — desktop",
       "min": 24,
       "max": 72,
       "step": 1,
@@ -1317,7 +1692,7 @@
     {
       "type": "range",
       "id": "title_size_mobile",
-      "label": "Titre principal — mobile",
+      "label": "Main heading — mobile",
       "min": 22,
       "max": 56,
       "step": 1,
@@ -1327,7 +1702,7 @@
     {
       "type": "range",
       "id": "body_text_size",
-      "label": "Texte principal de la section",
+      "label": "Main section text",
       "min": 11,
       "max": 22,
       "step": 1,
@@ -1337,7 +1712,7 @@
     {
       "type": "range",
       "id": "small_text_size",
-      "label": "Petits textes et informations",
+      "label": "Small text and information",
       "min": 9,
       "max": 18,
       "step": 1,
@@ -1347,7 +1722,7 @@
     {
       "type": "range",
       "id": "button_text_size",
-      "label": "Texte du bouton d’ajout au panier",
+      "label": "Add-to-cart button text",
       "min": 11,
       "max": 22,
       "step": 1,
@@ -1361,49 +1736,49 @@
     {
       "type": "color",
       "id": "background_color",
-      "label": "Arrière-plan",
+      "label": "Background",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "panel_color",
-      "label": "Fond des cartes",
+      "label": "Card background",
       "default": "#eef2f3"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Texte",
+      "label": "Text",
       "default": "#171717"
     },
     {
       "type": "color",
       "id": "muted_color",
-      "label": "Texte secondaire",
+      "label": "Secondary text",
       "default": "#607178"
     },
     {
       "type": "color",
       "id": "line_color",
-      "label": "Lignes",
+      "label": "Divider lines",
       "default": "#8da1a6"
     },
     {
       "type": "color",
       "id": "dark_color",
-      "label": "Couleur foncée",
+      "label": "Dark color",
       "default": "#29474e"
     },
     {
       "type": "color",
       "id": "accent_color",
-      "label": "Couleur du bouton",
+      "label": "Button color",
       "default": "#08b77a"
     },
     {
       "type": "range",
       "id": "corner_radius",
-      "label": "Arrondi des angles",
+      "label": "Corner radius",
       "min": 0,
       "max": 24,
       "step": 1,
@@ -1413,7 +1788,7 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Marge supérieure",
+      "label": "Top spacing",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -1423,7 +1798,7 @@
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Marge inférieure",
+      "label": "Bottom spacing",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -1434,114 +1809,164 @@
   "blocks": [
     {
       "type": "benefit",
-      "name": "Avantage",
+      "name": "Benefit",
       "limit": 6,
       "settings": [
         {
           "type": "select",
           "id": "icon",
-          "label": "Icône",
+          "label": "Icon",
           "default": "eye",
           "options": [
-            { "value": "eye", "label": "Œil" },
-            { "value": "sparkle", "label": "Éclat" },
-            { "value": "shield", "label": "Bouclier" },
-            { "value": "face", "label": "Visage" },
-            { "value": "check", "label": "Coche" }
+            { "value": "eye", "label": "Eye" },
+            { "value": "sparkle", "label": "Glow" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "face", "label": "Face" },
+            { "value": "check", "label": "Checkmark" }
           ]
         },
         {
           "type": "richtext",
           "id": "text",
-          "label": "Texte",
-          "default": "<p>Décrivez ici un bénéfice clé du produit.</p>"
+          "label": "Text",
+          "default": "<p>Describe a key product benefit here.</p>"
         }
       ]
     },
     {
       "type": "accordion",
-      "name": "Accordéon",
+      "name": "Accordion",
       "limit": 8,
       "settings": [
         {
           "type": "text",
           "id": "heading",
-          "label": "Titre",
+          "label": "Heading",
           "default": "Description"
         },
         {
           "type": "richtext",
           "id": "content",
-          "label": "Contenu",
-          "default": "<p>Ajoutez ici les informations détaillées.</p>"
+          "label": "Content",
+          "default": "<p>Add detailed information here.</p>"
         },
         {
           "type": "checkbox",
           "id": "open_by_default",
-          "label": "Ouvert par défaut",
+          "label": "Open by default",
           "default": false
+        }
+      ]
+    },
+    {
+      "type": "video_testimonial",
+      "name": "Customer video",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Shopify video"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Optional cover image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Optional caption",
+          "default": "Real customer result"
+        },
+        {
+          "type": "text",
+          "id": "accessible_label",
+          "label": "Accessible description",
+          "default": "Customer using Collagen Eye Patches"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Fiche produit premium",
+      "name": "Premium product page",
       "blocks": [
         {
           "type": "benefit",
           "settings": {
             "icon": "eye",
-            "text": "<p>Technologie précise et douce, adaptée aux zones délicates.</p>"
+            "text": "<p>Comfortable patches designed for the delicate under-eye area.</p>"
           }
         },
         {
           "type": "benefit",
           "settings": {
             "icon": "sparkle",
-            "text": "<p>Aide à améliorer visiblement l’apparence de la peau.</p>"
+            "text": "<p>Helps brighten the look of tired, dull under-eyes.</p>"
           }
         },
         {
           "type": "benefit",
           "settings": {
             "icon": "shield",
-            "text": "<p>Formule pensée pour une utilisation simple et confortable.</p>"
+            "text": "<p>A hydrating formula helps smooth the appearance of fine lines.</p>"
           }
         },
         {
           "type": "benefit",
           "settings": {
             "icon": "face",
-            "text": "<p>Peut être utilisée sur plusieurs zones ciblées du visage.</p>"
+            "text": "<p>Cooling care for a fresher, more rested-looking eye area.</p>"
           }
         },
         {
           "type": "accordion",
           "settings": {
             "heading": "Description",
-            "content": "<p>Présentez votre produit, ses bénéfices et sa technologie.</p>"
+            "content": "<p>Introduce your Collagen Eye Patches, their benefits, and how they fit into an under-eye care routine.</p>"
           }
         },
         {
           "type": "accordion",
           "settings": {
-            "heading": "Ingrédients clés",
-            "content": "<p>Listez ici les ingrédients ou matériaux principaux.</p>"
+            "heading": "Key Ingredients",
+            "content": "<p>List the key ingredients in your formula and explain their role.</p>"
           }
         },
         {
           "type": "accordion",
           "settings": {
-            "heading": "Conseils d’utilisation",
-            "content": "<p>Expliquez comment utiliser le produit étape par étape.</p>"
+            "heading": "How to Use",
+            "content": "<p>Explain how to apply, wear, and remove the patches step by step.</p>"
           }
         },
         {
           "type": "accordion",
           "settings": {
-            "heading": "Livraison et retours",
-            "content": "<p>Ajoutez vos délais, conditions de livraison et politique de retour.</p>"
+            "heading": "Shipping & Returns",
+            "content": "<p>Add your delivery times, shipping terms, and return policy.</p>"
+          }
+        },
+        {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "Cooling, refreshing and easy to use",
+            "accessible_label": "Customer applying Collagen Eye Patches"
+          }
+        },
+        {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "A brighter-looking under-eye routine",
+            "accessible_label": "Customer showing her eye patch routine"
+          }
+        },
+        {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "My new self-care essential",
+            "accessible_label": "Customer review of Collagen Eye Patches"
           }
         }
       ]

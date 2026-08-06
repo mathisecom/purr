@@ -572,7 +572,7 @@
         "text_color": "#2e4347",
         "accent_color": "#003049",
         "card_background": "#ffffff",
-        "border_color": "#ccd8dc",
+        "border_color": "#F7F7F7",
         "tag_background": "#003049",
         "tag_text_color": "#ffffff",
         "padding_top_desktop": 64,

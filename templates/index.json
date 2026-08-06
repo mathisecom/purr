@@ -396,6 +396,84 @@
         "mobile_side_padding": 11
       }
     },
+    "proofeyes_tgwDAU": {
+      "type": "proofeyes",
+      "blocks": {
+        "result_bNCJb9": {
+          "type": "result",
+          "settings": {
+            "percentage": "86%",
+            "text": "said their under-eye area looked more refreshed after use",
+            "benefit": "Brighter-looking eyes",
+            "meter_value": 86
+          }
+        },
+        "result_Keqimi": {
+          "type": "result",
+          "settings": {
+            "percentage": "91%",
+            "text": "noticed smoother-looking skin with consistent use",
+            "benefit": "Smoother-looking skin",
+            "meter_value": 91
+          }
+        },
+        "result_pmmetf": {
+          "type": "result",
+          "settings": {
+            "percentage": "81%",
+            "text": "reported a reduced look of puffiness and dark circles",
+            "benefit": "More rested-looking eyes",
+            "meter_value": 81
+          }
+        }
+      },
+      "block_order": [
+        "result_bNCJb9",
+        "result_Keqimi",
+        "result_pmmetf"
+      ],
+      "name": "Eye Results Slider",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "subheading": "",
+        "decorative_image_alt": "Collagen Eye Patches",
+        "mobile_image_fit": "cover",
+        "mobile_image_position": "center center",
+        "image_width_desktop": 320,
+        "image_offset_x": 20,
+        "image_offset_y": 20,
+        "show_arrows": false,
+        "show_dots": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "mobile_grid_gap": 8,
+        "mobile_header_min_height": 190,
+        "mobile_header_image_width": 145,
+        "mobile_header_image_space": 140,
+        "mobile_header_image_top": 20,
+        "mobile_header_image_right": -20,
+        "card_min_height": 230,
+        "card_min_height_mobile": 210,
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 32,
+        "body_size_desktop": 15,
+        "body_size_mobile": 13,
+        "percent_size_desktop": 58,
+        "percent_size_mobile": 44,
+        "background_color": "#FFFFFF",
+        "card_color": "#ffffff",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "line_color": "#b8c9cd",
+        "corner_radius": 10,
+        "max_width": 1380,
+        "padding_top": 0,
+        "padding_bottom": 32,
+        "disclaimer": ""
+      }
+    },
     "whatexpect_pBkHyR": {
       "type": "whatexpect",
       "blocks": {
@@ -661,84 +739,6 @@
         "padding_bottom_desktop": 72,
         "padding_top_mobile": 24,
         "padding_bottom_mobile": 24
-      }
-    },
-    "proofeyes_tgwDAU": {
-      "type": "proofeyes",
-      "blocks": {
-        "result_bNCJb9": {
-          "type": "result",
-          "settings": {
-            "percentage": "86%",
-            "text": "said their under-eye area looked more refreshed after use",
-            "benefit": "Brighter-looking eyes",
-            "meter_value": 86
-          }
-        },
-        "result_Keqimi": {
-          "type": "result",
-          "settings": {
-            "percentage": "91%",
-            "text": "noticed smoother-looking skin with consistent use",
-            "benefit": "Smoother-looking skin",
-            "meter_value": 91
-          }
-        },
-        "result_pmmetf": {
-          "type": "result",
-          "settings": {
-            "percentage": "81%",
-            "text": "reported a reduced look of puffiness and dark circles",
-            "benefit": "More rested-looking eyes",
-            "meter_value": 81
-          }
-        }
-      },
-      "block_order": [
-        "result_bNCJb9",
-        "result_Keqimi",
-        "result_pmmetf"
-      ],
-      "name": "Eye Results Slider",
-      "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "subheading": "",
-        "decorative_image_alt": "Collagen Eye Patches",
-        "mobile_image_fit": "cover",
-        "mobile_image_position": "center center",
-        "image_width_desktop": 320,
-        "image_offset_x": 20,
-        "image_offset_y": 20,
-        "show_arrows": false,
-        "show_dots": false,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "mobile_grid_gap": 8,
-        "mobile_header_min_height": 190,
-        "mobile_header_image_width": 145,
-        "mobile_header_image_space": 140,
-        "mobile_header_image_top": 20,
-        "mobile_header_image_right": -20,
-        "card_min_height": 230,
-        "card_min_height_mobile": 210,
-        "heading_size_desktop": 38,
-        "heading_size_mobile": 32,
-        "body_size_desktop": 15,
-        "body_size_mobile": 13,
-        "percent_size_desktop": 58,
-        "percent_size_mobile": 44,
-        "background_color": "#FFFFFF",
-        "card_color": "#ffffff",
-        "heading_color": "#003049",
-        "text_color": "#2e4347",
-        "accent_color": "#003049",
-        "line_color": "#b8c9cd",
-        "corner_radius": 10,
-        "max_width": 1380,
-        "padding_top": 0,
-        "padding_bottom": 32,
-        "disclaimer": "<p>Results may vary. Replace the sample percentages with substantiated data before publishing.</p>"
       }
     },
     "herobanner_aQXwMb": {
@@ -2313,10 +2313,10 @@
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
     "comparatif_wAMHKE",
+    "proofeyes_tgwDAU",
     "whatexpect_pBkHyR",
     "easysteps_pyKtnL",
     "ingredientslider_xXbFrr",
-    "proofeyes_tgwDAU",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

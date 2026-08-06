@@ -360,6 +360,103 @@
         "mobile_side_padding": 11
       }
     },
+    "whatexpect_pBkHyR": {
+      "type": "whatexpect",
+      "blocks": {
+        "stage_CwwazR": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 1–2",
+            "icon": "✦",
+            "title": "A More Refreshed Look",
+            "text": "<p>The cooling patches help the under-eye area feel hydrated and comfortable. Tired-looking eyes may appear fresher after each use.</p>",
+            "highlight": "Hydration and comfort become noticeable",
+            "card_background": "#2e4347"
+          }
+        },
+        "stage_YMWMnk": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 3–4",
+            "icon": "◌",
+            "title": "Smoother-Looking Skin",
+            "text": "<p>With consistent use, the eye area can look more supple and the appearance of fine dehydration lines may begin to soften.</p>",
+            "highlight": "Fine lines may look softened",
+            "card_background": "#003049"
+          }
+        },
+        "stage_4NERJi": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 5–6",
+            "icon": "✧",
+            "title": "Brighter, Less Tired-Looking Eyes",
+            "text": "<p>A regular routine may help puffiness and shadowing look less noticeable, leaving the under-eye area visibly brighter.</p>",
+            "highlight": "Eyes look brighter and more awake",
+            "card_background": "#2e4347"
+          }
+        },
+        "stage_xBHTC8": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 6–8+",
+            "icon": "∞",
+            "title": "Maintain Your Results",
+            "text": "<p>Continued use helps maintain a smoother, firmer-looking and refreshed eye area as part of your ongoing skincare routine.</p>",
+            "highlight": "Consistency supports lasting-looking results",
+            "card_background": "#003049"
+          }
+        }
+      },
+      "block_order": [
+        "stage_CwwazR",
+        "stage_YMWMnk",
+        "stage_4NERJi",
+        "stage_xBHTC8"
+      ],
+      "name": "Eye patches timeline",
+      "settings": {
+        "eyebrow": "",
+        "heading": "What to Expect\nWeek by Week",
+        "intro": "<p>Every skin journey is different. Here is what many customers may notice when Collagen Eye Patches become part of a consistent routine.</p>",
+        "product": "",
+        "note": "<p>Individual results vary. This section describes cosmetic appearance and routine-based expectations.</p>",
+        "tabs_label": "Choose a timeline stage",
+        "slider_label": "Collagen Eye Patches timeline",
+        "autoplay": false,
+        "autoplay_speed": 6,
+        "show_progress": false,
+        "card_min_height": 330,
+        "card_min_height_mobile": 310,
+        "card_radius": 10,
+        "background_color": "#EEF2F3",
+        "heading_color": "#003049",
+        "text_color": "#2E4347",
+        "card_background": "#2E4347",
+        "card_text_color": "#FFFFFF",
+        "accent_color": "#00A896",
+        "accent_text_color": "#FFFFFF",
+        "tab_background": "#FFFFFF",
+        "tab_text_color": "#2E4347",
+        "border_color": "#CBD5D8",
+        "heading_size_desktop": 35,
+        "intro_size_desktop": 17,
+        "tab_size_desktop": 14,
+        "card_title_size_desktop": 21,
+        "card_text_size_desktop": 15,
+        "heading_size_mobile": 28,
+        "intro_size_mobile": 13,
+        "tab_size_mobile": 13,
+        "card_title_size_mobile": 17,
+        "card_text_size_mobile": 14,
+        "max_width": 1420,
+        "desktop_gap": 58,
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 22
+      }
+    },
     "easysteps_pyKtnL": {
       "type": "easysteps",
       "blocks": {
@@ -516,14 +613,14 @@
         "heading_size_mobile": 28,
         "card_title_size_mobile": 12,
         "body_size_mobile": 14,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading_color": "#003049",
-        "text_color": "#2E4347",
+        "text_color": "#2e4347",
         "accent_color": "#003049",
-        "card_background": "#FFFFFF",
-        "border_color": "#CCD8DC",
+        "card_background": "#ffffff",
+        "border_color": "#ccd8dc",
         "tag_background": "#003049",
-        "tag_text_color": "#FFFFFF",
+        "tag_text_color": "#ffffff",
         "padding_top_desktop": 64,
         "padding_bottom_desktop": 72,
         "padding_top_mobile": 24,
@@ -2102,6 +2199,7 @@
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
     "comparatif_wAMHKE",
+    "whatexpect_pBkHyR",
     "easysteps_pyKtnL",
     "ingredientslider_xXbFrr",
     "herobanner_aQXwMb",

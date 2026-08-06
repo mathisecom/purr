@@ -476,6 +476,82 @@
         "disclaimer": ""
       }
     },
+    "logoscroll_4itVyN": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_UbCfCf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28-2.avif",
+            "url": ""
+          }
+        },
+        "image_XhpGxi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GH_BIB_2026_winner_roundel_1.avif",
+            "url": ""
+          }
+        },
+        "image_ciq3Ai": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28_4337a5f6-a688-4220-90b8-55a090540d13.avif",
+            "url": ""
+          }
+        },
+        "image_68mD93": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28-1.avif",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_UbCfCf",
+        "image_XhpGxi",
+        "image_ciq3Ai",
+        "image_68mD93"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 16,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 68,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#ffffff",
+        "layout_border_color": "#121212",
+        "background_color": "#ffffff",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 20,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
     "ingredientslider_xXbFrr": {
       "type": "ingredientslider",
       "blocks": {
@@ -2170,6 +2246,7 @@
     "avisclientcollagene_YB9Ry3",
     "comparatif_wAMHKE",
     "proofeyes_tgwDAU",
+    "logoscroll_4itVyN",
     "ingredientslider_xXbFrr",
     "whatexpect_pBkHyR",
     "easysteps_pyKtnL",

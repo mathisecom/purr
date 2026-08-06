@@ -777,6 +777,7 @@
         "step_VTVHTW": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Final_Image_1_B_1.webp",
             "title": "Relax & Finish",
             "text": "<p>Leave on for 15–20 minutes, or as directed. Remove the patches and gently pat in any remaining serum.</p>"
           }

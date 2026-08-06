@@ -770,6 +770,7 @@
         "step_fLKfLq": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_51_36.png",
             "title": "Apply",
             "text": "<p>Remove the Collagen Eye Patches from the tray and place one under each eye. Smooth gently for a comfortable fit.</p>"
           }

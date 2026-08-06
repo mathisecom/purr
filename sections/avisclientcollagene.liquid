@@ -1,6 +1,6 @@
 {% comment %}
-  Section : Avis clients — Collagen Eye Patches
-  Responsive PC / tablette / mobile, sans dépendance externe.
+  Section: Customer Reviews — Collagen Eye Patches
+  Responsive desktop / tablet / mobile, with no external dependencies.
 {% endcomment %}
 
 {%- liquid
@@ -58,7 +58,7 @@
           <button
             class="cep-reviews__arrow cep-reviews__arrow--prev"
             type="button"
-            aria-label="Avis précédent"
+            aria-label="Previous review"
             data-prev
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -99,7 +99,7 @@
 
                 <div class="cep-review-card__content">
                   <div class="cep-review-card__rating-row">
-                    <div class="cep-review-card__stars" aria-label="{{ review_rating }} sur 5 étoiles">
+                    <div class="cep-review-card__stars" aria-label="{{ review_rating }} out of 5 stars">
                       {% for star in (1..5) %}
                         <span class="{% if star <= review_rating %}is-active{% endif %}" aria-hidden="true">★</span>
                       {% endfor %}
@@ -139,7 +139,7 @@
           <button
             class="cep-reviews__arrow cep-reviews__arrow--next"
             type="button"
-            aria-label="Avis suivant"
+            aria-label="Next review"
             data-next
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -150,12 +150,12 @@
       </div>
 
       {% if section.settings.show_dots and card_count > 1 %}
-        <div class="cep-reviews__dots" data-dots aria-label="Navigation des avis">
+        <div class="cep-reviews__dots" data-dots aria-label="Review navigation">
           {% for block in section.blocks %}
             <button
               type="button"
               class="cep-reviews__dot{% if forloop.first %} is-active{% endif %}"
-              aria-label="Afficher l’avis {{ forloop.index }}"
+              aria-label="Show review {{ forloop.index }}"
               aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
               data-dot="{{ forloop.index0 }}"
             ></button>
@@ -164,7 +164,7 @@
       {% endif %}
     {% else %}
       <div class="cep-reviews__empty">
-        Ajoutez des blocs « Avis client » dans l’éditeur de thème.
+        Add “Customer review” blocks in the theme editor.
       </div>
     {% endif %}
   </div>
@@ -707,60 +707,60 @@
 
 {% schema %}
 {
-  "name": "Avis Collagen Eye Patches",
+  "name": "Collagen Eye Reviews",
   "tag": "section",
-  "class": "section-avis-collagen-eye-patches",
+  "class": "section-collagen-eye-reviews",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
   "settings": [
     {
       "type": "header",
-      "content": "Contenu"
+      "content": "Content"
     },
     {
       "type": "richtext",
       "id": "rating_text",
-      "label": "Note globale",
-      "default": "<p>Noté <strong>4,8 / 5 ‘Excellent’</strong></p>"
+      "label": "Overall rating",
+      "default": "<p>Rated <strong>4.8 / 5 ‘Excellent’</strong></p>"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
-      "label": "Titre principal",
-      "default": "Un regard visiblement plus frais"
+      "label": "Main heading",
+      "default": "Visibly Fresher-Looking Eyes"
     },
     {
       "type": "richtext",
       "id": "subtitle",
-      "label": "Sous-titre",
-      "default": "<p>Des clientes qui voulaient lisser et illuminer leur contour des yeux. Leurs impressions après avoir intégré nos Collagen Eye Patches à leur routine.</p>"
+      "label": "Subtitle",
+      "default": "<p>Customers who wanted smoother, brighter-looking under-eyes share their experience after adding our Collagen Eye Patches to their routine.</p>"
     },
     {
       "type": "header",
-      "content": "Carrousel"
+      "content": "Carousel"
     },
     {
       "type": "checkbox",
       "id": "show_arrows",
-      "label": "Afficher les flèches sur ordinateur",
+      "label": "Show arrows on desktop",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_dots",
-      "label": "Afficher les indicateurs",
+      "label": "Show slide indicators",
       "default": true
     },
     {
       "type": "select",
       "id": "image_ratio",
-      "label": "Format des images",
+      "label": "Image ratio",
       "default": "standard",
       "options": [
-        { "value": "landscape", "label": "Paysage 16:9" },
+        { "value": "landscape", "label": "Landscape 16:9" },
         { "value": "standard", "label": "Standard 4:3" },
-        { "value": "square", "label": "Carré 1:1" }
+        { "value": "square", "label": "Square 1:1" }
       ]
     },
     {
@@ -770,7 +770,7 @@
       "max": 94,
       "step": 1,
       "unit": "vw",
-      "label": "Largeur d’une carte sur mobile",
+      "label": "Card width on mobile",
       "default": 88
     },
     {
@@ -780,7 +780,7 @@
       "max": 36,
       "step": 2,
       "unit": "px",
-      "label": "Espacement entre les cartes",
+      "label": "Space between cards",
       "default": 24
     },
     {
@@ -790,12 +790,12 @@
       "max": 28,
       "step": 2,
       "unit": "px",
-      "label": "Arrondi des cartes",
+      "label": "Card corner radius",
       "default": 8
     },
     {
       "type": "header",
-      "content": "Typographie"
+      "content": "Typography"
     },
     {
       "type": "range",
@@ -804,7 +804,7 @@
       "max": 64,
       "step": 1,
       "unit": "px",
-      "label": "Titre — ordinateur",
+      "label": "Heading — desktop",
       "default": 38
     },
     {
@@ -814,7 +814,7 @@
       "max": 44,
       "step": 1,
       "unit": "px",
-      "label": "Titre — mobile",
+      "label": "Heading — mobile",
       "default": 32
     },
     {
@@ -824,7 +824,7 @@
       "max": 24,
       "step": 1,
       "unit": "px",
-      "label": "Sous-titre — ordinateur",
+      "label": "Subtitle — desktop",
       "default": 16
     },
     {
@@ -834,7 +834,7 @@
       "max": 22,
       "step": 1,
       "unit": "px",
-      "label": "Sous-titre — mobile",
+      "label": "Subtitle — mobile",
       "default": 16
     },
     {
@@ -844,7 +844,7 @@
       "max": 22,
       "step": 1,
       "unit": "px",
-      "label": "Texte des avis — ordinateur",
+      "label": "Review text — desktop",
       "default": 16
     },
     {
@@ -854,53 +854,53 @@
       "max": 22,
       "step": 1,
       "unit": "px",
-      "label": "Texte des avis — mobile",
+      "label": "Review text — mobile",
       "default": 16
     },
     {
       "type": "header",
-      "content": "Couleurs — branding"
+      "content": "Brand colors"
     },
     {
       "type": "color",
       "id": "background_color",
-      "label": "Fond de la section",
+      "label": "Section background",
       "default": "#003049"
     },
     {
       "type": "color",
       "id": "card_background_color",
-      "label": "Fond des cartes",
+      "label": "Card background",
       "default": "#EEF2F3"
     },
     {
       "type": "color",
       "id": "heading_color",
-      "label": "Titres et textes sur le fond",
+      "label": "Headings and text on background",
       "default": "#EEF2F3"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Texte des cartes",
+      "label": "Card text",
       "default": "#2E4347"
     },
     {
       "type": "color",
       "id": "accent_color",
-      "label": "Couleur d’accent",
+      "label": "Accent color",
       "default": "#003049"
     },
     {
       "type": "color",
       "id": "secondary_color",
-      "label": "Couleur secondaire",
+      "label": "Secondary color",
       "default": "#2E4347"
     },
     {
       "type": "color",
       "id": "star_color",
-      "label": "Couleur des étoiles",
+      "label": "Star color",
       "default": "#F6B800"
     },
     {
@@ -914,7 +914,7 @@
       "max": 1600,
       "step": 20,
       "unit": "px",
-      "label": "Largeur maximale",
+      "label": "Maximum width",
       "default": 1200
     },
     {
@@ -924,7 +924,7 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "label": "Marge intérieure haute",
+      "label": "Top padding",
       "default": 72
     },
     {
@@ -934,14 +934,14 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "label": "Marge intérieure basse",
+      "label": "Bottom padding",
       "default": 72
     }
   ],
   "blocks": [
     {
       "type": "review",
-      "name": "Avis client",
+      "name": "Customer review",
       "settings": [
         {
           "type": "image_picker",
@@ -951,8 +951,8 @@
         {
           "type": "text",
           "id": "image_alt",
-          "label": "Texte alternatif de la photo",
-          "info": "Décrivez brièvement la photo pour l’accessibilité."
+          "label": "Photo alt text",
+          "info": "Briefly describe the photo for accessibility."
         },
         {
           "type": "range",
@@ -960,38 +960,38 @@
           "min": 1,
           "max": 5,
           "step": 1,
-          "label": "Nombre d’étoiles",
+          "label": "Number of stars",
           "default": 5
         },
         {
           "type": "text",
           "id": "rating_label",
-          "label": "Texte à côté des étoiles",
-          "default": "Noté 5,0"
+          "label": "Text beside the stars",
+          "default": "Rated 5.0"
         },
         {
           "type": "richtext",
           "id": "review",
-          "label": "Avis",
-          "default": "<p>“Les patches sont frais et agréables. Mon contour des yeux paraît plus reposé et lumineux après ma routine du matin.”</p>"
+          "label": "Review",
+          "default": "<p>“The patches feel cool and comfortable. My under-eye area looks more rested and brighter after my morning routine.”</p>"
         },
         {
           "type": "text",
           "id": "customer_name",
-          "label": "Prénom ou nom",
+          "label": "First or full name",
           "default": "Sophie M."
         },
         {
           "type": "checkbox",
           "id": "verified",
-          "label": "Afficher le badge vérifié",
+          "label": "Show verified badge",
           "default": true
         },
         {
           "type": "text",
           "id": "verified_label",
-          "label": "Texte du badge",
-          "default": "Avis vérifié"
+          "label": "Badge text",
+          "default": "Verified review"
         }
       ]
     }
@@ -999,38 +999,38 @@
   "max_blocks": 12,
   "presets": [
     {
-      "name": "Avis Collagen Eye Patches",
+      "name": "Collagen Eye Reviews",
       "blocks": [
         {
           "type": "review",
           "settings": {
             "customer_name": "Sophie M.",
-            "rating_label": "Noté 5,0",
-            "review": "<p>“La sensation de fraîcheur est immédiate. Mon regard paraît plus reposé et mon contour des yeux plus lumineux.”</p>"
+            "rating_label": "Rated 5.0",
+            "review": "<p>“The cooling sensation feels immediate. My eyes look more rested and my under-eye area appears brighter.”</p>"
           }
         },
         {
           "type": "review",
           "settings": {
             "customer_name": "Claire D.",
-            "rating_label": "Noté 5,0",
-            "review": "<p>“Je les utilise avant de me maquiller. La zone sous les yeux semble plus lisse et l’anticernes se pose beaucoup mieux.”</p>"
+            "rating_label": "Rated 5.0",
+            "review": "<p>“I use them before applying makeup. My under-eye area looks smoother and my concealer applies much more evenly.”</p>"
           }
         },
         {
           "type": "review",
           "settings": {
             "customer_name": "Nadia R.",
-            "rating_label": "Noté 4,9",
-            "review": "<p>“Très simples à utiliser et ils restent bien en place. C’est devenu mon petit rituel lorsque mon regard paraît fatigué.”</p>"
+            "rating_label": "Rated 4.9",
+            "review": "<p>“They are easy to use and stay comfortably in place. They have become my go-to ritual whenever my eyes look tired.”</p>"
           }
         },
         {
           "type": "review",
           "settings": {
-            "customer_name": "Émilie L.",
-            "rating_label": "Noté 5,0",
-            "review": "<p>“J’aime leur texture douce et fraîche. Après utilisation, mon contour des yeux paraît hydraté et visiblement plus frais.”</p>"
+            "customer_name": "Emily L.",
+            "rating_label": "Rated 5.0",
+            "review": "<p>“I love the soft, cooling feel. After use, my under-eye area looks hydrated and visibly refreshed.”</p>"
           }
         }
       ]

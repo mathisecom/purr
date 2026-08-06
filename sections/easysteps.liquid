@@ -1,0 +1,678 @@
+{% comment %}
+  Three Easy Steps — Collagen Eye Patches
+  Responsive Shopify OS 2.0 section.
+{% endcomment %}
+
+{%- liquid
+  assign section_id = 'EasySteps-' | append: section.id
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="easy-steps"
+  style="
+    --easy-steps-bg: {{ section.settings.background_color }};
+    --easy-steps-heading: {{ section.settings.heading_color }};
+    --easy-steps-text: {{ section.settings.text_color }};
+    --easy-steps-accent: {{ section.settings.accent_color }};
+    --easy-steps-max-width: {{ section.settings.max_width }}px;
+    --easy-steps-columns: {{ section.settings.columns_desktop }};
+    --easy-steps-gap-desktop: {{ section.settings.gap_desktop }}px;
+    --easy-steps-gap-mobile: {{ section.settings.gap_mobile }}px;
+    --easy-steps-image-radius: {{ section.settings.image_radius }}px;
+    --easy-steps-mobile-image-width: {{ section.settings.mobile_image_width }}%;
+    --easy-steps-eyebrow-desktop: {{ section.settings.eyebrow_size_desktop }}px;
+    --easy-steps-eyebrow-mobile: {{ section.settings.eyebrow_size_mobile }}px;
+    --easy-steps-heading-desktop: {{ section.settings.heading_size_desktop }}px;
+    --easy-steps-heading-mobile: {{ section.settings.heading_size_mobile }}px;
+    --easy-steps-step-title-desktop: {{ section.settings.step_title_size_desktop }}px;
+    --easy-steps-step-title-mobile: {{ section.settings.step_title_size_mobile }}px;
+    --easy-steps-text-desktop: {{ section.settings.text_size_desktop }}px;
+    --easy-steps-text-mobile: {{ section.settings.text_size_mobile }}px;
+    --easy-steps-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --easy-steps-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --easy-steps-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --easy-steps-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="easy-steps__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <header class="easy-steps__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="easy-steps__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="easy-steps__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <div class="easy-steps__grid" role="list">
+      {%- for block in section.blocks -%}
+        <article class="easy-steps__item" role="listitem" {{ block.shopify_attributes }}>
+          <div class="easy-steps__media">
+            {%- if block.settings.image != blank -%}
+              {%- liquid
+                assign image_alt = block.settings.image.alt | default: block.settings.title
+              -%}
+              {{ block.settings.image
+                | image_url: width: 1200
+                | image_tag:
+                  class: 'easy-steps__image',
+                  loading: 'lazy',
+                  widths: '240, 360, 480, 600, 720, 960, 1200',
+                  sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 40vw',
+                  alt: image_alt
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'easy-steps__placeholder placeholder-svg' }}
+            {%- endif -%}
+
+            {%- if section.settings.show_step_numbers -%}
+              <span class="easy-steps__number" aria-hidden="true">{{ forloop.index }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="easy-steps__content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="easy-steps__item-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <div class="easy-steps__text rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- else -%}
+        <p class="easy-steps__empty">Add step blocks in the theme editor.</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #{{ section_id }},
+  #{{ section_id }} * {
+    box-sizing: border-box;
+  }
+
+  #{{ section_id }} {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--easy-steps-bg);
+    color: var(--easy-steps-text);
+  }
+
+  #{{ section_id }} .easy-steps__inner {
+    width: min(100%, var(--easy-steps-max-width));
+    margin: 0 auto;
+    padding: var(--easy-steps-padding-top-desktop) 24px var(--easy-steps-padding-bottom-desktop);
+  }
+
+  #{{ section_id }} .easy-steps__header {
+    max-width: 980px;
+    margin: 0 auto clamp(34px, 4vw, 56px);
+    text-align: center;
+  }
+
+  #{{ section_id }} .easy-steps__eyebrow,
+  #{{ section_id }} .easy-steps__heading,
+  #{{ section_id }} .easy-steps__item-title,
+  #{{ section_id }} .easy-steps__text,
+  #{{ section_id }} .easy-steps__text p {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #{{ section_id }} .easy-steps__eyebrow {
+    margin: 0 0 4px;
+    color: var(--easy-steps-heading);
+    font-family: inherit;
+    font-size: var(--easy-steps-eyebrow-desktop);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+
+  #{{ section_id }} .easy-steps__heading {
+    margin: 0;
+    color: var(--easy-steps-heading);
+    font-family: inherit;
+    font-size: var(--easy-steps-heading-desktop);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  #{{ section_id }} .easy-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--easy-steps-columns), minmax(0, 1fr));
+    gap: var(--easy-steps-gap-desktop);
+    width: 100%;
+    min-width: 0;
+  }
+
+  #{{ section_id }} .easy-steps__item {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #{{ section_id }} .easy-steps__media {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: {{ section.settings.image_ratio }};
+    overflow: hidden;
+    border-radius: var(--easy-steps-image-radius);
+    background: {{ section.settings.image_background }};
+  }
+
+  #{{ section_id }} .easy-steps__image,
+  #{{ section_id }} .easy-steps__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #{{ section_id }} .easy-steps__image {
+    object-fit: {{ section.settings.image_fit }};
+    object-position: center;
+  }
+
+  #{{ section_id }} .easy-steps__placeholder {
+    background: rgba(46, 67, 71, 0.08);
+    fill: rgba(46, 67, 71, 0.3);
+  }
+
+  #{{ section_id }} .easy-steps__number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--easy-steps-accent);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  #{{ section_id }} .easy-steps__content {
+    min-width: 0;
+    padding-top: 16px;
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  #{{ section_id }} .easy-steps__item-title {
+    margin: 0 0 4px;
+    color: var(--easy-steps-heading);
+    font-family: inherit;
+    font-size: var(--easy-steps-step-title-desktop);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  #{{ section_id }} .easy-steps__text {
+    color: var(--easy-steps-text);
+    font-family: inherit;
+    font-size: var(--easy-steps-text-desktop);
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  #{{ section_id }} .easy-steps__text > *:first-child {
+    margin-top: 0;
+  }
+
+  #{{ section_id }} .easy-steps__text > *:last-child {
+    margin-bottom: 0;
+  }
+
+  #{{ section_id }} .easy-steps__text p {
+    margin: 0;
+  }
+
+  #{{ section_id }} .easy-steps__empty {
+    grid-column: 1 / -1;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 989px) and (min-width: 750px) {
+    #{{ section_id }} .easy-steps__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section_id }} .easy-steps__inner {
+      padding: var(--easy-steps-padding-top-mobile) 14px var(--easy-steps-padding-bottom-mobile);
+    }
+
+    #{{ section_id }} .easy-steps__header {
+      margin-bottom: 34px;
+      padding-inline: 4px;
+    }
+
+    #{{ section_id }} .easy-steps__eyebrow {
+      margin-bottom: 5px;
+      font-size: var(--easy-steps-eyebrow-mobile);
+      line-height: 1.12;
+    }
+
+    #{{ section_id }} .easy-steps__heading {
+      font-size: var(--easy-steps-heading-mobile);
+      line-height: 1.1;
+    }
+
+    #{{ section_id }} .easy-steps__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--easy-steps-gap-mobile);
+    }
+
+    #{{ section_id }} .easy-steps__item {
+      display: grid;
+      grid-template-columns: minmax(0, var(--easy-steps-mobile-image-width)) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
+
+    #{{ section_id }} .easy-steps__media {
+      align-self: center;
+      aspect-ratio: 1 / 1;
+    }
+
+    #{{ section_id }} .easy-steps__content {
+      padding-top: 0;
+      text-align: left;
+    }
+
+    #{{ section_id }} .easy-steps__item-title {
+      margin-bottom: 4px;
+      font-size: var(--easy-steps-step-title-mobile);
+      line-height: 1.25;
+    }
+
+    #{{ section_id }} .easy-steps__text {
+      font-size: var(--easy-steps-text-mobile);
+      line-height: 1.42;
+    }
+
+    #{{ section_id }} .easy-steps__number {
+      top: 8px;
+      left: 8px;
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    #{{ section_id }} .easy-steps__inner {
+      padding-inline: 10px;
+    }
+
+    #{{ section_id }} .easy-steps__item {
+      gap: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "3 Easy Steps",
+  "tag": "section",
+  "class": "section-easy-steps",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Top heading",
+      "default": "3 Easy Steps"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "For Brighter, Smoother-Looking Eyes"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_step_numbers",
+      "label": "Show step numbers",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum content width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop gap",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile row gap",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_width",
+      "min": 30,
+      "max": 48,
+      "step": 1,
+      "unit": "%",
+      "label": "Mobile image width",
+      "default": 38
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Desktop text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Desktop image ratio",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 3", "label": "Landscape" },
+        { "value": "3 / 4", "label": "Portrait" }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "image_background",
+      "label": "Image placeholder background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "header",
+      "content": "Typography — desktop"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_desktop",
+      "min": 18,
+      "max": 52,
+      "step": 1,
+      "unit": "px",
+      "label": "Top heading size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Main heading size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_desktop",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Step title size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Typography — mobile"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Top heading size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 22,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Main heading size",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step title size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step text size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#EEF2F3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Headings",
+      "default": "#003049"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text",
+      "default": "#2E4347"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Step number color",
+      "default": "#003049"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Desktop top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Desktop bottom padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile top padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Step title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Describe this step in one or two clear sentences.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "3 Easy Steps — Eye Patches",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Cleanse & Prep",
+            "text": "<p>Start with clean, dry skin. Gently cleanse the under-eye area and pat dry before application.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Apply",
+            "text": "<p>Remove the Collagen Eye Patches from the tray and place one under each eye. Smooth gently for a comfortable fit.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Relax & Finish",
+            "text": "<p>Leave on for 15–20 minutes, or as directed. Remove the patches and gently pat in any remaining serum.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

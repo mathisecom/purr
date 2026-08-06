@@ -324,12 +324,33 @@
 
 <style>
   #PremiumProduct-{{ section.id }} {
+    width: 100%;
+    max-width: 100%;
     background: var(--pfp-bg);
     color: var(--pfp-text);
     padding: var(--pfp-top) 20px var(--pfp-bottom);
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
-  #PremiumProduct-{{ section.id }} * { box-sizing: border-box; }
+  #PremiumProduct-{{ section.id }} *,
+  #PremiumProduct-{{ section.id }} *::before,
+  #PremiumProduct-{{ section.id }} *::after { box-sizing: border-box; }
+
+  #PremiumProduct-{{ section.id }} .pfp__container,
+  #PremiumProduct-{{ section.id }} .pfp__gallery-column,
+  #PremiumProduct-{{ section.id }} .pfp__gallery-sticky,
+  #PremiumProduct-{{ section.id }} .pfp__content,
+  #PremiumProduct-{{ section.id }} .pfp__form,
+  #PremiumProduct-{{ section.id }} .pfp__variant-list {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #PremiumProduct-{{ section.id }} img,
+  #PremiumProduct-{{ section.id }} svg {
+    max-width: 100%;
+  }
 
   #PremiumProduct-{{ section.id }} .pfp__container {
     width: min(100%, 1180px);
@@ -379,12 +400,17 @@
 
   #PremiumProduct-{{ section.id }} .pfp__thumbs {
     display: grid;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     grid-auto-flow: column;
     grid-auto-columns: minmax(76px, 1fr);
     gap: 10px;
     margin-top: 14px;
     overflow-x: auto;
+    overflow-y: hidden;
     overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     padding-bottom: 4px;
   }
@@ -415,6 +441,21 @@
   }
 
   #PremiumProduct-{{ section.id }} .pfp__content { min-width: 0; }
+
+  #PremiumProduct-{{ section.id }} .pfp__trust-text,
+  #PremiumProduct-{{ section.id }} .pfp__title,
+  #PremiumProduct-{{ section.id }} .pfp__intro,
+  #PremiumProduct-{{ section.id }} .pfp__benefit > div,
+  #PremiumProduct-{{ section.id }} .pfp__clinician-body > div,
+  #PremiumProduct-{{ section.id }} .pfp__variant-info,
+  #PremiumProduct-{{ section.id }} .pfp__moneyback > div,
+  #PremiumProduct-{{ section.id }} .pfp__accordion summary > span:first-child,
+  #PremiumProduct-{{ section.id }} .pfp__accordion-content {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 
   #PremiumProduct-{{ section.id }} .pfp__trust {
     display: flex;
@@ -623,6 +664,8 @@
   #PremiumProduct-{{ section.id }} .pfp__variant-info,
   #PremiumProduct-{{ section.id }} .pfp__variant-price {
     display: grid;
+    min-width: 0;
+    max-width: 100%;
     gap: 3px;
   }
 
@@ -838,7 +881,8 @@
     }
 
     #PremiumProduct-{{ section.id }} .pfp__container {
-      grid-template-columns: 1fr;
+      width: 100%;
+      grid-template-columns: minmax(0, 1fr);
       gap: 24px;
     }
 
@@ -860,6 +904,19 @@
 
     #PremiumProduct-{{ section.id }} .pfp__trust {
       align-items: flex-start;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__trust img {
+      max-width: min(90px, 32vw);
+      height: auto;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__purchase-tab {
+      min-width: 0;
+      white-space: normal;
+      overflow-wrap: anywhere;
     }
 
     #PremiumProduct-{{ section.id }} .pfp__variant-card {
@@ -883,15 +940,74 @@
     }
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 520px) {
     #PremiumProduct-{{ section.id }} .pfp__variant-card {
-      grid-template-columns: 16px 38px minmax(0, 1fr) auto;
-      gap: 7px;
+      grid-template-columns: 16px 40px minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      column-gap: 8px;
+      row-gap: 4px;
+      padding: 13px 10px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__radio-dot {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      align-self: center;
     }
 
     #PremiumProduct-{{ section.id }} .pfp__variant-image {
-      width: 38px;
-      height: 38px;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__variant-info {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__variant-price {
+      grid-column: 3;
+      grid-row: 2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px 7px;
+      width: 100%;
+      white-space: normal;
+      text-align: left;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__variant-price strong,
+    #PremiumProduct-{{ section.id }} .pfp__variant-price del,
+    #PremiumProduct-{{ section.id }} .pfp__variant-price small {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__moneyback {
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #PremiumProduct-{{ section.id }} {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__variant-card {
+      grid-template-columns: 15px 36px minmax(0, 1fr);
+      column-gap: 7px;
+    }
+
+    #PremiumProduct-{{ section.id }} .pfp__variant-image {
+      width: 36px;
+      height: 36px;
     }
 
     #PremiumProduct-{{ section.id }} .pfp__variant-info small { display: none; }

@@ -188,7 +188,7 @@
         "show_arrows": true,
         "show_dots": true,
         "image_ratio": "standard",
-        "mobile_card_width": 88,
+        "mobile_card_width": 85,
         "card_gap": 24,
         "card_radius": 8,
         "heading_size_desktop": 38,

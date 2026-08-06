@@ -17,13 +17,29 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "SUMMER SALE: UP TO 58% OFF",
+            "text": "Trusted by 500,000+ Customers",
+            "url": ""
+          }
+        },
+        "message_mhHXR7": {
+          "type": "message",
+          "settings": {
+            "text": "90 Days Money Back Guarantee",
+            "url": ""
+          }
+        },
+        "message_kAJjU6": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
             "url": ""
           }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_mhHXR7",
+        "message_kAJjU6"
       ],
       "settings": {
         "enable_sticky": false,

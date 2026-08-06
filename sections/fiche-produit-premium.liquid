@@ -1,5 +1,5 @@
 {% comment %}
-  Section Shopify OS 2.0 — Fiche produit premium responsive
+  Section Shopify OS 2.0 — Fiche produit premium responsive avec réglages typographiques
   À placer dans : sections/fiche-produit-premium.liquid
 {% endcomment %}
 
@@ -31,6 +31,11 @@
     --pfp-radius: {{ section.settings.corner_radius }}px;
     --pfp-top: {{ section.settings.padding_top }}px;
     --pfp-bottom: {{ section.settings.padding_bottom }}px;
+    --pfp-title-size-desktop: {{ section.settings.title_size_desktop }}px;
+    --pfp-title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --pfp-body-size: {{ section.settings.body_text_size }}px;
+    --pfp-small-size: {{ section.settings.small_text_size }}px;
+    --pfp-button-size: {{ section.settings.button_text_size }}px;
   "
 >
   {% if featured_product == blank %}
@@ -462,7 +467,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
-    font-size: 12px;
+    font-size: var(--pfp-small-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__trust img {
@@ -477,7 +482,7 @@
   #PremiumProduct-{{ section.id }} .pfp__title {
     margin: 0 0 12px;
     color: var(--pfp-text);
-    font-size: clamp(34px, 4vw, 52px);
+    font-size: var(--pfp-title-size-desktop);
     line-height: .98;
     letter-spacing: -.035em;
     font-weight: 700;
@@ -485,7 +490,7 @@
 
   #PremiumProduct-{{ section.id }} .pfp__intro {
     color: var(--pfp-text);
-    font-size: 14px;
+    font-size: var(--pfp-body-size);
     line-height: 1.55;
   }
 
@@ -498,7 +503,7 @@
     flex-wrap: wrap;
     gap: 5px;
     margin-top: 14px;
-    font-size: 12px;
+    font-size: var(--pfp-small-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__stars {
@@ -521,7 +526,7 @@
     gap: 9px;
     align-items: start;
     padding: 8px 4px;
-    font-size: 13px;
+    font-size: var(--pfp-body-size);
     line-height: 1.4;
   }
 
@@ -551,7 +556,7 @@
     align-items: center;
     gap: 6px;
     margin-bottom: 6px;
-    font-size: 14px;
+    font-size: var(--pfp-body-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__clinician-body {
@@ -559,7 +564,7 @@
     gap: 10px;
     align-items: center;
     color: var(--pfp-muted);
-    font-size: 11px;
+    font-size: var(--pfp-small-size);
     line-height: 1.45;
   }
 
@@ -590,7 +595,7 @@
     background: transparent;
     color: var(--pfp-text);
     font: inherit;
-    font-size: 12px;
+    font-size: var(--pfp-small-size);
     font-weight: 700;
     cursor: pointer;
   }
@@ -669,9 +674,9 @@
     gap: 3px;
   }
 
-  #PremiumProduct-{{ section.id }} .pfp__variant-info strong { font-size: 14px; }
+  #PremiumProduct-{{ section.id }} .pfp__variant-info strong { font-size: var(--pfp-body-size); }
   #PremiumProduct-{{ section.id }} .pfp__variant-info small,
-  #PremiumProduct-{{ section.id }} .pfp__variant-price small { font-size: 10px; }
+  #PremiumProduct-{{ section.id }} .pfp__variant-price small { font-size: var(--pfp-small-size); }
 
   #PremiumProduct-{{ section.id }} .pfp__variant-price {
     justify-items: end;
@@ -681,7 +686,7 @@
 
   #PremiumProduct-{{ section.id }} .pfp__variant-price strong {
     color: var(--pfp-accent);
-    font-size: 13px;
+    font-size: var(--pfp-body-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__variant-card:not(.is-selected) .pfp__variant-price strong {
@@ -691,7 +696,7 @@
   #PremiumProduct-{{ section.id }} .pfp__variant-price del {
     min-height: 12px;
     opacity: .65;
-    font-size: 10px;
+    font-size: var(--pfp-small-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__popular {
@@ -709,7 +714,7 @@
   #PremiumProduct-{{ section.id }} .pfp__guarantee-line {
     margin: 8px 0;
     text-align: center;
-    font-size: 11px;
+    font-size: var(--pfp-small-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__add-button {
@@ -721,7 +726,7 @@
     color: #fff;
     background: var(--pfp-accent);
     font: inherit;
-    font-size: 14px;
+    font-size: var(--pfp-button-size);
     font-weight: 800;
     cursor: pointer;
     transition: filter .2s ease, transform .2s ease;
@@ -760,7 +765,7 @@
     padding: 11px 12px;
     border: 1px solid var(--pfp-text);
     border-radius: 8px;
-    font-size: 11px;
+    font-size: var(--pfp-small-size);
     line-height: 1.4;
   }
 
@@ -789,7 +794,7 @@
   #PremiumProduct-{{ section.id }} .pfp__faq-label {
     margin: 0 0 4px;
     color: var(--pfp-muted);
-    font-size: 11px;
+    font-size: var(--pfp-small-size);
   }
 
   #PremiumProduct-{{ section.id }} .pfp__accordion {
@@ -804,7 +809,7 @@
     padding: 15px 0;
     cursor: pointer;
     list-style: none;
-    font-size: 12px;
+    font-size: var(--pfp-body-size);
     font-weight: 600;
   }
 
@@ -841,7 +846,7 @@
   #PremiumProduct-{{ section.id }} .pfp__accordion-content {
     padding: 0 0 15px;
     color: var(--pfp-muted);
-    font-size: 12px;
+    font-size: var(--pfp-body-size);
     line-height: 1.55;
   }
 
@@ -898,7 +903,7 @@
     }
 
     #PremiumProduct-{{ section.id }} .pfp__title {
-      font-size: clamp(31px, 10vw, 42px);
+      font-size: var(--pfp-title-size-mobile);
       line-height: 1;
     }
 
@@ -931,12 +936,12 @@
       height: 42px;
     }
 
-    #PremiumProduct-{{ section.id }} .pfp__variant-info strong { font-size: 13px; }
-    #PremiumProduct-{{ section.id }} .pfp__variant-price strong { font-size: 12px; }
+    #PremiumProduct-{{ section.id }} .pfp__variant-info strong { font-size: var(--pfp-body-size); }
+    #PremiumProduct-{{ section.id }} .pfp__variant-price strong { font-size: var(--pfp-body-size); }
 
     #PremiumProduct-{{ section.id }} .pfp__add-button {
       min-height: 56px;
-      font-size: 14px;
+      font-size: var(--pfp-button-size);
     }
   }
 
@@ -1294,6 +1299,60 @@
       "id": "accordion_heading",
       "label": "Titre des accordéons",
       "default": "Questions fréquentes"
+    },
+    {
+      "type": "header",
+      "content": "Typographie"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Titre principal — ordinateur",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Titre principal — mobile",
+      "min": 22,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "body_text_size",
+      "label": "Texte principal de la section",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "small_text_size",
+      "label": "Petits textes et informations",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Texte du bouton d’ajout au panier",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
     },
     {
       "type": "header",

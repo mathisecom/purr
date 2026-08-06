@@ -85,9 +85,10 @@
       ],
       "name": "Fiche produit premium",
       "settings": {
-        "product": "",
+        "product": "collagen-eye-patches",
         "promo_badge": "Jusqu’à -33%",
-        "trust_text": "<p>Déjà adopté par plus de 500 clientes</p>",
+        "trust_image": "shopify://shop_images/trusted_by.webp",
+        "trust_text": "",
         "intro": "",
         "show_rating": true,
         "rating_value": 4.8,

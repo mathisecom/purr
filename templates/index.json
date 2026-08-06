@@ -309,8 +309,8 @@
         "subtitle_size_mobile": 13,
         "review_size_desktop": 16,
         "review_size_mobile": 14,
-        "background_color": "#FFFFFF",
-        "card_background_color": "#EEF2F3",
+        "background_color": "#ffffff",
+        "card_background_color": "#eef2f3",
         "heading_color": "#003049",
         "text_color": "#2e4347",
         "accent_color": "#003049",
@@ -762,6 +762,7 @@
         "step_zLVGUX": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_08_49.png",
             "title": "Cleanse & Prep",
             "text": "<p>Start with clean, dry skin. Gently cleanse the under-eye area and pat dry before application.</p>"
           }

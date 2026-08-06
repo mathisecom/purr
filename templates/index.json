@@ -9,106 +9,137 @@
  */
 {
   "sections": {
-    "fiche_produit_premium_p9aLWz": {
+    "fiche_produit_premium_B8Vfrz": {
       "type": "fiche-produit-premium",
       "blocks": {
-        "benefit_mPwV8Q": {
+        "benefit_jUtKqU": {
           "type": "benefit",
           "settings": {
             "icon": "eye",
-            "text": "<p>Technologie précise et douce, adaptée aux zones délicates.</p>"
+            "text": "<p>Comfortable patches designed for the delicate under-eye area.</p>"
           }
         },
-        "benefit_KGbreG": {
+        "benefit_w8dLeU": {
           "type": "benefit",
           "settings": {
             "icon": "sparkle",
-            "text": "<p>Aide à améliorer visiblement l’apparence de la peau.</p>"
+            "text": "<p>Helps brighten the look of tired, dull under-eyes.</p>"
           }
         },
-        "benefit_atw8KC": {
+        "benefit_wP6HWL": {
           "type": "benefit",
           "settings": {
             "icon": "shield",
-            "text": "<p>Formule pensée pour une utilisation simple et confortable.</p>"
+            "text": "<p>A hydrating formula helps smooth the appearance of fine lines.</p>"
           }
         },
-        "benefit_46V3ck": {
+        "benefit_8yCAiw": {
           "type": "benefit",
           "settings": {
             "icon": "face",
-            "text": "<p>Peut être utilisée sur plusieurs zones ciblées du visage.</p>"
+            "text": "<p>Cooling care for a fresher, more rested-looking eye area.</p>"
           }
         },
-        "accordion_rQamhm": {
+        "accordion_dnRhE6": {
           "type": "accordion",
           "settings": {
             "heading": "Description",
-            "content": "<p>Présentez votre produit, ses bénéfices et sa technologie.</p>",
+            "content": "<p>Introduce your Collagen Eye Patches, their benefits, and how they fit into an under-eye care routine.</p>",
             "open_by_default": false
           }
         },
-        "accordion_cCqeF7": {
+        "accordion_pEfpdq": {
           "type": "accordion",
           "settings": {
-            "heading": "Ingrédients clés",
-            "content": "<p>Listez ici les ingrédients ou matériaux principaux.</p>",
+            "heading": "Key Ingredients",
+            "content": "<p>List the key ingredients in your formula and explain their role.</p>",
             "open_by_default": false
           }
         },
-        "accordion_nch7iE": {
+        "accordion_gpc87E": {
           "type": "accordion",
           "settings": {
-            "heading": "Conseils d’utilisation",
-            "content": "<p>Expliquez comment utiliser le produit étape par étape.</p>",
+            "heading": "How to Use",
+            "content": "<p>Explain how to apply, wear, and remove the patches step by step.</p>",
             "open_by_default": false
           }
         },
-        "accordion_LX7kCi": {
+        "accordion_4JUmAQ": {
           "type": "accordion",
           "settings": {
-            "heading": "Livraison et retours",
-            "content": "<p>Ajoutez vos délais, conditions de livraison et politique de retour.</p>",
+            "heading": "Shipping & Returns",
+            "content": "<p>Add your delivery times, shipping terms, and return policy.</p>",
             "open_by_default": false
+          }
+        },
+        "video_testimonial_x74eBU": {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "Cooling, refreshing and easy to use",
+            "accessible_label": "Customer applying Collagen Eye Patches"
+          }
+        },
+        "video_testimonial_xHU4wg": {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "A brighter-looking under-eye routine",
+            "accessible_label": "Customer showing her eye patch routine"
+          }
+        },
+        "video_testimonial_UkXBqF": {
+          "type": "video_testimonial",
+          "settings": {
+            "caption": "My new self-care essential",
+            "accessible_label": "Customer review of Collagen Eye Patches"
           }
         }
       },
       "block_order": [
-        "benefit_mPwV8Q",
-        "benefit_KGbreG",
-        "benefit_atw8KC",
-        "benefit_46V3ck",
-        "accordion_rQamhm",
-        "accordion_cCqeF7",
-        "accordion_nch7iE",
-        "accordion_LX7kCi"
+        "benefit_jUtKqU",
+        "benefit_w8dLeU",
+        "benefit_wP6HWL",
+        "benefit_8yCAiw",
+        "accordion_dnRhE6",
+        "accordion_pEfpdq",
+        "accordion_gpc87E",
+        "accordion_4JUmAQ",
+        "video_testimonial_x74eBU",
+        "video_testimonial_xHU4wg",
+        "video_testimonial_UkXBqF"
       ],
-      "name": "Fiche produit premium",
+      "name": "Premium product page",
       "settings": {
         "product": "collagen-eye-patches",
-        "promo_badge": "Up To -40% OFF",
-        "trust_text": "",
+        "promo_badge": "Up to 50% OFF",
+        "trust_text": "<p>Trusted by over 500 customers</p>",
         "intro": "",
         "show_rating": true,
         "rating_value": 4.8,
-        "review_count": "3,201 avis",
-        "clinician_title": "Choix des professionnels",
-        "clinician_text": "<p>Recommandé par des professionnels et spécialistes, sans contrepartie.</p>",
-        "one_time_label": "Achat unique",
-        "subscribe_label": "S’abonner et économiser",
+        "review_count": "201 reviews",
+        "clinician_title": "Clinicians’ Choice",
+        "clinician_text": "<p>Recommended by skincare professionals and specialists, with no compensation.</p>",
+        "one_time_label": "One-time purchase",
+        "subscribe_label": "Subscribe & save",
         "popular_variant_position": 1,
-        "popular_badge": "Le plus populaire",
-        "guarantee_line": "Garantie satisfait ou remboursé 90 jours",
-        "button_label": "AJOUTER AU PANIER",
-        "sold_out_label": "ÉPUISÉ",
+        "popular_badge": "Most popular",
+        "guarantee_line": "90-day money-back guarantee",
+        "button_label": "ADD TO CART",
+        "sold_out_label": "SOLD OUT",
         "show_payment_icons": true,
         "moneyback_days": "90",
-        "moneyback_text": "<p><strong>Essayez sans risque pendant 90 jours.</strong> Sans résultat visible, vous êtes remboursé.</p>",
+        "moneyback_text": "<p><strong>Try it risk-free for 90 days.</strong> If you do not see visible results, you can request a refund.</p>",
         "accordion_heading": "Frequently Asked",
-        "title_size_desktop": 29,
-        "title_size_mobile": 25,
-        "body_text_size": 13,
-        "small_text_size": 12,
+        "show_video_slider": true,
+        "video_heading": "\"really my under-eye life-saver\"",
+        "video_title_size_desktop": 30,
+        "video_title_size_mobile": 24,
+        "video_card_width": 250,
+        "video_mobile_width": 78,
+        "video_spacing_top": 40,
+        "title_size_desktop": 32,
+        "title_size_mobile": 27,
+        "body_text_size": 11,
+        "small_text_size": 11,
         "button_text_size": 14,
         "background_color": "#ffffff",
         "panel_color": "#eef2f3",
@@ -273,7 +304,7 @@
         "subtitle_size_mobile": 13,
         "review_size_desktop": 14,
         "review_size_mobile": 14,
-        "background_color": "#EEF2F3",
+        "background_color": "#eef2f3",
         "card_background_color": "#eef2f3",
         "heading_color": "#003049",
         "text_color": "#2e4347",
@@ -429,16 +460,16 @@
         "card_min_height": 310,
         "card_min_height_mobile": 280,
         "card_radius": 8,
-        "background_color": "#EEF2F3",
+        "background_color": "#eef2f3",
         "heading_color": "#003049",
-        "text_color": "#2E4347",
-        "card_background": "#2E4347",
-        "card_text_color": "#FFFFFF",
-        "accent_color": "#00A896",
-        "accent_text_color": "#FFFFFF",
-        "tab_background": "#FFFFFF",
-        "tab_text_color": "#2E4347",
-        "border_color": "#CBD5D8",
+        "text_color": "#2e4347",
+        "card_background": "#2e4347",
+        "card_text_color": "#ffffff",
+        "accent_color": "#00a896",
+        "accent_text_color": "#ffffff",
+        "tab_background": "#ffffff",
+        "tab_text_color": "#2e4347",
+        "border_color": "#cbd5d8",
         "heading_size_desktop": 35,
         "intro_size_desktop": 17,
         "tab_size_desktop": 14,
@@ -2195,7 +2226,7 @@
     }
   },
   "order": [
-    "fiche_produit_premium_p9aLWz",
+    "fiche_produit_premium_B8Vfrz",
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
     "comparatif_wAMHKE",

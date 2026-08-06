@@ -75,22 +75,22 @@
         "video_testimonial_x74eBU": {
           "type": "video_testimonial",
           "settings": {
-            "caption": "Cooling, refreshing and easy to use",
-            "accessible_label": "Customer applying Collagen Eye Patches"
+            "caption": "",
+            "accessible_label": ""
           }
         },
         "video_testimonial_xHU4wg": {
           "type": "video_testimonial",
           "settings": {
-            "caption": "A brighter-looking under-eye routine",
-            "accessible_label": "Customer showing her eye patch routine"
+            "caption": "",
+            "accessible_label": ""
           }
         },
         "video_testimonial_UkXBqF": {
           "type": "video_testimonial",
           "settings": {
-            "caption": "My new self-care essential",
-            "accessible_label": "Customer review of Collagen Eye Patches"
+            "caption": "",
+            "accessible_label": ""
           }
         }
       },
@@ -134,7 +134,7 @@
         "video_title_size_desktop": 24,
         "video_title_size_mobile": 18,
         "video_card_width": 250,
-        "video_mobile_width": 78,
+        "video_mobile_width": 82,
         "video_spacing_top": 40,
         "title_size_desktop": 32,
         "title_size_mobile": 27,

@@ -122,6 +122,93 @@
         "padding_bottom": 40
       }
     },
+    "avisclientcollagene_TQE9aF": {
+      "type": "avisclientcollagene",
+      "blocks": {
+        "review_fGpiAJ": {
+          "type": "review",
+          "settings": {
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Noté 5,0",
+            "review": "<p>“La sensation de fraîcheur est immédiate. Mon regard paraît plus reposé et mon contour des yeux plus lumineux.”</p>",
+            "customer_name": "Sophie M.",
+            "verified": true,
+            "verified_label": "Avis vérifié"
+          }
+        },
+        "review_6eckHK": {
+          "type": "review",
+          "settings": {
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Noté 5,0",
+            "review": "<p>“Je les utilise avant de me maquiller. La zone sous les yeux semble plus lisse et l’anticernes se pose beaucoup mieux.”</p>",
+            "customer_name": "Claire D.",
+            "verified": true,
+            "verified_label": "Avis vérifié"
+          }
+        },
+        "review_HwCxyw": {
+          "type": "review",
+          "settings": {
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Noté 4,9",
+            "review": "<p>“Très simples à utiliser et ils restent bien en place. C’est devenu mon petit rituel lorsque mon regard paraît fatigué.”</p>",
+            "customer_name": "Nadia R.",
+            "verified": true,
+            "verified_label": "Avis vérifié"
+          }
+        },
+        "review_haeyPE": {
+          "type": "review",
+          "settings": {
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Noté 5,0",
+            "review": "<p>“J’aime leur texture douce et fraîche. Après utilisation, mon contour des yeux paraît hydraté et visiblement plus frais.”</p>",
+            "customer_name": "Émilie L.",
+            "verified": true,
+            "verified_label": "Avis vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_fGpiAJ",
+        "review_6eckHK",
+        "review_HwCxyw",
+        "review_haeyPE"
+      ],
+      "name": "Avis Collagen Eye Patches",
+      "settings": {
+        "rating_text": "<p>Noté <strong>4,8 / 5 ‘Excellent’</strong></p>",
+        "heading": "Un regard visiblement plus frais",
+        "subtitle": "<p>Des clientes qui voulaient lisser et illuminer leur contour des yeux. Leurs impressions après avoir intégré nos Collagen Eye Patches à leur routine.</p>",
+        "show_arrows": true,
+        "show_dots": true,
+        "image_ratio": "standard",
+        "mobile_card_width": 88,
+        "card_gap": 24,
+        "card_radius": 8,
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 32,
+        "subtitle_size_desktop": 16,
+        "subtitle_size_mobile": 16,
+        "review_size_desktop": 16,
+        "review_size_mobile": 16,
+        "background_color": "#003049",
+        "card_background_color": "#EEF2F3",
+        "heading_color": "#EEF2F3",
+        "text_color": "#2E4347",
+        "accent_color": "#003049",
+        "secondary_color": "#2E4347",
+        "star_color": "#F6B800",
+        "max_width": 1200,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "herobanner_aQXwMb": {
       "type": "herobanner",
       "disabled": true,
@@ -1769,6 +1856,7 @@
   },
   "order": [
     "fiche_produit_premium_p9aLWz",
+    "avisclientcollagene_TQE9aF",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "logoscroll_BjQiDb",

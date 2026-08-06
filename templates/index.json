@@ -285,57 +285,57 @@
         "padding_bottom": 32
       }
     },
-    "comparatif_wEAWVm": {
+    "comparatif_wAMHKE": {
       "type": "comparatif",
       "blocks": {
-        "comparison_row_hgJMPY": {
+        "comparison_row_6wHerU": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "<p>Reste à la surface de la peau</p>",
-            "right_text": "<p>Patchs hydrogel confortables qui épousent le contour des yeux</p>"
+            "left_text": "<p>Sit on the surface of the skin</p>",
+            "right_text": "<p>Soft hydrogel patches hug the under-eye area for targeted care</p>"
           }
         },
-        "comparison_row_3Q7Wb9": {
+        "comparison_row_ggyeGn": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "<p>Peut sembler lourd sous les yeux</p>",
-            "right_text": "<p>Texture légère, fraîche et agréable à porter</p>"
+            "left_text": "<p>Can feel heavy and may slip</p>",
+            "right_text": "<p>Lightweight, cooling fit designed to stay comfortably in place</p>"
           }
         },
-        "comparison_row_ABAjqw": {
+        "comparison_row_DDcyPr": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "<p>Hydratation basique uniquement</p>",
-            "right_text": "<p>Formule enrichie en collagène pour une peau visiblement plus lisse</p>"
+            "left_text": "<p>Provide basic moisture only</p>",
+            "right_text": "<p>Collagen-infused formula helps skin look smoother and more hydrated</p>"
           }
         },
-        "comparison_row_RzEPKm": {
+        "comparison_row_f34rAq": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "<p>Peu de différence visible dès la première utilisation</p>",
-            "right_text": "<p>Aide à réveiller et illuminer le regard dès l'application</p>"
+            "left_text": "<p>Little visible difference after one use</p>",
+            "right_text": "<p>Helps tired-looking eyes appear fresher and brighter from the first use</p>"
           }
         },
-        "comparison_row_M3jF9R": {
+        "comparison_row_mLwBpQ": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "<p>Les poches restent souvent inchangées</p>",
-            "right_text": "<p>Aide à réduire visiblement l'apparence des poches et des cernes</p>"
+            "left_text": "<p>Puffiness and dark circles may remain visible</p>",
+            "right_text": "<p>Helps visibly reduce the look of puffiness and dark circles with regular use</p>"
           }
         }
       },
       "block_order": [
-        "comparison_row_hgJMPY",
-        "comparison_row_3Q7Wb9",
-        "comparison_row_ABAjqw",
-        "comparison_row_RzEPKm",
-        "comparison_row_M3jF9R"
+        "comparison_row_6wHerU",
+        "comparison_row_ggyeGn",
+        "comparison_row_DDcyPr",
+        "comparison_row_f34rAq",
+        "comparison_row_mLwBpQ"
       ],
-      "name": "Comparatif Eye Patches",
+      "name": "Eye Patches Comparison",
       "settings": {
-        "eyebrow": "Pourquoi choisir nos patchs ?",
-        "heading": "La différence se voit dès la première utilisation",
-        "left_title": "Patchs Ordinaires",
+        "eyebrow": "WHY CHOOSE OUR EYE PATCHES?",
+        "heading": "A brighter, fresher-looking eye area in minutes",
+        "left_title": "Ordinary Eye Patches",
         "right_title": "Collagen Eye Patches",
         "section_background": "#F7F7F7",
         "left_background": "#EEF2F3",
@@ -346,13 +346,13 @@
         "right_icon_color": "#22D3A7",
         "left_divider_color": "#D8E0E2",
         "right_divider_color": "#60777D",
-        "border_color": "#D8D3C9",
+        "border_color": "#FFFFFF",
         "title_size_desktop": 24,
         "text_size_desktop": 17,
-        "title_size_mobile": 17,
-        "text_size_mobile": 13,
+        "title_size_mobile": 16,
+        "text_size_mobile": 11,
         "max_width": 1160,
-        "border_radius": 24,
+        "border_radius": 10,
         "padding_top": 36,
         "padding_bottom": 36,
         "padding_top_mobile": 24,
@@ -1931,7 +1931,7 @@
     "fiche_produit_premium_p9aLWz",
     "logoscroll_BjQiDb",
     "avisclientcollagene_TQE9aF",
-    "comparatif_wEAWVm",
+    "comparatif_wAMHKE",
     "herobanner_aQXwMb",
     "stats_TTB79g",
     "featured_product_CDz7jQ",

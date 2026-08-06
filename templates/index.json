@@ -11,6 +11,7 @@
   "sections": {
     "herobanner_aQXwMb": {
       "type": "herobanner",
+      "disabled": true,
       "name": "Pureva bannière hero",
       "settings": {
         "desktop_image": "shopify://shop_images/sstf_homepage_banner.webp",
@@ -139,6 +140,7 @@
         "stat_zzAPe4",
         "stat_mVrcKq"
       ],
+      "disabled": true,
       "name": "Pureva barre statistiques",
       "settings": {
         "section_background": "#08163d",
@@ -208,6 +210,7 @@
         "image_i7eihz",
         "image_a6Wb4x"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -274,7 +277,7 @@
           }
         },
         "rapi_rapi_bundle_JYWHpV": {
-          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "type": "shopify://apps/rapi-bundle/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
           "settings": {
             "product": "{{section.settings.product}}"
           }
@@ -372,6 +375,7 @@
         "collapsible_text_jWPDJz",
         "collapsible_text_mD7JdC"
       ],
+      "disabled": true,
       "name": "Featured product",
       "settings": {
         "full_width": true,
@@ -437,6 +441,7 @@
         "item_YdkBif",
         "item_QUrhxj"
       ],
+      "disabled": true,
       "name": "Marquee",
       "settings": {
         "speed": 28,
@@ -501,6 +506,7 @@
         "quote_zfDCjQ",
         "quote_NeETFY"
       ],
+      "disabled": true,
       "name": "Press",
       "settings": {
         "full_width": true,
@@ -580,6 +586,7 @@
         "benefit_beEPFy",
         "benefit_wyfci9"
       ],
+      "disabled": true,
       "name": "Pureva pourquoi choisir",
       "settings": {
         "heading": "Pourquoi choisir Puure® ?",
@@ -729,6 +736,7 @@
         "review_rtxAwi",
         "review_FJpDFy"
       ],
+      "disabled": true,
       "name": "Pureva avis clients",
       "settings": {
         "rating_text": "Excellent",
@@ -791,6 +799,7 @@
         "stat_6dgP8z",
         "stat_Mt6fUD"
       ],
+      "disabled": true,
       "name": "Données Produit",
       "settings": {
         "main_image": "shopify://shop_images/AF7819C0-7549-4356-864A-3384F1D93E34.webp",
@@ -924,6 +933,7 @@
         "row_YxJfAy",
         "row_Wqbgxf"
       ],
+      "disabled": true,
       "name": "Pureva comparaison",
       "settings": {
         "badge_text": "",
@@ -1049,6 +1059,7 @@
         "layer_4BcKBn",
         "layer_P7QeTU"
       ],
+      "disabled": true,
       "name": "Pureva couches filtration",
       "settings": {
         "badge_text": "Que contiennent nos cartouches ?",
@@ -1242,6 +1253,7 @@
         "contaminant_mYxMTG",
         "contaminant_it8N9F"
       ],
+      "disabled": true,
       "name": "Pureva filtration liste",
       "settings": {
         "product_image": "shopify://shop_images/wefilter_fr.webp",
@@ -1327,6 +1339,7 @@
         "benefit_DGb736",
         "benefit_f8tVJb"
       ],
+      "disabled": true,
       "name": "Bénéfices famille",
       "settings": {
         "background_image": "shopify://shop_images/DTS_Parenthood_Daniel_Faro_Photos_ID6941.webp",
@@ -1431,6 +1444,7 @@
         "item_BYwzRb",
         "item_T9Ldz6"
       ],
+      "disabled": true,
       "name": "Pureva Marquee",
       "settings": {
         "speed": 28,
@@ -1555,6 +1569,7 @@
         "benefit_xc7RYe",
         "benefit_6aRWBt"
       ],
+      "disabled": true,
       "name": "® FAQ",
       "settings": {
         "heading": "F.A.Q",

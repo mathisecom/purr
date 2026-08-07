@@ -2259,6 +2259,13 @@
             "answer": "Yes! Apply patches to clean, dry skin before other products. After removal, continue with your regular skincare routine."
           }
         },
+        "question_x6gKx3": {
+          "type": "question",
+          "settings": {
+            "question": "Are the patches safe for sensitive skin?",
+            "answer": "Yes, our patches are dermatologist-tested and suitable for all skin types, including sensitive skin. The ingredients are non-irritating."
+          }
+        },
         "benefit_mihfCT": {
           "type": "benefit",
           "settings": {
@@ -2284,6 +2291,7 @@
       },
       "block_order": [
         "question_EjdLwW",
+        "question_x6gKx3",
         "benefit_mihfCT",
         "benefit_bhQcTN",
         "benefit_tYNQWW"

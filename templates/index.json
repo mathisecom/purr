@@ -371,6 +371,7 @@
       "settings": {
         "eyebrow": "WHY CHOOSE OUR EYE PATCHES?",
         "heading": "A brighter, fresher-looking eye area in minutes",
+        "left_image": "shopify://shop_images/icone_37.png",
         "left_title": "Ordinary Eye Patches",
         "right_image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_38_48.png",
         "right_title": "Collagen Eye Patches",
@@ -722,7 +723,7 @@
         "eyebrow": "",
         "heading": "What to Expect\nWeek by Week",
         "intro": "<p>Every skin journey is different. Here is what many customers may notice when Collagen Eye Patches become part of a consistent routine.</p>",
-        "product": "",
+        "product": "collagen-eye-patches",
         "note": "<p>Individual results vary. This section describes cosmetic appearance and routine-based expectations.</p>",
         "tabs_label": "Choose a timeline stage",
         "slider_label": "Collagen Eye Patches timeline",

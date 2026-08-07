@@ -2255,12 +2255,13 @@
         "benefit_mihfCT": {
           "type": "benefit",
           "settings": {
-            "title": "Garantie 90 Jours",
-            "text": "Une qualité conçue pour durer."
+            "title": "90-Day Warranty",
+            "text": "Quality built to last."
           }
         },
         "benefit_bhQcTN": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "title": "Essayez-le pendant 100 jours",
             "text": "Satisfait ou remboursé, sans engagement."
@@ -2269,8 +2270,8 @@
         "benefit_tYNQWW": {
           "type": "benefit",
           "settings": {
-            "title": "Livraison offerte",
-            "text": "Expédié directement chez vous."
+            "title": "Free Shipping",
+            "text": "Shipped directly to your home."
           }
         }
       },

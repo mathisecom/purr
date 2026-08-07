@@ -9,46 +9,191 @@
  */
 {
   "sections": {
+    "fiche_produit_premium_B8Vfrz": {
+      "type": "fiche-produit-premium",
+      "blocks": {
+        "benefit_jUtKqU": {
+          "type": "benefit",
+          "settings": {
+            "icon": "eye",
+            "text": "<p>Comfortable patches designed for the delicate under-eye area.</p>"
+          }
+        },
+        "benefit_w8dLeU": {
+          "type": "benefit",
+          "settings": {
+            "icon": "sparkle",
+            "text": "<p>Helps brighten the look of tired, dull under-eyes.</p>"
+          }
+        },
+        "benefit_wP6HWL": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "text": "<p>A hydrating formula helps smooth the appearance of fine lines.</p>"
+          }
+        },
+        "benefit_8yCAiw": {
+          "type": "benefit",
+          "settings": {
+            "icon": "face",
+            "text": "<p>Cooling care for a fresher, more rested-looking eye area.</p>"
+          }
+        },
+        "accordion_dnRhE6": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Description",
+            "content": "<p>Introduce your Collagen Eye Patches, their benefits, and how they fit into an under-eye care routine.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_pEfpdq": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Key Ingredients",
+            "content": "<p>List the key ingredients in your formula and explain their role.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_gpc87E": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How to Use",
+            "content": "<p>Explain how to apply, wear, and remove the patches step by step.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_4JUmAQ": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "content": "<p>Add your delivery times, shipping terms, and return policy.</p>",
+            "open_by_default": false
+          }
+        },
+        "video_testimonial_x74eBU": {
+          "type": "video_testimonial",
+          "settings": {
+            "video": "shopify://files/videos/3e742f4831e643ccbe07382f121437e6.HD-1080p-7.2Mbps-64989763.mp4",
+            "caption": "",
+            "accessible_label": ""
+          }
+        },
+        "video_testimonial_xHU4wg": {
+          "type": "video_testimonial",
+          "settings": {
+            "video": "shopify://files/videos/63924037e0984f6ba6d6ca8b4dad4e1d.HD-1080p-7.2Mbps-64989762.mp4",
+            "caption": "",
+            "accessible_label": ""
+          }
+        },
+        "video_testimonial_UkXBqF": {
+          "type": "video_testimonial",
+          "settings": {
+            "video": "shopify://files/videos/def39fa8ca6a40c087512110a3167648.HD-1080p-7.2Mbps-64989765.mp4",
+            "caption": "",
+            "accessible_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_jUtKqU",
+        "benefit_w8dLeU",
+        "benefit_wP6HWL",
+        "benefit_8yCAiw",
+        "accordion_dnRhE6",
+        "accordion_pEfpdq",
+        "accordion_gpc87E",
+        "accordion_4JUmAQ",
+        "video_testimonial_x74eBU",
+        "video_testimonial_xHU4wg",
+        "video_testimonial_UkXBqF"
+      ],
+      "name": "Premium product page",
+      "settings": {
+        "product": "collagen-eye-patches",
+        "promo_badge": "Up to 50% OFF",
+        "trust_text": "",
+        "intro": "",
+        "show_rating": true,
+        "rating_value": 4.8,
+        "review_count": "3,201 reviews",
+        "clinician_title": "Clinicians’ Choice",
+        "clinician_text": "<p>Recommended by skincare professionals and specialists, with no compensation.</p>",
+        "one_time_label": "One-time purchase",
+        "subscribe_label": "Subscribe & save",
+        "popular_variant_position": 1,
+        "popular_badge": "Most popular",
+        "guarantee_line": "90-day money-back guarantee",
+        "button_label": "ADD TO CART",
+        "sold_out_label": "SOLD OUT",
+        "show_payment_icons": true,
+        "moneyback_days": "90",
+        "moneyback_text": "<p><strong>Try it risk-free for 90 days.</strong> If you do not see visible results, you can request a refund.</p>",
+        "accordion_heading": "Frequently Asked",
+        "show_video_slider": true,
+        "video_heading": "\"really my under-eye life-saver\"",
+        "video_title_size_desktop": 24,
+        "video_title_size_mobile": 18,
+        "video_card_width": 180,
+        "video_mobile_width": 70,
+        "video_spacing_top": 36,
+        "title_size_desktop": 32,
+        "title_size_mobile": 27,
+        "body_text_size": 13,
+        "small_text_size": 11,
+        "button_text_size": 14,
+        "background_color": "#ffffff",
+        "panel_color": "#eef2f3",
+        "text_color": "#171717",
+        "muted_color": "#607178",
+        "line_color": "#8da1a6",
+        "dark_color": "#29474e",
+        "accent_color": "#08b77a",
+        "corner_radius": 10,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
     "logoscroll_BjQiDb": {
       "type": "logoscroll",
       "blocks": {
-        "image_mbJBHm": {
+        "image_GPGYHX": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Figma_Image_7.avif",
+            "image": "shopify://shop_images/womenshealth.avif",
             "url": ""
           }
         },
-        "image_ekttxE": {
+        "image_qFHHB3": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Figma_Image_8.png",
+            "image": "shopify://shop_images/marieclaire.png",
             "url": ""
           }
         },
-        "image_i7eihz": {
+        "image_aw9ANc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/France_3_1.avif",
+            "image": "shopify://shop_images/glamour.webp",
             "url": ""
           }
         },
-        "image_a6Wb4x": {
+        "image_aqiYBg": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Les_Echos_8d7091b0-5c03-45ed-b5ac-4f0f3d6cce04.avif",
+            "image": "shopify://shop_images/bazaar.avif",
             "url": ""
           }
         }
       },
       "block_order": [
-        "image_mbJBHm",
-        "image_ekttxE",
-        "image_i7eihz",
-        "image_a6Wb4x"
+        "image_GPGYHX",
+        "image_qFHHB3",
+        "image_aw9ANc",
+        "image_aqiYBg"
       ],
-      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -73,11 +218,11 @@
         "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
-        "margin_bottom": 0,
+        "margin_bottom": 20,
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 0,
         "full_width": true,
@@ -87,129 +232,763 @@
         "lazy": true
       }
     },
-    "featured_product_CDz7jQ": {
-      "type": "featured-product",
+    "avisclientcollagene_YB9Ry3": {
+      "type": "avisclientcollagene",
       "blocks": {
-        "liquid_V4tcn9": {
-          "type": "liquid",
-          "disabled": true,
+        "review_NBzzt8": {
+          "type": "review",
           "settings": {
-            "liquid": "<div class=\"pureva-rating-line\">\n  <div class=\"pureva-stars\" aria-label=\"5 étoiles sur 5\">\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n    <span>★</span>\n  </div>\n\n  <div class=\"pureva-rating-text\">\n    <strong>40 000</strong> utilisateurs conquis\n  </div>\n</div>\n\n<style>\n  .pureva-rating-line {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .pureva-stars {\n    display: flex;\n    align-items: center;\n    gap: 1px;\n    color: #00b67a;\n    font-size: 22px;\n    line-height: 1;\n    letter-spacing: -1px;\n  }\n\n  .pureva-stars span {\n    display: inline-block;\n    line-height: 1;\n  }\n\n  .pureva-rating-text {\n    font-size: 13px;\n    line-height: 1;\n    font-weight: 400;\n    color: #000000;\n    white-space: nowrap;\n  }\n\n  .pureva-rating-text strong {\n    font-weight: 700;\n  }\n\n  @media screen and (max-width: 749px) {\n    .pureva-rating-line {\n      gap: 7px;\n    }\n\n    .pureva-stars {\n      font-size: 21px;\n    }\n\n    .pureva-rating-text {\n      font-size: 13px;\n    }\n  }\n</style>"
+            "image": "shopify://shop_images/Eye_Pacthes_-_fFoto_Michelle_Maxime.webp",
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Rated 5.0",
+            "review": "<p>“The cooling sensation feels immediate. My eyes look more rested and my under-eye area appears brighter.”</p>",
+            "customer_name": "Sophie M.",
+            "verified": true,
+            "verified_label": "Verified review"
           }
         },
-        "liquid_3EHbrb": {
-          "type": "liquid",
+        "review_38igRt": {
+          "type": "review",
           "settings": {
-            "liquid": "<div class=\"pureva-product-header\">\n  <div class=\"pureva-title-row\">\n    <h1 class=\"pureva-product-title\">Filtre Puure®</h1>\n    <div class=\"pureva-daily-price\">Dès <strong>0,27 €</strong>/jour</div>\n  </div>\n\n  <p class=\"pureva-product-subtitle\">\n    Transformez votre robinet en source d’eau pure\n  </p>\n</div>\n\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');\n\n  .pureva-product-header {\n    width: 100%;\n    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .pureva-title-row {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: 14px;\n    width: 100%;\n  }\n\n  .pureva-product-title {\n    margin: 0;\n    padding: 0;\n    font-size: 24px;\n    line-height: 1.05;\n    font-weight: 600;\n    letter-spacing: -0.3px;\n    color: #000000;\n  }\n\n  .pureva-daily-price {\n    margin-top: 5px;\n    font-size: 14px;\n    line-height: 1.1;\n    font-weight: 400;\n    white-space: nowrap;\n    color: #000000;\n    text-align: right;\n  }\n\n  .pureva-daily-price strong {\n    font-weight: 600;\n  }\n\n  .pureva-product-subtitle {\n    margin: 5px 0 0 0;\n    padding: 0;\n    font-size: 13px;\n    line-height: 1.25;\n    font-weight: 400;\n    color: #000000;\n  }\n\n  @media screen and (max-width: 749px) {\n    .pureva-product-title {\n      font-size: 25px;\n    }\n\n    .pureva-daily-price {\n      margin-top: 5px;\n      font-size: 13px;\n    }\n\n    .pureva-product-subtitle {\n      font-size: 12.5px;\n    }\n  }\n</style>"
+            "image": "shopify://shop_images/image1-vmake.webp",
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Rated 5.0",
+            "review": "<p>“I use them before applying makeup. My under-eye area looks smoother and my concealer applies much more evenly.”</p>",
+            "customer_name": "Claire D.",
+            "verified": true,
+            "verified_label": "Verified review"
           }
         },
-        "liquid_ezeUwP": {
-          "type": "liquid",
+        "review_CijLd7": {
+          "type": "review",
           "settings": {
-            "liquid": "<div class=\"custom-benefits-list\">\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Une eau plus pure, un goût meilleur</span>\n  </div>\n\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Certifié en laboratoires indépendants</span>\n  </div>\n\n  <div class=\"custom-benefit-item\">\n    <span class=\"custom-check-icon\">✓</span>\n    <span>Compatible avec 99% des robinets</span>\n  </div>\n</div>\n\n<style>\n  .custom-benefits-list {\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    font-family: Instrument Sans, sans-serif;\n    font-size: 13px;\n    color: #000000;\n    margin: 0;\n    padding: 0;\n  }\n\n  .custom-benefit-item {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    line-height: 1.2;\n  }\n\n  .custom-check-icon {\n    width: 18px;\n    height: 18px;\n    min-width: 18px;\n    border-radius: 50%;\n    background-color: #d8f5f6;\n    color: #111111;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n  }\n</style>"
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Rated 4.9",
+            "review": "<p>“They are easy to use and stay comfortably in place. They have become my go-to ritual whenever my eyes look tired.”</p>",
+            "customer_name": "Nadia R.",
+            "verified": true,
+            "verified_label": "Verified review"
           }
         },
-        "price_kMemri": {
-          "type": "price",
-          "disabled": true,
+        "review_RPxKMP": {
+          "type": "review",
           "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "variant_picker_qLYhm6": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector_WyV4nV": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "buy_buttons_hzg446": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": false,
-            "show_gift_card_recipient": false,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "liquid_gifM4f": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_eqMLbV\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_77mC7N\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <style>\n  .payment-icons__list {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    list-style: none;\n    padding: 0;\n    margin: 16px 0;\n  }\n  .payment-icons__item {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    line-height: 0;\n  }\n  .payment-icons__item svg {\n    display: block;\n    width: 38px;\n    height: 24px;\n  }\n  @media (max-width: 480px) {\n    .payment-icons__list {\n      gap: 6px;\n    }\n    .payment-icons__item svg {\n      width: 34px;\n      height: 22px;\n    }\n  }\n</style>\n\n<ul class=\"payment-icons__list\" role=\"list\">\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"pi-american_express\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-american_express\">American Express</title><path fill=\"#000\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z\" opacity=\".07\"></path><path fill=\"#006FCF\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z\"></path><path fill=\"#FFF\" d=\"M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z\"></path><path fill=\"#006FCF\" d=\"M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z\"></path><path fill=\"#006FCF\" d=\"m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z\"></path><path fill=\"#FFF\" d=\"M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z\"></path><path fill=\"#006FCF\" d=\"m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z\"></path><path fill=\"#006FCF\" d=\"M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" x=\"0\" y=\"0\" width=\"38\" height=\"24\" viewBox=\"0 0 165.521 105.965\" xml:space=\"preserve\" aria-labelledby=\"pi-apple_pay\"><title id=\"pi-apple_pay\">Apple Pay</title><path fill=\"#000\" d=\"M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z\"></path><path fill=\"#FFF\" d=\"M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875\"></path><g><g><path fill=\"#000\" d=\"M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858\"></path><path fill=\"#000\" d=\"M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048\"></path></g><g><path fill=\"#000\" d=\"M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z\"></path><path fill=\"#000\" d=\"M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z\"></path><path fill=\"#000\" d=\"M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z\"></path></g></g></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" aria-labelledby=\"pi-bancontact\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-bancontact\">Bancontact</title><path fill=\"#000\" opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M4.703 3.077h28.594c.139 0 .276.023.405.068.128.045.244.11.343.194a.9.9 0 0 1 .229.29c.053.107.08.223.08.34V20.03a.829.829 0 0 1-.31.631 1.164 1.164 0 0 1-.747.262H4.703a1.23 1.23 0 0 1-.405-.068 1.09 1.09 0 0 1-.343-.194.9.9 0 0 1-.229-.29.773.773 0 0 1-.08-.34V3.97c0-.118.027-.234.08-.342a.899.899 0 0 1 .23-.29c.098-.082.214-.148.342-.193a1.23 1.23 0 0 1 .405-.068Z\" fill=\"#fff\"></path><path d=\"M6.38 18.562v-3.077h1.125c.818 0 1.344.259 1.344.795 0 .304-.167.515-.401.638.338.132.536.387.536.734 0 .62-.536.91-1.37.91H6.38Zm.724-1.798h.537c.328 0 .468-.136.468-.387 0-.268-.255-.356-.599-.356h-.406v.743Zm0 1.262h.448c.438 0 .693-.093.693-.383 0-.286-.219-.404-.63-.404h-.51v.787Zm3.284.589c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.156.002.31.014.464.035v-.105c0-.269-.183-.396-.531-.396a2.128 2.128 0 0 0-.688.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.767 0 1.147.343 1.147.936v1.222c-.214.093-.615.194-1.136.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.947.947 0 0 0 .365-.061Zm1.204.444v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.167-.444-.484-.444a1.267 1.267 0 0 0-.459.079v1.719h-.713Zm4.886-2.167-.135.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.652.25-.652.664 0 .453.24.685.688.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.553 2.22c-.802 0-1.302-.47-1.302-1.178 0-.704.5-1.174 1.302-1.174.807 0 1.297.47 1.297 1.173 0 .708-.49 1.179-1.297 1.179Zm0-.502c.37 0 .563-.259.563-.677 0-.413-.193-.672-.563-.672-.364 0-.568.26-.568.672 0 .418.204.677.568.677Zm1.713.449v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.166-.444-.484-.444a1.268 1.268 0 0 0-.459.079v1.719h-.713Zm3.996.053c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.355v-.488l.718-.03v.518h.578v.484h-.578v.94c0 .256.125.374.36.374.093 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Zm1.814 0c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.155.002.31.014.464.035v-.105c0-.269-.183-.396-.532-.396a2.128 2.128 0 0 0-.687.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.766 0 1.146.343 1.146.936v1.222c-.213.093-.614.194-1.135.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.946.946 0 0 0 .365-.061Zm3.157-1.723-.136.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.651.25-.651.664 0 .453.24.685.687.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.58 2.22c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.354v-.488l.72-.03v.518h.577v.484h-.578v.94c0 .256.125.374.36.374.092 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Z\" fill=\"#1E3764\"></path><path d=\"M11.394 13.946c3.803 0 5.705-2.14 7.606-4.28H6.38v4.28h5.014Z\" fill=\"url(#pi-bancontact-a)\"></path><path d=\"M26.607 5.385c-3.804 0-5.705 2.14-7.607 4.28h12.62v-4.28h-5.013Z\" fill=\"url(#pi-bancontact-b)\"></path><defs><linearGradient id=\"pi-bancontact-a\" x1=\"8.933\" y1=\"12.003\" x2=\"17.734\" y2=\"8.13\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#005AB9\"></stop><stop offset=\"1\" stop-color=\"#1E3764\"></stop></linearGradient><linearGradient id=\"pi-bancontact-b\" x1=\"19.764\" y1=\"10.037\" x2=\"29.171\" y2=\"6.235\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FBA900\"></stop><stop offset=\"1\" stop-color=\"#FFD800\"></stop></linearGradient></defs></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-maestro\"><title id=\"pi-maestro\">Maestro</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#00A2E5\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#7375CF\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-master\"><title id=\"pi-master\">Mastercard</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#F79E1B\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#FF5F00\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\" aria-labelledby=\"pi-shopify_pay\"><title id=\"pi-shopify_pay\">Shop Pay</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\" fill=\"#000\"></path><path d=\"M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z\" fill=\"#5A31F4\"></path><path d=\"M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z\" fill=\"#fff\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-visa\"><title id=\"pi-visa\">Visa</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z\" fill=\"#142688\"></path></svg>\n  </li>\n</ul>\n            </div></div>\n            </div></div>"
-          }
-        },
-        "collapsible_text_TPbMhM": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Est-ce compatible avec mon robinet ?",
-            "content": "<p><strong>Puure® est compatible avec environ 99 % des robinets équipés d'un aérateur circulaire amovible.</strong></p><p>Votre commande inclut 3 adaptateurs pour différentes tailles de robinet.</p><p>Vous n'êtes pas sûr(e) que ça s'adapte au vôtre ? Consultez notre guide d'adaptateurs ici avant de commander.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_jWPDJz": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "Que contient le kit ?",
-            "content": "<p><strong>Votre Kit de démarrage Puure® comprend :</strong></p><p>✔ 1x Système de filtration Puure® 3.0 (acier inoxydable 304 qualité médicale)</p><p>✔ 2x Cartouches Puure® 3.0 (6 mois d'autonomie)</p><p>✔ 3x Adaptateurs universels (compatible 99 % des robinets)</p><p>✔ 1x Guide d'installation</p><p>✔ 1x Carte de rappel de remplacement de cartouche</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_mD7JdC": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "title": "L'installation est-elle facile ?",
-            "content": "<p><strong>Oui — environ 30 secondes, sans aucun outil.</strong></p><p>Dévissez simplement l'aérateur de votre robinet, vissez l'adaptateur Puure®, puis clipsez le système de filtration. C'est tout.</p><p>Compatible avec 99 % des robinets standards équipés d'un aérateur amovible. Votre kit comprend 3 tailles d'adaptateur pour un ajustement parfait.</p>",
-            "page": ""
+            "image_alt": "",
+            "rating": 5,
+            "rating_label": "Rated 5.0",
+            "review": "<p>“I love the soft, cooling feel. After use, my under-eye area looks hydrated and visibly refreshed.”</p>",
+            "customer_name": "Emily L.",
+            "verified": true,
+            "verified_label": "Verified review"
           }
         }
       },
       "block_order": [
-        "liquid_V4tcn9",
-        "liquid_3EHbrb",
-        "liquid_ezeUwP",
-        "price_kMemri",
-        "variant_picker_qLYhm6",
-        "quantity_selector_WyV4nV",
-        "buy_buttons_hzg446",
-        "liquid_gifM4f",
-        "collapsible_text_TPbMhM",
-        "collapsible_text_jWPDJz",
-        "collapsible_text_mD7JdC"
+        "review_NBzzt8",
+        "review_38igRt",
+        "review_CijLd7",
+        "review_RPxKMP"
       ],
-      "name": "Featured product",
+      "name": "Collagen Eye Reviews",
       "settings": {
+        "rating_text": "<p>Rated <strong>4.8 / 5 ‘Excellent’</strong></p>",
+        "heading": "Visibly Fresher-Looking Eyes",
+        "subtitle": "<p>Customers who wanted smoother, brighter-looking under-eyes share their experience after adding our Collagen Eye Patches to their routine.</p>",
+        "show_arrows": true,
+        "show_dots": true,
+        "image_ratio": "square",
+        "mobile_card_width": 83,
+        "card_gap": 24,
+        "card_radius": 8,
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 24,
+        "subtitle_size_desktop": 16,
+        "subtitle_size_mobile": 13,
+        "review_size_desktop": 16,
+        "review_size_mobile": 14,
+        "background_color": "#ffffff",
+        "card_background_color": "#eef2f3",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "secondary_color": "#2e4347",
+        "star_color": "#f6b800",
+        "max_width": 1200,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "comparatif_wAMHKE": {
+      "type": "comparatif",
+      "blocks": {
+        "comparison_row_6wHerU": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Sit on the surface of the skin</p>",
+            "right_text": "<p>Soft hydrogel patches hug the under-eye area for targeted care</p>"
+          }
+        },
+        "comparison_row_ggyeGn": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Can feel heavy and may slip</p>",
+            "right_text": "<p>Lightweight, cooling fit designed to stay comfortably in place</p>"
+          }
+        },
+        "comparison_row_DDcyPr": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Provide basic moisture only</p>",
+            "right_text": "<p>Collagen-infused formula helps skin look smoother and more hydrated</p>"
+          }
+        },
+        "comparison_row_f34rAq": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Little visible difference after one use</p>",
+            "right_text": "<p>Helps tired-looking eyes appear fresher and brighter from the first use</p>"
+          }
+        },
+        "comparison_row_mLwBpQ": {
+          "type": "comparison_row",
+          "settings": {
+            "left_text": "<p>Puffiness and dark circles may remain visible</p>",
+            "right_text": "<p>Helps visibly reduce the look of puffiness and dark circles with regular use</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_6wHerU",
+        "comparison_row_ggyeGn",
+        "comparison_row_DDcyPr",
+        "comparison_row_f34rAq",
+        "comparison_row_mLwBpQ"
+      ],
+      "name": "Eye Patches Comparison",
+      "settings": {
+        "eyebrow": "WHY CHOOSE OUR EYE PATCHES?",
+        "heading": "A brighter, fresher-looking eye area in minutes",
+        "left_image": "shopify://shop_images/icone_37.png",
+        "left_title": "Ordinary Eye Patches",
+        "right_image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_38_48.png",
+        "right_title": "Collagen Eye Patches",
+        "section_background": "#f7f7f7",
+        "left_background": "#eef2f3",
+        "right_background": "#003049",
+        "left_text_color": "#2e4347",
+        "right_text_color": "#eef2f3",
+        "left_icon_color": "#d95d50",
+        "right_icon_color": "#22d3a7",
+        "left_divider_color": "#d8e0e2",
+        "right_divider_color": "#60777d",
+        "border_color": "#ffffff",
+        "title_size_desktop": 24,
+        "text_size_desktop": 17,
+        "title_size_mobile": 16,
+        "text_size_mobile": 11,
+        "max_width": 1160,
+        "border_radius": 10,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "mobile_side_padding": 11
+      }
+    },
+    "proofeyes_tgwDAU": {
+      "type": "proofeyes",
+      "blocks": {
+        "result_bNCJb9": {
+          "type": "result",
+          "settings": {
+            "percentage": "86%",
+            "text": "said their under-eye area looked more refreshed after use",
+            "benefit": "Brighter-looking eyes",
+            "meter_value": 86
+          }
+        },
+        "result_Keqimi": {
+          "type": "result",
+          "settings": {
+            "percentage": "91%",
+            "text": "noticed smoother-looking skin with consistent use",
+            "benefit": "Smoother-looking skin",
+            "meter_value": 91
+          }
+        },
+        "result_pmmetf": {
+          "type": "result",
+          "settings": {
+            "percentage": "81%",
+            "text": "reported a reduced look of puffiness and dark circles",
+            "benefit": "More rested-looking eyes",
+            "meter_value": 81
+          }
+        }
+      },
+      "block_order": [
+        "result_bNCJb9",
+        "result_Keqimi",
+        "result_pmmetf"
+      ],
+      "name": "Eye Results Slider",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "subheading": "",
+        "decorative_image_alt": "Collagen Eye Patches",
+        "mobile_header_image": "shopify://shop_images/Final_Image_1_B.webp",
+        "mobile_grid_image": "shopify://shop_images/Final_Image_1_B.webp",
+        "mobile_image_fit": "cover",
+        "mobile_image_position": "left center",
+        "image_width_desktop": 320,
+        "image_offset_x": 20,
+        "image_offset_y": 20,
+        "show_arrows": false,
+        "show_dots": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "mobile_grid_gap": 8,
+        "mobile_header_min_height": 190,
+        "mobile_header_image_width": 145,
+        "mobile_header_image_space": 140,
+        "mobile_header_image_top": 20,
+        "mobile_header_image_right": -20,
+        "card_min_height": 230,
+        "card_min_height_mobile": 210,
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 32,
+        "body_size_desktop": 15,
+        "body_size_mobile": 13,
+        "percent_size_desktop": 58,
+        "percent_size_mobile": 44,
+        "background_color": "#f7f7f7",
+        "card_color": "#ffffff",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "line_color": "#b8c9cd",
+        "corner_radius": 10,
+        "max_width": 1380,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "disclaimer": ""
+      }
+    },
+    "logoscroll_4itVyN": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_UbCfCf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28-2.avif",
+            "url": ""
+          }
+        },
+        "image_XhpGxi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GH_BIB_2026_winner_roundel_1.avif",
+            "url": ""
+          }
+        },
+        "image_ciq3Ai": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28_4337a5f6-a688-4220-90b8-55a090540d13.avif",
+            "url": ""
+          }
+        },
+        "image_68mD93": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_28-1.avif",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_UbCfCf",
+        "image_XhpGxi",
+        "image_ciq3Ai",
+        "image_68mD93"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 16,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 68,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#ffffff",
+        "layout_border_color": "#121212",
+        "background_color": "#ffffff",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 20,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
         "full_width": true,
-        "product": "pomme-de-douche-clear",
-        "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_left",
-        "mobile_media_size": "contained",
-        "mobile_carousel_control": "floating_dots",
-        "enable_video_autoplay": true,
-        "enable_video_looping": false,
-        "enable_image_zoom": false,
-        "max_image_zoom_level": 3,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "ingredientslider_xXbFrr": {
+      "type": "ingredientslider",
+      "blocks": {
+        "ingredient_U8JYFL": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/collagene_Kbeauty.webp",
+            "title": "Collagen",
+            "text": "<p>Helps support a smoother, firmer-looking under-eye area while keeping delicate skin feeling soft and conditioned.</p>",
+            "benefit": "Firmer-looking skin",
+            "media_background": "#f3ece2",
+            "circle_color": "#c79b70",
+            "small_circle_color": "#e8d8c6"
+          }
+        },
+        "ingredient_Rt3G9g": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/1_d6f324f3-fa94-4be6-a71a-7772b1a3fbfc.webp",
+            "title": "Peptide Blend",
+            "text": "<p>Supports the look of elasticity and helps the under-eye area appear smoother and more refined over time.</p>",
+            "benefit": "Smoother-looking texture",
+            "media_background": "#e9edf2",
+            "circle_color": "#a9bac8",
+            "small_circle_color": "#d6e0e7"
+          }
+        },
+        "ingredient_hDdq4C": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/3_dbaab273-a8b0-4d56-8799-5e2697a21aa2.webp",
+            "title": "Niacinamide + Hyaluronic Acid",
+            "text": "<p>A brightening and hydrating duo that helps soften the look of fine lines while replenishing moisture.</p>",
+            "benefit": "Brighter, hydrated eyes",
+            "media_background": "#e6f0f0",
+            "circle_color": "#c7dfdf",
+            "small_circle_color": "#d2b996"
+          }
+        },
+        "ingredient_C9Bhcc": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/2_cbccc6c5-5a5a-4eb9-b1e4-888198c6ab0e.webp",
+            "title": "Caffeine Complex",
+            "text": "<p>Helps visibly reduce the look of puffiness and tired-looking eyes for a fresher, more awake appearance.</p>",
+            "benefit": "Reduced look of puffiness",
+            "media_background": "#f5e3e3",
+            "circle_color": "#e5aaa5",
+            "small_circle_color": "#f2d3d0"
+          }
+        },
+        "ingredient_rGgwnT": {
+          "type": "ingredient",
+          "disabled": true,
+          "settings": {
+            "title": "Vitamin C",
+            "text": "<p>Helps revive dull-looking skin and improve the appearance of uneven tone for a naturally luminous look.</p>",
+            "benefit": "More radiant-looking eyes",
+            "media_background": "#f5efe0",
+            "circle_color": "#d9b765",
+            "small_circle_color": "#eee0b8"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_U8JYFL",
+        "ingredient_Rt3G9g",
+        "ingredient_hDdq4C",
+        "ingredient_C9Bhcc",
+        "ingredient_rGgwnT"
+      ],
+      "name": "Ingredients slider — Eye Patches",
+      "settings": {
+        "kicker": "3 Powerful Ingredients",
+        "heading": "For Brighter, Smoother-Looking Eyes",
+        "intro": "",
+        "carousel_label": "Key eye patch ingredients",
+        "show_badges": true,
+        "badge_1": "Cruelty-Free",
+        "badge_2": "Dermatologist Tested",
+        "badge_3": "Skin-Loving Ingredients",
+        "badge_4": "Sensitive Skin Friendly",
+        "badge_5": "No Harsh Chemicals",
+        "max_width": 1200,
+        "cards_desktop": 3,
+        "mobile_card_width": 88,
+        "card_gap": 24,
+        "media_height": 270,
+        "image_fit": "cover",
+        "card_radius": 12,
+        "kicker_size_desktop": 28,
+        "heading_size_desktop": 28,
+        "card_title_size_desktop": 13,
+        "body_size_desktop": 14,
+        "kicker_size_mobile": 24,
+        "heading_size_mobile": 28,
+        "card_title_size_mobile": 12,
+        "body_size_mobile": 14,
+        "background_color": "#ffffff",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "card_background": "#ffffff",
+        "border_color": "#f7f7f7",
+        "tag_background": "#003049",
+        "tag_text_color": "#ffffff",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    },
+    "whatexpect_pBkHyR": {
+      "type": "whatexpect",
+      "blocks": {
+        "stage_CwwazR": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 1–2",
+            "icon": "✦",
+            "title": "A More Refreshed Look",
+            "text": "<p>The cooling patches help the under-eye area feel hydrated and comfortable. Tired-looking eyes may appear fresher after each use.</p>",
+            "highlight": "Hydration and comfort become noticeable",
+            "card_background": "#2e4347"
+          }
+        },
+        "stage_YMWMnk": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 3–4",
+            "icon": "◌",
+            "title": "Smoother-Looking Skin",
+            "text": "<p>With consistent use, the eye area can look more supple and the appearance of fine dehydration lines may begin to soften.</p>",
+            "highlight": "Fine lines may look softened",
+            "card_background": "#003049"
+          }
+        },
+        "stage_4NERJi": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 5–6",
+            "icon": "✧",
+            "title": "Brighter, Less Tired-Looking Eyes",
+            "text": "<p>A regular routine may help puffiness and shadowing look less noticeable, leaving the under-eye area visibly brighter.</p>",
+            "highlight": "Eyes look brighter and more awake",
+            "card_background": "#2e4347"
+          }
+        },
+        "stage_xBHTC8": {
+          "type": "stage",
+          "settings": {
+            "tab_label": "Week 6–8+",
+            "icon": "∞",
+            "title": "Maintain Your Results",
+            "text": "<p>Continued use helps maintain a smoother, firmer-looking and refreshed eye area as part of your ongoing skincare routine.</p>",
+            "highlight": "Consistency supports lasting-looking results",
+            "card_background": "#003049"
+          }
+        }
+      },
+      "block_order": [
+        "stage_CwwazR",
+        "stage_YMWMnk",
+        "stage_4NERJi",
+        "stage_xBHTC8"
+      ],
+      "name": "Eye patches timeline",
+      "settings": {
+        "eyebrow": "",
+        "heading": "What to Expect\nWeek by Week",
+        "intro": "<p>Every skin journey is different. Here is what many customers may notice when Collagen Eye Patches become part of a consistent routine.</p>",
+        "product": "collagen-eye-patches",
+        "note": "<p>Individual results vary. This section describes cosmetic appearance and routine-based expectations.</p>",
+        "tabs_label": "Choose a timeline stage",
+        "slider_label": "Collagen Eye Patches timeline",
+        "autoplay": false,
+        "autoplay_speed": 6,
+        "show_progress": false,
+        "card_min_height": 310,
+        "card_min_height_mobile": 280,
+        "card_radius": 8,
+        "background_color": "#eef2f3",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "card_background": "#2e4347",
+        "card_text_color": "#ffffff",
+        "accent_color": "#00a896",
+        "accent_text_color": "#ffffff",
+        "tab_background": "#ffffff",
+        "tab_text_color": "#2e4347",
+        "border_color": "#cbd5d8",
+        "heading_size_desktop": 35,
+        "intro_size_desktop": 17,
+        "tab_size_desktop": 14,
+        "card_title_size_desktop": 21,
+        "card_text_size_desktop": 15,
+        "heading_size_mobile": 28,
+        "intro_size_mobile": 13,
+        "tab_size_mobile": 13,
+        "card_title_size_mobile": 17,
+        "card_text_size_mobile": 13,
+        "max_width": 1420,
+        "desktop_gap": 58,
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 22
+      }
+    },
+    "easysteps_pyKtnL": {
+      "type": "easysteps",
+      "blocks": {
+        "step_zLVGUX": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_08_49.png",
+            "title": "Cleanse & Prep",
+            "text": "<p>Start with clean, dry skin. Gently cleanse the under-eye area and pat dry before application.</p>"
+          }
+        },
+        "step_fLKfLq": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_6_aout_2026_17_51_36.png",
+            "title": "Apply",
+            "text": "<p>Remove the Collagen Eye Patches from the tray and place one under each eye. Smooth gently for a comfortable fit.</p>"
+          }
+        },
+        "step_VTVHTW": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/Final_Image_1_B_1.webp",
+            "title": "Relax & Finish",
+            "text": "<p>Leave on for 15–20 minutes, or as directed. Remove the patches and gently pat in any remaining serum.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_zLVGUX",
+        "step_fLKfLq",
+        "step_VTVHTW"
+      ],
+      "name": "3 Easy Steps — Eye Patches",
+      "settings": {
+        "eyebrow": "3 Easy Steps",
+        "heading": "For Brighter, Smoother-Looking Eyes",
+        "show_step_numbers": false,
+        "max_width": 1200,
+        "columns_desktop": 3,
+        "gap_desktop": 18,
+        "gap_mobile": 30,
+        "mobile_image_width": 38,
+        "text_alignment": "left",
+        "image_ratio": "1 / 1",
+        "image_fit": "cover",
+        "image_radius": 14,
+        "image_background": "#eef2f3",
+        "eyebrow_size_desktop": 28,
+        "heading_size_desktop": 30,
+        "step_title_size_desktop": 16,
+        "text_size_desktop": 15,
+        "eyebrow_size_mobile": 24,
+        "heading_size_mobile": 28,
+        "step_title_size_mobile": 15,
+        "text_size_mobile": 13,
+        "background_color": "#eef2f3",
+        "heading_color": "#003049",
+        "text_color": "#2e4347",
+        "accent_color": "#003049",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "herobanner_aQXwMb": {
+      "type": "herobanner",
+      "disabled": true,
+      "name": "Pureva bannière hero",
+      "settings": {
+        "desktop_image": "shopify://shop_images/sstf_homepage_banner.webp",
+        "mobile_image": "shopify://shop_images/Mobile_Banner_1.webp",
+        "image_alt": "",
+        "desktop_image_position": "center center",
+        "mobile_image_position": "center center",
+        "lazy_load": false,
+        "rating_text": "Excellent pour +40.000 utilisateurs",
+        "heading": "Transformez votre robinet\nen source d’eau saine",
+        "subheading": "Le filtre à eau Puure protège votre santé des polluants et améliore le goût de l’eau",
+        "button_label": "Profitez de L'Offre",
+        "button_arrow": "→",
+        "button_link": "#shopify-section-template--29088761086279__featured_product_CDz7jQ",
+        "show_product_card": false,
+        "show_product_card_mobile": false,
+        "product_card_rating": "+800 avis vérifiés",
+        "product_card_title": "Filtre à eau Pureva One",
+        "product_card_subtitle": "Cartouches + Filtre",
+        "product_card_price": "à partir de 59,90€",
+        "product_card_arrow": "↗",
+        "section_background": "#f4f4f4",
+        "text_color": "#ffffff",
+        "subtext_color": "#ffffff",
+        "star_color": "#00b67a",
+        "button_background": "#08163d",
+        "button_text_color": "#ffffff",
+        "product_card_background": "#ffffff",
+        "product_card_text_color": "#08163d",
+        "desktop_overlay": "linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.45) 52%, rgba(255, 255, 255, 0.76) 100%)",
+        "overlay_opacity": 100,
+        "mobile_overlay": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.38) 42%, rgba(255, 255, 255, 0.78) 100%)",
+        "mobile_overlay_opacity": 30,
+        "max_width": 2600,
+        "desktop_height": 620,
+        "section_radius": 0,
+        "desktop_outer_padding_y": 0,
+        "desktop_outer_padding_x": 0,
+        "desktop_horizontal_align": "flex-end",
+        "desktop_vertical_align": "center",
+        "desktop_text_align": "left",
+        "desktop_content_padding_y": 70,
+        "desktop_content_padding_x": 190,
+        "content_width": 620,
+        "rating_text_size": 15,
+        "star_size": 22,
+        "rating_bottom_spacing": 16,
+        "heading_size": 42,
+        "heading_line_height": 108,
+        "heading_weight": "800",
+        "subheading_size": 16,
+        "subheading_width": 640,
+        "subheading_weight": "500",
+        "subheading_top_spacing": 25,
+        "button_top_spacing": 39,
+        "button_min_width": 245,
+        "button_height": 51,
+        "button_padding_x": 32,
+        "button_text_size": 15,
+        "product_card_left": 19,
+        "product_card_bottom": 65,
+        "product_card_width": 360,
+        "product_card_height": 110,
+        "product_card_padding": 14,
+        "product_card_radius": 13,
+        "product_card_image_size": 80,
+        "product_card_image_radius": 8,
+        "product_card_arrow_size": 30,
+        "product_card_title_size": 15,
+        "product_card_text_size": 13,
+        "mobile_height": 650,
+        "mobile_section_radius": 0,
+        "mobile_outer_padding_y": 0,
+        "mobile_outer_padding_x": 0,
+        "mobile_horizontal_align": "center",
+        "mobile_vertical_align": "flex-start",
+        "mobile_text_align": "center",
+        "mobile_content_width": 390,
+        "mobile_content_padding_y": 40,
+        "mobile_content_padding_x": 12,
+        "mobile_rating_text_size": 13,
+        "mobile_star_size": 17,
+        "mobile_rating_bottom_spacing": 13,
+        "mobile_heading_size": 28,
+        "mobile_heading_line_height": 108,
+        "mobile_subheading_size": 16,
+        "mobile_subheading_width": 355,
+        "mobile_subheading_top_spacing": 17,
+        "mobile_button_width": 88,
+        "mobile_button_height": 46,
+        "mobile_button_padding_x": 22,
+        "mobile_button_text_size": 13,
+        "mobile_button_top_spacing": 18,
+        "mobile_product_card_left": 16,
+        "mobile_product_card_right": 16,
+        "mobile_product_card_bottom": 25
+      }
+    },
+    "stats_TTB79g": {
+      "type": "stats",
+      "blocks": {
+        "stat_pU8jn3": {
+          "type": "stat",
+          "settings": {
+            "number": "92%",
+            "text": "Fois moins cher que l'eau en bouteille, au litre"
+          }
+        },
+        "stat_zzAPe4": {
+          "type": "stat",
+          "settings": {
+            "number": "2,000×",
+            "text": "Plus efficace qu'une carafe filtrante classique"
+          }
+        },
+        "stat_mVrcKq": {
+          "type": "stat",
+          "settings": {
+            "number": "150+",
+            "text": "contaminants éliminés de votre eau"
+          }
+        }
+      },
+      "block_order": [
+        "stat_pU8jn3",
+        "stat_zzAPe4",
+        "stat_mVrcKq"
+      ],
+      "disabled": true,
+      "name": "Pureva barre statistiques",
+      "settings": {
+        "section_background": "#08163d",
+        "text_color": "#ffffff",
+        "muted_text_color": "#b9c8e0",
+        "divider_color": "#ffffff",
+        "divider_opacity": 25,
+        "max_width": 1360,
+        "desktop_padding_y": 25,
+        "desktop_padding_x": 20,
+        "columns_desktop": 3,
+        "item_padding_x": 35,
+        "divider_height": 50,
+        "number_size": 28,
+        "number_weight": "700",
+        "number_bottom_spacing": 7,
+        "text_size": 11,
+        "text_weight": "500",
+        "text_width": 200,
+        "mobile_padding_y": 10,
+        "mobile_padding_x": 4,
+        "columns_mobile": 3,
+        "mobile_item_padding_x": 8,
+        "mobile_divider_height": 36,
+        "mobile_number_size": 19,
+        "mobile_number_bottom_spacing": 6,
+        "mobile_text_size": 9,
+        "mobile_text_width": 115
       }
     },
     "marquee_eAYBzE": {
@@ -258,6 +1037,7 @@
         "item_YdkBif",
         "item_QUrhxj"
       ],
+      "disabled": true,
       "name": "Marquee",
       "settings": {
         "speed": 28,
@@ -273,11 +1053,11 @@
         "pill_padding_y": 14,
         "pill_padding_x": 22,
         "gap": 18,
-        "section_padding_y": 10,
+        "section_padding_y": 44,
         "mobile_font_size": 13,
-        "mobile_pill_padding_y": 9,
+        "mobile_pill_padding_y": 11,
         "mobile_pill_padding_x": 18,
-        "mobile_section_padding_y": 0
+        "mobile_section_padding_y": 32
       }
     },
     "press_ppPgea": {
@@ -322,6 +1102,7 @@
         "quote_zfDCjQ",
         "quote_NeETFY"
       ],
+      "disabled": true,
       "name": "Press",
       "settings": {
         "full_width": true,
@@ -401,6 +1182,7 @@
         "benefit_beEPFy",
         "benefit_wyfci9"
       ],
+      "disabled": true,
       "name": "Pureva pourquoi choisir",
       "settings": {
         "heading": "Pourquoi choisir Puure® ?",
@@ -466,7 +1248,7 @@
         "review_dxGHgP": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/gempages_567015059822216273-3139feb5-284e-4a09-9e63-d09abc534f9c.webp",
+            "image": "shopify://shop_images/jaqflkknm8m4ib5wyd7hz68ved3w.jpg",
             "show_image": true,
             "rating": 5,
             "title": "Enfin une eau saine... et bonne !",
@@ -479,6 +1261,7 @@
         "review_YgnXAy": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/tc58lw3rzembuhexv6rbat15b5z1.jpg",
             "show_image": true,
             "rating": 5,
             "title": "Bien plus simple que mon ancien filtre !",
@@ -491,6 +1274,7 @@
         "review_W7jT4z": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/6buj7octxrkplcvahby16q8gpihb.jpg",
             "show_image": true,
             "rating": 5,
             "title": "On a arrêté d’acheter des packs d’eau !",
@@ -503,6 +1287,7 @@
         "review_hd3c3D": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/mptxpf1942lllkh3orre30xcm89m.jpg",
             "show_image": true,
             "rating": 5,
             "title": "L’eau ne me donne plus mal au ventre",
@@ -515,6 +1300,7 @@
         "review_rtxAwi": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/lobc40pap11ygou94mh39nj1gr6w.jpg",
             "show_image": true,
             "rating": 5,
             "title": "Un bon geste, sans contrainte",
@@ -527,6 +1313,7 @@
         "review_FJpDFy": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/o9p7zu8n5ot70ula34p9lvajyshq.jpg",
             "show_image": true,
             "rating": 5,
             "title": "Installation rapide",
@@ -545,6 +1332,7 @@
         "review_rtxAwi",
         "review_FJpDFy"
       ],
+      "disabled": true,
       "name": "Pureva avis clients",
       "settings": {
         "rating_text": "Excellent",
@@ -584,7 +1372,7 @@
           "type": "stat",
           "settings": {
             "number": "600€",
-            "text": "Jusqu’à 600 € d’économies par an avec OhPur"
+            "text": "Jusqu’à 600 € d’économies par an avec Puure"
           }
         },
         "stat_6dgP8z": {
@@ -607,6 +1395,7 @@
         "stat_6dgP8z",
         "stat_Mt6fUD"
       ],
+      "disabled": true,
       "name": "Données Produit",
       "settings": {
         "main_image": "shopify://shop_images/AF7819C0-7549-4356-864A-3384F1D93E34.webp",
@@ -614,7 +1403,7 @@
         "label_left": "Cartouche neuve",
         "label_right": "Cartouche usagée",
         "image_radius": 18,
-        "heading": "Données OhPur",
+        "heading": "Données Puure®",
         "button_label": "",
         "button_link": "",
         "note": "Exemple pris pour une famille de 3/4 personnes consommant exclusivement de l’eau en bouteille.",
@@ -740,11 +1529,12 @@
         "row_YxJfAy",
         "row_Wqbgxf"
       ],
+      "disabled": true,
       "name": "Pureva comparaison",
       "settings": {
         "badge_text": "",
         "heading": "Votre eau au quotidien,\nsans compromis",
-        "subheading": "OhPur vous permet de consommer une eau pure, sans plastique et à moindre coût.",
+        "subheading": "Puure vous permet de consommer une eau pure, sans plastique et à moindre coût.",
         "pill_1": "Moins coûteux",
         "pill_2": "Plus écologique",
         "pill_3": "Plus respectueux de la planète",
@@ -755,7 +1545,7 @@
         "stat_3_number": "245 000",
         "stat_3_text": "microplastiques ingérés par litre d’eau en bouteille",
         "brand_logo": "shopify://shop_images/Puure_logo_white.svg",
-        "brand_name": "OhPur.",
+        "brand_name": "Puure®",
         "brand_subtitle": "Comparaison",
         "column_2_icon": "",
         "column_2_title": "Eau du robinet",
@@ -865,6 +1655,7 @@
         "layer_4BcKBn",
         "layer_P7QeTU"
       ],
+      "disabled": true,
       "name": "Pureva couches filtration",
       "settings": {
         "badge_text": "Que contiennent nos cartouches ?",
@@ -873,7 +1664,7 @@
         "certification_logo": "shopify://shop_images/NSF_International_logo_svg_06494a68-8744-473a-8717-9e859377eff2.png",
         "certification_logo_alt": "Certification NSF",
         "certification_logo_text": "NSF.",
-        "certification_text": "Les composants de la cartouche Pure® sont testés et certifiés par NSF International selon la norme NSF/ANSI 42 pour la sécurité des matériaux. La cartouche Pure® 3.0 est spécifiquement formulée pour les contaminants présents dans l'eau du robinet européenne.",
+        "certification_text": "Les composants de la cartouche Puure® sont testés et certifiés par NSF International selon la norme NSF/ANSI 42 pour la sécurité des matériaux. La cartouche Puure® 3.0 est spécifiquement formulée pour les contaminants présents dans l'eau du robinet européenne.",
         "card_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7\"></path><path d=\"M9 7h8v8\"></path></svg>",
         "prev_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"></path></svg>",
         "next_arrow_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg>",
@@ -980,6 +1771,132 @@
         "mobile_arrow_size": 50
       }
     },
+    "infosfiltres_HHQ3zk": {
+      "type": "infosfiltres",
+      "blocks": {
+        "contaminant_EzfmTM": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Chlore & sous-produits chimiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_3XMXxG": {
+          "type": "contaminant",
+          "settings": {
+            "question": "PFAS (polluants éternels)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_4EJcyQ": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Fluorure",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_xJqTNe": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Microplastiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_Pd3ptf": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Pesticides & résidus agricoles",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_pYxEwV": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Métaux lourds (plomb, mercure, cadmium)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_wVaNnU": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Sédiments & rouille",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_mYxMTG": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Hydrocarbures & composés organiques volatils (COV)",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        },
+        "contaminant_it8N9F": {
+          "type": "contaminant",
+          "settings": {
+            "question": "Résidus pharmaceutiques & polluants organiques",
+            "answer": "Texte explicatif modifiable sur cette catégorie de contaminants."
+          }
+        }
+      },
+      "block_order": [
+        "contaminant_EzfmTM",
+        "contaminant_3XMXxG",
+        "contaminant_4EJcyQ",
+        "contaminant_xJqTNe",
+        "contaminant_Pd3ptf",
+        "contaminant_pYxEwV",
+        "contaminant_wVaNnU",
+        "contaminant_mYxMTG",
+        "contaminant_it8N9F"
+      ],
+      "disabled": true,
+      "name": "Pureva filtration liste",
+      "settings": {
+        "product_image": "shopify://shop_images/wefilter_fr.webp",
+        "product_image_alt": "",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "open_first": false,
+        "close_others": true,
+        "section_background": "#f7f7f8",
+        "image_card_background": "#ffffff",
+        "blue_background": "#2764ff",
+        "blue_text_color": "#ffffff",
+        "accordion_border_color": "#ffffff24",
+        "max_width": 1120,
+        "desktop_padding_y": 45,
+        "desktop_padding_x": 20,
+        "desktop_gap": 80,
+        "image_column_width": 6,
+        "accordion_column_width": 5,
+        "image_card_height": 560,
+        "card_radius": 18,
+        "accordion_radius": 16,
+        "accordion_padding_y": 17,
+        "accordion_padding_x": 22,
+        "accordion_shadow": "0 24px 55px rgba(39,100,255,0.28)",
+        "question_height": 56,
+        "question_size": 14,
+        "question_weight": "600",
+        "plus_size": 25,
+        "plus_text_size": 22,
+        "answer_size": 13,
+        "answer_bottom_padding": 14,
+        "mobile_padding_y": 15,
+        "mobile_padding_x": 8,
+        "mobile_card_radius": 18,
+        "mobile_image_card_height": 350,
+        "mobile_accordion_overlap": -40,
+        "mobile_accordion_radius": 22,
+        "mobile_accordion_padding_y": 17,
+        "mobile_accordion_padding_x": 21,
+        "mobile_question_height": 55,
+        "mobile_question_size": 14,
+        "mobile_plus_size": 25,
+        "mobile_plus_text_size": 22,
+        "mobile_answer_size": 13
+      }
+    },
     "benefice_G87kVk": {
       "type": "benefice",
       "blocks": {
@@ -1018,6 +1935,7 @@
         "benefit_DGb736",
         "benefit_f8tVJb"
       ],
+      "disabled": true,
       "name": "Bénéfices famille",
       "settings": {
         "background_image": "shopify://shop_images/DTS_Parenthood_Daniel_Faro_Photos_ID6941.webp",
@@ -1074,6 +1992,75 @@
         "mobile_number_text_size": 12,
         "mobile_number_position_top": 13,
         "mobile_number_position_right": 13
+      }
+    },
+    "marquee_cML6M3": {
+      "type": "marquee",
+      "blocks": {
+        "item_EAAMqj": {
+          "type": "item",
+          "settings": {
+            "icon": "◷",
+            "text": "Installation en moins de 5 min"
+          }
+        },
+        "item_GE4Pn4": {
+          "type": "item",
+          "settings": {
+            "icon": "🔧",
+            "text": "Compatible avec 99% des robinets"
+          }
+        },
+        "item_tXHEB4": {
+          "type": "item",
+          "settings": {
+            "icon": "⚗",
+            "text": "Filtration certifiée Eurofins"
+          }
+        },
+        "item_BYwzRb": {
+          "type": "item",
+          "settings": {
+            "icon": "€",
+            "text": "Jusqu'à 600€ économisés par an"
+          }
+        },
+        "item_T9Ldz6": {
+          "type": "item",
+          "settings": {
+            "icon": "💧",
+            "text": "Eau filtrée en 0,1 micron"
+          }
+        }
+      },
+      "block_order": [
+        "item_EAAMqj",
+        "item_GE4Pn4",
+        "item_tXHEB4",
+        "item_BYwzRb",
+        "item_T9Ldz6"
+      ],
+      "disabled": true,
+      "name": "Pureva Marquee",
+      "settings": {
+        "speed": 28,
+        "direction": "left",
+        "pause_on_hover": true,
+        "section_background": "#ffffff",
+        "pill_background": "#08163d",
+        "text_color": "#ffffff",
+        "icon_color": "#1f3445",
+        "font_size": 14,
+        "font_weight": "400",
+        "pill_radius": 40,
+        "pill_padding_y": 14,
+        "pill_padding_x": 22,
+        "gap": 18,
+        "section_padding_y": 35,
+        "mobile_font_size": 13,
+        "mobile_pill_padding_y": 12,
+        "mobile_pill_padding_x": 18,
+        "mobile_section_padding_y": 40
       }
     },
     "faqpuure_AehWUN": {
@@ -1178,9 +2165,10 @@
         "benefit_xc7RYe",
         "benefit_6aRWBt"
       ],
+      "disabled": true,
       "name": "® FAQ",
       "settings": {
-        "heading": "F.A.Q",
+        "heading": "Frequently Asked",
         "description": "Une question ? Nous avons la réponse ! Notre équipe d’experts est là pour vous, du lundi au samedi, de 9h à 18h.",
         "button_label": "puuresav@gmail.com",
         "button_link": "",
@@ -1190,15 +2178,153 @@
         "open_first": false,
         "close_others": true,
         "check_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"></path></svg>",
-        "section_background": "#f4f4f4",
-        "text_color": "#08164c",
-        "muted_text_color": "#4e5878",
+        "section_background": "#ffffff",
+        "text_color": "#003049",
+        "muted_text_color": "#003049",
         "border_color": "#d8dce6",
         "card_background": "#ffffff",
-        "icon_background": "#14244d",
+        "icon_background": "#003049",
         "icon_color": "#ffffff",
         "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "#14244d",
+        "button_text_color": "#003049",
+        "max_width": 1180,
+        "desktop_padding_y": 60,
+        "desktop_padding_x": 20,
+        "left_column_width": 4,
+        "right_column_width": 6,
+        "desktop_gap": 95,
+        "heading_size": 30,
+        "heading_weight": "800",
+        "heading_bottom_spacing": 25,
+        "description_size": 14,
+        "description_weight": "500",
+        "description_width": 470,
+        "description_bottom_spacing": 32,
+        "avatar_size": 28,
+        "avatar_overlap": 8,
+        "button_width": 470,
+        "button_height": 48,
+        "button_text_size": 14,
+        "question_size": 14,
+        "question_weight": "800",
+        "question_padding_y": 19,
+        "plus_size": 25,
+        "answer_size": 14,
+        "answer_bottom_padding": 16,
+        "benefits_top_spacing": 28,
+        "benefits_columns_desktop": 3,
+        "benefits_gap": 13,
+        "benefit_height": 75,
+        "benefit_padding_y": 15,
+        "benefit_padding_x": 14,
+        "benefit_icon_size": 28,
+        "benefit_icon_overlap": 8,
+        "benefit_icon_offset": 36,
+        "benefit_title_size": 13,
+        "benefit_text_size": 13,
+        "mobile_padding_y": 55,
+        "mobile_padding_x": 20,
+        "mobile_gap": 42,
+        "mobile_heading_size": 29,
+        "mobile_heading_bottom_spacing": 22,
+        "mobile_description_size": 14,
+        "mobile_description_bottom_spacing": 28,
+        "mobile_avatar_size": 28,
+        "mobile_avatar_overlap": 8,
+        "mobile_button_height": 48,
+        "mobile_button_text_size": 13,
+        "mobile_question_size": 14,
+        "mobile_question_padding_y": 18,
+        "mobile_plus_size": 24,
+        "mobile_answer_size": 14,
+        "mobile_benefits_top_spacing": 20,
+        "mobile_benefits_gap": 12,
+        "mobile_benefit_height": 70,
+        "mobile_benefit_padding_y": 15,
+        "mobile_benefit_padding_x": 17,
+        "mobile_benefit_icon_size": 28,
+        "mobile_benefit_icon_overlap": 7,
+        "mobile_benefit_icon_offset": 38,
+        "mobile_benefit_title_size": 13,
+        "mobile_benefit_text_size": 13
+      }
+    },
+    "faqpuure_n6Cmny": {
+      "type": "faqpuure",
+      "blocks": {
+        "question_EjdLwW": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use these patches with other skincare products?",
+            "answer": "Yes! Apply patches to clean, dry skin before other products. After removal, continue with your regular skincare routine."
+          }
+        },
+        "question_x6gKx3": {
+          "type": "question",
+          "settings": {
+            "question": "Are the patches safe for sensitive skin?",
+            "answer": "Yes, our patches are dermatologist-tested and suitable for all skin types, including sensitive skin. The ingredients are non-irritating."
+          }
+        },
+        "question_HTiky6": {
+          "type": "question",
+          "settings": {
+            "question": "How do Collagen Eye Patches work?",
+            "answer": "No, each patch is designed for single use to maintain effectiveness and hygiene."
+          }
+        },
+        "benefit_mihfCT": {
+          "type": "benefit",
+          "settings": {
+            "title": "90-Day Warranty",
+            "text": "Quality built to last."
+          }
+        },
+        "benefit_bhQcTN": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "title": "Essayez-le pendant 100 jours",
+            "text": "Satisfait ou remboursé, sans engagement."
+          }
+        },
+        "benefit_tYNQWW": {
+          "type": "benefit",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "Shipped directly to your home."
+          }
+        }
+      },
+      "block_order": [
+        "question_EjdLwW",
+        "question_x6gKx3",
+        "question_HTiky6",
+        "benefit_mihfCT",
+        "benefit_bhQcTN",
+        "benefit_tYNQWW"
+      ],
+      "name": "Eye Patches FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "description": "Everything you need to know about using our Collagen Eye Patches. Still need help? Our support team is happy to assist.",
+        "button_label": "Contact our support team",
+        "button_link": "",
+        "avatar_alt_1": "Expert support 1",
+        "avatar_alt_2": "Expert support 2",
+        "avatar_alt_3": "Expert support 3",
+        "open_first": false,
+        "close_others": true,
+        "check_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"></path></svg>",
+        "section_background": "#eef2f3",
+        "text_color": "#003049",
+        "muted_text_color": "#2e4347",
+        "border_color": "#b8c5c9",
+        "card_background": "#ffffff",
+        "icon_background": "#003049",
+        "icon_color": "#ffffff",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "#003049",
         "max_width": 1180,
         "desktop_padding_y": 95,
         "desktop_padding_x": 20,
@@ -1263,8 +2389,17 @@
     }
   },
   "order": [
+    "fiche_produit_premium_B8Vfrz",
     "logoscroll_BjQiDb",
-    "featured_product_CDz7jQ",
+    "avisclientcollagene_YB9Ry3",
+    "comparatif_wAMHKE",
+    "proofeyes_tgwDAU",
+    "logoscroll_4itVyN",
+    "ingredientslider_xXbFrr",
+    "whatexpect_pBkHyR",
+    "easysteps_pyKtnL",
+    "herobanner_aQXwMb",
+    "stats_TTB79g",
     "marquee_eAYBzE",
     "press_ppPgea",
     "whychoose_7AXKL8",
@@ -1272,7 +2407,10 @@
     "infosproduit_dQxKfJ",
     "tabsvs_7myebi",
     "ingredients_YgGrni",
+    "infosfiltres_HHQ3zk",
     "benefice_G87kVk",
-    "faqpuure_AehWUN"
+    "marquee_cML6M3",
+    "faqpuure_AehWUN",
+    "faqpuure_n6Cmny"
   ]
 }

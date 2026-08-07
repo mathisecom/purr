@@ -2252,6 +2252,13 @@
     "faqpuure_n6Cmny": {
       "type": "faqpuure",
       "blocks": {
+        "question_EjdLwW": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use these patches with other skincare products?",
+            "answer": "Yes! Apply patches to clean, dry skin before other products. After removal, continue with your regular skincare routine."
+          }
+        },
         "benefit_mihfCT": {
           "type": "benefit",
           "settings": {
@@ -2276,6 +2283,7 @@
         }
       },
       "block_order": [
+        "question_EjdLwW",
         "benefit_mihfCT",
         "benefit_bhQcTN",
         "benefit_tYNQWW"

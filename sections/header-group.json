@@ -84,7 +84,7 @@
       "settings": {
         "icon": "",
         "prefix_text": "SUMMER SALE",
-        "highlight_text": "UP TO -30 % OFF",
+        "highlight_text": "UP TO -50 % OFF",
         "message": "",
         "code_label": "",
         "promo_code": "",
@@ -118,7 +118,7 @@
         "highlight_radius": 4,
         "code_radius": 4,
         "button_radius": 4,
-        "z_index": 5
+        "z_index": 4
       }
     }
   },

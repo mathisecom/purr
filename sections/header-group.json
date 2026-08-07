@@ -77,10 +77,54 @@
         "background_opacity": 100,
         "background_blur_radius": 0
       }
+    },
+    "bannerpromo_DCaajk": {
+      "type": "bannerpromo",
+      "name": "Bannière promo solde",
+      "settings": {
+        "icon": "",
+        "prefix_text": "SUMMER SALE",
+        "highlight_text": "UP TO -30 % OFF",
+        "message": "",
+        "code_label": "",
+        "promo_code": "",
+        "button_label": "J’en profite",
+        "button_link": "",
+        "show_arrow": true,
+        "open_new_tab": false,
+        "sticky": false,
+        "close_button": false,
+        "enable_marquee_mobile": false,
+        "marquee_speed": 20,
+        "hide_message_mobile": false,
+        "hide_button_mobile": false,
+        "max_width": 1600,
+        "height_desktop": 52,
+        "height_mobile": 36,
+        "horizontal_padding": 24,
+        "content_gap": 12,
+        "content_gap_mobile": 8,
+        "font_size_desktop": 13,
+        "font_size_mobile": 12,
+        "font_weight": "600",
+        "background_color": "#003049",
+        "text_color": "#FFFFFF",
+        "accent_background": "#E8ECEE",
+        "accent_text_color": "#003049",
+        "button_background": "#FFFFFF",
+        "button_text_color": "#111111",
+        "border_color": "#111111",
+        "border_width": 0,
+        "highlight_radius": 4,
+        "code_radius": 4,
+        "button_radius": 4,
+        "z_index": 5
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "bannerpromo_DCaajk"
   ]
 }

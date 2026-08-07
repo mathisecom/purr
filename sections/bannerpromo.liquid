@@ -1,0 +1,797 @@
+{% liquid
+  assign banner_id = 'promo-banner-' | append: section.id
+  assign has_link = false
+  if section.settings.button_link != blank
+    assign has_link = true
+  endif
+%}
+
+<section
+  id="{{ banner_id }}"
+  class="promo-banner{% if section.settings.sticky %} promo-banner--sticky{% endif %}{% if section.settings.enable_marquee_mobile %} promo-banner--marquee-mobile{% endif %}"
+  style="
+    --pb-bg: {{ section.settings.background_color }};
+    --pb-text: {{ section.settings.text_color }};
+    --pb-accent-bg: {{ section.settings.accent_background }};
+    --pb-accent-text: {{ section.settings.accent_text_color }};
+    --pb-button-bg: {{ section.settings.button_background }};
+    --pb-button-text: {{ section.settings.button_text_color }};
+    --pb-border: {{ section.settings.border_color }};
+    --pb-height-desktop: {{ section.settings.height_desktop }}px;
+    --pb-height-mobile: {{ section.settings.height_mobile }}px;
+    --pb-font-desktop: {{ section.settings.font_size_desktop }}px;
+    --pb-font-mobile: {{ section.settings.font_size_mobile }}px;
+    --pb-gap: {{ section.settings.content_gap }}px;
+    --pb-padding-x: {{ section.settings.horizontal_padding }}px;
+  "
+  {% if section.settings.close_button %}
+    data-dismissible="true"
+    data-storage-key="promo-banner-closed-{{ section.id }}"
+  {% endif %}
+>
+  <div class="promo-banner__inner">
+    <div class="promo-banner__track">
+      <div class="promo-banner__content">
+        {% if section.settings.icon != blank %}
+          <span class="promo-banner__icon" aria-hidden="true">
+            {{ section.settings.icon | escape }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.prefix_text != blank %}
+          <span class="promo-banner__prefix">
+            {{ section.settings.prefix_text | escape }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.highlight_text != blank %}
+          <span class="promo-banner__highlight">
+            {{ section.settings.highlight_text | escape }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.message != blank %}
+          <span class="promo-banner__message">
+            {{ section.settings.message | escape }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.promo_code != blank %}
+          <button
+            type="button"
+            class="promo-banner__code"
+            aria-label="Copier le code promo {{ section.settings.promo_code | escape }}"
+            data-copy-code="{{ section.settings.promo_code | escape }}"
+          >
+            <span class="promo-banner__code-label">
+              {{ section.settings.code_label | escape }}
+            </span>
+            <strong>{{ section.settings.promo_code | escape }}</strong>
+          </button>
+        {% endif %}
+
+        {% if section.settings.button_label != blank and has_link %}
+          <a
+            class="promo-banner__button"
+            href="{{ section.settings.button_link }}"
+            {% if section.settings.open_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+          >
+            {{ section.settings.button_label | escape }}
+            {% if section.settings.show_arrow %}
+              <span aria-hidden="true">→</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if section.settings.enable_marquee_mobile %}
+        <div class="promo-banner__content promo-banner__content--duplicate" aria-hidden="true">
+          {% if section.settings.icon != blank %}
+            <span class="promo-banner__icon">{{ section.settings.icon | escape }}</span>
+          {% endif %}
+
+          {% if section.settings.prefix_text != blank %}
+            <span class="promo-banner__prefix">{{ section.settings.prefix_text | escape }}</span>
+          {% endif %}
+
+          {% if section.settings.highlight_text != blank %}
+            <span class="promo-banner__highlight">{{ section.settings.highlight_text | escape }}</span>
+          {% endif %}
+
+          {% if section.settings.message != blank %}
+            <span class="promo-banner__message">{{ section.settings.message | escape }}</span>
+          {% endif %}
+
+          {% if section.settings.promo_code != blank %}
+            <span class="promo-banner__code promo-banner__code--duplicate">
+              <span class="promo-banner__code-label">{{ section.settings.code_label | escape }}</span>
+              <strong>{{ section.settings.promo_code | escape }}</strong>
+            </span>
+          {% endif %}
+
+          {% if section.settings.button_label != blank and has_link %}
+            <span class="promo-banner__button">
+              {{ section.settings.button_label | escape }}
+              {% if section.settings.show_arrow %}<span>→</span>{% endif %}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.close_button %}
+      <button
+        type="button"
+        class="promo-banner__close"
+        aria-label="Fermer la bannière promotionnelle"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    {% endif %}
+  </div>
+
+  <span class="promo-banner__copy-feedback" role="status" aria-live="polite">
+    Code copié
+  </span>
+</section>
+
+{% style %}
+  #{{ banner_id }} {
+    position: relative;
+    z-index: {{ section.settings.z_index }};
+    display: block;
+    width: 100%;
+    min-height: var(--pb-height-desktop);
+    overflow: hidden;
+    border-top: {{ section.settings.border_width }}px solid var(--pb-border);
+    border-bottom: {{ section.settings.border_width }}px solid var(--pb-border);
+    background: var(--pb-bg);
+    color: var(--pb-text);
+  }
+
+  #{{ banner_id }}.promo-banner--sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  #{{ banner_id }} *,
+  #{{ banner_id }} *::before,
+  #{{ banner_id }} *::after {
+    box-sizing: border-box;
+  }
+
+  #{{ banner_id }} .promo-banner__inner {
+    position: relative;
+    display: flex;
+    min-height: var(--pb-height-desktop);
+    align-items: center;
+    justify-content: center;
+    width: min(100%, {{ section.settings.max_width }}px);
+    margin-inline: auto;
+    padding-inline: var(--pb-padding-x);
+  }
+
+  #{{ banner_id }} .promo-banner__track {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #{{ banner_id }} .promo-banner__content {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pb-gap);
+    text-align: center;
+    font-size: var(--pb-font-desktop);
+    font-weight: {{ section.settings.font_weight }};
+    line-height: 1.25;
+  }
+
+  #{{ banner_id }} .promo-banner__content--duplicate {
+    display: none;
+  }
+
+  #{{ banner_id }} .promo-banner__icon {
+    flex: 0 0 auto;
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  #{{ banner_id }} .promo-banner__prefix,
+  #{{ banner_id }} .promo-banner__message {
+    color: var(--pb-text);
+  }
+
+  #{{ banner_id }} .promo-banner__highlight {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: {{ section.settings.highlight_radius }}px;
+    background: var(--pb-accent-bg);
+    color: var(--pb-accent-text);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  #{{ banner_id }} .promo-banner__code {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 30px;
+    padding: 5px 10px;
+    border: 1px dashed currentColor;
+    border-radius: {{ section.settings.code_radius }}px;
+    background: transparent;
+    color: var(--pb-text);
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+  }
+
+  #{{ banner_id }} .promo-banner__code-label {
+    opacity: 0.75;
+    font-size: 0.82em;
+    font-weight: 500;
+  }
+
+  #{{ banner_id }} .promo-banner__code strong {
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  #{{ banner_id }} .promo-banner__button {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: var(--pb-button-bg);
+    color: var(--pb-button-text);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  #{{ banner_id }} .promo-banner__close {
+    position: absolute;
+    top: 50%;
+    right: max(10px, calc(var(--pb-padding-x) / 2));
+    display: grid;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    transform: translateY(-50%);
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--pb-text);
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    opacity: 0.72;
+  }
+
+  #{{ banner_id }} .promo-banner__copy-feedback {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    padding: 5px 9px;
+    transform: translate(-50%, 8px);
+    border-radius: 999px;
+    background: var(--pb-button-bg);
+    color: var(--pb-button-text);
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  #{{ banner_id }} .promo-banner__copy-feedback.is-visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    #{{ banner_id }} .promo-banner__button:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    #{{ banner_id }} .promo-banner__code:hover,
+    #{{ banner_id }} .promo-banner__close:hover {
+      opacity: 0.82;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ banner_id }} {
+      min-height: var(--pb-height-mobile);
+    }
+
+    #{{ banner_id }} .promo-banner__inner {
+      min-height: var(--pb-height-mobile);
+      padding-right: {% if section.settings.close_button %}48px{% else %}14px{% endif %};
+      padding-left: 14px;
+    }
+
+    #{{ banner_id }} .promo-banner__content {
+      gap: {{ section.settings.content_gap_mobile }}px;
+      font-size: var(--pb-font-mobile);
+    }
+
+    #{{ banner_id }} .promo-banner__highlight {
+      min-height: 24px;
+      padding: 3px 8px;
+    }
+
+    #{{ banner_id }} .promo-banner__button {
+      min-height: 30px;
+      padding: 6px 10px;
+    }
+
+    #{{ banner_id }} .promo-banner__code {
+      min-height: 28px;
+      padding: 4px 8px;
+    }
+
+    {% if section.settings.hide_message_mobile %}
+      #{{ banner_id }} .promo-banner__message {
+        display: none;
+      }
+    {% endif %}
+
+    {% if section.settings.hide_button_mobile %}
+      #{{ banner_id }} .promo-banner__button {
+        display: none;
+      }
+    {% endif %}
+
+    #{{ banner_id }}.promo-banner--marquee-mobile .promo-banner__inner {
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    #{{ banner_id }}.promo-banner--marquee-mobile .promo-banner__track {
+      width: max-content;
+      justify-content: flex-start;
+      animation: promo-banner-marquee-{{ section.id }} {{ section.settings.marquee_speed }}s linear infinite;
+    }
+
+    #{{ banner_id }}.promo-banner--marquee-mobile .promo-banner__content {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding-right: 38px;
+      white-space: nowrap;
+    }
+
+    #{{ banner_id }}.promo-banner--marquee-mobile .promo-banner__content--duplicate {
+      display: flex;
+    }
+  }
+
+  @keyframes promo-banner-marquee-{{ section.id }} {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{{ banner_id }}.promo-banner--marquee-mobile .promo-banner__track {
+      animation: none;
+    }
+
+    #{{ banner_id }} .promo-banner__button,
+    #{{ banner_id }} .promo-banner__copy-feedback {
+      transition: none;
+    }
+  }
+{% endstyle %}
+
+<script>
+  (() => {
+    const banner = document.getElementById('{{ banner_id }}');
+    if (!banner || banner.dataset.initialized === 'true') return;
+
+    banner.dataset.initialized = 'true';
+
+    const storageKey = banner.dataset.storageKey;
+    const closeButton = banner.querySelector('.promo-banner__close');
+    const copyButton = banner.querySelector('[data-copy-code]');
+    const feedback = banner.querySelector('.promo-banner__copy-feedback');
+
+    if (storageKey) {
+      try {
+        if (window.localStorage.getItem(storageKey) === 'true') {
+          banner.hidden = true;
+          return;
+        }
+      } catch (error) {
+        // Le stockage local peut être bloqué par le navigateur.
+      }
+    }
+
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        banner.hidden = true;
+
+        if (storageKey) {
+          try {
+            window.localStorage.setItem(storageKey, 'true');
+          } catch (error) {
+            // La bannière est tout de même masquée pour la session.
+          }
+        }
+      });
+    }
+
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const code = copyButton.dataset.copyCode;
+
+        try {
+          await navigator.clipboard.writeText(code);
+        } catch (error) {
+          const textarea = document.createElement('textarea');
+          textarea.value = code;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          textarea.remove();
+        }
+
+        if (feedback) {
+          feedback.classList.add('is-visible');
+          window.setTimeout(() => {
+            feedback.classList.remove('is-visible');
+          }, 1400);
+        }
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bannière promo solde",
+  "tag": "section",
+  "class": "section-promo-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Icône ou emoji",
+      "default": "🔥"
+    },
+    {
+      "type": "text",
+      "id": "prefix_text",
+      "label": "Texte avant la réduction",
+      "default": "SOLDES EXCLUSIVES"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Texte mis en avant",
+      "default": "-30 %"
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Message",
+      "default": "sur une sélection — offre limitée"
+    },
+    {
+      "type": "text",
+      "id": "code_label",
+      "label": "Libellé du code promo",
+      "default": "Code"
+    },
+    {
+      "type": "text",
+      "id": "promo_code",
+      "label": "Code promo",
+      "default": "SOLDE30"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton",
+      "default": "J’en profite"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow",
+      "label": "Afficher la flèche du bouton",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "Ouvrir le lien dans un nouvel onglet",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Comportement"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Garder la bannière visible au défilement",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "close_button",
+      "label": "Afficher le bouton de fermeture",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_marquee_mobile",
+      "label": "Activer le défilement sur mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "label": "Vitesse du défilement mobile",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "s",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_message_mobile",
+      "label": "Masquer le message secondaire sur mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_button_mobile",
+      "label": "Masquer le bouton sur mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale du contenu",
+      "min": 800,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "default": 1600
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Hauteur minimale sur ordinateur",
+      "min": 36,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Hauteur minimale sur mobile",
+      "min": 36,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Marge horizontale",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Espacement entre les éléments",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "label": "Espacement entre les éléments sur mobile",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typographie"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Taille du texte sur ordinateur",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Taille du texte sur mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Graisse du texte",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normale"
+        },
+        {
+          "value": "500",
+          "label": "Moyenne"
+        },
+        {
+          "value": "600",
+          "label": "Semi-grasse"
+        },
+        {
+          "value": "700",
+          "label": "Grasse"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond de la bannière",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_background",
+      "label": "Fond du texte mis en avant",
+      "default": "#FFDF5D"
+    },
+    {
+      "type": "color",
+      "id": "accent_text_color",
+      "label": "Texte mis en avant",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond du bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte du bouton",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur des bordures",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Épaisseur des bordures",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "Arrondi du texte mis en avant",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "code_radius",
+      "label": "Arrondi du code promo",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi du bouton",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "z_index",
+      "label": "Priorité d’affichage",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bannière promo solde"
+    }
+  ]
+}
+{% endschema %}
